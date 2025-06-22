@@ -39,7 +39,7 @@ Mari kita bahas satu per satu.
   Epidemiologi tidak hanya mempelajari penyakit (misalnya penyakit menular dan tidak menular), tetapi juga mencakup berbagai kondisi, seperti cedera, malnutrisi, dan kebuntingan; dan berbagai peristiwa, seperti keracunan pakan, penurunan produksi telur atau susu, dan kematian mendadak.
 
 - **Distribusi**<br>
-  Distribusi menjelaskan kapan, di mana, dan pada hewan dengan karakteristik apa kondisi atau peristiwa tersebut terjadi. Sebagai contoh, apakah kasus lebih banyak terjadi pada musim hujan, di kota besar, atau pada jenis hewan tertentu seperti kuda pacu. Pemahaman mengenai distribusi membantu memahami pola penyebaran suatu kondisi atau peristiwa kesehatan.
+  Distribusi menjelaskan kondisi atau peristiwa kesehatan berdasarkan karakteristik subjek (siapa yang terdampak), tempat (di mana ia terjadi), dan waktu (kapan ia terjadi). Sebagai contoh, apakah kasus lebih banyak terjadi pada musim hujan, di kota besar, atau pada jenis hewan tertentu seperti kuda pacu. Pemahaman mengenai distribusi membantu memahami pola penyebaran suatu kondisi atau peristiwa kesehatan.
 
 - **Determinan**<br>
   Determinan merupakan faktor yang memengaruhi kesehatan hewan. Ia dapat berupa unsur genetik, pakan, sanitasi lingkungan, sistem pemeliharaan, atau keberadaan vektor serangga. Pemahaman mengenai determinan membantu dalam mencari tahu apa penyebab atau pemicu suatu kondisi atau peristiwa kesehatan.
@@ -48,9 +48,31 @@ Mari kita bahas satu per satu.
   Populasi merujuk pada kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya gajah yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota. 
 
 - **Penerapan**<br>
-  Penerapan berarti menggunakan hasil kajian epidemiologi untuk mencegah dan mengendalikan penyakit hewan. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
+  Penerapan berarti menggunakan hasil kajian epidemiologi untuk mencegah dan mengendalikan masalah kesehatan serta meningkatkan status kesehatan populasi. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
 
+---
 
+**Asal kata**
+
+Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: *epi* (di atas atau pada), *demos* (rakyat atau populasi), dan *logos* (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
+
+Epidemiologi juga dapat dimaknai sebagai ilmu yang mempelajari epidemi. Kata ini berasal dari bahasa Yunani *epidemios*, yang berarti 'tersebar dalam populasi.' 
+
+Hippokrates, seorang tabib Yunani Kuno yang dikenal sebagai "Bapak Kedokteran," adalah orang pertama yang menggunakan kata epidemi dalam konteks kesehatan. Ia menggunakan istilah *epidemios* untuk merujuk pada sekumpulan sindrom fisik yang beredar dan menyebar dalam suatu populasi manusia pada waktu tertentu. 
+
+Sejak zaman peradaban kuno, ada dua istilah yang menggambarkan situasi penyakit dalam suatu populasi: epidemi dan endemi.
+
+**Epidemi** berasal dari *epi-* (di atas) dan *demos* (populasi). Artinya, kondisi saat suatu penyakit “mengunjungi” populasi. Istilah ini digunakan ketika suatu penyakit muncul dan menyebar dengan cepat dalam suatu populasi dan jumlahnya melampaui angka yang biasanya diprediksi dalam periode waktu tertentu. 
+
+Di sisi lain, **endemi** berasal dari *en-* (di dalam) dan *demos* (populasi). Artinya, kondisi saat suatu penyakit "mendiami" populasi. Istilah ini digunakan ketika suatu penyakit selalu ada dalam suatu populasi dengan tingkat kejadian yang relatif stabil dan dapat diprediksi. 
+
+Sebagai contoh, rabies adalah penyakit endemik di beberapa wilayah tropis, sedangkan flu burung dapat menjadi epidemi ketika terjadi peningkatan kasus yang signifikan di luar pola normalnya.
+
+---
+
+**Penggambaran penyakit dalam populasi**
+
+Selain epidemi dan endemi, ada beberapa istilah lain yang sering digunakan untuk menggambarkan situasi penyakit dalam populasi.
 
 ## Referensi
 
