@@ -42,10 +42,10 @@ Mari kita bahas satu per satu.
   Distribusi menjelaskan kapan, di mana, dan pada hewan dengan karakteristik apa kondisi atau peristiwa tersebut terjadi. Sebagai contoh, apakah kasus lebih banyak terjadi pada musim hujan, di kota besar, atau pada jenis hewan tertentu seperti kuda pacu. Pemahaman mengenai distribusi membantu memahami pola penyebaran suatu kondisi atau peristiwa kesehatan.
 
 - **Determinan**<br>
-  Determinan merupakan faktor yang memengaruhi kesehatan hewan. Ia dapat berupa unsur genetik, pakan, sanitasi kandang, sistem pemeliharaan, atau keberadaan vektor serangga. Pemahaman mengenai determinan membantu dalam mencari tahu apa penyebab atau pemicu suatu kondisi atau peristiwa kesehatan.
+  Determinan merupakan faktor yang memengaruhi kesehatan hewan. Ia dapat berupa unsur genetik, pakan, sanitasi lingkungan, sistem pemeliharaan, atau keberadaan vektor serangga. Pemahaman mengenai determinan membantu dalam mencari tahu apa penyebab atau pemicu suatu kondisi atau peristiwa kesehatan.
 
 - **Populasi**<br>
-  Populasi merujuk pada kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya kuda yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota. 
+  Populasi merujuk pada kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya gajah yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota. 
 
 - **Penerapan**<br>
   Penerapan berarti menggunakan hasil kajian epidemiologi untuk mencegah dan mengendalikan penyakit hewan. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
