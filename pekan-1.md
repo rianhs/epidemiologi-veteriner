@@ -2,7 +2,7 @@
 
 Ini adalah materi pekan 1: Berpikir epidemiologis
 
-**Apa konsep paling awal yang perlu saya pahami?**
+#### **Apa konsep paling awal yang perlu saya pahami?**
 
 Semua makhluk hidup bisa terganggu kesehatannya dan menjadi sakit. Pada umumnya, penyakit tidak muncul secara acak, tetapi mengikuti pola tertentu. Dengan mengamati dan menganalisis pola-pola ini, kita dapat mencegah dan/atau mengendalikan penyakit. 
 
@@ -20,7 +20,7 @@ Sebelum melangkah lebih jauh, Anda perlu memahami bahwa kondisi kesehatan dan pe
 
 ---
 
-**Definisi komprehensif**
+#### **Definisi komprehensif**
 
 Ada banyak definisi epidemiologi. Namun, salah satu definisi yang komprehensif dan banyak digunakan yaitu:
 
@@ -52,7 +52,7 @@ Mari kita bahas satu per satu.
 
 ---
 
-**Asal kata**
+#### **Asal kata**
 
 Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: *epi* (di atas atau pada), *demos* (rakyat atau populasi), dan *logos* (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
 
@@ -75,7 +75,7 @@ Sebagai contoh, rabies adalah penyakit endemik di beberapa wilayah tropis, sedan
 
 ---
 
-**Penggambaran penyakit dalam populasi**
+#### **Penggambaran penyakit dalam populasi**
 
 Selain epidemi dan endemi, ada beberapa istilah lain yang sering digunakan untuk menggambarkan situasi penyakit dalam populasi, seperti hiperendemi, wabah, pandemi, dan sporadik.
 
@@ -91,7 +91,7 @@ Meskipun istilah wabah dan epidemi sering dianggap sama dan digunakan secara ber
 
 ---
 
-**Sejarah**
+#### **Sejarah**
 
 Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti konsep bahwa penyakit muncul akibat interaksi antara manusia dan lingkungan. Namun, julukan "Bapak epidemiologi modern" diberikan kepada John Snow, seorang dokter asal Inggris yang hidup pada abad ke-19.
 
@@ -135,7 +135,7 @@ Sebelum penemuan ini, sebagian besar ilmuwan dan dokter belum mengetahui bahwa a
 
 ---
 
-**Pendekatan epidemiologis**
+#### **Pendekatan epidemiologis**
 
 Salah satu butir kompetensi dokter hewan Indonesia menurut Perhimpunan Dokter Hewan Indonesia (PDHI) adalah
 
@@ -151,9 +151,48 @@ Artinya, suatu diagnosis dapat ditegakkan melalui empat pendekatan: klinis, labo
 
 - **Diagnosis epidemiologis** didasarkan pada hasil analisis pola penyebaran penyakit dalam populasi, termasuk karakter hewan, tempat, waktu, dan faktor risiko yang berperan.
 
-Sebagai calon dokter hewan, Anda dapat menggunakan berbagai pendekatan untuk menganalisis masalah kesehatan hewan. Saat menggunakan pendekatan epidemiologi, gunakan perspektif populasi, bukan perspektif individu hewan.
+Dalam praktiknya, dokter hewan dapat menggunakan berbagai pendekatan untuk memecahkan masalah kesehatan hewan. Seorang klinisi biasanya menangani penyakit dari perspektif individu hewan. Sebagai contoh, ketika seekor sapi sakit, seorang klinisi akan melakukan pemeriksaan fisik, mendiagnosis penyakit berdasarkan tanda klinis yang ditunjukkan, dan memberikan pengobatan langsung kepada hewan tersebut. Tujuan utama seorang klinisi adalah menyembuhkan individu yang sakit dan pendekatannya sering kali bersifat kuratif, misalnya pemberian obat atau pembedahan.
+
+Di sisi lain, seorang epidemiolog mencoba memahami faktor-faktor yang memengaruhi penyebaran penyakit dalam suatu kelompok hewan. Sebagai contoh, jika dalam suatu peternakan terjadi peningkatan kasus diare pada sapi, seorang epidemiolog tidak hanya mendiagnosis satu ekor sapi, tetapi juga mencari pola dalam populasi, seperti apakah semua sapi yang sakit berasal dari kandang yang sama, apakah mereka mengonsumsi pakan yang sama, atau apakah ada faktor lingkungan yang berperan. Tujuan utama seorang epidemiolog adalah mencegah dan mengendalikan penyakit dalam populasi sehingga pendekatannya berbasis pembuatan kebijakan atau aturan, yang sering kali bersifat preventif.
 
 
-## Referensi
+Berikut ini contoh perbandingan perspektif seorang klinisi dan epidemiolog.
+
+| Perbandingan | Klinisi | Epidemiolog |
+|:---:|:---:|:---:|
+| Unit yang diperhatikan | Individu | Populasi |
+| Tujuan | Menjaga kesehatan individu dan menyembuhkan individu sakit | Mencegah dan mengendalikan penyakit pada populasi |
+| Diagnosis | Berdasarkan anamnesis, pemeriksaan fisik, dan pencitraan diagnostik | Berdasarkan analisis statistika dan kajian epidemiologis |
+| Penanganan | Melakukan perawatan medis, menghantarkan obat, atau melakukan pembedahan | Membuat aturan yang memodifikasi perlakuan terhadap populasi |
+
+Dengan mengadopsi pendekatan epidemiologis, seorang dokter hewan dapat memperluas perannya dari sekadar menangani individu yang sakit menjadi menganalisis dan mencegah penyakit dalam skala yang lebih luas. Pendekatan ini sangat penting dalam menghadapi ancaman penyakit menular, zoonosis, dan tantangan kesehatan hewan yang semakin kompleks dalam skala global.
+
+---
+
+#### Pertanyaan kunci dalam epidemiologi
+
+Ada banyak pertanyaan yang dapat diajukan dalam epidemiologi, terutama yang berkaitan dengan kondisi atau peristiwa kesehatan dan populasi spesifik yang terkena dampak. Mari kita eksplorasi pertanyaan-pertanyaan tersebut dengan kerangka 5W+1H.
+
+Namun, sebelum itu, coba tentukan dulu kondisi atau peristiwa kesehatan dan populasi spesifik yang akan kita jadikan bahan pertanyaan.
+- Kondisi atau peristiwa kesehatan: ...?
+- Populasi spesifik: ...?
+
+Contoh:<br>
+1\. Kecanduan merokok pada penduduk negara Indonesia.<br>
+2\. Rabun jauh pada mahasiswa Universitas Hasanuddin.<br>
+3\. Obesitas pada anjing di Kota Makassar.
+
+| Kata tanya | Contoh pertanyaan
+|:---:|:---:|
+| *What*<br>(apa?) | Apa kondisi/peristiwa kesehatan yang dikaji?<br>Apakah ada kondisi/peristiwa tersebut dalam populasi? |
+| *Who*<br>(siapa?) | Siapa saja yang mengalami kondisi/peristiwa kesehatan tersebut? |
+| *Where*<br>(di mana?) | Di mana saja kondisi/peristiwa kesehatan tersebut terjadi? |
+| *When*<br>(kapan?) | Kapan saja kondisi/peristiwa kesehatan tersebut terjadi (atau mulai terjadi)? |
+| *Why*<br>(mengapa?) | Mengapa populasi mengalami kondisi/peristiwa kesehatan tersebut? |
+| *How*<br>(bagaimana?) | - Bagaimana cara kondisi/peristiwa kesehatan tersebut menyebar di dalam populasi?<br>- Bagaimana cara mengendalikan penyebaran kondisi/peristiwa kesehatan tersebut dalam populasi? |
+
+---
+
+### Referensi
 
 https://doi.org/10.1186/1471-2458-14-139
