@@ -1,2 +1,2 @@
-- Pekan 1
-- Pekan 2
+- [🏠 Home](home.md)
+- [Pekan 1](pekan-1.md)
