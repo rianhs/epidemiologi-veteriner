@@ -1,8 +1,8 @@
 # Pekan 1
 
-Ini adalah materi pekan 1: Berpikir epidemiologis
+> Halaman ini berisi materi Pekan 1: Dasar-dasar epidemiologi.
 
-#### **Apa konsep paling awal yang perlu saya pahami?**
+##### **Apa konsep paling awal yang perlu saya pahami?**
 
 Semua makhluk hidup bisa terganggu kesehatannya dan menjadi sakit. Pada umumnya, penyakit tidak muncul secara acak, tetapi mengikuti pola tertentu. Dengan mengamati dan menganalisis pola-pola ini, kita dapat mencegah dan/atau mengendalikan penyakit. 
 
@@ -12,7 +12,7 @@ Bayangkan Anda bekerja di peternakan yang memiliki 100 ekor sapi perah. Dalam se
 - "Apakah ini hanya kebetulan?" 
 - "Apakah ada pola tertentu?"
 - "Apa kesamaan yang dimiliki oleh sapi-sapi yang sakit?"
-- "Mengapa 10 ekor sapi ini dan bukan 90 ekor sapi lainnya?"
+- "Mengapa 10 ekor sapi ini yaang terdampak dan bukan 90 ekor sapi lainnya?"
 
 Dengan pendekatan epidemiologis, Anda tidak berfokus pada seekor hewan, tetapi menyelidiki suatu populasi. 
 
@@ -20,7 +20,7 @@ Sebelum melangkah lebih jauh, Anda perlu memahami bahwa kondisi kesehatan dan pe
 
 ---
 
-#### **Definisi komprehensif**
+##### **Definisi komprehensif**
 
 Ada banyak definisi epidemiologi. Namun, salah satu definisi yang komprehensif dan banyak digunakan yaitu:
 
@@ -48,11 +48,11 @@ Mari kita bahas satu per satu.
   Populasi merujuk pada kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya gajah yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota. 
 
 - **Penerapan**<br>
-  Penerapan berarti menggunakan hasil kajian epidemiologi untuk mencegah dan mengendalikan masalah kesehatan serta meningkatkan status kesehatan populasi. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
+  Penerapan berarti menggunakan hasil kajian epidemiologis untuk mencegah dan mengendalikan masalah kesehatan serta meningkatkan status kesehatan populasi. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
 
 ---
 
-#### **Asal kata**
+##### **Asal kata**
 
 Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: *epi* (di atas atau pada), *demos* (rakyat atau populasi), dan *logos* (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
 
@@ -71,15 +71,15 @@ Sejak zaman peradaban kuno, ada dua istilah yang menggambarkan situasi penyakit 
 
 Di sisi lain, **endemi** berasal dari *en-* (di dalam) dan *demos* (populasi). Artinya, kondisi saat suatu penyakit "mendiami" populasi. Istilah ini digunakan ketika suatu penyakit selalu ada dalam suatu populasi dengan tingkat kejadian yang relatif stabil dan dapat diprediksi. 
 
-Sebagai contoh, rabies adalah penyakit endemik di beberapa wilayah tropis, sedangkan flu burung dapat menjadi epidemi ketika terjadi peningkatan kasus yang signifikan di luar pola normalnya.
+Sebagai contoh, rabies bersifat endemik di beberapa wilayah tropis, sedangkan flu burung dapat menjadi epidemi ketika terjadi peningkatan kasus yang signifikan di luar pola normalnya.
 
 ---
 
-#### **Penggambaran penyakit dalam populasi**
+##### **Penggambaran penyakit dalam populasi**
 
 Selain epidemi dan endemi, ada beberapa istilah lain yang sering digunakan untuk menggambarkan situasi penyakit dalam populasi, seperti hiperendemi, wabah, pandemi, dan sporadik.
 
-- **Hiperendemi** adalah situasi ketika suatu penyakit terus-menerus ada dalam suatu populasi dengan tingkat kejadian yang tinggi dan stabil dalam jangka waktu lama. Artinya, kasus penyakit muncul secara rutin seperti endemi, dengan jumlah yang tinggi. Contohnya adalah malaria yang secara konsisten terjadi dalam angka tinggi di beberapa daerah tropis sepanjang tahun.
+- **Hiperendemi** adalah situasi ketika suatu penyakit terus-menerus ada dalam suatu populasi dengan tingkat kejadian yang tinggi dan stabil. Artinya, kasus penyakit muncul secara rutin seperti endemi, dengan jumlah yang tinggi. Contohnya adalah malaria yang secara konsisten terjadi dalam angka tinggi di beberapa daerah tropis sepanjang tahun.
 
 - **Wabah** mengacu pada peningkatan kasus suatu penyakit di suatu wilayah tertentu dalam waktu yang relatif singkat, sering kali dalam skala yang lebih kecil dibandingkan dengan epidemi. Contoh wabah adalah peningkatan mendadak kasus leptospirosis setelah banjir di suatu daerah. 
 
@@ -91,7 +91,7 @@ Meskipun istilah wabah dan epidemi sering dianggap sama dan digunakan secara ber
 
 ---
 
-#### **Sejarah**
+##### **Sejarah**
 
 Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti konsep bahwa penyakit muncul akibat interaksi antara manusia dan lingkungan. Namun, julukan "Bapak epidemiologi modern" diberikan kepada John Snow, seorang dokter asal Inggris yang hidup pada abad ke-19.
 
@@ -100,7 +100,7 @@ Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti k
   <figcaption>John Snow, tokoh yang dianggap sebagai Bapak Epidemiologi Modern. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:John_Snow.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
-Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat itu, penyebab penyakit ini belum diketahui secara pasti. Teori dominan yang berkembang adalah teori miasma yang menyatakan bahwa penyakit menular disebarkan melalui udara yang terkontaminasi oleh miasma, partikel kecil yang juga mengakibatkan bau busuk. Namun, John Snow memiliki hipotesis berbeda. Ia mencurigai bahwa penyebaran kolera berkaitan dengan konsumsi air yang terkontaminasi.
+Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat itu, penyebab penyakit ini belum diketahui secara pasti. Teori dominan yang berkembang adalah teori miasma yang menyatakan bahwa penyakit menular disebarkan melalui udara yang terkontaminasi oleh miasma, partikel kecil yang juga mengakibatkan bau busuk. Namun, John Snow memiliki dugaan yang berbeda. Ia mencurigai bahwa penyebaran kolera berkaitan dengan konsumsi air yang terkontaminasi.
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-1-img-3-kolera.png" alt="Situasi wabah kolera" width="350">
@@ -135,7 +135,7 @@ Sebelum penemuan ini, sebagian besar ilmuwan dan dokter belum mengetahui bahwa a
 
 ---
 
-#### **Pendekatan epidemiologis**
+##### **Pendekatan epidemiologis**
 
 Salah satu butir kompetensi dokter hewan Indonesia menurut Perhimpunan Dokter Hewan Indonesia (PDHI) adalah
 
@@ -147,7 +147,7 @@ Artinya, suatu diagnosis dapat ditegakkan melalui empat pendekatan: klinis, labo
 
 - **Diagnosis laboratoris** didasarkan pada hasil pemeriksaan dan pengujian laboratorium terhadap spesimen seperti darah, feses, dan urine.
 
-- **Diagnosis patologis** didasarkan pada hasil pemeriksaan perubahan jaringan atau organ, baik secara makroskopis (bedah bangkai) maupun mikroskopis (histopatologi).
+- **Diagnosis patologis** didasarkan pada perubahan jaringan atau organ, baik melalui pemeriksaan makroskopis (bedah bangkai) maupun mikroskopis (histopatologis).
 
 - **Diagnosis epidemiologis** didasarkan pada hasil analisis pola penyebaran penyakit dalam populasi, termasuk karakter hewan, tempat, waktu, dan faktor risiko yang berperan.
 
@@ -169,7 +169,7 @@ Dengan mengadopsi pendekatan epidemiologis, seorang dokter hewan dapat memperlua
 
 ---
 
-#### Pertanyaan kunci dalam epidemiologi
+##### **Pertanyaan kunci dalam epidemiologi**
 
 Ada banyak pertanyaan yang dapat diajukan dalam epidemiologi, terutama yang berkaitan dengan kondisi atau peristiwa kesehatan dan populasi spesifik yang terkena dampak. Mari kita eksplorasi pertanyaan-pertanyaan tersebut dengan kerangka 5W+1H.
 
@@ -178,18 +178,41 @@ Namun, sebelum itu, coba tentukan dulu kondisi atau peristiwa kesehatan dan popu
 - Populasi spesifik: ...?
 
 Contoh:<br>
-1\. Kecanduan merokok pada penduduk negara Indonesia.<br>
+1\. Kecanduan merokok pada penduduk Indonesia.<br>
 2\. Rabun jauh pada mahasiswa Universitas Hasanuddin.<br>
 3\. Obesitas pada anjing di Kota Makassar.
 
-| Kata tanya | Contoh pertanyaan
+| Kata tanya | Contoh pertanyaan |
 |:---:|:---:|
-| *What*<br>(apa?) | Apa kondisi/peristiwa kesehatan yang dikaji?<br>Apakah ada kondisi/peristiwa tersebut dalam populasi? |
-| *Who*<br>(siapa?) | Siapa saja yang mengalami kondisi/peristiwa kesehatan tersebut? |
-| *Where*<br>(di mana?) | Di mana saja kondisi/peristiwa kesehatan tersebut terjadi? |
-| *When*<br>(kapan?) | Kapan saja kondisi/peristiwa kesehatan tersebut terjadi (atau mulai terjadi)? |
-| *Why*<br>(mengapa?) | Mengapa populasi mengalami kondisi/peristiwa kesehatan tersebut? |
-| *How*<br>(bagaimana?) | - Bagaimana cara kondisi/peristiwa kesehatan tersebut menyebar di dalam populasi?<br>- Bagaimana cara mengendalikan penyebaran kondisi/peristiwa kesehatan tersebut dalam populasi? |
+| *What*<br>(apa?) | Apakah kondisi/peristiwa tersebut ada di dalam populasi? |
+| *Who*<br>(siapa?) | Siapa saja dalam populasi yang (paling banyak) mengalami kondisi/peristiwa kesehatan tersebut? |
+| *Where*<br>(di mana?) | Di mana saja kondisi/peristiwa kesehatan tersebut (paling banyak) ditemukan dalam populasi? |
+| *When*<br>(kapan?) | - Kapan saja kondisi/peristiwa kesehatan tersebut terjadi (atau mulai terjadi)?<br>- Kapan waktu paling sering terjadinya kondisi/peristiwa kesehatan tersebut pada populasi? |
+| *Why*<br>(mengapa?) | - Mengapa populasi mengalami kondisi/peristiwa kesehatan tersebut?<br>- Mengapa kondisi/peristiwa kesehatan tersebut lebih sering ditemukan pada kelompok tertentu dalam populasi? |
+| *How*<br>(bagaimana?) | - Bagaimana cara kondisi/peristiwa kesehatan tersebut dapat menyebar di antara individu dalam populasi?<br>- Bagaimana perkiraan kejadian kondisi/peristiwa kesehatan tersebut pada masa depan?<br>- Bagaimana cara mengendalikan penyebaran kondisi/peristiwa kesehatan tersebut dalam populasi?<br>- Bagaimana efektivitas suatu intervensi dalam menurunkan angka kejadian kondisi/peristiwa kesehatan tersebut dalam populasi? |
+
+Sekian banyak pertanyaan di atas dapat dibagi menjadi empat kelompok yang mencerminkan fungsi epidemiologi, yaitu deskripsi, eksplanasi, prediksi, dan intervensi.
+
+- **Deskripsi** merupakan fungsi epidemiologi yang memerinci pola kejadian suatu kondisi/peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata *what*, *who*, *when*, dan *where*.
+
+- **Eksplanasi** merupakan fungsi epidemiologi yang menggali penyebab, sumber, atau faktor yang berperan dalam terjadinya kondisi/peristiwa kesehatan dalam populasi. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata *why*.
+
+- **Prediksi** merupakan fungsi epidemiologi yang memperkirakan kemungkinan kejadian suatu kondisi/peristiwa kesehatan pada masa depan berdasarkan data dan tren yang ada.
+
+- **Intervensi** merupakan fungsi epidemiologi yang merancang, menerapkan, dan mengevaluasi tindakan atau kebijakan untuk mencegah atau mengendalikan kondisi/peristiwa kesehatan dalam populasi.
+
+Jawaban atas pertanyaan yang menggunakan kata *how* dapat ditempatkan dalam fungsi eksplanasi, prediksi, atau intervensi, bergantung pada konteks dan kontennya.
+
+Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel berikut ini merangkum contoh pertanyaan utama, jenis informasi yang dihasilkan, serta cabang epidemiologi yang relevan dengan masing-masing fungsi.
+
+| Topik | Jawaban | Cabang Epidemiologi |
+|:---:|:---:|:---:|
+| Seperti apa distribusi dari suatu kondisi/peristiwa kesehatan dalam populasi? | Kehadiran, frekuensi, pola, dan tren kondisi/peristiwa kesehatan berdasarkan subjek, tempat, dan waktu | Deskriptif |
+| Apa saja determinan atau faktor penyebab dari suatu kondisi/peristiwa kesehatan dalam populasi? | Penyebab, sumber, dan paparan yang memengaruhi risiko terjadinya kondisi/peristiwa kesehatan | Analitis (atau inferensial) |
+| Seperti apa perkiraan kejadian dari suatu kondisi/peristiwa kesehatan dalam populasi pada masa depan? | Proyeksi, estimasi, atau prediksi tren kejadian berdasarkan data dan model yang tersedia | Prediktif |
+| Apa saja intervensi atau kebijakan untuk mencegah atau mengendalikan suatu kondisi/peristiwa kesehatan dalam populasi? | Intervensi atau kebijakan serta evaluasi efektivitas, efisiensi, dan kesetaraannya | Intervensional |
+
+Berdasarkan uraian ini, paling tidak terdapat empat cabang epidemiologi, yaitu epidemiologi deskriptif, analitis, prediktif, dan intervensional. Namun, kali ini kita hanya akan mendalami epidemiologi deskriptif dan epidemiologi analitis.
 
 ---
 
