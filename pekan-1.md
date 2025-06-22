@@ -127,11 +127,32 @@ Dalam bidang kedokteran hewan, epidemiologi mengalami kemajuan pesat pada akhir 
   <figcaption>Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam. Sumber gambar: <a href="https://www.tshaonline.org/handbook/entries/texas-fever" target="_blank" rel="noopener noreferrer">Texas State Historical Association</a>.</figcaption>
 </figure></div>
 
-Pada akhir dasawarsa 1880-an, Theobald Smith dan Frederick Kilbourne menemukan bahwa penyakit ini tidak menyebar langsung dari sapi ke sapi lainnya, tetapi memerlukan perantara. Mereka menyimpulkan bahwa caplak *Boophilus annulatus* berperan sebagai vektor yang mentransmisikan agen penyakit dari sapi yang terinfeksi ke sapi yang sehat.
+Pada akhir dasawarsa 1880-an, Theobald Smith dan Frederick Kilbourne menemukan bahwa penyakit ini tidak menyebar langsung dari satu sapi ke sapi lainnya, tetapi memerlukan perantara. Mereka menyimpulkan bahwa caplak *Boophilus annulatus* berperan sebagai vektor yang mentransmisikan agen penyakit dari sapi yang terinfeksi ke sapi yang sehat.
 
 Penemuan ini merupakan momen sejarah yang penting. Mereka membuktikan bahwa artropoda, yang dalam hal ini adalah caplak, dapat membawa dan mentransmisikan patogen dari satu hewan ke hewan lain. Hal ini membuka konsep tentang vektor penyakit. 
 
 Sebelum penemuan ini, sebagian besar ilmuwan dan dokter belum mengetahui bahwa artropoda bisa menjadi penular penyakit. Oleh karena itu, studi tentang demam sapi Texas (saat ini dikenal sebagai babesiosis sapi) membuka pemahaman bahwa artropoda seperti nyamuk dan kutu dapat menularkan penyakit seperti malaria dan demam kuning. Selain itu, temuan ini juga menjadi dasar bagi penerapan program pengendalian penyakit berbasis vektor, seperti pemberantasan caplak untuk mengurangi penyebaran penyakit pada ternak.
+
+---
+
+**Pendekatan epidemiologis**
+
+Salah satu butir kompetensi dokter hewan Indonesia menurut Perhimpunan Dokter Hewan Indonesia (PDHI) adalah
+
+> "*memiliki kemampuan dalam melakukan diagnosis klinis, laboratoris, patologis, dan epidemiologis penyakit hewan*."
+
+Artinya, suatu diagnosis dapat ditegakkan melalui empat pendekatan: klinis, laboratoris, patologis, dan epidemiologis.
+
+- **Diagnosis klinis** didasarkan pada hasil pemeriksaan fisik berupa tanda-tanda penyakit pada hewan.
+
+- **Diagnosis laboratoris** didasarkan pada hasil pemeriksaan dan pengujian laboratorium terhadap spesimen seperti darah, feses, dan urine.
+
+- **Diagnosis patologis** didasarkan pada hasil pemeriksaan perubahan jaringan atau organ, baik secara makroskopis (bedah bangkai) maupun mikroskopis (histopatologi).
+
+- **Diagnosis epidemiologis** didasarkan pada hasil analisis pola penyebaran penyakit dalam populasi, termasuk karakter hewan, tempat, waktu, dan faktor risiko yang berperan.
+
+Sebagai calon dokter hewan, Anda dapat menggunakan berbagai pendekatan untuk menganalisis masalah kesehatan hewan. Saat menggunakan pendekatan epidemiologi, gunakan perspektif populasi, bukan perspektif individu hewan.
+
 
 ## Referensi
 
