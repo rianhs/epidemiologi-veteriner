@@ -12,7 +12,7 @@ Bayangkan Anda bekerja di peternakan yang memiliki 100 ekor sapi perah. Dalam se
 - "Apakah ini hanya kebetulan?" 
 - "Apakah ada pola tertentu?"
 - "Apa kesamaan yang dimiliki oleh sapi-sapi yang sakit?"
-- "Mengapa 10 ekor sapi ini yaang terdampak dan bukan 90 ekor sapi lainnya?"
+- "Mengapa 10 ekor sapi ini yang terdampak dan bukan 90 ekor sapi lainnya?"
 
 Dengan pendekatan epidemiologis, Anda tidak berfokus pada seekor hewan, tetapi menyelidiki suatu populasi. 
 
@@ -171,9 +171,9 @@ Dengan mengadopsi pendekatan epidemiologis, seorang dokter hewan dapat memperlua
 
 ##### **Pertanyaan kunci dalam epidemiologi**
 
-Ada banyak pertanyaan yang dapat diajukan dalam epidemiologi, terutama yang berkaitan dengan kondisi atau peristiwa kesehatan dan populasi spesifik yang terkena dampak. Mari kita eksplorasi pertanyaan-pertanyaan tersebut dengan kerangka 5W+1H.
+Ada banyak pertanyaan yang dapat diajukan dalam epidemiologi, terutama yang berkaitan dengan kondisi atau peristiwa kesehatan dan populasi spesifik yang terdampak. Mari kita eksplorasi pertanyaan-pertanyaan tersebut dengan kerangka 5W+1H.
 
-Namun, sebelum itu, coba tentukan dulu kondisi atau peristiwa kesehatan dan populasi spesifik yang akan kita jadikan bahan pertanyaan.
+Namun, sebelum itu, coba tentukan dulu (1) kondisi atau peristiwa kesehatan, dan (2) populasi spesifik yang akan Anda jadikan bahan pertanyaan.
 - Kondisi atau peristiwa kesehatan: ...?
 - Populasi spesifik: ...?
 
@@ -182,20 +182,22 @@ Contoh:<br>
 2\. Rabun jauh pada mahasiswa Universitas Hasanuddin.<br>
 3\. Obesitas pada anjing di Kota Makassar.
 
+Tabel berikut ini berisi pertanyaan-pertanyaan kunci untuk mendapatkan jawaban atau informasi epidemiologis yang penting.
+
 | Kata tanya | Contoh pertanyaan |
 |:---:|:---:|
 | *What*<br>(apa?) | Apakah kondisi/peristiwa tersebut ada di dalam populasi? |
 | *Who*<br>(siapa?) | Siapa saja dalam populasi yang (paling banyak) mengalami kondisi/peristiwa kesehatan tersebut? |
 | *Where*<br>(di mana?) | Di mana saja kondisi/peristiwa kesehatan tersebut (paling banyak) ditemukan dalam populasi? |
-| *When*<br>(kapan?) | - Kapan saja kondisi/peristiwa kesehatan tersebut terjadi (atau mulai terjadi)?<br>- Kapan waktu paling sering terjadinya kondisi/peristiwa kesehatan tersebut pada populasi? |
+| *When*<br>(kapan?) | - Kapan saja kondisi/peristiwa kesehatan tersebut terjadi (atau mulai terjadi)?<br>- Kapan waktu ketika kondisi/peristiwa kesehatan tersebut paling sering terjadi pada populasi? |
 | *Why*<br>(mengapa?) | - Mengapa populasi mengalami kondisi/peristiwa kesehatan tersebut?<br>- Mengapa kondisi/peristiwa kesehatan tersebut lebih sering ditemukan pada kelompok tertentu dalam populasi? |
 | *How*<br>(bagaimana?) | - Bagaimana cara kondisi/peristiwa kesehatan tersebut dapat menyebar di antara individu dalam populasi?<br>- Bagaimana perkiraan kejadian kondisi/peristiwa kesehatan tersebut pada masa depan?<br>- Bagaimana cara mengendalikan penyebaran kondisi/peristiwa kesehatan tersebut dalam populasi?<br>- Bagaimana efektivitas suatu intervensi dalam menurunkan angka kejadian kondisi/peristiwa kesehatan tersebut dalam populasi? |
 
 Sekian banyak pertanyaan di atas dapat dibagi menjadi empat kelompok yang mencerminkan fungsi epidemiologi, yaitu deskripsi, eksplanasi, prediksi, dan intervensi.
 
-- **Deskripsi** merupakan fungsi epidemiologi yang memerinci pola kejadian suatu kondisi/peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata *what*, *who*, *when*, dan *where*.
+- **Deskripsi** merupakan fungsi epidemiologi yang memerinci kejadian suatu kondisi/peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata *what*, *who*, *when*, dan *where*.
 
-- **Eksplanasi** merupakan fungsi epidemiologi yang menggali penyebab, sumber, atau faktor yang berperan dalam terjadinya kondisi/peristiwa kesehatan dalam populasi. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata *why*.
+- **Eksplanasi** merupakan fungsi epidemiologi yang menggali penyebab atau faktor yang berperan dalam terjadinya kondisi/peristiwa kesehatan dalam populasi. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata *why*.
 
 - **Prediksi** merupakan fungsi epidemiologi yang memperkirakan kemungkinan kejadian suatu kondisi/peristiwa kesehatan pada masa depan berdasarkan data dan tren yang ada.
 
@@ -203,9 +205,9 @@ Sekian banyak pertanyaan di atas dapat dibagi menjadi empat kelompok yang mencer
 
 Jawaban atas pertanyaan yang menggunakan kata *how* dapat ditempatkan dalam fungsi eksplanasi, prediksi, atau intervensi, bergantung pada konteks dan kontennya.
 
-Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel berikut ini merangkum contoh pertanyaan utama, jenis informasi yang dihasilkan, serta cabang epidemiologi yang relevan dengan masing-masing fungsi.
+Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel berikut ini merangkum topik pertanyaan utama, jenis informasi yang dihasilkan, serta cabang epidemiologi yang relevan dengan masing-masing fungsi.
 
-| Topik | Jawaban | Cabang Epidemiologi |
+| Topik | Jawaban | Cabang epidemiologi |
 |:---:|:---:|:---:|
 | Seperti apa distribusi dari suatu kondisi/peristiwa kesehatan dalam populasi? | Kehadiran, frekuensi, pola, dan tren kondisi/peristiwa kesehatan berdasarkan subjek, tempat, dan waktu | Deskriptif |
 | Apa saja determinan atau faktor penyebab dari suatu kondisi/peristiwa kesehatan dalam populasi? | Penyebab, sumber, dan paparan yang memengaruhi risiko terjadinya kondisi/peristiwa kesehatan | Analitis (atau inferensial) |
@@ -213,6 +215,45 @@ Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan mene
 | Apa saja intervensi atau kebijakan untuk mencegah atau mengendalikan suatu kondisi/peristiwa kesehatan dalam populasi? | Intervensi atau kebijakan serta evaluasi efektivitas, efisiensi, dan kesetaraannya | Intervensional |
 
 Berdasarkan uraian ini, paling tidak terdapat empat cabang epidemiologi, yaitu epidemiologi deskriptif, analitis, prediktif, dan intervensional. Namun, kali ini kita hanya akan mendalami epidemiologi deskriptif dan epidemiologi analitis.
+
+---
+
+##### **Epidemiologi deskriptif dan analitis**
+
+Sebelumnya, kita telah membahas definisi epidemiologi yang komprehensif, yaitu:
+
+> Epidemiologi adalah studi ilmiah mengenai distribusi dan determinan dari kondisi atau peristiwa yang berhubungan dengan kesehatan pada populasi yang spesifik dan penerapan studi ini untuk mengendalikan masalah kesehatan.
+
+**Epidemiologi deskriptif** adalah cabang epidemiologi yang memerinci kejadian suatu kondisi/peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Dalam epidemiologi deskriptif, kita berfokus pada kasus positif. Ia menguraikan unsur "distribusi" dalam definisi epidemiologi di atas.
+
+**Epidemiologi analitis** adalah cabang epidemiologi yang menggali penyebab dan/atau faktor yang berperan dalam terjadinya kondisi/peristiwa kesehatan dalam populasi. Dalam epidemiologi analitis, kita menguji hipotesis dengan cara membandingkan kasus positif dan kasus negatif. Ia menguraikan unsur "determinan" dalam definisi epidemiologi di atas.
+
+Untuk lebih memperjelas perbedaan antara epidemiologi deskriptif dan analitis, berikut contoh narasi singkat pada beberapa objek penelitian.
+
+**1\. Kecanduan merokok pada penduduk Indonesia**
+- Epidemiologi deskriptif:<br> 
+  Seorang peneliti akan menggambarkan seberapa banyak kasus kecanduan merokok, siapa yang paling banyak kecanduan (misalnya berdasarkan umur, jenis kelamin, pekerjaan), di wilayah mana kasus paling banyak terjadi, dan pada periode waktu apa kecenderungan kasus meningkat.
+
+- Epidemiologi analitis:<br>
+  Seorang peneliti akan menguji apakah faktor tertentu, seperti tingkat pendidikan, paparan iklan rokok, atau pengaruh teman sebaya, berkaitan secara signifikan dengan kecanduan merokok, dengan cara membandingkan kelompok yang kecanduan dan yang tidak kecanduan.
+
+**2\. Rabun jauh pada mahasiswa Universitas Hasanuddin**
+- Epidemiologi deskriptif:<br> 
+  Seorang peneliti akan menghitung proporsi mahasiswa yang mengalami rabun jauh, memerinci berdasarkan fakultas, usia, jenis kelamin, serta melihat apakah kasus lebih banyak terjadi pada mahasiswa tahun awal atau akhir.
+
+- Epidemiologi analitis:<br>
+  Seorang peneliti akan mengevaluasi apakah lama waktu penggunaan gawai atau kebiasaan membaca dalam pencahayaan buruk berkaitan dengan kejadian rabun jauh, dengan membandingkan mahasiswa yang rabun jauh dan yang tidak.
+
+**3\. Obesitas pada anjing di Kota Makassar**
+- Epidemiologi deskriptif:<br> 
+  Seorang peneliti akan melaporkan berapa banyak anjing yang mengalami obesitas, di kelurahan mana saja kasus paling banyak ditemukan, jenis ras anjing apa yang paling sering mengalami obesitas, dan tren kasus obesitas dalam beberapa tahun terakhir.
+
+- Epidemiologi analitis:<br>
+  Seorang peneliti akan meneliti apakah pola makan, kurangnya aktivitas fisik, atau kebiasaan pemberian camilan oleh pemilik berhubungan dengan kejadian obesitas, dengan membandingkan anjing obesitas dan anjing yang tidak obesitas.
+
+---
+
+##### **Cabang-cabang epidemiologi**
 
 ---
 
