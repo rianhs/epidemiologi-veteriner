@@ -20,38 +20,6 @@ Sebelum melangkah lebih jauh, Anda perlu memahami bahwa kondisi kesehatan dan pe
 
 ---
 
-##### **Definisi komprehensif**
-
-Ada banyak definisi epidemiologi. Namun, salah satu definisi yang komprehensif dan banyak digunakan yaitu:
-
-> Epidemiologi adalah studi ilmiah mengenai distribusi dan determinan dari kondisi atau peristiwa yang berhubungan dengan kesehatan pada populasi yang spesifik dan penerapan studi ini untuk mengendalikan masalah kesehatan.
-
-Ada beberapa kata dan frasa kunci dalam definisi tersebut.
-1. Distribusi
-2. Determinan
-3. Kondisi atau peristiwa yang berhubungan dengan kesehatan
-4. Populasi
-5. Penerapan
-
-Mari kita bahas satu per satu.
-
-- **Kondisi atau peristiwa yang berhubungan dengan kesehatan**<br> 
-  Epidemiologi tidak hanya mempelajari penyakit (misalnya penyakit menular dan tidak menular), tetapi juga mencakup berbagai kondisi, seperti cedera, malnutrisi, dan kebuntingan; dan berbagai peristiwa, seperti keracunan pakan, penurunan produksi telur atau susu, dan kematian mendadak.
-
-- **Distribusi**<br>
-  Distribusi menjelaskan kondisi atau peristiwa kesehatan berdasarkan karakteristik subjek (siapa yang terdampak), tempat (di mana ia terjadi), dan waktu (kapan ia terjadi). Sebagai contoh, apakah kasus lebih banyak terjadi pada musim hujan, di kota besar, atau pada jenis hewan tertentu seperti kuda pacu. Pemahaman mengenai distribusi membantu memahami pola penyebaran suatu kondisi atau peristiwa kesehatan.
-
-- **Determinan**<br>
-  Determinan merupakan faktor yang memengaruhi kesehatan hewan. Ia dapat berupa unsur genetik, pakan, sanitasi lingkungan, sistem pemeliharaan, atau keberadaan vektor serangga. Pemahaman mengenai determinan membantu dalam mencari tahu apa penyebab atau pemicu suatu kondisi atau peristiwa kesehatan.
-
-- **Populasi**<br>
-  Populasi merujuk pada kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya gajah yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota. 
-
-- **Penerapan**<br>
-  Penerapan berarti menggunakan hasil kajian epidemiologis untuk mencegah dan mengendalikan masalah kesehatan serta meningkatkan status kesehatan populasi. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
-
----
-
 ##### **Asal kata**
 
 Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: *epi* (di atas atau pada), *demos* (rakyat atau populasi), dan *logos* (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
@@ -132,6 +100,38 @@ Pada akhir dasawarsa 1880-an, Theobald Smith dan Frederick Kilbourne menemukan b
 Penemuan ini merupakan momen sejarah yang penting. Mereka membuktikan bahwa artropoda, yang dalam hal ini adalah caplak, dapat membawa dan mentransmisikan patogen dari satu hewan ke hewan lain. Hal ini membuka konsep tentang vektor penyakit. 
 
 Sebelum penemuan ini, sebagian besar ilmuwan dan dokter belum mengetahui bahwa artropoda bisa menjadi penular penyakit. Oleh karena itu, studi tentang demam sapi Texas (saat ini dikenal sebagai babesiosis sapi) membuka pemahaman bahwa artropoda seperti nyamuk dan kutu dapat menularkan penyakit seperti malaria dan demam kuning. Selain itu, temuan ini juga menjadi dasar bagi penerapan program pengendalian penyakit berbasis vektor, seperti pemberantasan caplak untuk mengurangi penyebaran penyakit pada ternak.
+
+---
+
+##### **Definisi komprehensif**
+
+Ada banyak definisi epidemiologi. Namun, salah satu definisi yang komprehensif dan banyak digunakan yaitu:
+
+> Epidemiologi adalah studi ilmiah mengenai distribusi dan determinan dari kondisi atau peristiwa yang berhubungan dengan kesehatan pada populasi yang spesifik dan penerapan studi ini untuk mengendalikan masalah kesehatan.
+
+Ada beberapa kata dan frasa kunci dalam definisi tersebut.
+1. Distribusi
+2. Determinan
+3. Kondisi atau peristiwa yang berhubungan dengan kesehatan
+4. Populasi
+5. Penerapan
+
+Mari kita bahas satu per satu.
+
+- **Kondisi atau peristiwa yang berhubungan dengan kesehatan**<br> 
+  Epidemiologi tidak hanya mempelajari penyakit (misalnya penyakit menular dan tidak menular), tetapi juga mencakup berbagai kondisi, seperti cedera, malnutrisi, dan kebuntingan; dan berbagai peristiwa, seperti keracunan pakan, penurunan produksi telur atau susu, dan kematian mendadak.
+
+- **Distribusi**<br>
+  Distribusi menjelaskan kondisi atau peristiwa kesehatan berdasarkan karakteristik subjek (siapa yang terdampak), tempat (di mana ia terjadi), dan waktu (kapan ia terjadi). Sebagai contoh, apakah kasus lebih banyak terjadi pada musim hujan, di kota besar, atau pada jenis hewan tertentu seperti kuda pacu. Pemahaman mengenai distribusi membantu memahami pola penyebaran suatu kondisi atau peristiwa kesehatan.
+
+- **Determinan**<br>
+  Determinan merupakan faktor yang memengaruhi kesehatan hewan. Ia dapat berupa unsur genetik, pakan, sanitasi lingkungan, sistem pemeliharaan, atau keberadaan vektor serangga. Pemahaman mengenai determinan membantu dalam mencari tahu apa penyebab atau pemicu suatu kondisi atau peristiwa kesehatan.
+
+- **Populasi**<br>
+  Populasi merujuk pada kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya gajah yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota. 
+
+- **Penerapan**<br>
+  Penerapan berarti menggunakan hasil kajian epidemiologis untuk mencegah dan mengendalikan masalah kesehatan serta meningkatkan status kesehatan populasi. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.
 
 ---
 
@@ -228,7 +228,7 @@ Sebelumnya, kita telah membahas definisi epidemiologi yang komprehensif, yaitu:
 
 **Epidemiologi analitis** adalah cabang epidemiologi yang menggali penyebab dan/atau faktor yang berperan dalam terjadinya kondisi/peristiwa kesehatan dalam populasi. Dalam epidemiologi analitis, kita menguji hipotesis dengan cara membandingkan kasus positif dan kasus negatif. Ia menguraikan unsur "determinan" dalam definisi epidemiologi di atas.
 
-Untuk lebih memperjelas perbedaan antara epidemiologi deskriptif dan analitis, berikut contoh narasi singkat pada beberapa objek penelitian.
+Untuk memperjelas perbedaan antara epidemiologi deskriptif dan analitis, berikut contoh narasi singkat pada beberapa topik penelitian.
 
 **1\. Kecanduan merokok pada penduduk Indonesia**
 - Epidemiologi deskriptif:<br> 
@@ -254,6 +254,20 @@ Untuk lebih memperjelas perbedaan antara epidemiologi deskriptif dan analitis, b
 ---
 
 ##### **Cabang-cabang epidemiologi**
+
+Selain epidemiologi deskriptif dan analitis, masih banyak cabang-cabang epidemiologi lainnya.
+
+- **Epidemiologi eksperimental**: melakukan studi terkontrol mengenai efek perlakuan atau kesehatan yang diujicobakan kepada populasi.
+
+- **Epidemiologi klinis**: menerapkan prinsip epidemiologi pada praktik klinis, sering kali berfokus pada proses diagnostik dan terapeutik.
+- **Epidemiologi klinis**: menerapkan prinsip epidemiologi untuk mengevaluasi proses diagnostik dan terapeutik pada praktik klinis yang berhubungan langsung dengan pasien.
+- **Epidemiologi molekuler**: menggunakan teknik biologi molekuler untuk mempelajari distribusi dan determinan penyakit pada populasi pada tingkat molekuler.
+- **Epidemiologi genetik**: mempelajari peran faktor genetik dalam distribusi dan determinan hasil kesehatan pada populasi.
+- **Epidemiologi gizi**: mempelajari hubungan antara pola makan, asupan gizi, dan kondisi kesehatan pada populasi.
+- **Epidemiologi lingkungan**: mempelajari hubungan antara kondisi dan paparan lingkungan terhadap kesehatan populasi.
+- **Epidemiologi sosial**: mempelajari pengaruh faktor sosial, ekonomi, dan budaya terhadap distribusi dan determinan kesehatan.
+- **Epidemiologi kerja (okupasi)**: mempelajari hubungan antara kondisi kerja dan risiko gangguan kesehatan pada pekerja.
+- **Epidemiologi prediktif**: memperkirakan kejadian penyakit (atau kondisi kesehatan) pada masa depan menggunakan data historis dan model matematis.
 
 ---
 
