@@ -2,6 +2,8 @@
 
 > Halaman ini berisi materi Pekan 1: Dasar-dasar epidemiologi.
 
+### Materi
+
 ##### **Apa konsep paling awal yang perlu saya pahami?**
 
 Semua makhluk hidup bisa terganggu kesehatannya dan menjadi sakit. Pada umumnya, penyakit tidak muncul secara acak, tetapi mengikuti pola tertentu. Dengan mengamati dan menganalisis pola-pola ini, kita dapat mencegah dan/atau mengendalikan penyakit. 
@@ -255,19 +257,31 @@ Untuk memperjelas perbedaan antara epidemiologi deskriptif dan analitis, berikut
 
 ##### **Cabang-cabang epidemiologi**
 
-Selain epidemiologi deskriptif dan analitis, masih banyak cabang-cabang epidemiologi lainnya.
+Selain epidemiologi deskriptif dan analitis, terdapat cabang-cabang epidemiologi lain, di antaranya:
 
-- **Epidemiologi eksperimental**: melakukan studi terkontrol mengenai efek perlakuan atau kesehatan yang diujicobakan kepada populasi.
+1. **Epidemiologi eksperimental**: menggunakan percobaan terkontrol untuk meneliti efek perlakuan atau intervensi terhadap kondisi kesehatan sebelum diterapkan kepada populasi yang lebih luas.
 
-- **Epidemiologi klinis**: menerapkan prinsip epidemiologi pada praktik klinis, sering kali berfokus pada proses diagnostik dan terapeutik.
-- **Epidemiologi klinis**: menerapkan prinsip epidemiologi untuk mengevaluasi proses diagnostik dan terapeutik pada praktik klinis yang berhubungan langsung dengan pasien.
-- **Epidemiologi molekuler**: menggunakan teknik biologi molekuler untuk mempelajari distribusi dan determinan penyakit pada populasi pada tingkat molekuler.
-- **Epidemiologi genetik**: mempelajari peran faktor genetik dalam distribusi dan determinan hasil kesehatan pada populasi.
-- **Epidemiologi gizi**: mempelajari hubungan antara pola makan, asupan gizi, dan kondisi kesehatan pada populasi.
-- **Epidemiologi lingkungan**: mempelajari hubungan antara kondisi dan paparan lingkungan terhadap kesehatan populasi.
-- **Epidemiologi sosial**: mempelajari pengaruh faktor sosial, ekonomi, dan budaya terhadap distribusi dan determinan kesehatan.
-- **Epidemiologi kerja (okupasi)**: mempelajari hubungan antara kondisi kerja dan risiko gangguan kesehatan pada pekerja.
-- **Epidemiologi prediktif**: memperkirakan kejadian penyakit (atau kondisi kesehatan) pada masa depan menggunakan data historis dan model matematis.
+2. **Epidemiologi intervensional**: merancang, melaksanakan, dan mengevaluasi efektivitas intervensi kesehatan untuk mencegah atau mengendalikan masalah kesehatan dalam populasi.
+
+3. **Epidemiologi klinis**: menerapkan prinsip epidemiologi untuk mengevaluasi proses diagnostik dan terapeutik pada praktik klinis yang berhubungan langsung dengan pasien.
+
+4. **Epidemiologi molekuler**: menggunakan teknik biologi molekuler untuk mempelajari kondisi kesehatan populasi pada tingkat molekuler.
+
+5. **Epidemiologi genetik**: mempelajari peran faktor genetik dalam kondisi kesehatan pada populasi.
+
+6. **Epidemiologi gizi**: mempelajari hubungan antara pola makan, asupan gizi, dan kondisi kesehatan pada populasi.
+
+7. **Epidemiologi lingkungan**: mempelajari hubungan antara kondisi dan paparan lingkungan terhadap kesehatan populasi.
+
+8. **Epidemiologi sosial**: mempelajari pengaruh faktor sosial, ekonomi, dan budaya terhadap kesehatan populasi.
+
+9. **Epidemiologi kerja (okupasi)**: mempelajari hubungan antara lingkungan kerja dan risiko gangguan kesehatan pada pekerja.
+
+10. **Epidemiologi spasial**: mempelajari distribusi penyakit berdasarkan faktor lokasi geografis dengan menggunakan analisis spasial dan pemetaan.
+
+11. **Epidemiologi prediktif**: memperkirakan kejadian penyakit (atau kondisi kesehatan) pada masa depan menggunakan data historis dan model matematis.
+
+12. **Epidemiologi teoretis**: mengembangkan model matematis untuk memahami dinamika penyakit (atau kondisi kesehatan) pada populasi.
 
 ---
 
