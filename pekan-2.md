@@ -8,15 +8,19 @@ Pada tahun 1958, Organisasi Kesehatan Dunia (WHO) mendefinisikan kesehatan sebag
 
 Ini merupakan definisi yang dirumuskan untuk manusia. Bagi hewan, pada umumnya ada ekspektasi tambahan. Hewan yang sehat juga diharapkan memiliki performa yang optimal, misalnya pada aspek produksi dan reproduksinya. Hewan yang performanya tidak optimal (terutama hewan produksi) sering kali dianggap kurang sehat.
 
-Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gangguan kesehatan, penyakit, cedera, dan sindrom. Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Berikut ini penjelasan singkatnya.
+Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gangguan (*disorder*), penyakit (*disease*), cedera (*injury*), dan sindrom. Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Berikut ini penjelasan singkatnya.
 
-- Gangguan (*disorder*): gangguan pada aspek spesifik pada tubuh.
+- Gangguan: kondisi ketika aspek tertentu pada tubuh tidak berfungsi sebagaimana mestinya.
 
-- Penyakit (*disease*): serangkaian perubahan patofisiologis yang telah diketahui.
+- Penyakit: gangguan fungsi dan/atau struktur tubuh yang proses biologisnya telah dipahami.
 
-- Cedera (*injury*): kerusakan pada tubuh yang diakibatkan oleh sumber eksternal.
+- Cedera: kerusakan pada tubuh yang diakibatkan oleh sumber eksternal.
 
-- Sindrom (*syndrome*): serangkaian gejala dan tanda klinis yang biasanya muncul bersamaan.
+- Sindrom: serangkaian gejala dan tanda klinis yang muncul bersamaan dan sering kali penyebabnya tidak diketahui dengan jelas.
+
+---
+
+##### **Penyebab hewan sakit**
 
 Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Secara umum, mereka dapat diklasifikam dalam delapan kelompok.
 
