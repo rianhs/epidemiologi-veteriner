@@ -93,7 +93,7 @@ Konsep ini menguat sejak Postulat Koch dibuat pada tahun 1884. Robert Koch, seor
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-2-img-1-PostulatKoch.png" alt="Postulat Koch" width="350">
-  <figcaption>Diagram yang menjelaskan Postulat Koch. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Koch%27s_Postulates.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
+  <figcaption>Gambar x. Diagram yang menjelaskan Postulat Koch. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Koch%27s_Postulates.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
 Postulat Koch:
@@ -123,3 +123,33 @@ Hal yang membedakan konsep multifaktorial dengan teori kuman penyakit adalah per
 Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktorial, di antaranya segitiga epidemiologi, pai penyebab, jejaring penyebab, dan lingkaran determinan. Di sini, kita hanya membahas satu model, yaitu segitiga epidemiologi.
 
 ---
+
+##### **Segitiga epidemiologi**
+
+Segitiga epidemiologi merupakan model konseptual yang digunakan untuk memahami kemunculan, kejadian, dan penyebaran penyakit. Model ini terdiri dari tiga komponen, yaitu inang, agen, dan lingkungan.
+
+Penyakit timbul akibat interaksi yang sesuai antara inang, agen, dan lingkungan.
+
+Menurut model ini, kejadian dan penyebaran penyakit dapat dikaitkan dengan beberapa faktor yang dikelompokkan menjadi tiga komponen.
+
+<div style="margin-bottom: 25px;"><figure style="text-align: center;">
+  <img src="img/pekan-2-img-2-SegitigaEpid.jpg" alt="Segitiga epidemiologi" width="350">
+  <figcaption>Gambar x. Model segitiga epidemiologi.</figcaption>
+</figure></div>
+
+**Inang**<br>
+Inang adalah organisme yang menampung penyakit. Faktor: Spesies, ras, jenis kelamin, usia, ukuran tubuh, kekebalan, dll.
+
+**Agen**<br>
+Agen adalah penyebab penyakit, yang bisa berupa patogen, bahan kimia, kekuatan fisik, atau bahkan kekurangan nutrisi. Faktor: jenis agen, dosis, virulensi, patogenisitas, dll.
+
+**Lingkungan**<br>
+Lingkungan mencakup semua faktor eksternal tempat inang hidup dan terpapar agen. Faktor: iklim (suhu, kelembaban, curah hujan), cuaca, tempat berteduh, pakan, pengelolaan hewan, dll.
+
+---
+
+Referensi
+
+Koch, R. (1884). "<a href="https://books.google.co.id/books?id=Y6lQAAAAYAAJ&pg=PA1&redir_esc=y" target="_blank" rel="noopener noreferrer">Die Aetiologie der Tuberkulose</a>" [The etiology of tuberculosis]. Mittheilungen aus dem Kaiserlichen Gesundheitsamte (Reports from the Imperial Office of Public Health). 2: 1–88.
+
+Frost, W.H. (1976). <a href="https://doi.org/10.1093/oxfordjournals.aje.a112212" target="_blank" rel="noopener noreferrer">Some Conceptions of Epidemics in General</a>. American Journal of Epidemiology, 103(2): 141–151
