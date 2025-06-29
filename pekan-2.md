@@ -30,11 +30,11 @@ Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Se
 
 | Penyebab | Deskripsi singkat | Contoh |
 |:---:|:---:|:---:|
-| Infeksi dan infestasi | Invasi mikroorganisme patogenik atau parasit | Panleukopenia dan infestasi pinjal pada kucing |
+| Infeksi dan infestasi | Invasi mikroorganisme patogenik dan/atau parasit | Panleukopenia dan infestasi pinjal pada kucing |
 | Kelainan genetik | Kelainan bawaan pada DNA | Displasia pinggul pada anjing, penyakit ginjal polisistik pada kucing |
 | Trauma fisik | Kerusakan tubuh akibat sumber eskternal | Kaki kuda yang patah, sapi terluka akibat kawat berduri |
 | Proses degeneratif | Kemunduran fungsi jaringan secara progresif dari waktu ke waktu | Osteoartritis pada kucing, mielopati degeneratif pada anjing |
-| Gangguan metabolisme | Proses biokimia yang abnormal dalam tubuh | Ketosis pada sapi perah, diabetes melitus pada anjing |
+| Gangguan metabolisme | Proses biokimia yang abnormal dalam tubuh | Ketosis pada sapi perah, diabetes melitus pada anjing, obesitas pada kucing |
 | Keracunan | Masuknya zat beracun ke dalam tubuh | Keracunan cokelat pada anjing, keracunan timbal pada sapi |
 | Iatrogenesis | Efek buruk akibat perawatan atau intervensi medis | Infeksi pada bekas lokasi pembedahan, efek samping vaksinasi |
 | Idiopati | Kondisi yang penyebabnya tidak diketahui | Sistitis idiopatik pada kucing, tremor kepala idiopatik pada anjing |
@@ -43,20 +43,20 @@ Di antara penyebab-penyebab di atas, mana yang berpotensi untuk berdampak pada b
 
 **Potensi untuk menimbulkan masalah epidemiologis**
 
-Tidak semua penyebab ketidaksehatan memiliki kemungkinan yang sama untuk menimbulkan masalah epidemiologis, seperti wabah, epidemi, atau penyebaran kasus secara luas. Tabel berikut ini merangkum delapan kelompok penyebab berdasarkan potensi mereka untuk menimbulkan kejadian yang berdampak pada banyak individu dalam populasi hewan.
+Tidak semua penyebab ketidaksehatan memiliki kemungkinan yang sama untuk menimbulkan masalah epidemiologis, seperti wabah, epidemi, atau penyebaran kasus secara luas. Tabel berikut ini merangkum potensi mereka untuk menimbulkan kejadian yang berdampak pada banyak individu dalam populasi hewan.
 
 | Penyebab | Potensi | Keterangan |
 |:---:|:---:|:---:|
 | Infeksi dan infestasi | Sangat tinggi | Potensi tertinggi untuk menimbulkan masalah epidemiologis karena sifat agen infeksius dan parasit yang menular antarindividu |
 | Kelainan genetik | Dapat diabaikan | Tidak menimbulkan masalah epidemiologis karena bersifat bawaan dan tidak menyebar antarindividu dalam populasi. |
 | Trauma fisik | Sangat rendah | Umumnya berupa kasus tunggal; kejadian massal mungkin terjadi akibat bencana atau kecelakaan, tetapi tidak mencerminkan pola penyebaran dalam konteks epidemiologis |
-| Proses degeneratif | Dapat diabaikan | Umumnya tidak menular dan bersifat individual, tetapi dapat menjadi masalah epidemiologis dalam populasi hewan lanjut usia |
+| Proses degeneratif | Sangat rendah | Umumnya tidak menular dan bersifat individual, tetapi dapat menjadi masalah epidemiologis dalam populasi hewan lanjut usia |
 | Gangguan metabolisme | Rendah s.d. sedang | Tidak menular, tetapi dapat menjadi masalah epidemiologis jika terjadi secara meluas akibat pola makan, manajemen, atau lingkungan yang seragam |
-| Keracunan | Rendah s.d. sedang | Dapat menimbulkan masalah epidemiologis jika banyak hewan terpapar sumber racun yang sama, terutama dalam sistem produksi atau lingkungan akuatik |
+| Keracunan | Rendah s.d. sedang | Dapat menimbulkan masalah epidemiologis jika banyak hewan terpapar sumber racun yang sama, terutama pada peternakan atau lingkungan akuatik |
 | Iatrogenesis | Sangat rendah | Biasanya terbatas pada individu yang menerima tindakan medis dan jarang terjadi pada banyak hewan |
 | Idiopati | Dapat diabaikan | Tidak diketahui penyebabnya dan umumnya tidak menular sehingga tidak berpotensi menimbulkan masalah epidemiologis |
 
-Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam epidemiologi veteriner karena sifatnya yang menular dan mampu menyebar cepat dalam populasi. Meskipun beberapa penyebab lain seperti gangguan metabolisme dan keracunan juga dapat menimbulkan masalah epidemiologis dalam konteks tertentu, dampaknya biasanya terbatas pada situasi atau kelompok hewan tertentu. Oleh karena itu, pemahaman terhadap karakteristik setiap penyebab sangat penting untuk menentukan strategi pencegahan dan pengendalian yang tepat.
+Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam epidemiologi veteriner karena sifatnya yang menular dan mampu menyebar cepat dalam populasi. Meskipun beberapa penyebab lain seperti gangguan metabolisme dan keracunan juga dapat menimbulkan masalah epidemiologis pada konteks tertentu, dampaknya biasanya terbatas pada situasi atau kelompok hewan yang spesifik. Oleh karena itu, pemahaman terhadap karakteristik setiap penyebab sangat penting untuk menentukan strategi pencegahan dan pengendalian yang tepat.
 
 ---
 
@@ -65,7 +65,7 @@ Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam ep
 Sepanjang sejarah, manusia memiliki banyak konsep tentang penyebab penyakit. Berikut ini adalah beberapa konsep atau teori yang banyak dianut.
 
 **👻 Teori supranatural**<br>
-Penyakit disebabkan oleh roh jahat, kutukan dewa, pengaruh benda-benda langit, dan sebagainya. Konsep ini banyak dipercaya oleh kelompok-kelompok manusia yang hidup dalam budaya primitif. Contoh: Influenza berasal dari bahasa Latin *influentia* karena diduga disebabkan oleh pengaruh bintang.
+Penyakit disebabkan oleh roh jahat, kutukan dewa, pengaruh benda-benda langit, dan sebagainya. Konsep ini banyak dipercaya oleh kelompok-kelompok manusia yang hidup dalam budaya primitif. Contoh: influenza berasal dari bahasa Latin *influentia* karena diduga disebabkan oleh pengaruh bintang.
 
 **💦 Teori humoral**<br>
 Penyakit disebabkan oleh ketidakseimbangan empat humor (cairan) tubuh, yaitu darah, empedu kuning, empedu hitam, dan dahak. Konsep ini banyak dipercaya pada peradaban kuno dan dihubungkan dengan empat unsur alam (api, air, angin, dan tanah) serta empat temperamen manusia (sanguinis, koleris, melankolis, dan flegmatis).
