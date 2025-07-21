@@ -93,7 +93,7 @@ Konsep ini menguat sejak Postulat Koch dibuat pada tahun 1884. Robert Koch, seor
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-2-img-1-PostulatKoch.png" alt="Postulat Koch" width="350">
-  <figcaption>Gambar x. Diagram yang menjelaskan Postulat Koch. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Koch%27s_Postulates.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
+  <figcaption>Gambar 2.1. Diagram yang menjelaskan Postulat Koch. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Koch%27s_Postulates.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
 Postulat Koch:
@@ -126,27 +126,55 @@ Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktorial, di an
 
 ##### **Segitiga epidemiologi**
 
-Segitiga epidemiologi merupakan model konseptual yang digunakan untuk memahami kemunculan, kejadian, dan penyebaran penyakit. Model ini terdiri dari tiga komponen, yaitu inang, agen, dan lingkungan.
-
-Penyakit timbul akibat interaksi yang sesuai antara inang, agen, dan lingkungan.
-
-Menurut model ini, kejadian dan penyebaran penyakit dapat dikaitkan dengan beberapa faktor yang dikelompokkan menjadi tiga komponen.
+Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa suatu penyakit (terutama penyakit menular) dapat muncul akibat adanya interaksi yang sesuai antara tiga komponen, yaitu inang, agen, dan lingkungan. Jika ada komponen yang tidak mendukung, maka penyakit kemungkinan besar tidak akan muncul atau menyebar lebih lanjut.
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-2-img-2-SegitigaEpid.jpg" alt="Segitiga epidemiologi" width="350">
-  <figcaption>Gambar x. Model segitiga epidemiologi.</figcaption>
+  <figcaption>Gambar 2.2. Model segitiga epidemiologi.</figcaption>
 </figure></div>
 
-**Inang**<br>
-Inang adalah organisme yang menampung penyakit. Faktor: Spesies, ras, jenis kelamin, usia, ukuran tubuh, kekebalan, dll.
+- **Inang**<br>
+ Inang (atau penjamu) adalah organisme yang menampung agen dan menderita penyakit. Sejumlah faktor yang dimiliki inang memengaruhi kerentanannya terhadap penyakit, antara lain spesies, ras, jenis kelamin, usia, ukuran tubuh, dan status kekebalan.
 
-**Agen**<br>
-Agen adalah penyebab penyakit, yang bisa berupa patogen, bahan kimia, kekuatan fisik, atau bahkan kekurangan nutrisi. Faktor: jenis agen, dosis, virulensi, patogenisitas, dll.
+- **Agen**<br>
+ Agen adalah penyebab penyakit, yang dapat berupa patogen, bahan kimia, kekuatan fisik, atau kekurangan nutrisi. Faktor dari agen yang berpengaruh terhadap potensi penyakit antara lain jenis agen, dosis, virulensi, dan patogenisitas.
 
-**Lingkungan**<br>
-Lingkungan mencakup semua faktor eksternal tempat inang hidup dan terpapar agen. Faktor: iklim (suhu, kelembaban, curah hujan), cuaca, tempat berteduh, pakan, pengelolaan hewan, dll.
+- **Lingkungan**<br>
+ Lingkungan mencakup semua faktor eksternal tempat inang hidup dan terpapar agen. Faktor ini meliputi iklim (suhu, kelembaban, curah hujan), cuaca, tempat tinggal, ketersediaan pakan, dan cara pengelolaan hewan.
+
+Ketiga komponen ini berinteraksi satu sama lain. Interaksi antarkomponen yang tepat mendukung kemunculan dan penyebaran penyakit.
+
+- **Interaksi inang–agen**<br>
+ Penyakit muncul ketika inang yang rentan terpapar dengan agen yang efektif. Interaksi ini bergantung pada respons imun inang dan kemampuan agen menimbulkan penyakit.
+
+- **Interaksi inang–lingkungan**<br>
+ Lingkungan dapat memengaruhi kesehatan inang secara umum. Kondisi hidup yang buruk dan stresor dari lingkungan dapat meningkatkan kerentanan terhadap penyakit.
+
+- **Interaksi agen–lingkungan**<br>
+ Lingkungan dapat memengaruhi kelangsungan hidup dan perpindahan agen. Sebagai contoh, suhu dan kelembapan dapat memengaruhi viabilitas patogen di lingkungan.
+
+Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumlah modifikasi atau intervensi setidaknya pada salah satu sisi segitiga epidemiologi, yaitu interaksi antara dua komponen.
+
+* **Intervensi inang–agen:** 
+    * Vaksinasi (meningkatkan kekebalan inang terhadap agen).
+    * Pemberian antimikroba atau antiparasit (menargetkan agen dalam inang).
+    * Pengembangan genetik (menghasilkan inang yang lebih resisten terhadap agen).
+* **Intervensi inang–lingkungan:**
+    * Peningkatan kondisi tempat tinggal (mengurangi stres pada inang akibat lingkungan yang buruk).
+    * Pengaturan kepadatan hewan (mengurangi risiko penularan akibat interaksi antarinang dalam lingkungan terbatas).
+    * Penyediaan pakan dan air minum yang cukup dan berkualitas (pemanfaatan sumber daya lingkungan untuk memenuhi asupan nutrisi inang).
+* **Intervensi agen–lingkungan:**
+    * Tindakan biosekuriti (mencegah masuk dan keluarnya agen dari suatu lingkungan).
+    * Sanitasi lingkungan (mengurangi jumlah agen di lingkungan).
+    * Pengendalian vektor (mencegah perpindahan agen melalui unsur lingkungan).
 
 ---
+
+##### **Riwayat alamiah penyakit**
+
+
+---
+
 
 Referensi
 
