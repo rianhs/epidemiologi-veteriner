@@ -172,9 +172,9 @@ Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumla
 
 ##### **Riwayat alamiah penyakit**
 
+Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh, mengalami disabilitas, atau meninggal dunia.
 
 ---
-
 
 Referensi
 
