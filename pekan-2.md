@@ -10,6 +10,8 @@
 - [Penyebab multifaktorial](pekan-2.md#penyebab-multifaktorial)
 - [Segitiga epidemiologi](pekan-2.md#segitiga-epidemiologi)
 - [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
+- [Model SIR](pekan-2.md#model-sir)
+- [Kurva epidemi](pekan-2.md#kurva-epidemi)
 
 ---
 
@@ -186,7 +188,7 @@ Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumla
 Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu (baik manusia maupun hewan) seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh atau meninggal dunia.
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
-  <img src="img/pekan-2-img-2-Riwayat-alamiah-penyakit.jpg" alt="Riwayat alamiah penyakit" width="450">
+  <img src="img/pekan-2-img-3-Riwayat-alamiah-penyakit.jpg" alt="Riwayat alamiah penyakit" width="450">
   <figcaption>Gambar 2.3. Model riwayat alamiah penyakit.</figcaption>
 </figure></div>
 
@@ -196,15 +198,15 @@ Pada penyakit infeksius, terdapat empat tahapan yang dilalui oleh individu pende
 Pada tahap ini, individu berada dalam kondisi yang memungkinkan untuk tertular jika terpapar agen penyebab penyakit.
 
 - **Tahap penyakit subklinis:**<br> 
-Ini adalah fase setelah individu terpapar agen penyakit. Agen sudah mulai berkembang dalam tubuh, tetapi belum menimbulkan gejala dan tanda klinis.
+Ini adalah tahap setelah individu terpapar agen penyakit. Agen sudah mulai berkembang dalam tubuh, tetapi belum menimbulkan gejala dan tanda klinis.
 
 - **Tahap penyakit klinis:**<br> 
-Pada fase ini, tanda-tanda penyakit sudah terlihat dan/atau gejalanya dapat dirasakan. Manifestasinya bisa ringan hingga berat, tergantung jenis penyakit dan respons tubuh.
+Pada tahap ini, tanda-tanda penyakit sudah terlihat dan/atau gejalanya dapat dirasakan. Manifestasinya bisa ringan hingga berat, tergantung jenis penyakit dan respons tubuh.
 
 - **Tahap pemulihan, disabilitas, atau kematian:**<br> 
-Ini adalah fase akhir dari perjalanan penyakit, ketika hasil akhirnya bisa berupa pulih sepenuhnya, disabilitas yang bersifat permanen atau sebagian, atau kematian.
+Ini adalah tahap akhir dari perjalanan penyakit, ketika hasil akhirnya bisa berupa pulih sepenuhnya, disabilitas yang bersifat permanen atau sebagian, atau kematian.
 
-Setiap tahap penyakit dapat dikendalikan melalui tiga level pencegahan berikut.
+Setiap tahap penyakit dapat dikendalikan melalui tiga tingkat pencegahan berikut.
 
 - **Pencegahan primer:**<br> 
 Upaya yang dilakukan untuk mencegah munculnya kasus baru. Contoh: vaksinasi, edukasi kesehatan, peningkatan sanitasi, promosi gaya hidup sehat.
@@ -215,9 +217,118 @@ Upaya untuk mendeteksi penyakit sedini mungkin dan memberikan pengobatan awal gu
 - **Pencegahan tersier:**<br> 
 Upaya mengurangi dampak jangka panjang penyakit, mempercepat pemulihan, mencegah kecacatan, dan meningkatkan kualitas hidup. Contoh: rehabilitasi, terapi fisik, dukungan psikososial.
 
+Selain tahapan dan tingkat pencegahan, terdapat pula istilah lain yang sering digunakan untuk menggambarkan durasi waktu pada perjalanan penyakit.
+
+- **Masa inkubasi:**<br> 
+Interval waktu sejak individu terpapar agen penyakit hingga munculnya gejala klinis yang pertama. 
+
+- **Masa laten:**<br> 
+Interval waktu sejak individu terpapar agen penyakit hingga ia menjadi infeksius.
+
+- **Masa infeksius:**<br> 
+Periode waktu ketika individu terinfeksi dapat menularkan agen penyakit ke individu lain.
+
+- **Masa prepaten:**<br> 
+Interval waktu sejak individu terpapar parasit hingga parasit tersebut dapat dideteksi pertama kali, misalnya melalui pemeriksaan feses atau darah.
+
+Catatan:<br>Individu yang terinfeksi bisa saja memiliki masa laten yang lebih singkat dari masa inkubasi. Artinya, ia berpotensi menjadi sumber penularan penyakit meskipun belum menunjukkan tanda klinis. Sebaliknya, masa laten bisa lebih panjang dari masa inkubasi. Artinya, ia sudah menunjukkan tanda klinis, tetapi belum dapat menularkan penyakit ke individu lain.
+
+Untuk memahami bagaimana perbedaan antara masa laten, masa infeksius, dan masa inkubasi memengaruhi pola penularan penyakit, perhatikan Gambar 2.4 yang mengilustrasikan garis waktu rantai infeksi antara dua individu.
+
+<div style="margin-bottom: 25px;"><figure style="text-align: center;">
+  <img src="img/pekan-2-img-4-Garis-waktu-infeksi-berpasangan.jpg" alt="Garis-waktu-infeksi-berpasangan" width="450">
+  <figcaption>Gambar 2.4. Model yang mengilustrasikan rantai infeksi antara dua individu.</figcaption>
+</figure></div>
+
+Gambar 2.4 menunjukkan individu penginfeksi dan individu terinfeksi dalam rantai penularan penyakit. Pada gambar ini, penularan bisa terjadi sebelum munculnya gejala klinis pada individu penginfeksi. Hal ini dikenal sebagai penularan (transmisi) pra-simtomatik. 
+
 ---
 
-Referensi
+#### **Model SIR**
+
+Salah satu cara untuk menggambarkan riwayat alamiah penyakit dalam suatu populasi adalah melalui model SIR. Model ini menggunakan pendekatan matematika yang membagi populasi ke dalam tiga kompartemen berdasarkan status penyakit setiap individu.
+
+- **Susceptible (rentan):**<br>Individu yang saat ini rentan terhadap penyakit dan dapat terinfeksi jika terpapar agen infeksius.
+
+- **Infected (terinfeksi):**<br>Individu yang saat ini terinfeksi dan bersifat infeksius, artinya dapat menularkan penyakit kepada individu yang rentan.
+
+- **Recovered atau removed (sembuh atau keluar):**<br>Individu yang tidak lagi terinfeksi karena sembuh dan menjadi kebal dan tidak lagi berperan dalam penularan penyakit.
+
+Model SIR mengasumsikan bahwa individu mengalami perubahan status penyakit dan berpindah kompartemen secara berurutan. Pada awalnya ia rentan, kemudian terinfeksi, dan terakhir menjadi sembuh (S⟶I⟶R). 
+
+Namun, dalam perkembangan selanjutnya, model ini dianggap terlalu sederhana untuk menjelaskan dinamika penyakit. Oleh karena itu, para ahli epidemiologi menambahkan beberapa kompartemen lain, seperti E, V, dan D.
+
+- **Exposed (terpapar):**<br>Individu yang telah terpapar agen penyakit, tetapi belum infeksius (penyakit berada dalam masa inkubasi).
+
+- **Vaccinated (tervaksin):**<br>Individu yang telah menerima vaksin dan terlindungi dari infeksi, baik berupa perlindungan sebagian atau penuh.
+
+- **Death (mati):**<br>Individu yang meninggal akibat penyakit.
+
+- Kompartemen lain, seperti Quarantined (dikarantina) dan Hospitalized (dirawat), tergantung kebutuhan analisis.
+
+Dengan adanya kompartemen-kompartemen baru ini, model SIR dapat berkembang menjadi SIRD, SEIRD, SVEIRD, atau bentuk lainnya. 
+
+Berikut ini contoh dinamika penyebaran penyakit pada ayam berdasarkan model SIRD. Perhatikan bahwa setiap hari, jumlah populasi tetap konstan, yaitu 1000.
+
+| Hari | Rentan (S) | Terinfeksi (I) | Sembuh (R) | Mati (D) |
+| :--: | :--------: | :------------: | :--------: | :------: |
+|   0  |    1000    |        0       |      0     |     0    |
+|   1  |     990    |       10       |      0     |     0    |
+|   2  |     978    |       18       |      2     |     2    |
+|   3  |     965    |       24       |      7     |     4    |
+|   4  |     950    |       30       |     14     |     6    |
+|   5  |     935    |       35       |     24     |     6    |
+
+Dari tabel di atas, kita dapat melihat bagaimana jumlah individu dalam setiap kompartemen berubah dari hari ke hari. Pola perubahan ini mencerminkan dinamika penyebaran penyakit dalam populasi dan dapat digunakan sebagai dasar untuk membuat kurva epidemi. 
+
+---
+
+#### **Kurva epidemi**
+
+Kurva epidemi adalah grafik yang menggambarkan jumlah kasus penyakit dari waktu ke waktu dalam suatu populasi. Grafik ini digunakan untuk memvisualisasikan pola kejadian penyakit, termasuk bagaimana jumlah kasus dapat meningkat, mencapai puncak, dan kemudian menurun. Kurva ini sangat berguna terutama dalam situasi wabah, tetapi juga dapat diterapkan dalam pemantauan penyakit endemik atau musiman.
+
+Pada kurva epidemi, sumbu X selalu menunjukkan waktu, seperti hari, pekan, atau bulan. Sementara itu, sumbu Y biasanya menunjukkan jumlah individu, dan dapat diisi oleh berbagai jenis variabel, tergantung pada tujuan analisis.
+
+Berikut ini beberapa variabel yang umum digunakan pada sumbu Y dalam kurva epidemiologi:
+- **Jumlah kasus baru (insidensi)**, untuk menunjukkan kecepatan penyebaran penyakit dan waktu terjadinya puncak kasus. Ini adalah variabel yang paling sering digunakan pada sumbu Y kurva epidemiologi.
+- **Jumlah kasus aktif**, untuk menggambarkan beban penyakit yang sedang berlangsung pada suatu waktu.
+- **Jumlah kasus kumulatif**, untuk menunjukkan total dampak penyakit sejak awal hingga waktu tertentu.
+- **Jumlah kematian baru**, untuk menunjukkan laju kematian dari waktu ke waktu dan mengidentifikasi periode paling mematikan dari penyakit.
+- **Jumlah kematian kumulatif**, untuk memperlihatkan total kasus kematian akibat penyakit hingga waktu tertentu, mencerminkan dampak keseluruhan terhadap populasi.
+- **Jumlah kesembuhan kumulatif**, untuk menggambarkan pemulihan dalam populasi dan efektivitas penanganan.
+
+Mari kita buat kurva epidemiologi dari tabel SIRD. Pada tabel ini, 
+- kolom Terinfeksi (I) menunjukkan jumlah kasus aktif,
+- kolom Sembuh (R) menunjukkan jumlah kesembuhan kumulatif, dan
+- kolom Mati (D), menunjukkan jumlah kematian kumulatif.
+
+Kita memerlukan satu tambahan kolom lagi, yaitu jumlah kasus baru. Setiap baris pada kolom ini didapatkan dengan cara menjumlahkan pertambahan jumlah individu yang sembuh dan yang meninggal dibandingkan hari sebelumnya, yaitu:
+
+Jumlah kasus baru pada hari ke-n = (Rₙ − Rₙ₋₁) + (Dₙ − Dₙ₋₁)
+
+| Hari | Rentan (S) | Terinfeksi (I) | Sembuh (R) | Mati (D) |
+| :--: | :--------: | :------------: | :--------: | :------: |
+|   0  |    1000    |        0       |      0     |     0    |
+|   1  |     990    |       10       |      0     |     0    |
+|   2  |     978    |       18       |      2     |     2    |
+|   3  |     965    |       24       |      7     |     4    |
+|   4  |     950    |       30       |     14     |     6    |
+|   5  |     935    |       35       |     24     |     6    |
+|   6  |     920    |       37       |     33     |    10    |
+|   7  |     908    |       36       |     39     |    17    |
+|   8  |     900    |       32       |     45     |    23    |
+|   9  |     896    |       26       |     53     |    25    |
+|  10  |     894    |       20       |     60     |    26    |
+|  11  |     895    |       14       |     65     |    26    |
+|  12  |     897    |        9       |     68     |    26    |
+|  13  |     900    |        5       |     69     |    26    |
+|  14  |     902    |        3       |     69     |    26    |
+|  15  |     904    |        2       |     68     |    26    |
+
+
+---
+
+## Referensi
 
 Koch, R. (1884). "<a href="https://books.google.co.id/books?id=Y6lQAAAAYAAJ&pg=PA1&redir_esc=y" target="_blank" rel="noopener noreferrer">Die Aetiologie der Tuberkulose</a>" [The etiology of tuberculosis]. Mittheilungen aus dem Kaiserlichen Gesundheitsamte (Reports from the Imperial Office of Public Health). 2: 1–88.
 
