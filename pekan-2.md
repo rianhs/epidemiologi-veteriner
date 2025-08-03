@@ -12,6 +12,9 @@
 - [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
 - [Model SIR](pekan-2.md#model-sir)
 - [Kurva epidemi](pekan-2.md#kurva-epidemi)
+- [Tingkat penularan penyakit](pekan-2.md#tingkat-penularan-penyakit)
+- [Rantai infeksi](pekan-2.md#rantai-infeksi)
+- [Cara penularan](pekan-2.md#cara-penularan)
 
 ---
 
@@ -297,34 +300,96 @@ Berikut ini beberapa variabel yang umum digunakan pada sumbu Y dalam kurva epide
 - **Jumlah kematian kumulatif**, untuk memperlihatkan total kasus kematian akibat penyakit hingga waktu tertentu, mencerminkan dampak keseluruhan terhadap populasi.
 - **Jumlah kesembuhan kumulatif**, untuk menggambarkan pemulihan dalam populasi dan efektivitas penanganan.
 
-Mari kita buat kurva epidemiologi dari tabel SIRD. Pada tabel ini, 
-- kolom Terinfeksi (I) menunjukkan jumlah kasus aktif,
-- kolom Sembuh (R) menunjukkan jumlah kesembuhan kumulatif, dan
-- kolom Mati (D), menunjukkan jumlah kematian kumulatif.
+Mari kita buat kurva epidemiologi dari tabel SIRD. Pada tabel di bawah ini, kolom I menunjukkan jumlah kasus aktif, kolom R menunjukkan jumlah kesembuhan kumulatif, dan kolom D menunjukkan jumlah kematian kumulatif. Kita memerlukan satu tambahan kolom lagi, yaitu jumlah kasus baru. Setiap baris pada kolom ini didapatkan dengan cara mengurangi jumlah hewan rentan pada hari sebelumnya dengan jumlah hewan rentan pada hari ini. 
 
-Kita memerlukan satu tambahan kolom lagi, yaitu jumlah kasus baru. Setiap baris pada kolom ini didapatkan dengan cara menjumlahkan pertambahan jumlah individu yang sembuh dan yang meninggal dibandingkan hari sebelumnya, yaitu:
+Jumlah kasus baru pada hari ke-n = <img src="https://latex.codecogs.com/svg.image?S_{n-1}-S_n" 
+     alt="S_{n-1} - S_n" 
+     style="vertical-align: middle; height: 1em;">
 
-Jumlah kasus baru pada hari ke-n = (Rₙ − Rₙ₋₁) + (Dₙ − Dₙ₋₁)
 
-| Hari | Rentan (S) | Terinfeksi (I) | Sembuh (R) | Mati (D) |
-| :--: | :--------: | :------------: | :--------: | :------: |
-|   0  |    1000    |        0       |      0     |     0    |
-|   1  |     990    |       10       |      0     |     0    |
-|   2  |     978    |       18       |      2     |     2    |
-|   3  |     965    |       24       |      7     |     4    |
-|   4  |     950    |       30       |     14     |     6    |
-|   5  |     935    |       35       |     24     |     6    |
-|   6  |     920    |       37       |     33     |    10    |
-|   7  |     908    |       36       |     39     |    17    |
-|   8  |     900    |       32       |     45     |    23    |
-|   9  |     896    |       26       |     53     |    25    |
-|  10  |     894    |       20       |     60     |    26    |
-|  11  |     895    |       14       |     65     |    26    |
-|  12  |     897    |        9       |     68     |    26    |
-|  13  |     900    |        5       |     69     |    26    |
-|  14  |     902    |        3       |     69     |    26    |
-|  15  |     904    |        2       |     68     |    26    |
+| Hari | Rentan (S) | Terinfeksi (I) | Sembuh (R) | Mati (D) | Kasus Baru |
+|:----:|:----------:|:--------------:|:----------:|:--------:|:----------:|
+|  0   |    1000    |       0        |     0      |    0     |      0     |
+|  1   |     990    |      10        |     0      |    0     |     10     |
+|  2   |     978    |      18        |     2      |    2     |     12     |
+|  3   |     965    |      24        |     7      |    4     |     13     |
+|  4   |     950    |      30        |    14      |    6     |     15     |
+|  5   |     935    |      35        |    24      |    6     |     15     |
+|  6   |     920    |      37        |    33      |   10     |     15     |
+|  7   |     908    |      36        |    39      |   17     |     12     |
+|  8   |     899    |      33        |    45      |   23     |      9     |
+|  9   |     892    |      30        |    53      |   25     |      7     |
+| 10   |     886    |      28        |    60      |   26     |      6     |
+| 11   |     881    |      28        |    65      |   26     |      5     |
+| 12   |     876    |      26        |    72      |   26     |      5     |
+| 13   |     873    |      24        |    77      |   26     |      3     |
+| 14   |     872    |      20        |    82      |   26     |      1     |
+| 15   |     872    |      17        |    85      |   26     |      0     |
 
+Setelah mengetahui jumlah penambahan kasus baru per hari, kita dapat membuat kurva epideminya.
+
+<div style="margin-bottom: 25px;"><figure style="text-align: center;">
+  <img src="img/pekan-2-img-5-Kurva-penambahan-kasus-baru.jpg" alt="Kurva-penambahan-kasus-baru" width="450">
+  <figcaption>Gambar 2.5. Kurva penambahan kasus baru.</figcaption>
+</figure></div>
+
+---
+
+#### **Tingkat penularan penyakit**
+
+Penyakit satu dan penyakit lainnya memiliki tingkat penularan yang bervariasi. Kita telah mengetahui bahwa penyakit adalah gangguan fungsi dan/atau struktur tubuh yang proses biologisnya telah dipahami. Secara garis besar, penyakit dapat diklasifikasikan menjadi penyakit infeksius dan penyakit noninfeksius.
+
+**Penyakit infeksius** adalah penyakit yang disebabkan oleh mikroorganisme patogenik seperti bakteri, virus, atau parasit yang dapat tumbuh dan berkembang biak di dalam tubuh inang. Penyakit infeksius dapat diklasifikasikan menjadi infeksi yang bersifat individual (misalnya infeksi rongga mulut dan gigi atau infeksi pada luka terbuka) dan penyakit infeksius yang menular.
+
+**Penyakit menular** (contagious atau transmissible diseases) adalah penyakit yang dapat berpindah dari satu individu ke individu lain. Penyakit menular dapat diklasifikasikan menjadi penyakit yang penularannya terbatas (misalnya pink eye dan koksidiosis) dan penyakit lintas batas.
+
+**Penyakit lintas batas**  (transboundary diseases) adalah penyakit dapat menyebar dengan cepat antarwilayah atau antarnegara, serta menimbulkan dampak ekonomi dan sosial yang signifikan, khususnya dalam konteks perdagangan internasional.
+
+---
+
+#### **Rantai infeksi**
+
+Untuk memahami bagaimana penyakit menular menyebar dalam suatu populasi, kita dapat menggunakan konsep rantai infeksi. Rantai infeksi adalah model yang menjelaskan bagaimana agen infeksius berpindah dari satu individu atau satu sumber ke individu lainnya. Penyebaran ini terjadi melalui serangkaian komponen yang saling terhubung dan membentuk suatu siklus penularan.
+
+<div style="margin-bottom: 25px;"><figure style="text-align: center;">
+  <img src="img/pekan-2-img-6-Rantai-infeksi.jpg" alt="Model-rantai-infeksi" width="550">
+  <figcaption>Gambar 2.6. Model rantai infeksi.</figcaption>
+</figure></div>
+
+Gambar 2.6 mengilustrasikan komponen utama dalam rantai infeksi:
+- **Agen infeksius**: mikroorganisme penyebab penyakit, seperti virus, bakteri, atau parasit.
+- **Reservoir atau inang terinfeksi**: tempat hidup dan berkembangnya agen infeksius, yang bisa berupa manusia, hewan, atau objek di lingkungan.
+- **Portal keluar**: jalur keluarnya agen infeksi dari inang terinfeksi, seperti cairan tubuh, feses, atau percikan napas.
+- **Cara penularan**: cara agen berpindah dari sumber ke individu lain, misalnya melalui kontak langsung, udara (aerosol), makanan, atau vektor seperti nyamuk.
+- **Portal masuk**: jalur masuknya agen ke inang baru, seperti saluran pernapasan, saluran pencernaan, atau kulit yang terluka.
+- **Inang rentan**: individu yang tidak memiliki kekebalan dan rentan terinfeksi.
+
+---
+
+#### **Cara Penularan**
+
+Cara penularan (disebut juga jalur atau rute penularan) adalah mekanisme perpindahan agen infeksius dari suatu sumber atau dari inang terinfeksi ke inang rentan. 
+
+Secara umum, cara penularan dibagi menjadi dua kategori utama:
+
+* **Penularan vertikal**:<br>
+Terjadi ketika agen infeksius ditularkan dari induk ke keturunannya, biasanya melalui plasenta, selama proses kelahiran, atau melalui air susu.
+
+* **Penularan horizontal**:<br>
+Merupakan penularan dari satu individu ke individu lain yang tidak berada dalam hubungan induk dan anak. Penularan ini dibagi lagi menjadi dua jenis:
+    * **Penularan langsung**:<br>
+      Agen infeksi berpindah secara langsung tanpa perantara. Ini dapat terjadi melalui:
+      * **Kontak fisik**, seperti melalui kulit, membran mukosa, luka terbuka, atau hubungan seksual.
+      * **Aerosol**, yaitu partikel halus yang terhirup saat dua individu berada di tempat dan waktu yang sama, seperti saat bersin atau batuk.<br><br>
+    * **Penularan tidak langsung**:<br>
+      Terjadi ketika agen infeksi berpindah melalui media atau perantara. Penularan ini bisa melibatkan:
+      * **Fomit**, yaitu benda mati yang terkontaminasi seperti peralatan, pakaian, atau kandang.
+      * **Airborne**, partikel kecil yang melayang di udara dan bisa bertahan cukup lama.
+      * **Foodborne**, melalui makanan yang tercemar.
+      * **Waterborne**, melalui air yang tercemar.
+      * **Vectorborne**, melalui perantara biologis seperti serangga.
+
+Pemahaman tentang berbagai jalur penularan ini penting untuk mencegah dan mengendalikan penyakit. Intervensi yang tepat dapat dilakukan pada titik-titik kritis dalam rantai penularan.
 
 ---
 
