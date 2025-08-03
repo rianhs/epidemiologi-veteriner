@@ -1,8 +1,19 @@
 # Pekan 2
 
 > Halaman ini berisi materi Pekan 2: Kesehatan populasi.
+---
+### Daftar isi
+- [Konsep sehat dan tidak sehat](pekan-2.md#konsep-sehat-dan-tidak-sehat)
+- [Penyebab hewan sakit](pekan-2.md#penyebab-hewan-sakit)
+- [Perkembangan konsep tentang penyebab penyakit](pekan-2.md#perkembangan-konsep-tentang-penyebab-penyakit)
+- [Teori kuman penyakit](pekan-2.md#teori-kuman-penyakit)
+- [Penyebab multifaktorial](pekan-2.md#penyebab-multifaktorial)
+- [Segitiga epidemiologi](pekan-2.md#segitiga-epidemiologi)
+- [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
 
-##### **Konsep sehat dan tidak sehat**
+---
+
+#### **Konsep sehat dan tidak sehat**
 
 Pada tahun 1958, Organisasi Kesehatan Dunia (WHO) mendefinisikan kesehatan sebagai "kesejahteraan fisik, mental, dan sosial yang lengkap dan bukan sekadar ketiadaan penyakit atau kelemahan".
 
@@ -24,7 +35,7 @@ Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak s
 
 ---
 
-##### **Penyebab hewan sakit**
+#### **Penyebab hewan sakit**
 
 Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Secara umum, mereka dapat diklasifikan dalam delapan kelompok sebagaimana tabel di bawah ini.
 
@@ -60,7 +71,7 @@ Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam ep
 
 ---
 
-##### **Perkembangan konsep tentang penyebab penyakit**
+#### **Perkembangan konsep tentang penyebab penyakit**
 
 Sepanjang sejarah, manusia memiliki banyak konsep tentang penyebab penyakit. Berikut ini adalah beberapa konsep atau teori yang banyak dianut.
 
@@ -83,7 +94,7 @@ Kita akan berfokus pada dua konsep terakhir, yaitu teori kuman penyakit dan mult
 
 ---
 
-##### **Teori kuman penyakit**
+#### **Teori kuman penyakit**
 
 Konsep dasar munculnya penyakit menurut teori kuman penyakit adalah:
 
@@ -110,7 +121,7 @@ Meskipun postulat Koch dapat digunakan untuk mengidentifikasi mikroorganisme pat
 
 ---
 
-##### **Penyebab multifaktorial**
+#### **Penyebab multifaktorial**
 
 Gagasan bahwa suatu penyakit disebabkan oleh interaksi antara berbagai faktor mulai muncul pada tahun 1900-an, seiring dengan perkembangan epidemiologi modern yang menggunakan statistika.
 
@@ -124,7 +135,7 @@ Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktorial, di an
 
 ---
 
-##### **Segitiga epidemiologi**
+#### **Segitiga epidemiologi**
 
 Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa suatu penyakit (terutama penyakit menular) dapat muncul akibat adanya interaksi yang sesuai antara tiga komponen, yaitu inang, agen, dan lingkungan. Jika ada komponen yang tidak mendukung, maka penyakit kemungkinan besar tidak akan muncul atau menyebar lebih lanjut.
 
@@ -137,7 +148,7 @@ Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa sua
  Inang (atau penjamu) adalah organisme yang menampung agen dan menderita penyakit. Sejumlah faktor yang dimiliki inang memengaruhi kerentanannya terhadap penyakit, antara lain spesies, ras, jenis kelamin, usia, ukuran tubuh, dan status kekebalan.
 
 - **Agen**<br>
- Agen adalah penyebab penyakit, yang dapat berupa patogen, bahan kimia, kekuatan fisik, atau kekurangan nutrisi. Faktor dari agen yang berpengaruh terhadap potensi penyakit antara lain jenis agen, dosis, virulensi, dan patogenisitas.
+ Agen adalah penyebab penyakit, yang dapat berupa patogen, bahan kimia, atau benda fisik. Faktor dari agen yang berpengaruh terhadap potensi penyakit antara lain jenis agen, dosis, virulensi, dan patogenisitas.
 
 - **Lingkungan**<br>
  Lingkungan mencakup semua faktor eksternal tempat inang hidup dan terpapar agen. Faktor ini meliputi iklim (suhu, kelembaban, curah hujan), cuaca, tempat tinggal, ketersediaan pakan, dan cara pengelolaan hewan.
@@ -164,15 +175,45 @@ Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumla
     * Pengaturan kepadatan hewan (mengurangi risiko penularan akibat interaksi antarinang dalam lingkungan terbatas).
     * Penyediaan pakan dan air minum yang cukup dan berkualitas (pemanfaatan sumber daya lingkungan untuk memenuhi asupan nutrisi inang).
 * **Intervensi agen–lingkungan:**
-    * Tindakan biosekuriti (mencegah masuk dan keluarnya agen dari suatu lingkungan).
+    * Tindakan biosekuriti (mencegah masuk dan keluarnya agen ke dan dari suatu lingkungan).
     * Sanitasi lingkungan (mengurangi jumlah agen di lingkungan).
     * Pengendalian vektor (mencegah perpindahan agen melalui unsur lingkungan).
 
 ---
 
-##### **Riwayat alamiah penyakit**
+#### **Riwayat alamiah penyakit**
 
-Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh, mengalami disabilitas, atau meninggal dunia.
+Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu (baik manusia maupun hewan) seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh atau meninggal dunia.
+
+<div style="margin-bottom: 25px;"><figure style="text-align: center;">
+  <img src="img/pekan-2-img-2-Riwayat-alamiah-penyakit.jpg" alt="Riwayat alamiah penyakit" width="450">
+  <figcaption>Gambar 2.3. Model riwayat alamiah penyakit.</figcaption>
+</figure></div>
+
+Pada penyakit infeksius, terdapat empat tahapan yang dilalui oleh individu penderitanya.
+
+- **Tahap rentan:**<br> 
+Pada tahap ini, individu berada dalam kondisi yang memungkinkan untuk tertular jika terpapar agen penyebab penyakit.
+
+- **Tahap penyakit subklinis:**<br> 
+Ini adalah fase setelah individu terpapar agen penyakit. Agen sudah mulai berkembang dalam tubuh, tetapi belum menimbulkan gejala dan tanda klinis.
+
+- **Tahap penyakit klinis:**<br> 
+Pada fase ini, tanda-tanda penyakit sudah terlihat dan/atau gejalanya dapat dirasakan. Manifestasinya bisa ringan hingga berat, tergantung jenis penyakit dan respons tubuh.
+
+- **Tahap pemulihan, disabilitas, atau kematian:**<br> 
+Ini adalah fase akhir dari perjalanan penyakit, ketika hasil akhirnya bisa berupa pulih sepenuhnya, disabilitas yang bersifat permanen atau sebagian, atau kematian.
+
+Setiap tahap penyakit dapat dikendalikan melalui tiga level pencegahan berikut.
+
+- **Pencegahan primer:**<br> 
+Upaya yang dilakukan untuk mencegah munculnya kasus baru. Contoh: vaksinasi, edukasi kesehatan, peningkatan sanitasi, promosi gaya hidup sehat.
+
+- **Pencegahan sekunder:**<br> 
+Upaya untuk mendeteksi penyakit sedini mungkin dan memberikan pengobatan awal guna mencegah perkembangan penyakit menjadi lebih parah. Contoh: skrining, diagnosis dini, pemeriksaan laboratorium rutin. 
+
+- **Pencegahan tersier:**<br> 
+Upaya mengurangi dampak jangka panjang penyakit, mempercepat pemulihan, mencegah kecacatan, dan meningkatkan kualitas hidup. Contoh: rehabilitasi, terapi fisik, dukungan psikososial.
 
 ---
 
