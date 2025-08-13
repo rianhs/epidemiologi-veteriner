@@ -15,6 +15,8 @@
 - [Tingkat penularan penyakit](pekan-2.md#tingkat-penularan-penyakit)
 - [Rantai infeksi](pekan-2.md#rantai-infeksi)
 - [Cara penularan](pekan-2.md#cara-penularan)
+- [Angka reproduksi dasar](pekan-2.md#angka-reproduksi-dasar)
+- [Kekebalan kelompok](pekan-2.md#kekebalan-kelompok)
 
 ---
 
@@ -24,7 +26,7 @@ Pada tahun 1958, Organisasi Kesehatan Dunia (WHO) mendefinisikan kesehatan sebag
 
 Ini merupakan definisi yang dirumuskan untuk manusia. Bagi hewan, pada umumnya ada ekspektasi tambahan. Hewan yang sehat juga diharapkan memiliki performa yang optimal, misalnya pada aspek produksi dan reproduksinya. Hewan yang performanya tidak optimal (terutama hewan produksi) sering kali dianggap kurang sehat.
 
-Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gejala klinis (*clinical symptoms*), tanda klinis (*clinical signs*), gangguan (*disorder*), penyakit (*disease*), cedera (*injury*), dan sindrom (*syndrome*). Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Namun, mereka dapat dijelaskan dengan ringkas sebagaimana berikut.
+Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gejala klinis (clinical symptoms), tanda klinis (clinical signs), gangguan (disorder), penyakit (disease), cedera (injury), dan sindrom (syndrome). Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Namun, mereka dapat dijelaskan dengan ringkas sebagaimana berikut.
 
 - **Gejala klinis**: perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat dikenali atau dirasakan oleh penderitanya. Dalam kedokteran hewan, istilah ini tidak digunakan karena hewan sebagai pasien tidak dapat menceritakan kondisi yang ia rasakan. Contoh: seekor anjing tidak dapat mengomunikasikan bahwa ia sedang sakit kepala.
 
@@ -366,7 +368,7 @@ Gambar 2.6 mengilustrasikan komponen utama dalam rantai infeksi:
 
 ---
 
-#### **Cara Penularan**
+#### **Cara penularan**
 
 Cara penularan (disebut juga jalur atau rute penularan) adalah mekanisme perpindahan agen infeksius dari suatu sumber atau dari inang terinfeksi ke inang rentan. 
 
@@ -390,6 +392,32 @@ Merupakan penularan dari satu individu ke individu lain yang tidak berada dalam 
       * **Vectorborne**, melalui perantara biologis seperti serangga.
 
 Pemahaman tentang berbagai jalur penularan ini penting untuk mencegah dan mengendalikan penyakit. Intervensi yang tepat dapat dilakukan pada titik-titik kritis dalam rantai penularan.
+
+---
+
+#### **Angka reproduksi dasar**
+
+**Angka reproduksi dasar** (disimbolkan sebagai R₀) adalah perkiraan jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.7 sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ = 3. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
+
+<div style="margin-bottom: 25px;"><figure style="text-align: center;">
+  <img src="img/pekan-2-img-7-Angka-reproduksi-dasar.jpg" alt="Angka reproduksi dasar" width="550">
+  <figcaption>Gambar 2.7. Ilustrasi dua penyakit. Penyakit A memiliki R₀ = 2, sedangkan penyakit B memiliki R₀ = 3.</figcaption>
+</figure></div>
+
+Perlu diingat bahwa R₀ mengasumsikan bahwa semua populasi rentan dan tidak ada intervensi lain (seperti isolasi, karantina, atau vaksinasi) yang dilakukan untuk mengendalikan penyebaran penyakit.
+
+Catatan:
+* R₀ bukanlah konstanta biologis untuk patogen karena ia juga dipengaruhi oleh faktor-faktor lain seperti kondisi lingkungan dan perilaku populasi yang terinfeksi.
+* R₀ menunjukkan potensi penyebaran penyakit dalam suatu populasi. R0 bukan ukuran keparahan penyakit menular atau kecepatan penyebaran patogen dalam suatu populasi.
+* Jika R₀ lebih besar dari 1, penyakit akan meningkat sehingga berpotensi menjadi epidemi.
+* Jika R₀ kurang dari 1, penyakit akan menurun dan akhirnya menghilang karena setiap individu yang terinfeksi rata-rata menularkan penyakit kepada kurang dari satu individu lainnya.
+* R₀ membantu menentukan ambang batas kekebalan kelompok (dijelaskan di bawah), yaitu proporsi populasi yang harus diimunisasi untuk mencapai kekebalan kelompok dan secara efektif menghentikan penularan penyakit.
+* Ambang batas kekebalan kelompok dapat diperkirakan sebagai: 1 − 1/R₀
+
+---
+
+#### **Kekebalan kelompok**
+
 
 ---
 
