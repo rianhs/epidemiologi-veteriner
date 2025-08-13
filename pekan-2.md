@@ -3,23 +3,27 @@
 > Halaman ini berisi materi Pekan 2: Kesehatan populasi.
 ---
 ### Daftar isi
-- [Konsep sehat dan tidak sehat](pekan-2.md#konsep-sehat-dan-tidak-sehat)
-- [Penyebab hewan sakit](pekan-2.md#penyebab-hewan-sakit)
-- [Perkembangan konsep tentang penyebab penyakit](pekan-2.md#perkembangan-konsep-tentang-penyebab-penyakit)
-- [Teori kuman penyakit](pekan-2.md#teori-kuman-penyakit)
-- [Penyebab multifaktorial](pekan-2.md#penyebab-multifaktorial)
-- [Segitiga epidemiologi](pekan-2.md#segitiga-epidemiologi)
-- [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
-- [Model SIR](pekan-2.md#model-sir)
-- [Kurva epidemi](pekan-2.md#kurva-epidemi)
-- [Tingkat penularan penyakit](pekan-2.md#tingkat-penularan-penyakit)
-- [Rantai infeksi](pekan-2.md#rantai-infeksi)
-- [Cara penularan](pekan-2.md#cara-penularan)
-- [Angka reproduksi dasar](pekan-2.md#angka-reproduksi-dasar)
-- [Kekebalan kelompok](pekan-2.md#kekebalan-kelompok)
+- [Populasi yang tidak sehat](pekan-2.md#populasi-yang-tidak-sehat)
+  - [Konsep sehat dan tidak sehat](pekan-2.md#konsep-sehat-dan-tidak-sehat)
+  - [Penyebab hewan sakit](pekan-2.md#penyebab-hewan-sakit)
+  - [Perkembangan konsep tentang penyebab penyakit](pekan-2.md#perkembangan-konsep-tentang-penyebab-penyakit)
+- [Model yang menggambarkan kejadian penyakit](pekan-2.md#model-yang-menggambarkan-kejadian-penyakit)
+  - [Teori kuman penyakit](pekan-2.md#teori-kuman-penyakit)
+  - [Penyebab multifaktorial](pekan-2.md#penyebab-multifaktorial)
+  - [Segitiga epidemiologi](pekan-2.md#segitiga-epidemiologi)
+  - [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
+  - [Model SIR](pekan-2.md#model-sir)
+  - [Kurva epidemi](pekan-2.md#kurva-epidemi)
+- [Penyebaran penyakit infeksius](pekan-2.md#penyebaran-penyakit-infeksius)
+  - [Tingkat penularan penyakit](pekan-2.md#tingkat-penularan-penyakit)
+  - [Rantai infeksi](pekan-2.md#rantai-infeksi)
+  - [Cara penularan](pekan-2.md#cara-penularan)
+  - [Angka reproduksi dasar](pekan-2.md#angka-reproduksi-dasar)
+  - [Kekebalan kelompok](pekan-2.md#kekebalan-kelompok)
 
 ---
-
+### **Populasi yang tidak sehat**
+---
 #### **Konsep sehat dan tidak sehat**
 
 Pada tahun 1958, Organisasi Kesehatan Dunia (WHO) mendefinisikan kesehatan sebagai "kesejahteraan fisik, mental, dan sosial yang lengkap dan bukan sekadar ketiadaan penyakit atau kelemahan".
@@ -100,7 +104,8 @@ Penyakit disebabkan oleh banyak faktor yang saling berinteraksi. Konsep ini bany
 Kita akan berfokus pada dua konsep terakhir, yaitu teori kuman penyakit dan multifaktor.
 
 ---
-
+### **Model yang menggambarkan kejadian penyakit**
+---
 #### **Teori kuman penyakit**
 
 Konsep dasar munculnya penyakit menurut teori kuman penyakit adalah:
@@ -336,6 +341,8 @@ Setelah mengetahui jumlah penambahan kasus baru per hari, kita dapat membuat kur
 </figure></div>
 
 ---
+### **Penyebaran penyakit infeksius**
+---
 
 #### **Tingkat penularan penyakit**
 
@@ -408,7 +415,7 @@ Perlu diingat bahwa R₀ mengasumsikan bahwa semua populasi rentan dan tidak ada
 
 Catatan:
 * R₀ bukanlah konstanta biologis untuk patogen karena ia juga dipengaruhi oleh faktor-faktor lain seperti kondisi lingkungan dan perilaku populasi yang terinfeksi.
-* R₀ menunjukkan potensi penyebaran penyakit dalam suatu populasi. R0 bukan ukuran keparahan penyakit menular atau kecepatan penyebaran patogen dalam suatu populasi.
+* R₀ menunjukkan potensi penyebaran penyakit dalam suatu populasi. Ia bukan ukuran keparahan penyakit menular atau kecepatan penyebaran patogen dalam suatu populasi.
 * Jika R₀ lebih besar dari 1, penyakit akan meningkat sehingga berpotensi menjadi epidemi.
 * Jika R₀ kurang dari 1, penyakit akan menurun dan akhirnya menghilang karena setiap individu yang terinfeksi rata-rata menularkan penyakit kepada kurang dari satu individu lainnya.
 * R₀ membantu menentukan ambang batas kekebalan kelompok (dijelaskan di bawah), yaitu proporsi populasi yang harus diimunisasi untuk mencapai kekebalan kelompok dan secara efektif menghentikan penularan penyakit.
@@ -418,6 +425,9 @@ Catatan:
 
 #### **Kekebalan kelompok**
 
+**Kekebalan kelompok** atau **kekebalan kawanan** merupakan bentuk perlindungan tidak langsung dari penyakit menular yang terjadi ketika sebagian besar populasi menjadi kebal terhadap suatu infeksi sehingga individu yang tidak kebal juga terlindungi. 
+
+Sebagai contoh, untuk melindungi suatu populasi dari penyakit X, sebanyak 80% populasi harus menjadi kebal terhadap penyakit tersebut, baik akibat infeksi alami ataupun vaksinasi. Jika angka ini tercapai, maka penularan penyakit otomatis terhenti meskipun 20% anggota populasi tidak kebal terhadap penyakit X.
 
 ---
 
