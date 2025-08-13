@@ -71,6 +71,28 @@
     .search {
        margin-top: 50px !important;     /* Adds space so search isn't hidden */
     }
+
+    details {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #0066cc;
+  }
+  summary:hover {
+    text-decoration: underline;
+  }
+  details[open] summary {
+    color: #005bb5;
+  }
+  .quiz-container {
+    margin-bottom: 20px;
+  }
   </style> 
 
 </head>
@@ -90,7 +112,7 @@
       maxLevel: 0,
       // Set subMaxLevel to 0 to remove automatic display of page table of contents (TOC) in Sidebar
       subMaxLevel: 3,
-
+      executeScript: true,
       // Search Plugin Configuration
       search: {
         placeholder: 'Type to search',
@@ -101,10 +123,11 @@
     };
   </script>
 
-  <!-- Required -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <!-- Pustaka utama -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 
-  <!-- Recommended -->
+  <!-- Docsify dan plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
 

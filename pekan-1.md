@@ -2,6 +2,24 @@
 
 > Halaman ini berisi materi Pekan 1: Dasar-dasar epidemiologi.
 
+---
+<details>
+<summary>Daftar isi</summary>
+
+- [Apa konsep paling awal yang perlu saya pahami?](pekan-1.md#apa-konsep-paling-awal-yang-perlu-saya-pahami)
+- [Konsep sehat dan tidak sehat](pekan-1.md#konsep-sehat-dan-tidak-sehat)
+- [Penyebab hewan sakit](pekan-1.md#penyebab-hewan-sakit)
+- [Asal kata epidemiologi](pekan-1.md#asal-kata-epidemiologi)
+- [Penggambaran penyakit dalam populasi](pekan-1.md#penggambaran-penyakit-dalam-populasi)
+- [Sejarah](pekan-1.md#sejarah)
+- [Definisi komprehensif](pekan-1.md#definisi-komprehensif)
+- [Pendekatan epidemiologis](pekan-1.md#pendekatan-epidemiologis)
+- [Pertanyaan kunci dalam epidemiologi](pekan-1.md#pertanyaan-kunci-dalam-epidemiologi)
+- [Epidemiologi deskriptif dan analitis](pekan-1.md#epidemiologi-deskriptif-dan-analitis)
+- [Cabang-cabang epidemiologi](pekan-1.md#cabang-cabang-epidemiologi)
+</details>
+
+---
 ### Materi
 
 ##### **Apa konsep paling awal yang perlu saya pahami?**
@@ -22,7 +40,65 @@ Sebelum melangkah lebih jauh, Anda perlu memahami bahwa kondisi kesehatan dan pe
 
 ---
 
-##### **Asal kata**
+##### **Konsep sehat dan tidak sehat**
+
+Pada tahun 1958, Organisasi Kesehatan Dunia (WHO) mendefinisikan kesehatan sebagai "kesejahteraan fisik, mental, dan sosial yang lengkap dan bukan sekadar ketiadaan penyakit atau kelemahan".
+
+Ini merupakan definisi yang dirumuskan untuk manusia. Bagi hewan, pada umumnya ada ekspektasi tambahan. Hewan yang sehat juga diharapkan memiliki performa yang optimal, misalnya pada aspek produksi dan reproduksinya. Hewan yang performanya tidak optimal (terutama hewan produksi) sering kali dianggap kurang sehat.
+
+Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gejala klinis (clinical symptoms), tanda klinis (clinical signs), gangguan (disorder), penyakit (disease), cedera (injury), dan sindrom (syndrome). Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Namun, mereka dapat dijelaskan dengan ringkas sebagaimana berikut.
+
+- **Gejala klinis**: perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat dikenali atau dirasakan oleh penderitanya. Dalam kedokteran hewan, istilah ini tidak digunakan karena hewan sebagai pasien tidak dapat menceritakan kondisi yang ia rasakan. Contoh: seekor anjing tidak dapat mengomunikasikan bahwa ia sedang sakit kepala.
+
+- **Tanda klinis**: perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat diamati dan/atau diukur oleh pemeriksa. Contoh: demam pada kucing, kerontokan rambut pada kelinci, pincang dan pembengkakan kaki pada ayam.
+
+- **Gangguan**: kondisi ketika aspek tertentu pada tubuh tidak berfungsi sebagaimana mestinya. Contoh: gangguan fertilitas pada sapi betina yang tidak bunting walaupun telah dikawinkan berulang kali.
+
+- **Penyakit**: gangguan fungsi dan/atau struktur tubuh yang proses biologisnya telah dipahami. Contoh: infeksi parvovirus pada anjing, penyakit mulut dan kuku pada kambing, penyakit Newcastle pada unggas.
+
+- **Cedera**: kerusakan pada tubuh yang diakibatkan oleh sumber eksternal. Contoh: luka robek pada kulit anjing akibat gigitan sesama anjing atau tertabrak kendaraan.
+
+- **Sindrom**: serangkaian gejala dan tanda klinis yang muncul bersamaan dan sering kali penyebabnya tidak diketahui dengan jelas. Contoh: *fading puppy syndrome* pada anak anjing yang tiba-tiba melemah dan mati tanpa penyebab pasti yang teridentifikasi.
+
+---
+
+##### **Penyebab hewan sakit**
+
+Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Secara umum, mereka dapat diklasifikan dalam delapan kelompok sebagaimana tabel di bawah ini.
+
+| Penyebab | Deskripsi singkat | Contoh |
+|:---:|:---:|:---:|
+| Infeksi dan infestasi | Invasi mikroorganisme patogenik dan/atau parasit | Panleukopenia dan infestasi pinjal pada kucing |
+| Kelainan genetik | Kelainan bawaan pada DNA | Displasia pinggul pada anjing, penyakit ginjal polisistik pada kucing |
+| Trauma fisik | Kerusakan tubuh akibat sumber eskternal | Kaki kuda yang patah, sapi terluka akibat kawat berduri |
+| Proses degeneratif | Kemunduran fungsi jaringan secara progresif dari waktu ke waktu | Osteoartritis pada kucing, mielopati degeneratif pada anjing |
+| Gangguan metabolisme | Proses biokimia yang abnormal dalam tubuh | Ketosis pada sapi perah, diabetes melitus pada anjing, obesitas pada kucing |
+| Keracunan | Masuknya zat beracun ke dalam tubuh | Keracunan cokelat pada anjing, keracunan timbal pada sapi |
+| Iatrogenesis | Efek buruk akibat perawatan atau intervensi medis | Infeksi pada bekas lokasi pembedahan, efek samping vaksinasi |
+| Idiopati | Kondisi yang penyebabnya tidak diketahui | Sistitis idiopatik pada kucing, tremor kepala idiopatik pada anjing |
+
+Di antara penyebab-penyebab di atas, mana yang berpotensi untuk berdampak pada banyak hewan dan/atau menyebabkan wabah penyakit, epidemi, dan pandemi? Mengapa?
+
+**Potensi untuk menimbulkan masalah epidemiologis**
+
+Tidak semua penyebab ketidaksehatan memiliki kemungkinan yang sama untuk menimbulkan masalah epidemiologis, seperti wabah, epidemi, atau penyebaran kasus secara luas. Tabel berikut ini merangkum potensi mereka untuk menimbulkan kejadian yang berdampak pada banyak individu dalam populasi hewan.
+
+| Penyebab | Potensi | Keterangan |
+|:---:|:---:|:---:|
+| Infeksi dan infestasi | Sangat tinggi | Potensi tertinggi untuk menimbulkan masalah epidemiologis karena sifat agen infeksius dan parasit yang menular antarindividu |
+| Kelainan genetik | Dapat diabaikan | Tidak menimbulkan masalah epidemiologis karena bersifat bawaan dan tidak menyebar antarindividu dalam populasi. |
+| Trauma fisik | Sangat rendah | Umumnya berupa kasus tunggal; kejadian massal mungkin terjadi akibat bencana atau kecelakaan, tetapi tidak mencerminkan pola penyebaran dalam konteks epidemiologis |
+| Proses degeneratif | Sangat rendah | Umumnya tidak menular dan bersifat individual, tetapi dapat menjadi masalah epidemiologis dalam populasi hewan lanjut usia |
+| Gangguan metabolisme | Rendah s.d. sedang | Tidak menular, tetapi dapat menjadi masalah epidemiologis jika terjadi secara meluas akibat pola makan, manajemen, atau lingkungan yang seragam |
+| Keracunan | Rendah s.d. sedang | Dapat menimbulkan masalah epidemiologis jika banyak hewan terpapar sumber racun yang sama, terutama pada peternakan atau lingkungan akuatik |
+| Iatrogenesis | Sangat rendah | Biasanya terbatas pada individu yang menerima tindakan medis dan jarang terjadi pada banyak hewan |
+| Idiopati | Dapat diabaikan | Tidak diketahui penyebabnya dan umumnya tidak menular sehingga tidak berpotensi menimbulkan masalah epidemiologis |
+
+Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam epidemiologi veteriner karena sifatnya yang menular dan mampu menyebar cepat dalam populasi. Meskipun beberapa penyebab lain seperti gangguan metabolisme dan keracunan juga dapat menimbulkan masalah epidemiologis pada konteks tertentu, dampaknya biasanya terbatas pada situasi atau kelompok hewan yang spesifik. Oleh karena itu, pemahaman terhadap karakteristik setiap penyebab sangat penting untuk menentukan strategi pencegahan dan pengendalian yang tepat.
+
+---
+
+##### **Asal kata epidemiologi**
 
 Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: *epi* (di atas atau pada), *demos* (rakyat atau populasi), dan *logos* (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
 
@@ -32,7 +108,7 @@ Hippokrates, seorang tabib Yunani Kuno yang dikenal sebagai "Bapak Kedokteran," 
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-1-img-1-Hippocrates.jpg" alt="Hippokrates" width="150">
-  <figcaption>Hippokrates, tokoh yang menggunakan kata epidemi dalam konteks kesehatan. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Hippocrates.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
+  <figcaption>Gambar 1.1. Hippokrates, tokoh yang menggunakan kata epidemi dalam konteks kesehatan. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Hippocrates.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
 Sejak zaman peradaban kuno, ada dua istilah yang menggambarkan situasi penyakit dalam suatu populasi: epidemi dan endemi.
@@ -67,21 +143,21 @@ Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti k
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-1-img-2-JohnSnow.jpg" alt="John Snow" width="150">
-  <figcaption>John Snow, tokoh yang dianggap sebagai Bapak Epidemiologi Modern. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:John_Snow.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
+  <figcaption>Gambar 1.2. John Snow, tokoh yang dianggap sebagai Bapak Epidemiologi Modern. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:John_Snow.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
 Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat itu, penyebab penyakit ini belum diketahui secara pasti. Teori dominan yang berkembang adalah teori miasma yang menyatakan bahwa penyakit menular disebarkan melalui udara yang terkontaminasi oleh miasma, partikel kecil yang juga mengakibatkan bau busuk. Namun, John Snow memiliki dugaan yang berbeda. Ia mencurigai bahwa penyebaran kolera berkaitan dengan konsumsi air yang terkontaminasi.
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-1-img-3-kolera.png" alt="Situasi wabah kolera" width="350">
-  <figcaption>Situasi wabah kolera di Inggris pada abad ke-19. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Punch-A_Court_for_King_Cholera.png" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
+  <figcaption>Gambar 1.3. Situasi wabah kolera di Inggris pada abad ke-19. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Punch-A_Court_for_King_Cholera.png" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
 Untuk membuktikan hipotesisnya, Snow memetakan lokasi kasus kolera di London dan menemukan bahwa sebagian besar kasus terpusat di sekitar pompa air di Broad Street. Dengan melakukan wawancara dan analisis lebih lanjut, ia menemukan bahwa orang yang mengonsumsi air dari pompa tersebut lebih rentan terkena kolera dibandingkan mereka yang mendapatkan air dari sumber lain.
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-1-img-4-SnowMap.jpg" alt="Peta kasus kolera oleh John Snow" width="350">
-  <figcaption>Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Snow-cholera-map-1.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
+  <figcaption>Gambar 1.4. Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera. Sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Snow-cholera-map-1.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
 </figure></div>
 
 Sebagai tindakan pengendalian, Snow meyakinkan pemerintah setempat untuk mencabut pegangan pompa air di Broad Street sehingga warga tak bisa menggunakannya. Setelah itu, wabah kolera berhenti menyebar. 
@@ -94,7 +170,7 @@ Dalam bidang kedokteran hewan, epidemiologi mengalami kemajuan pesat pada akhir 
 
 <div style="margin-bottom: 25px;"><figure style="text-align: center;">
   <img src="img/pekan-1-img-5-TexasFeverMap.jpg" alt="Peta sebaran Texas cattle fever" width="350">
-  <figcaption>Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam. Sumber gambar: <a href="https://www.tshaonline.org/handbook/entries/texas-fever" target="_blank" rel="noopener noreferrer">Texas State Historical Association</a>.</figcaption>
+  <figcaption>Gambar 1.5. Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam. Sumber gambar: <a href="https://www.tshaonline.org/handbook/entries/texas-fever" target="_blank" rel="noopener noreferrer">Texas State Historical Association</a>.</figcaption>
 </figure></div>
 
 Pada akhir dasawarsa 1880-an, Theobald Smith dan Frederick Kilbourne menemukan bahwa penyakit ini tidak menyebar langsung dari satu sapi ke sapi lainnya, tetapi memerlukan perantara. Mereka menyimpulkan bahwa caplak *Boophilus annulatus* berperan sebagai vektor yang mentransmisikan agen penyakit dari sapi yang terinfeksi ke sapi yang sehat.
@@ -288,3 +364,5 @@ Selain epidemiologi deskriptif dan analitis, terdapat cabang-cabang epidemiologi
 ### Referensi
 
 https://doi.org/10.1186/1471-2458-14-139
+
+---

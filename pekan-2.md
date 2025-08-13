@@ -2,85 +2,25 @@
 
 > Halaman ini berisi materi Pekan 2: Kesehatan populasi.
 ---
-### Daftar isi
-- [Populasi yang tidak sehat](pekan-2.md#populasi-yang-tidak-sehat)
-  - [Konsep sehat dan tidak sehat](pekan-2.md#konsep-sehat-dan-tidak-sehat)
-  - [Penyebab hewan sakit](pekan-2.md#penyebab-hewan-sakit)
-  - [Perkembangan konsep tentang penyebab penyakit](pekan-2.md#perkembangan-konsep-tentang-penyebab-penyakit)
-- [Model yang menggambarkan kejadian penyakit](pekan-2.md#model-yang-menggambarkan-kejadian-penyakit)
-  - [Teori kuman penyakit](pekan-2.md#teori-kuman-penyakit)
-  - [Penyebab multifaktorial](pekan-2.md#penyebab-multifaktorial)
-  - [Segitiga epidemiologi](pekan-2.md#segitiga-epidemiologi)
-  - [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
-  - [Model SIR](pekan-2.md#model-sir)
-  - [Kurva epidemi](pekan-2.md#kurva-epidemi)
-- [Penyebaran penyakit infeksius](pekan-2.md#penyebaran-penyakit-infeksius)
-  - [Tingkat penularan penyakit](pekan-2.md#tingkat-penularan-penyakit)
-  - [Rantai infeksi](pekan-2.md#rantai-infeksi)
-  - [Cara penularan](pekan-2.md#cara-penularan)
-  - [Angka reproduksi dasar](pekan-2.md#angka-reproduksi-dasar)
-  - [Kekebalan kelompok](pekan-2.md#kekebalan-kelompok)
+<details>
+<summary>Daftar isi</summary>
+
+- [Perkembangan konsep tentang penyebab penyakit](pekan-2.md#perkembangan-konsep-tentang-penyebab-penyakit)
+- [Teori kuman penyakit](pekan-2.md#teori-kuman-penyakit)
+- [Penyebab multifaktorial](pekan-2.md#penyebab-multifaktorial)
+- [Segitiga epidemiologi](pekan-2.md#segitiga-epidemiologi)
+- [Riwayat alamiah penyakit](pekan-2.md#riwayat-alamiah-penyakit)
+- [Model SIR](pekan-2.md#model-sir)
+- [Kurva epidemi](pekan-2.md#kurva-epidemi)
+- [Tingkat penularan penyakit](pekan-2.md#tingkat-penularan-penyakit)
+- [Rantai infeksi](pekan-2.md#rantai-infeksi)
+- [Cara penularan](pekan-2.md#cara-penularan)
+- [Angka reproduksi dasar](pekan-2.md#angka-reproduksi-dasar)
+- [Kekebalan kelompok](pekan-2.md#kekebalan-kelompok)
+</details>
 
 ---
-### **Populasi yang tidak sehat**
----
-#### **Konsep sehat dan tidak sehat**
-
-Pada tahun 1958, Organisasi Kesehatan Dunia (WHO) mendefinisikan kesehatan sebagai "kesejahteraan fisik, mental, dan sosial yang lengkap dan bukan sekadar ketiadaan penyakit atau kelemahan".
-
-Ini merupakan definisi yang dirumuskan untuk manusia. Bagi hewan, pada umumnya ada ekspektasi tambahan. Hewan yang sehat juga diharapkan memiliki performa yang optimal, misalnya pada aspek produksi dan reproduksinya. Hewan yang performanya tidak optimal (terutama hewan produksi) sering kali dianggap kurang sehat.
-
-Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gejala klinis (clinical symptoms), tanda klinis (clinical signs), gangguan (disorder), penyakit (disease), cedera (injury), dan sindrom (syndrome). Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Namun, mereka dapat dijelaskan dengan ringkas sebagaimana berikut.
-
-- **Gejala klinis**: perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat dikenali atau dirasakan oleh penderitanya. Dalam kedokteran hewan, istilah ini tidak digunakan karena hewan sebagai pasien tidak dapat menceritakan kondisi yang ia rasakan. Contoh: seekor anjing tidak dapat mengomunikasikan bahwa ia sedang sakit kepala.
-
-- **Tanda klinis**: perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat diamati dan/atau diukur oleh pemeriksa. Contoh: demam pada kucing, kerontokan rambut pada kelinci, pincang dan pembengkakan kaki pada ayam.
-
-- **Gangguan**: kondisi ketika aspek tertentu pada tubuh tidak berfungsi sebagaimana mestinya. Contoh: gangguan fertilitas pada sapi betina yang tidak bunting walaupun telah dikawinkan berulang kali.
-
-- **Penyakit**: gangguan fungsi dan/atau struktur tubuh yang proses biologisnya telah dipahami. Contoh: infeksi parvovirus pada anjing, penyakit mulut dan kuku pada kambing, penyakit Newcastle pada unggas.
-
-- **Cedera**: kerusakan pada tubuh yang diakibatkan oleh sumber eksternal. Contoh: luka robek pada kulit anjing akibat gigitan sesama anjing atau tertabrak kendaraan.
-
-- **Sindrom**: serangkaian gejala dan tanda klinis yang muncul bersamaan dan sering kali penyebabnya tidak diketahui dengan jelas. Contoh: *fading puppy syndrome* pada anak anjing yang tiba-tiba melemah dan mati tanpa penyebab pasti yang teridentifikasi.
-
----
-
-#### **Penyebab hewan sakit**
-
-Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Secara umum, mereka dapat diklasifikan dalam delapan kelompok sebagaimana tabel di bawah ini.
-
-| Penyebab | Deskripsi singkat | Contoh |
-|:---:|:---:|:---:|
-| Infeksi dan infestasi | Invasi mikroorganisme patogenik dan/atau parasit | Panleukopenia dan infestasi pinjal pada kucing |
-| Kelainan genetik | Kelainan bawaan pada DNA | Displasia pinggul pada anjing, penyakit ginjal polisistik pada kucing |
-| Trauma fisik | Kerusakan tubuh akibat sumber eskternal | Kaki kuda yang patah, sapi terluka akibat kawat berduri |
-| Proses degeneratif | Kemunduran fungsi jaringan secara progresif dari waktu ke waktu | Osteoartritis pada kucing, mielopati degeneratif pada anjing |
-| Gangguan metabolisme | Proses biokimia yang abnormal dalam tubuh | Ketosis pada sapi perah, diabetes melitus pada anjing, obesitas pada kucing |
-| Keracunan | Masuknya zat beracun ke dalam tubuh | Keracunan cokelat pada anjing, keracunan timbal pada sapi |
-| Iatrogenesis | Efek buruk akibat perawatan atau intervensi medis | Infeksi pada bekas lokasi pembedahan, efek samping vaksinasi |
-| Idiopati | Kondisi yang penyebabnya tidak diketahui | Sistitis idiopatik pada kucing, tremor kepala idiopatik pada anjing |
-
-Di antara penyebab-penyebab di atas, mana yang berpotensi untuk berdampak pada banyak hewan dan/atau menyebabkan wabah penyakit, epidemi, dan pandemi? Mengapa?
-
-**Potensi untuk menimbulkan masalah epidemiologis**
-
-Tidak semua penyebab ketidaksehatan memiliki kemungkinan yang sama untuk menimbulkan masalah epidemiologis, seperti wabah, epidemi, atau penyebaran kasus secara luas. Tabel berikut ini merangkum potensi mereka untuk menimbulkan kejadian yang berdampak pada banyak individu dalam populasi hewan.
-
-| Penyebab | Potensi | Keterangan |
-|:---:|:---:|:---:|
-| Infeksi dan infestasi | Sangat tinggi | Potensi tertinggi untuk menimbulkan masalah epidemiologis karena sifat agen infeksius dan parasit yang menular antarindividu |
-| Kelainan genetik | Dapat diabaikan | Tidak menimbulkan masalah epidemiologis karena bersifat bawaan dan tidak menyebar antarindividu dalam populasi. |
-| Trauma fisik | Sangat rendah | Umumnya berupa kasus tunggal; kejadian massal mungkin terjadi akibat bencana atau kecelakaan, tetapi tidak mencerminkan pola penyebaran dalam konteks epidemiologis |
-| Proses degeneratif | Sangat rendah | Umumnya tidak menular dan bersifat individual, tetapi dapat menjadi masalah epidemiologis dalam populasi hewan lanjut usia |
-| Gangguan metabolisme | Rendah s.d. sedang | Tidak menular, tetapi dapat menjadi masalah epidemiologis jika terjadi secara meluas akibat pola makan, manajemen, atau lingkungan yang seragam |
-| Keracunan | Rendah s.d. sedang | Dapat menimbulkan masalah epidemiologis jika banyak hewan terpapar sumber racun yang sama, terutama pada peternakan atau lingkungan akuatik |
-| Iatrogenesis | Sangat rendah | Biasanya terbatas pada individu yang menerima tindakan medis dan jarang terjadi pada banyak hewan |
-| Idiopati | Dapat diabaikan | Tidak diketahui penyebabnya dan umumnya tidak menular sehingga tidak berpotensi menimbulkan masalah epidemiologis |
-
-Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam epidemiologi veteriner karena sifatnya yang menular dan mampu menyebar cepat dalam populasi. Meskipun beberapa penyebab lain seperti gangguan metabolisme dan keracunan juga dapat menimbulkan masalah epidemiologis pada konteks tertentu, dampaknya biasanya terbatas pada situasi atau kelompok hewan yang spesifik. Oleh karena itu, pemahaman terhadap karakteristik setiap penyebab sangat penting untuk menentukan strategi pencegahan dan pengendalian yang tepat.
-
----
+### Materi
 
 #### **Perkembangan konsep tentang penyebab penyakit**
 
@@ -104,8 +44,7 @@ Penyakit disebabkan oleh banyak faktor yang saling berinteraksi. Konsep ini bany
 Kita akan berfokus pada dua konsep terakhir, yaitu teori kuman penyakit dan multifaktor.
 
 ---
-### **Model yang menggambarkan kejadian penyakit**
----
+
 #### **Teori kuman penyakit**
 
 Konsep dasar munculnya penyakit menurut teori kuman penyakit adalah:
@@ -139,9 +78,13 @@ Gagasan bahwa suatu penyakit disebabkan oleh interaksi antara berbagai faktor mu
 
 Hal yang membedakan konsep multifaktorial dengan teori kuman penyakit adalah pertimbangan faktor-faktor lain seperti lingkungan dalam menimbulkan penyakit.
 
-> Konsep munculnya penyakit menurut teori kuman penyakit:<br><center>🙂 inang + 🦠 agen = 🤒 penyakit</center>
+| Konsep munculnya penyakit menurut teori kuman penyakit |
+| :---: |
+| <center>🙂 inang + 🦠 agen = 🤒 penyakit</center> |
 
-> Konsep-awal munculnya penyakit menurut teori multifaktorial:<br><center>🙂 inang + 🦠 agen + 🌄 lingkungan = 🤒 penyakit</center>
+| Konsep-awal munculnya penyakit menurut teori multifaktorial |
+| :---: |
+| <center>🙂 inang + 🦠 agen + 🌄 lingkungan = 🤒 penyakit</center> |
 
 Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktorial, di antaranya segitiga epidemiologi, pai penyebab, jejaring penyebab, dan lingkaran determinan. Di sini, kita hanya membahas satu model, yaitu segitiga epidemiologi.
 
@@ -341,8 +284,6 @@ Setelah mengetahui jumlah penambahan kasus baru per hari, kita dapat membuat kur
 </figure></div>
 
 ---
-### **Penyebaran penyakit infeksius**
----
 
 #### **Tingkat penularan penyakit**
 
@@ -431,7 +372,7 @@ Sebagai contoh, untuk melindungi suatu populasi dari penyakit X, sebanyak 80% po
 
 ---
 
-## Referensi
+### Bacaan lanjutan
 
 Koch, R. (1884). "<a href="https://books.google.co.id/books?id=Y6lQAAAAYAAJ&pg=PA1&redir_esc=y" target="_blank" rel="noopener noreferrer">Die Aetiologie der Tuberkulose</a>" [The etiology of tuberculosis]. Mittheilungen aus dem Kaiserlichen Gesundheitsamte (Reports from the Imperial Office of Public Health). 2: 1–88.
 
