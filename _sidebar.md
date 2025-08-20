@@ -1,3 +1,2 @@
 - [🏠 Beranda](home.md)
 - [Pekan 1](pekan-1.md)
-- [Pekan 2](pekan-2.md)
