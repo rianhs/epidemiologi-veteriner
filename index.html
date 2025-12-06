@@ -6,78 +6,277 @@
     <title>Portal Epidemiologi Veteriner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: white; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a; 
+            color: white; 
+            /* Menghapus overflow-hidden agar bisa discroll di mobile */
+            overflow-x: hidden;
+        }
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .glass-card:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: #10b981; /* Emerald-500 */
+            border-radius: 2px;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col relative overflow-hidden">
+<body class="min-h-screen relative selection:bg-emerald-500/30">
     
-    <!-- Background Elements -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div class="absolute top-10 left-10 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div class="absolute top-10 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+    <!-- Background Elements (Fixed Position agar tidak mengganggu scroll) -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-10 left-10 w-64 h-64 md:w-96 md:h-96 bg-emerald-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-10 right-10 w-64 h-64 md:w-96 md:h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-64 h-64 md:w-96 md:h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
     </div>
 
-    <header class="pt-20 pb-10 px-4 text-center">
-        <div class="inline-block p-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4">
-            <i data-lucide="activity" class="w-8 h-8 text-emerald-400"></i>
+    <!-- Header -->
+    <header class="pt-16 pb-8 px-4 text-center">
+        <div class="inline-block p-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4 shadow-lg shadow-emerald-900/20">
+            <!-- ICON -->
+            <i data-lucide="bar-chart-3" class="w-10 h-10 text-emerald-400"></i>
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
             Epidemiologi Veteriner
         </h1>
-        <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-            Kumpulan modul interaktif, kalkulator, dan visualisasi data untuk pembelajaran epidemiologi modern.
+        <p class="text-slate-400 max-w-2xl mx-auto text-base md:text-lg">
+            Portal pembelajaran interaktif untuk Mata Kuliah Epidemiologi Veteriner di Prodi Kedokteran Hewan FK UNHAS.
         </p>
     </header>
 
-    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16 pb-24">
 
-            <!-- Card 1: Link ke File Analitis -->
-            <a href="analitis.html" class="glass-card rounded-2xl p-6 group cursor-pointer">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-3 bg-blue-500/20 rounded-lg text-blue-400 group-hover:text-white group-hover:bg-blue-500 transition-colors">
-                        <i data-lucide="microscope" class="w-6 h-6"></i>
+        <!-- Section CPMK-1 -->
+        <section>
+            <div class="mb-6 border-l-4 border-emerald-500 pl-4">
+                <h2 class="text-2xl font-bold text-white">CPMK-1</h2>
+                <p class="text-slate-400 text-sm">Mahasiswa mampu mengevaluasi status kesehatan populasi hewan dengan mengintegrasikan konsep epidemiologi deskriptif dan analitis.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- PERUBAHAN 2: Sub-CPMK-1 MENJADI AKTIF (Tag <a>, ada border hijau, cursor pointer) -->
+                <a href="#" class="glass-card rounded-2xl p-6 group cursor-pointer border-emerald-500/30 bg-emerald-900/10">
+                    <div class="flex justify-between items-start mb-4">
+                        <!-- Icon wrapper diberi background emerald agar menyala -->
+                        <div class="p-3 bg-emerald-500/20 rounded-lg text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 1</span>
                     </div>
-                    <span class="bg-blue-500/10 text-blue-300 text-xs font-bold px-2 py-1 rounded-full">INTERAKTIF</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2 text-slate-100 group-hover:text-emerald-400 transition-colors">Epidemiologi Analitis</h3>
-                <p class="text-slate-400 text-sm mb-4">Pelajari desain studi Kohort, Kasus-Kontrol, dan hitung Odds Ratio (OR) & Relative Risk (RR) secara visual.</p>
-                <div class="flex items-center text-sm text-emerald-400 font-semibold">
-                    Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </a>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-emerald-400 transition-colors">Pengantar Epidemiologi</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-1: Mahasiswa mampu menguraikan konsep dasar epidemiologi veteriner (sejarah, peran, ruang lingkup, pola kejadian penyakit, dan klasifikasi pendekatan epidemiologi) serta prinsip estimasi demografi populasi hewan.</p>
+                    <div class="flex items-center text-sm text-emerald-400 font-bold mt-auto pt-4 border-t border-emerald-500/30">
+                        Buka Modul Interaktif <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
 
-            <!-- Card 2: Placeholder (Segera Hadir) -->
-            <div class="glass-card rounded-2xl p-6 opacity-50 border-dashed border-slate-700">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-3 bg-slate-700 rounded-lg text-slate-500">
-                        <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                <!-- Sub-CPMK-2 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 2</span>
                     </div>
-                    <span class="bg-slate-800 text-slate-500 text-xs font-bold px-2 py-1 rounded-full">SEGERA HADIR</span>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-emerald-400 transition-colors">Dinamika Penyakit</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-2: Mahasiswa mampu menganalisis dinamika penyebaran penyakit dalam populasi menggunakan konsep segitiga epidemiologi, riwayat alamiah penyakit, kurva epidemi, dan parameter penularan penyakit.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-2 text-slate-500">Epidemiologi Deskriptif</h3>
-                <p class="text-slate-600 text-sm mb-4">Visualisasi distribusi penyakit berdasarkan Orang, Tempat, dan Waktu.</p>
+
+                <!-- Sub-CPMK-3 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 3</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-emerald-400 transition-colors">Epidemiologi Deskriptif</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-3: Mahasiswa mampu mengukur frekuensi kejadian penyakit menggunakan parameter morbiditas, mortalitas, serta pola distribusi spasial dan temporal.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Sub-CPMK-4 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i data-lucide="test-tube-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 4 & 5</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-emerald-400 transition-colors">Uji Diagnostik</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-4: Mahasiswa mampu mengevaluasi akurasi metode diagnosis penyakit berdasarkan parameter validitas (sensitivitas dan spesifisitas), nilai prediksi, reliabilitas, dan strategi pengujian ganda.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- PERUBAHAN 3: Sub-CPMK-5 KEMBALI NON-AKTIF (Tag <div>, tanpa href, style standar) -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i data-lucide="microscope" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 6 & 7</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-emerald-400 transition-colors">Epidemiologi Analitis</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-5: Mahasiswa mampu merancang kerangka kajian observasional yang meliputi pemilihan desain kajian, perhitungan asosiasi risiko, dan penyusunan instrumen pengumpulan data.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider with Exam Info -->
+        <div class="relative py-4">
+            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                <div class="w-full border-t border-slate-700"></div>
+            </div>
+            <div class="relative flex justify-center">
+                <span class="px-4 bg-[#0f172a] text-sm text-slate-500 font-mono">
+                    <i data-lucide="file-check" class="inline w-4 h-4 mb-1 mr-1"></i> PEKAN 8: UJIAN TENGAH SEMESTER (UTS)
+                </span>
+            </div>
+        </div>
+
+        <!-- Section CPMK-2 -->
+        <section>
+            <div class="mb-6 border-l-4 border-blue-500 pl-4">
+                <h2 class="text-2xl font-bold text-white">CPMK-2</h2>
+                <p class="text-slate-400 text-sm">Mahasiswa mampu merancang program pengendalian dan penanggulangan penyakit hewan yang berbasis bukti dan layak secara ekonomi pada populasi hewan produksi, hewan kesayangan, dan/atau satwa liar.</p>
             </div>
 
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Sub-CPMK-6 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i data-lucide="radar" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 9</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">Surveilans</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-6: Mahasiswa mampu merancang sistem surveilans veteriner dan mekanisme peringatan dini penyakit hewan.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Sub-CPMK-7 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i data-lucide="siren" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 10</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">Investigasi Wabah</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-7: Mahasiswa mampu merumuskan langkah-langkah investigasi wabah secara sistematis mulai dari penetapan definisi kasus hingga rekomendasi tindakan darurat.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Sub-CPMK-8 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 11</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">Analisis Risiko</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-8: Mahasiswa mampu merumuskan rekomendasi manajemen risiko terkait pemasukan dan penyebaran penyakit berdasarkan hasil analisis risiko impor atau lalu lintas hewan.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Sub-CPMK-9 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i data-lucide="coins" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 12 & 13</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">Ekonomi Veteriner</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-9: Mahasiswa mampu menganalisis dampak ekonomi penyakit dan kelayakan finansial program intervensi kesehatan hewan, baik pada level mikro (kawanan  hewan) maupun level makro (regional/nasional).</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Sub-CPMK-10 -->
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-slate-700/50 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i data-lucide="syringe" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Pekan 14 & 15</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-slate-100 group-hover:text-blue-400 transition-colors">Pengendalian Penyakit</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">Sub-CPMK-10: Mahasiswa mampu menyusun dokumen strategi pengendalian dan penanggulangan penyakit hewan yang komprehensif berdasarkan sintesis data epidemiologis dan pertimbangan ekonomi.</p>
+                    <div class="flex items-center text-sm text-slate-500 font-semibold mt-auto pt-4 border-t border-slate-700/50">
+                        Buka Modul <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Final Exam Info -->
+		        <!-- Divider with Exam Info -->
+        <div class="relative py-4">
+            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                <div class="w-full border-t border-slate-700"></div>
+            </div>
+            <div class="relative flex justify-center">
+                <span class="px-4 bg-[#0f172a] text-sm text-slate-500 font-mono">
+                    <i data-lucide="graduation-cap" class="inline w-4 h-4 mb-1 mr-1"></i> PEKAN 16: UJIAN AKHIR SEMESTER (UAS)
+                </span>
+            </div>
+
     </main>
 
-    <footer class="py-8 text-center text-slate-600 text-sm">
-        &copy; 2025 Rian HS - Epidemiologi Veteriner
+    <footer class="py-8 text-center text-slate-600 text-sm border-t border-slate-800/50 bg-[#0f172a]">
+        &copy; 2025. Situs web ini dibuat dengan ♡️ oleh RianHS.
     </footer>
 
     <script>
