@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub-CPMK-7 | Investigasi Wabah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a; 
+            color: white; 
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+        .nav-button {
+            transition: all 0.3s;
+        }
+        .nav-button:hover:not(:disabled) {
+            transform: translateX(5px);
+        }
+        .nav-button.prev:hover:not(:disabled) {
+            transform: translateX(-5px);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<!-- Theme Blue selection -->
+<body class="min-h-screen relative selection:bg-blue-500/30 flex flex-col">
+
+    <!-- Background Elements -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-800 bg-[#0f172a]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-semibold text-sm">Kembali ke Menu Utama</span>
+                </a>
+                <div class="flex items-center gap-2">
+                    <!-- Blue Badge -->
+                    <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-wider">
+                        PEKAN 10
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-grow w-full">
+        
+        <!-- Header Section -->
+        <div class="mb-10 md:flex md:items-end md:justify-between">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-2">
+                    Sub-CPMK-7
+                </h1>
+                <h2 class="text-2xl text-white font-semibold flex items-center gap-2">
+                    <!-- Icon Siren & Color Blue -->
+                    <i data-lucide="siren" class="w-6 h-6 text-blue-500"></i>
+                    Investigasi Wabah
+                </h2>
+            </div>
+            <div class="mt-4 md:mt-0 text-right text-slate-500 text-sm font-mono">
+                Modul 7 dari 10
+            </div>
+        </div>
+
+        <!-- Grid Layout: Konten Kiri (Info) & Kanan (Materi) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- KOLOM KIRI: Informasi & Administrasi -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- 1. Capaian Pembelajaran -->
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold text-slate-200 mb-3 border-b border-slate-700/50 pb-2">
+                        Capaian Pembelajaran
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed text-base">
+                        Mahasiswa mampu merumuskan langkah-langkah investigasi wabah secara sistematis mulai dari penetapan definisi kasus hingga rekomendasi tindakan darurat.
+                    </p>
+                </div>
+
+                <!-- 2. Indikator & Bobot (Grid 70:30) -->
+                <div class="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-6">
+                    <!-- Indikator -->
+                    <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group h-full">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Indikator Penilaian</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-slate-300 text-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0"></i>
+                                <span>Keruntutan dan kelengkapan perumusan langkah-langkah investigasi wabah sesuai dengan prosedur standar epidemiologi.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-300 text-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0"></i>
+                                <span>Ketepatan dan kejelasan penetapan definisi kasus berdasarkan kriteria klinis, waktu, tempat, dan karakteristik hewan.</span>
+                            </li>
+							<li class="flex items-start gap-3 text-slate-300 text-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0"></i>
+                                <span>Kesesuaian dan kelayakan rekomendasi tindakan pengendalian darurat untuk memutus rantai penularan sesegera mungkin.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Bobot -->
+                    <div class="glass-panel p-6 rounded-2xl flex flex-col justify-center items-center text-center relative overflow-hidden h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2 z-10">Bobot Penilaian</h3>
+                        <div class="text-6xl font-extrabold text-blue-400 z-10">10%</div>
+                        <p class="text-xs text-slate-500 mt-2 z-10">dari total nilai akhir</p>
+                    </div>
+                </div>
+
+                <!-- 3. Administrasi Pembelajaran -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Mekanisme Penilaian -->
+                    <div class="glass-panel p-6 rounded-2xl relative overflow-hidden h-full flex flex-col">
+                        <div class="flex flex-col justify-between flex-grow gap-6">
+                            <!-- Teknik -->
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wide mb-3">Teknik Penilaian Sumatif</h4>
+                                <ul class="text-sm text-slate-400 space-y-2">
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-500/50 rounded-full mt-1.5 shrink-0"></span>
+                                        <span><strong class="text-slate-300">Non-test:</strong> unjuk kerja dalam bentuk penugasan</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-500/50 rounded-full mt-1.5 shrink-0"></span>
+                                        <span><strong class="text-slate-300">Test:</strong> ujian akhir semester (UAS)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Kriteria -->
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wide mb-2">Kriteria Penilaian</h4>
+                                <a href="#" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors group">
+                                    <i data-lucide="link" class="w-3 h-3 text-blue-500"></i>
+                                    <span class="border-b border-slate-600 group-hover:border-white transition-colors">Lihat Rubrik Penilaian</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3 transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rencana Pembelajaran -->
+                    <div class="glass-panel p-6 rounded-2xl relative overflow-hidden h-full flex flex-col">
+                        <div class="flex flex-col justify-between flex-grow gap-6">
+                            <!-- Bentuk Pembelajaran -->
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wide mb-3">Bentuk Pembelajaran: Kuliah</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between items-center border-b border-slate-700/50 pb-1">
+                                        <span class="text-slate-400 text-xs flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-blue-500/50"></div> Kegiatan belajar terbimbing</span>
+                                        <span class="text-slate-400 text-xs">100 menit</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-slate-700/50 pb-1">
+                                        <span class="text-slate-400 text-xs flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-blue-500/50"></div> Kegiatan belajar mandiri</span>
+                                        <span class="text-slate-400 text-xs">120 menit</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-slate-400 text-xs flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-blue-500/50"></div> Kegiatan penugasan terstruktur</span>
+                                        <span class="text-slate-400 text-xs">120 menit</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Link RPP -->
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wide mb-2">Rencana Proses Pembelajaran</h4>
+                                <a href="#" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors group">
+                                    <i data-lucide="link" class="w-3 h-3 text-blue-500"></i>
+                                    <span class="border-b border-slate-600 group-hover:border-white transition-colors">Lihat Dokumen RPP</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3 transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- KOLOM KANAN: Materi & Aktivitas (Sticky Sidebar) -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24">
+                    <div class="glass-panel p-2 rounded-2xl">
+                        <div class="bg-slate-900/50 rounded-xl p-4">
+                            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <i data-lucide="layers" class="w-4 h-4"></i> Materi & Aktivitas
+                            </h3>
+                            
+                            <div class="space-y-3">
+                                
+                                <!-- 1. Modul Bacaan -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-indigo-500/50 hover:bg-indigo-500/10">
+                                    <div class="p-2 bg-indigo-500/20 text-indigo-400 rounded-lg group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-indigo-300">Modul Bacaan</div>
+                                        <div class="text-xs text-slate-500">Materi esensial</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                                <!-- 2. Slide Presentasi -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-rose-500/50 hover:bg-rose-500/10">
+                                    <div class="p-2 bg-rose-500/20 text-rose-400 rounded-lg group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="presentation" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-rose-300">Slide Presentasi</div>
+                                        <div class="text-xs text-slate-500">Bahan paparan</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                                <!-- 3. Simulasi Interaktif -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-cyan-500/50 hover:bg-cyan-500/10">
+                                    <div class="p-2 bg-cyan-500/20 text-cyan-400 rounded-lg group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="mouse-pointer-click" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-cyan-300">Simulasi Interaktif</div>
+                                        <div class="text-xs text-slate-500">Praktikum virtual</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                                <!-- 4. NotebookLM (AI) -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-purple-500/50 hover:bg-purple-500/10">
+                                    <div class="p-2 bg-purple-500/20 text-purple-400 rounded-lg group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="bot" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-purple-300">NotebookLM</div>
+                                        <div class="text-xs text-slate-500">Asisten AI</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                                <!-- 5. Contoh Soal (Blue/Teal) -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-teal-500/50 hover:bg-teal-500/10">
+                                    <div class="p-2 bg-teal-500/20 text-teal-400 rounded-lg group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="help-circle" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-teal-300">Contoh Soal</div>
+                                        <div class="text-xs text-slate-500">Latihan mandiri</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                                <!-- 6. Tugas (Pink) -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-pink-500/50 hover:bg-pink-500/10">
+                                    <div class="p-2 bg-pink-500/20 text-pink-400 rounded-lg group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-pink-300">Tugas Terstruktur</div>
+                                        <div class="text-xs text-slate-500">Instruksi pengerjaan tugas</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                                <!-- 7. Tautan Eksternal (Blue) -->
+                                <a href="#" class="glass-button w-full p-4 rounded-xl flex items-center gap-4 group hover:border-blue-500/50 hover:bg-blue-500/10">
+                                    <div class="p-2 bg-blue-500/20 text-blue-400 rounded-lg group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                                        <i data-lucide="link" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-200 group-hover:text-blue-300">Tautan Eksternal</div>
+                                        <div class="text-xs text-slate-500">Sumber tambahan</div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Closing Grid Layout -->
+
+        <!-- Bottom Navigation -->
+        <div class="mt-16 pt-8 border-t border-slate-800 flex justify-between items-center">
+            
+            <!-- Tombol Kiri (Aktif ke Sub-CPMK sebelumnya) -->
+            <a href="sub-cpmk-06.html" class="nav-button prev flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 hover:border-blue-500/50 hover:text-white transition-all group">
+                <!-- Blue Icon -->
+                <i data-lucide="arrow-left" class="w-5 h-5 text-blue-500 group-hover:-translate-x-1 transition-transform"></i>
+                <div class="text-left hidden sm:block">
+                    <div class="text-xs font-bold text-slate-400 uppercase">Sebelumnya</div>
+                    <!-- Blue Hover Text -->
+                    <div class="font-semibold group-hover:text-blue-400 transition-colors">Sub-CPMK-6: Surveilans</div>
+                </div>
+            </a>
+
+            <!-- Tombol Kanan (Aktif ke Sub-CPMK selanjutnya) -->
+            <a href="sub-cpmk-08.html" class="nav-button flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 hover:border-blue-500/50 hover:text-white transition-all group">
+                <div class="text-right hidden sm:block">
+                    <div class="text-xs font-bold text-slate-400 uppercase">Selanjutnya</div>
+                    <!-- Blue Hover Text -->
+                    <div class="font-semibold group-hover:text-blue-400 transition-colors">Sub-CPMK-8: Analisis Risiko</div>
+                </div>
+                <!-- Blue Icon -->
+                <i data-lucide="arrow-right" class="w-5 h-5 text-blue-500 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer class="py-8 text-center text-slate-600 text-sm border-t border-slate-800/50 bg-[#0f172a]">
+        &copy; 2025. Situs web ini dibuat dengan ♡️ oleh RianHS.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
