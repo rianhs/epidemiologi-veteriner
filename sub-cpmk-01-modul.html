@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MK Epidemiologi Veteriner | Pekan 1</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: '#4f46e5', // Indigo
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Tipografi Khusus untuk Readability */
+    .prose-content {
+      max-width: 70ch;
+      margin: 0 auto;
+      line-height: 1.75;
+      font-size: 1.1rem;
+    }
+
+    /* Kustomisasi Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    .light ::webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    .dark ::webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+    /* Highlight Daftar Isi */
+	.toc-active {
+      color: #4f46e5 !important;
+      font-weight: 600;
+      border-left: 2px solid #4f46e5; 
+      background-color: rgba(79, 70, 229, 0.1);
+      border-radius: 0px !important; 
+    }
+	
+	header, aside {
+      transition: background-color 0.3s ease;
+    }
+	
+	.chart-wrapper {
+      position: relative;
+      margin: 2rem auto;
+      width: 100%;
+      max-width: 600px; /* Ukuran maksimal grafik */
+    }
+
+    /* Transisi Sidebar */
+    #sidebar { 
+      transition: transform 0.3s ease, width 0.3s ease, opacity 0.3s ease, margin 0.3s ease; 
+    }
+	
+	/* Mengunci layout utama agar tidak bocor */
+    main {
+      min-width: 0; 
+    }
+	
+	:root {
+      --base-font-size: 1.1rem; /* Ukuran default */
+    }
+
+    .prose-content {
+      /* Ubah baris font-size yang lama dengan variabel ini */
+      font-size: var(--base-font-size);
+      max-width: 825px;
+      margin: 0 auto;
+      line-height: 1.75;
+      transition: font-size 0.2s ease, font-family 0.2s ease;
+    }
+    
+    /* Tabel Responsive */
+	.table-container {
+      display: block;
+      width: 100%;
+      max-width: 100%; /* Kunci utama agar tidak melebihi lebar layar */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .dark .table-container { 
+      border-color: rgba(255,255,255,0.05); /* Border sangat tipis untuk mode gelap */
+      background-color: rgba(255,255,255,0.02); /* Sedikit bayangan gelap agar ada dimensi */
+    }
+	
+	/* Kontainer untuk tabel agar posisi hint bisa diatur */
+    .table-wrapper {
+      position: relative;
+      margin-bottom: 2rem;
+	  margin-top: 0rem;
+    }
+
+    /* Gaya untuk teks petunjuk geser */
+    .scroll-hint {
+      display: none; /* Sembunyikan di PC */
+      font-size: 0.75rem;
+      color: #64748b; /* Warna abu-abu slate-500 */
+      background-color: rgba(100, 116, 139, 0.08); /* Latar belakang abu-abu sangat tipis */
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.5rem;
+      width: max-content;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Munculkan hint hanya pada layar ponsel */
+    @media (max-width: 768px) {
+      .scroll-hint {
+        display: inline-flex;
+      }
+    }
+	
+	/* Memberikan ruang agar judul tidak tertutup header saat di-scroll */
+	section, h2, h3, h4 {
+	scroll-margin-top: 5rem; /* Ini setara dengan scroll-mt-24 di Tailwind */
+	}
+	
+	article p {
+      margin-bottom: 1rem; /* Setara mb-4 */
+    }
+	
+	article h2, article h3, article h4 {
+	color: #0f172a;
+	}
+	
+	/* Menentukan gaya otomatis untuk konten di dalam <article> */
+    article h2 {
+      font-size: 1.5rem; /* text-2xl */
+      font-weight: 700;   /* font-bold */
+      margin-top: 2.25rem;
+      margin-bottom: 0.5rem;
+	  line-height: 1.5;
+    }
+
+    article h3 {
+      font-size: 1.25rem; /* text-xl */
+      font-weight: 600;   /* font-semibold */
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+	  line-height: 1.5;
+    }
+
+    article h4 {
+      font-size: 1.15rem; /* text-xl */
+      font-weight: 600;    /* font-semibold */
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+	  line-height: 1.5;
+    }
+
+    /* Penyesuaian warna untuk Mode Gelap */
+    .dark article h2, 
+    .dark article h3, 
+    .dark article h4 {
+      color: #ffffff;
+    }
+	
+	/* Ukuran tombol pada komponen kuis */
+    [data-quiz] button {
+      padding: 0.5rem 1rem !important; /* Setara px-4 py-2 */
+      font-size: 0.875rem !important;   /* Setara text-sm */
+      border-radius: 0.5rem !important; /* rounded-lg, lebih lurus */
+    }
+
+    /* Penyesuaian khusus untuk teks umpan balik (feedback) kuis */
+    [data-feedback] {
+      font-size: 0.875rem; /* text-sm */
+      margin-top: 1rem;
+    }
+	
+	/* Gaya untuk Gambar dan Figcaption */
+    figure {
+      margin: 2.5rem 0;
+	  display: flex;
+	  flex-direction: column;
+      align-items: center;
+    }
+
+    figure img {
+      border-radius: 0.25rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      max-width: 100%;
+      height: auto;
+	  display: block;
+    }
+
+    .dark figure img {
+      border-color: rgba(255,255,255,0.05);
+    }
+
+    figcaption {
+      font-size: 0.875rem;
+      color: #64748b; /* Slate-500 */
+      margin-top: 0.5rem;
+	  margin-bottom: 1rem;
+    }
+	
+	.callout {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem;
+      background-color: rgba(79, 70, 229, 0.06); /* Indigo sangat tipis */
+      border-radius: 0.75rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(79, 70, 229, 0.1); /* Border tipis di semua sisi agar simetris */
+    }
+
+    .callout i {
+      flex-shrink: 0;
+      color: #4f46e5; /* Warna ikon Indigo */
+      margin-top: 0.15rem;
+    }
+
+    .callout p {
+      margin-bottom: 0 !important;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .dark .callout {
+      background-color: rgba(79, 70, 229, 0.1);
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+	
+	/* Wadah untuk meratakan tombol ke kanan */
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin: 1rem 0 2rem 0;
+    }
+
+    /* Gaya dasar tombol aksi (seragam dengan tombol kuis) */
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 0.5rem;
+      background-color: #4f46e5; /* Indigo */
+      color: white !important;
+      text-decoration: none !important; /* Menghapus garis bawah tautan */
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background-color: #4338ca; /* Indigo-700 */
+      transform: translateY(-1px); /* Efek sedikit terangkat */
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+    }
+
+    /* Penyesuaian warna untuk mode gelap agar tetap konsisten */
+    .dark .btn-action:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+	
+	/* Definisi Font Serif yang nyaman di mata */
+    .font-serif-mode {
+      font-family: 'Lora', ui-serif, Georgia, serif;
+    }
+
+    /* Penyesuaian ukuran teks daftar isi saat mode serif */
+    .font-serif-mode #tocList {
+      font-size: 0.9rem;
+    }
+
+    /* Transisi font agar tidak mengagetkan saat berubah */
+    .prose-content {
+      transition: font-family 0.2s ease, font-size 0.2s ease;
+    }
+	
+	/* Mengecilkan seluruh teks di dalam kartu kuis */
+    [data-quiz] {
+      font-size: calc(var(--base-font-size) - 0.1rem);
+    }
+
+    /* Menyesuaikan ukuran judul pertanyaan di dalam kuis agar tidak terlalu besar */
+    [data-quiz] h4 {
+      font-size: 1.15rem !important; 
+      margin-top: 0 !important; /* Menghilangkan margin atas otomatis article h4 */
+    }
+	
+	article blockquote {
+      padding: 1.5rem 2rem; /* Atas-Bawah 1.5rem, Kiri-Kanan 2rem */
+      border-left-width: 4px;
+      border-color: #4f46e5; /* Warna brand Indigo */
+      background-color: rgba(79, 70, 229, 0.05);
+      font-style: italic;
+      margin: 2rem 0;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+	
+	/* Pengaturan Otomatis Unordered List (Daftar Poin) */
+    article ul {
+      list-style-type: disc; /* Setara list-disc */
+      margin-left: 1.5rem;   /* Setara ml-6 */
+      margin-bottom: 1.5rem; /* Setara mb-6 */
+    }
+
+    /* Pengaturan Otomatis Ordered List (Daftar Angka) */
+    article ol {
+      list-style-type: decimal; /* Setara list-decimal */
+      margin-left: 1.5rem;      /* Setara ml-6 */
+      margin-bottom: 1.5rem;    /* Setara mb-6 */
+    }
+	
+	/* Replikasi space-y-2 (jarak antar butir daftar) */
+    article ul li + li, 
+    article ol li + li {
+      margin-top: 0.5rem; /* Memberikan jeda 8px antar item */
+    }
+	
+	/* Kelas khusus untuk daftar tanpa spasi antar baris */
+    article ul.compact li + li, 
+    article ol.compact li + li {
+      margin-top: 0;
+    }
+
+  </style>
+</head>
+
+<body class="bg-[#f2f2f2] dark:bg-[#0a0a0a] text-slate-800 dark:text-slate-200 antialiased transition-colors duration-300">
+
+	<header class="sticky top-0 z-40 w-full bg-[#f2f2f2]/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+		<div class="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
+			<div class="flex items-center gap-4">
+				<button id="toggleSidebar" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition" title="Toggle Sidebar">
+					<i data-lucide="menu" class="w-5 h-5"></i>
+				</button>
+				<span class="font-bold tracking-tight text-lg hidden md:block">Pengantar epidemiologi veteriner</span>
+			</div>
+      
+			<div class="flex items-center gap-1 md:gap-2">
+				<div class="flex items-center border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden mr-1">
+					<button id="decreaseFont" class="px-2 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-xs font-bold" title="Kecilkan Huruf">A-</button>
+					<div class="w-[1px] h-4 bg-slate-200 dark:bg-slate-800"></div>
+					<button id="increaseFont" class="px-2 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-xs font-bold" title="Besarkan Huruf">A+</button>
+				</div>
+					<button id="fontToggle" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition" title="Ganti Jenis Huruf">
+						<i data-lucide="type" class="w-5 h-5"></i>
+					</button>
+					<button id="themeToggle" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition">
+						<i data-lucide="sun" id="sunIcon" class="w-5 h-5 hidden dark:block"></i>
+						<i data-lucide="moon" id="moonIcon" class="w-5 h-5 block dark:hidden"></i>
+					</button>
+			</div>
+		</div>
+	</header>
+
+	<div class="max-w-[1400px] mx-auto flex">
+    
+	<aside id="sidebar" class="fixed inset-y-0 left-0 z-30 w-72 bg-[#f2f2f2] dark:bg-[#0a0a0a] border-r border-slate-200 dark:border-slate-800 pt-20 overflow-y-auto transform -translate-x-full lg:translate-x-0 lg:sticky lg:top-0 lg:h-[calc(100vh-64px)] lg:pt-8">
+		<nav class="px-4 pb-10">
+			<h2 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-3">Daftar Isi</h2>
+				<div id="tocList" class="space-y-1 text-sm text-slate-600 dark:text-slate-400"></div>
+		</nav>
+    </aside>
+
+	<main class="flex-1 px-4 py-8 md:py-12 lg:px-12">
+		<article class="prose-content">
+        
+		<header class="mb-12">
+			<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
+				Pengantar epidemiologi veteriner
+			</h1>
+		</header>
+
+		<section id="dasar-dasar-epidemiologi" class="mb-16">
+			<h2>1. Dasar-dasar epidemiologi</h2>
+			
+			<p>
+            Semua makhluk hidup bisa terganggu kesehatannya dan menjadi sakit. Pada umumnya, penyakit tidak muncul secara acak, tetapi mengikuti pola tertentu. Dengan mengamati dan menganalisis pola-pola ini, kita dapat mencegah dan/atau mengendalikan penyakit.
+			</p>
+			<p>
+			Secara sederhana, epidemiologi adalah yang ilmu mempelajari bagaimana penyakit-penyakit muncul dan menyebar di dalam populasi dan bagaimana cara mengendalikannya. Dalam epidemiologi veteriner, populasi yang dipelajari adalah sekelompok hewan, bukan hanya hewan secara individual.
+			</p>
+			<p>
+			Bayangkan ada seorang dokter hewan yang bekerja di peternakan yang memiliki 100 ekor sapi perah. Dalam seminggu terakhir, 10 sapi mengalami diare dan penurunan produksi susu. Dokter hewan tersebut mungkin berpikir:
+			</p>
+				<ul>
+					<li>Apakah ini hanya kebetulan?</li>
+					<li>Apakah ada pola tertentu?</li>
+					<li>Apa kesamaan yang dimiliki oleh sapi-sapi yang sakit?</li>
+					<li>Mengapa 10 ekor sapi ini yang terdampak dan bukan 90 ekor sapi lainnya?</li>
+				</ul>
+			<p>
+			Dengan pendekatan epidemiologis, kita tidak berfokus pada seekor hewan, tetapi menyelidiki suatu populasi.
+			</p>
+			<p>
+			Sebelum melangkah lebih jauh, perlu dipahami bahwa kondisi kesehatan dan penyakit memiliki pola yang dapat dipelajari.
+			</p>
+
+
+				<h3>1.1. Asal kata</h3>
+				
+				<p>
+				Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: epi (di atas atau pada), demos (rakyat atau populasi), dan logos (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
+				</p>
+				<p>
+				Epidemiologi juga dapat dimaknai sebagai ilmu yang mempelajari epidemi. Kata ini berasal dari bahasa Yunani epidemios, yang berarti 'tersebar dalam populasi.'
+				</p>
+				<p>
+				Hippokrates, seorang tabib Yunani Kuno yang dikenal sebagai "Bapak Kedokteran," adalah orang pertama yang menggunakan kata epidemi dalam konteks kesehatan. Ia menggunakan istilah epidemios untuk merujuk pada sekumpulan sindrom fisik yang beredar dan menyebar dalam suatu populasi manusia pada waktu tertentu.
+				</p>
+				<figure>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg" style="width: 175px;" alt="Deskripsi gambar untuk aksesibilitas">
+					<figcaption>Gambar 1. Hippokrates, tokoh yang menggunakan kata epidemi dalam konteks kesehatan (sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Hippocrates.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>).</figcaption>
+				</figure>
+				<p>
+				Sejak zaman peradaban kuno, ada dua istilah yang menggambarkan situasi penyakit dalam suatu populasi: epidemi dan endemi.
+				</p>
+				<ul>
+					<li>Epidemi berasal dari epi- (di atas) dan demos (populasi). Artinya, kondisi saat suatu penyakit “mengunjungi” populasi. Istilah ini digunakan ketika suatu penyakit muncul dan menyebar dengan cepat dalam suatu populasi dan jumlahnya melampaui angka yang biasanya diprediksi dalam periode waktu tertentu.</li>
+					<li>Di sisi lain, endemi berasal dari en- (di dalam) dan demos (populasi). Artinya, kondisi saat suatu penyakit "mendiami" populasi. Istilah ini digunakan ketika suatu penyakit selalu ada dalam suatu populasi dengan tingkat kejadian yang relatif stabil dan dapat diprediksi. </li>
+				</ul>
+				<p>
+				Sebagai contoh, rabies bersifat endemik di beberapa wilayah tropis, sedangkan flu burung dapat menjadi epidemi ketika terjadi peningkatan kasus secara drastis di luar pola normalnya.
+				</p>
+		  
+				<h3>1.2. Berpikir epidemiologis</h3>
+				
+				<p>
+				Salah satu butir kompetensi dokter hewan Indonesia menurut Perhimpunan Dokter Hewan Indonesia (PDHI) adalah:
+				</p>
+				<blockquote>
+				"... memiliki kemampuan dalam melakukan diagnosis klinis, laboratoris, patologis, dan epidemiologis penyakit hewan."
+				</blockquote>
+				<p>
+				Artinya, suatu diagnosis dapat ditegakkan melalui empat pendekatan: klinis, laboratoris, patologis, dan epidemiologis.
+				</p>
+				<ul>
+					<li>Diagnosis klinis didasarkan pada hasil pemeriksaan fisik berupa tanda-tanda penyakit pada hewan.</li>
+					<li>Diagnosis laboratoris didasarkan pada hasil pemeriksaan dan pengujian laboratorium terhadap spesimen seperti darah, feses, dan urine.</li>
+					<li>Diagnosis patologis didasarkan pada perubahan jaringan atau organ, baik melalui pemeriksaan makroskopis (bedah bangkai) maupun mikroskopis (histopatologis).</li>
+					<li>Diagnosis epidemiologis didasarkan pada hasil analisis pola penyebaran penyakit dalam populasi, termasuk karakter hewan, tempat, waktu, dan faktor risiko yang berperan.</li>
+				</ul>
+				<p>
+				Dalam praktiknya, dokter hewan dapat menggunakan berbagai pendekatan untuk memecahkan masalah kesehatan hewan. Seorang klinisi biasanya menangani penyakit dari perspektif individu hewan. Sebagai contoh, ketika seekor sapi sakit, seorang klinisi akan melakukan pemeriksaan fisik, mendiagnosis penyakit berdasarkan tanda klinis yang ditunjukkan, dan memberikan pengobatan langsung kepada hewan tersebut. Tujuan utama seorang klinisi adalah menyembuhkan individu yang sakit dan pendekatannya sering kali bersifat kuratif, misalnya pemberian obat atau pembedahan.
+				</p>
+				<p>
+				Di sisi lain, seorang epidemiolog mencoba memahami faktor-faktor yang memengaruhi penyebaran penyakit dalam suatu kelompok hewan. Sebagai contoh, jika dalam suatu peternakan terjadi peningkatan kasus diare pada sapi, seorang epidemiolog tidak hanya mendiagnosis satu ekor sapi, tetapi juga mencari pola dalam populasi, seperti apakah semua sapi yang sakit berasal dari kandang yang sama, apakah mereka mengonsumsi pakan yang sama, atau apakah ada faktor lingkungan yang berperan. Tujuan utama seorang epidemiolog adalah mencegah dan mengendalikan penyakit dalam populasi sehingga pendekatannya berbasis pembuatan kebijakan atau aturan, yang sering kali bersifat preventif.
+				</p>
+				<p>
+				Berikut ini contoh perbandingan perspektif seorang klinisi dan epidemiolog.
+				</p>
+			<p class="text-sm text-slate-500 text-center">Tabel 1.Perbandingan perspektif seorang klinisi dan epidemiolog.</p>
+			<div class="table-wrapper">
+			<div class="table-container">
+				<table class="w-full min-w-[800px] text-left text-sm">
+					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+						<tr>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Perbandingan</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Klinisi</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Epidemiolog</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+						<tr>
+							<td class="py-4 px-6 font-medium">Unit yang diperhatikan</td>
+							<td class="py-4 px-6">Individu</td>
+							<td class="py-4 px-6">Populasi</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6 font-medium">Tujuan</td>
+							<td class="py-4 px-6">Menjaga kesehatan individu dan menyembuhkan individu sakit</td>
+							<td class="py-4 px-6">Mencegah dan mengendalikan penyakit pada populasi</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6 font-medium">Diagnosis</td>
+							<td class="py-4 px-6">Berdasarkan anamnesis, pemeriksaan fisik, dan pencitraan diagnostik</td>
+							<td class="py-4 px-6">Berdasarkan analisis statistika dan kajian epidemiologis</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6 font-medium">Penanganan</td>
+							<td class="py-4 px-6">Melakukan perawatan medis, menghantarkan obat, atau melakukan pembedahan</td>
+							<td class="py-4 px-6">Membuat aturan yang memodifikasi perlakuan terhadap populasi</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="scroll-hint">
+				<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+				<span>Geser tabel untuk melihat selengkapnya</span>
+			</div>
+			</div>
+				<p>
+				Dengan mengadopsi pendekatan epidemiologis, seorang dokter hewan dapat memperluas perannya dari sekadar menangani individu yang sakit menjadi menganalisis dan mencegah penyakit dalam skala yang lebih luas. Pendekatan ini sangat penting dalam menghadapi ancaman penyakit menular, zoonosis, dan tantangan kesehatan hewan yang semakin kompleks dalam skala global.
+				</p>
+				
+				<h3>1.3. Sejarah</h3>
+				
+					<h4>1.3.1. Sejarah epidemiologi</h4>
+					<p>
+					Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti konsep bahwa penyakit muncul akibat interaksi antara manusia dan lingkungan. Namun, julukan "Bapak epidemiologi modern" diberikan kepada John Snow, seorang dokter asal Inggris yang hidup pada abad ke-19.
+					</p>
+					<figure>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/John_Snow.jpg" style="width: 175px;" alt="Deskripsi gambar untuk aksesibilitas">
+						<figcaption>Gambar 2. John Snow, tokoh yang dianggap sebagai Bapak Epidemiologi Modern (sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:John_Snow.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>).</figcaption>
+					</figure>
+					<p>
+					Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat itu, penyebab penyakit ini belum diketahui secara pasti. Teori dominan yang berkembang adalah teori miasma yang menyatakan bahwa penyakit menular disebarkan melalui udara yang terkontaminasi oleh miasma, partikel kecil yang juga mengakibatkan bau busuk. Namun, John Snow memiliki dugaan yang berbeda. Ia mencurigai bahwa penyebaran kolera berkaitan dengan konsumsi air yang terkontaminasi.
+					</p>
+					<figure>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Punch-A_Court_for_King_Cholera.png/960px-Punch-A_Court_for_King_Cholera.png" style="width: 600px;" alt="Deskripsi gambar untuk aksesibilitas">
+						<figcaption>Gambar 3. Situasi wabah kolera di Inggris pada abad ke-19 (sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Punch-A_Court_for_King_Cholera.png" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>).</figcaption>
+					</figure>
+					<p>
+					Untuk membuktikan hipotesisnya, Snow memetakan lokasi kasus kolera di London dan menemukan bahwa sebagian besar kasus terpusat di sekitar pompa air di Broad Street. Dengan melakukan wawancara dan analisis lebih lanjut, ia menemukan bahwa orang yang mengonsumsi air dari pompa tersebut lebih rentan terkena kolera dibandingkan mereka yang mendapatkan air dari sumber lain.
+					</p>
+					<figure>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/960px-Snow-cholera-map-1.jpg" style="width: 600px;" alt="Deskripsi gambar untuk aksesibilitas">
+						<figcaption>Gambar 4. Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera (sumber gambar: <a href="https://commons.wikimedia.org/wiki/File:Snow-cholera-map-1.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>).</figcaption>
+					</figure>
+					<p>
+					Sebagai tindakan pengendalian, Snow meyakinkan pemerintah setempat untuk mencabut pegangan pompa air di Broad Street sehingga warga tak bisa menggunakannya. Setelah itu, wabah kolera berhenti menyebar. 
+					</p>
+					<p>
+					Penemuan ini menjadi bukti awal bahwa penyakit dapat ditularkan melalui sumber air yang terkontaminasi. Wabah kolera dikendalikan bahkan sebelum bakteri penyebabnya, yaitu <i>Vibrio cholerae</i>, ditemukan oleh Robert Koch pada tahun 1884, sekitar 30 tahun setelah studi Snow. Melalui data epidemiologis, John Snow dapat memperkirakan sumber penyakit dan penyebarannya.
+					</p>
+					
+					<h4>1.3.2. Sejarah epidemiologi veteriner</h4>
+					<p>
+					Dalam bidang kedokteran hewan, epidemiologi mengalami kemajuan pesat pada akhir abad ke-19. Penelitian tentang demam sapi Texas menjadi salah satu pemicunya. Penyakit ini menjadi masalah serius di Amerika Serikat karena menyebabkan angka kematian yang cukup tinggi.
+					</p>
+					<figure>
+						<img src="https://www.tshaonline.org/images/handbook/entries/CC/cattle_fever_map.jpg" style="width: 450px;" alt="Deskripsi gambar untuk aksesibilitas">
+						<figcaption>Gambar 5. Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam. Sumber gambar: <a href="https://www.tshaonline.org/handbook/entries/texas-fever" target="_blank" rel="noopener noreferrer">Texas State Historical Association</a>).</figcaption>
+					</figure>
+					<p>
+					Pada akhir dasawarsa 1880-an, Theobald Smith dan Frederick Kilbourne menemukan bahwa penyakit ini tidak menyebar langsung dari satu sapi ke sapi lainnya, tetapi memerlukan perantara. Mereka menyimpulkan bahwa caplak <i>Boophilus annulatus</i> berperan sebagai vektor yang mentransmisikan agen penyakit dari sapi yang terinfeksi ke sapi yang sehat.
+					</p>
+					<p>
+					Penemuan ini merupakan momen sejarah yang penting. Mereka membuktikan bahwa artropoda, yang dalam hal ini adalah caplak, dapat membawa dan mentransmisikan patogen dari satu hewan ke hewan lain. Hal ini membuka konsep tentang vektor penyakit. 
+					</p>
+					<p>
+					Sebelum penemuan ini, sebagian besar ilmuwan dan dokter belum mengetahui bahwa artropoda bisa menjadi penular penyakit. Oleh karena itu, studi tentang demam sapi Texas (saat ini dikenal sebagai babesiosis sapi) membuka pemahaman bahwa artropoda seperti nyamuk dan kutu dapat menularkan penyakit seperti malaria dan demam kuning. Selain itu, temuan ini juga menjadi dasar bagi penerapan program pengendalian penyakit berbasis vektor, seperti pemberantasan caplak untuk mengurangi penyebaran penyakit pada ternak.
+					</p>
+				
+				<h3>1.4. Pola kejadian penyakit</h3>
+				
+				<p>
+				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				</p>
+				
+				<h3>1.5. Definisi epidemiologi secara komprehensif</h3>
+				
+				<p>
+				Ada banyak definisi epidemiologi. Namun, salah satu definisi yang komprehensif dan banyak digunakan yaitu:
+				</p>
+				<blockquote>
+				Epidemiologi adalah studi ilmiah mengenai distribusi dan determinan dari kondisi atau peristiwa yang berhubungan dengan kesehatan pada populasi yang spesifik dan penerapan studi ini untuk mengendalikan masalah kesehatan.
+				</blockquote>
+				<p>
+				Ada beberapa kata dan frasa kunci dalam definisi tersebut.
+				</p>
+				<ol class="compact">
+					<li>Distribusi</li>
+					<li>Determinan</li>
+					<li>Kondisi atau peristiwa yang berhubungan dengan kesehatan</li>
+					<li>Populasi</li>
+					<li>Penerapan</li>
+				</ol>
+				
+				<p>
+				Mari kita bahas satu per satu.
+				<p>
+				<ul>
+					<li><strong>Kondisi atau peristiwa yang berhubungan dengan kesehatan</strong>: Epidemiologi tidak hanya mempelajari penyakit (misalnya penyakit menular dan tidak menular), tetapi juga mencakup berbagai kondisi, seperti cedera, malnutrisi, dan kebuntingan; dan berbagai peristiwa, seperti keracunan pakan, penurunan produksi telur atau susu, dan kematian mendadak.</li>
+					<li><strong>Distribusi</strong>: Ini adalah penjelasan mengenai kondisi atau peristiwa kesehatan berdasarkan karakteristik subjek (siapa yang terdampak), tempat (di mana ia terjadi), dan waktu (kapan ia terjadi). Sebagai contoh, apakah kasus lebih banyak terjadi pada musim hujan, di kota besar, atau pada jenis hewan tertentu seperti kuda pacu. Pemahaman mengenai distribusi membantu kita memahami pola penyebaran suatu kondisi atau peristiwa kesehatan.</li>
+					<li><strong>Determinan</strong>: Ini adalah faktor yang memengaruhi kesehatan hewan. Ia dapat berupa unsur genetik, pakan, sanitasi lingkungan, sistem pemeliharaan, atau keberadaan vektor serangga. Pemahaman mengenai determinan membantu kita untuk mencari tahu apa penyebab atau pemicu suatu kondisi atau peristiwa kesehatan.</li>
+					<li><strong>Populasi</strong>: Ini adalah kelompok hewan yang menjadi fokus kajian. Individu-individu hewan yang memiliki kesamaan karakteristik tertentu digolongkan sebagai populasi, misalnya gajah yang lahir pada tahun tertentu, kambing di sebuah desa, atau anjing jalanan di suatu kota.</li>
+					<li><strong>Penerapan</strong>: Ini berarti menggunakan hasil kajian epidemiologis untuk mencegah dan mengendalikan masalah kesehatan serta meningkatkan status kesehatan populasi. Contohnya membuat program vaksinasi massal, meningkatkan kebersihan kandang, atau membatasi lalu lintas hewan untuk mencegah penyebaran penyakit.</li>
+				</ul>
+				
+				<h3>1.6. Pertanyaan kunci dalam epidemiologi</h3>
+				
+				<p>
+				Ada banyak pertanyaan yang dapat diajukan dalam epidemiologi, terutama yang berkaitan dengan kondisi atau peristiwa kesehatan dan populasi spesifik yang terdampak. Mari kita eksplorasi pertanyaan-pertanyaan tersebut dengan kerangka 5W+1H.
+				</p>
+				<p>
+				Namun, sebelum itu, coba tentukan dulu dua hal ini: (1) kondisi atau peristiwa kesehatan, dan (2) populasi spesifik yang akan Anda jadikan bahan pertanyaan. Contoh:
+				</p>
+				<ol class="compact">
+					<li>Kecanduan merokok pada penduduk Indonesia</li>
+					<li>Rabun jauh pada mahasiswa Universitas Hasanuddin</li>
+					<li>Obesitas pada anjing di Kota Makassar</li>
+				</ol>
+				<p>
+				Tabel berikut ini berisi pertanyaan-pertanyaan kunci untuk mendapatkan jawaban atau informasi epidemiologis yang penting.
+				</p>
+			<p class="text-sm text-slate-500 text-center">Tabel 2.Pertanyaan terkait kondisi atau peristiwa kesehatan dalam populasi spesifik.</p>
+			<div class="table-wrapper">
+			<div class="table-container">
+				<table class="w-full min-w-[800px] text-left text-sm">
+					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+						<tr>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Kata tanya</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Contoh pertanyaan</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+						<tr>
+							<td class="py-4 px-6">What (apa)</td>
+							<td class="py-4 px-6">Apakah kondisi atau peristiwa tersebut ada di dalam populasi?</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">Who (siapa)</td>
+							<td class="py-4 px-6">Siapa saja dalam populasi yang (paling banyak) mengalami kondisi atau peristiwa kesehatan tersebut?</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">Where (di mana)</td>
+							<td class="py-4 px-6"> Di mana saja kondisi atau peristiwa kesehatan tersebut (paling banyak) ditemukan dalam populasi?</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">When (kapan)</td>
+							<td class="py-4 px-6">Kapan saja kondisi atau peristiwa kesehatan tersebut terjadi (atau mulai terjadi)?<br>Kapan waktu ketika kondis atau peristiwa kesehatan tersebut paling sering terjadi pada populasi?</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">Why (mengapa)</td>
+							<td class="py-4 px-6">Mengapa populasi mengalami kondisi atau peristiwa kesehatan tersebut?<br>Mengapa kondisi atau peristiwa kesehatan tersebut lebih sering ditemukan pada kelompok tertentu dalam populasi?</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">How (bagaimana)</td>
+							<td class="py-4 px-6">Bagaimana cara kondisi atau peristiwa kesehatan tersebut dapat menyebar di antara individu dalam populasi?<br>Bagaimana perkiraan kejadian kondisi atau peristiwa kesehatan tersebut pada masa depan?<br>Bagaimana cara mengendalikan penyebaran kondisi atau peristiwa kesehatan tersebut dalam populasi?<br>Bagaimana efektivitas suatu intervensi dalam menurunkan angka kejadian kondisi atau peristiwa kesehatan tersebut dalam populasi?</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="scroll-hint">
+				<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+				<span>Geser tabel untuk melihat selengkapnya</span>
+			</div>
+			</div>
+				<p>
+				Sekian banyak pertanyaan di atas dapat dibagi menjadi empat kelompok yang mencerminkan fungsi epidemiologi, yaitu deskripsi, eksplanasi, prediksi, dan intervensi.
+				</p>
+				<ol>
+					<li>Deskripsi merupakan fungsi epidemiologi yang memerinci kejadian suatu kondisi atau peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata what, who, when, dan where.</li>
+					<li>Eksplanasi merupakan fungsi epidemiologi yang menggali penyebab atau faktor yang berperan dalam terjadinya kondisi atau peristiwa kesehatan dalam populasi. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata why.</li>
+					<li>Prediksi merupakan fungsi epidemiologi yang memperkirakan kemungkinan kejadian suatu kondisi atau peristiwa kesehatan pada masa depan berdasarkan data dan tren yang ada.</li>
+					<li>Intervensi merupakan fungsi epidemiologi yang merancang, menerapkan, dan mengevaluasi tindakan atau kebijakan untuk mencegah atau mengendalikan kondisi/peristiwa kesehatan dalam populasi.</li>
+				</ol>
+				<p>
+				Catatan: Jawaban atas pertanyaan yang menggunakan kata how dapat ditempatkan dalam fungsi eksplanasi, prediksi, atau intervensi, bergantung pada konteks dan kontennya.
+				</p>
+				<p>
+				Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel berikut ini merangkum topik pertanyaan utama, jenis informasi yang dihasilkan, serta cabang epidemiologi yang relevan dengan masing-masing fungsi.
+				</p>
+			<p class="text-sm text-slate-500 text-center">Tabel 3.xxx</p>
+			<div class="table-wrapper">
+			<div class="table-container">
+				<table class="w-full min-w-[800px] text-left text-sm">
+					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+						<tr>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Topik</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Jawaban (informasi yang dihasilkan)</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Jenis kajian epidemiologi</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+						<tr>
+							<td class="py-4 px-6">Seperti apa distribusi dari suatu kondisi atau peristiwa kesehatan dalam populasi?</td>
+							<td class="py-4 px-6">Kehadiran, frekuensi, pola, dan tren kondisi atau peristiwa kesehatan berdasarkan subjek, tempat, dan waktu</td>
+							<td class="py-4 px-6">Deskriptif</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">Apa saja determinan atau faktor penyebab dari suatu kondisi atau peristiwa kesehatan dalam populasi?</td>
+							<td class="py-4 px-6">Penyebab, sumber, dan paparan yang memengaruhi risiko terjadinya kondisi atau peristiwa kesehatan</td>
+							<td class="py-4 px-6">Analitis (atau inferensial)</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">Seperti apa perkiraan kejadian dari suatu kondisi atau peristiwa kesehatan dalam populasi pada masa depan?</td>
+							<td class="py-4 px-6">Proyeksi, estimasi, atau prediksi tren kejadian berdasarkan data dan model yang tersedia</td>
+							<td class="py-4 px-6">Prediktif</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6">Apa saja intervensi atau kebijakan untuk mencegah atau mengendalikan suatu kondisi/peristiwa kesehatan dalam populasi?</td>
+							<td class="py-4 px-6">Intervensi atau kebijakan serta evaluasi efektivitas, efisiensi, dan kesetaraannya</td>
+							<td class="py-4 px-6">Intervensional</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="scroll-hint">
+				<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+				<span>Geser tabel untuk melihat selengkapnya</span>
+			</div>
+			</div>
+				<p>
+				Berdasarkan uraian ini, paling tidak terdapat empat jenis kajian epidemiologi, yaitu epidemiologi deskriptif, analitis, prediktif, dan intervensional. Namun, kali ini kita hanya akan mendalami epidemiologi deskriptif dan epidemiologi analitis.
+				</p>
+				
+				
+				<h3>1.7. Jenis kajian epidemiologi</h3>
+				
+				<p>
+				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				</p>
+				
+				<h3>1.8. Peran epidemiologi bagi populasi hewan</h3>
+				
+				<p>
+				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				</p>
+		  
+		</section>
+
+		<section id="estimasi-populasi-hewan" class="mb-16">
+			<h2>2. Estimasi populasi hewan</h2>
+			<p>
+			Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+			</p>
+
+				<h3>2.1. Konsep populasi hewan</h3>
+				<p>
+				Populasi hewan merupakan sekumpulan individu hewan dengan tingkat taksonomi yang sama (biasanya spesies) yang hidup di wilayah geografis tertentu pada periode waktu tertentu. Dalam epidemiologi veteriner, populasi hewan adalah unit analisis utama karena kajian penyakit dilakukan pada tingkat kelompok, bukan tingkat individu.
+				</p>
+				<p>
+				Saat berbicara tentang populasi, fokus utama kita adalah menghitung jumlah hewan. Namun, selain itu, kita juga perlu mendata karakteristik demografis lain, misalnya jenis kelamin, perkiraan umur, distribusi spasial, dan kepadatan.
+				</p>
+				<ol>
+					<li>Jenis kelamin. Komposisi hewan jantan dan betina berpengaruh terhadap kemampuan reproduksi dan laju pertumbuhan populasi.</li>
+					<li>Perkiraan umur. Perbedaan kelompok umur hewan (misalnya muda, dewasa, senior) memengaruhi perbedaan kerentanan terhadap penyakit. Selain itu, proporsi hewan muda yang tinggi dapat menjadi indikator keberhasilan reproduksi.</li>
+					<li>Distribusi spasial dan kepadatan. Pola sebaran hewan—apakah merata, mengelompok, atau acak—sangat memengaruhi peluang kontak antarindividu dan kecepatan penularan penyakit. Selain itu, populasi dengan kepadatan tinggi memiliki risiko penyebaran penyakit yang jauh lebih besar dibandingkan populasi yang kepadatannya rendah.</li>
+				</ol>
+				<p>
+				Kita juga perlu memahami bahwa populasi hewan bersifat dinamis. Artinya, jumlah dan strukturnya selalu berubah dari waktu ke waktu. Perubahan ini dipengaruhi oleh tiga faktor, yaitu kelahiran, kematian, dan perpindahan (migrasi).
+				</p>
+				<ol>
+					<li>Kelahiran. Populasi dapat melonjak drastis pada spesies yang memiliki tingkat reproduksi tinggi. Pada usaha budi daya (breeding), pertumbuhan populasi juga dapat direkayasa dengan mengelola reproduksi hewan, baik secara alami maupun melalui teknologi reproduksi seperti inseminasi buatan.</li>
+					<li>Kematian. Populasi dapat merosot tajam akibat wabah penyakit, kebijakan pemusnahan hewan untuk pengendalian penyakit menular, maupun penyembelihan massal, seperti pada hari Iduladha.</li>
+					<li>Perpindahan. Arus ekspor-impor dan lalu lintas ternak antarwilayah dapat mengubah struktur populasi dengan cepat, sedangkan migrasi alamiah merupakan faktor yang perlu dipertimbangkan saat memperkirakan populasi satwa liar.</li>
+				</ol>
+				<p>
+				Dalam epidemiologi, kita perlu membedakan populasi target dan populasi terjangkau. Populasi target adalah keseluruhan kelompok hewan yang ingin kita pelajari, misalnya seluruh populasi unggas komersial di sebuah provinsi yang berisiko terkena flu burung. Namun, pada praktiknya, kita sering kali hanya mampu mengakses sebagian dari populasi target tersebut, yang disebut populasi terjangkau. Keterbatasan akses geografis, waktu, dan sumber daya menyebabkan tidak semua individu dalam populasi target dapat diobservasi atau diikutsertakan dalam kajian. 
+				</p>
+				
+				<h3>2.2. Mengapa kita perlu mengetahui populasi hewan?</h3>
+				<p>
+				Data tentang jumlah dan struktur populasi hewan merupakan informasi awal. Kita selanjutnya memanfaatkan informasi tersebut untuk berbagai keperluan dalam aspek kesehatan, ekonomi, dan ekologi.
+				</p>
+				
+					<h4>2.2.1. Aspek kesehatan hewan dan manusia</h4>
+					<p>
+					Populasi merupakan angka yang penting dalam epidemiologi. Data mengenai jumlah hewan yang sakit tidak bermakna jika kita tidak tahu populasi hewan yang berisiko. Sebagai contoh, temuan 10 kasus penyakit akan memiliki makna yang berbeda tergantung pada jumlah total hewannya.
+					</p>
+					<ul>
+						<li>Jika populasi berjumlah 20 ekor, maka proporsi penyakit mencapai 50%.</li>
+						<li>Jika populasi berjumlah 1.000 ekor, maka proporsi penyakit hanya 1%.</li>
+					</ul>
+					<p>
+					Angka populasi ini berfungsi sebagai pembagi atau penyebut (denominator) yang memungkinkan kita mengukur tingkat keparahan atau risiko suatu penyakit.
+					</p>
+					<p>
+					Data populasi hewan yang menjadi inang atau reservoir patogen dan parasit zoonotik, misalnya anjing dan tikus, sangat berguna untuk memperkirakan risiko penularan penyakit ke manusia. Sebagai contoh, dengan mengetahui data populasi anjing dan pola pemeliharaannya (apakah banyak anjing jalanan atau anjing peliharaan), kita bisa memetakan potensi rabies, menghitung jumlah vaksin yang diperlukan untuk membentuk kekebalan kelompok (70% dari populasi), dan merancang alokasi sumber daya untuk menjalankan program vaksinasi. Tanpa mengetahui total populasi anjing, kita tidak akan pernah tahu apakah program vaksinasi yang kita lakukan sudah cukup untuk melindungi masyarakat atau belum. Selain aspek biologis, pemahaman mengenai populasi hewan juga membantu kita untuk mengungkap dimensi sosial dan budaya masyarakat dalam berinteraksi dengan hewan.
+					</p>
+					
+					<h4>2.2.2. Aspek ekonomi dan usaha</h4>
+					<p>
+					Pada hewan produksi seperti sapi, ayam, atau ikan budi daya, data populasi berperan penting dalam sistem ekonomi dan ketahanan pangan. Dengan mengetahui jumlah populasi, struktur umur, dan laju pertumbuhan hewan, kita dapat memperkirakan jumlah daging, susu, atau telur yang akan dihasilkan pada masa depan. Informasi ini lantas digunakan untuk menghitung nilai ekonomi, menganalisis keseimbangan antara stok dan kebutuhan masyarakat (apakah cukup untuk konsumsi domestik atau ekspor), dan merencanakan sumber daya untuk memelihara hewan, seperti pakan, obat-obatan, dan infrastruktur kandang. Di level nasional, data populasi mendukung penetapan kebijakan pangan nasional dan pengembangan industri seperti pengolahan pangan asal hewan. 
+					</p>
+					<p>
+					Baik bagi pemerintah maupun sektor swasta, data populasi hewan digunakan untuk memperkirakan jumlah dokter hewan dan paramedik yang dibutuhkan di suatu wilayah. Selain itu, kita juga bisa memperkirakan kebutuhan klinik hewan, pusat kesehatan hewan, laboratorium, alat-alat diagnostik, vaksin, obat-obatan, dan sarana pendukung lainnya berdasarkan jumlah dan kepadatan populasi hewan.
+					</p>
+					
+					<h4>2.2.3. Aspek ekologi</h4>
+					<p>
+					Pada satwa liar, data populasi sangat penting untuk menilai status konservasi mereka. Dengan menganalisis struktur dan dinamika demografi populasi suatu spesies, kita bisa memproyeksikan keberlangsungan hidup spesies tersebut pada masa depan, misalnya apakah populasinya menurun karena perburuan atau hilangnya habitat. Informasi ini dijadikan dasar untuk menyusun strategi konservasi, baik melalui perlindungan habitat maupun program reintroduksi. 
+					</p>
+				
+				<h3>2.3. Perbedaan antara penghitungan populasi manusia dan hewan</h3>
+				<p>
+				Cara menghitung populasi manusia dan hewan sangat berbeda. Ada banyak keterbatasan yang menimbulkan ketidakpastian pada penghitungan populasi hewan. Tiga aspek utama yang membedakan penghitungan populasi manusia dan hewan adalah administrasi, metode deteksi, dan dinamika populasi.
+				</p>
+				
+					<h4>2.3.1. Aspek administrasi</h4>
+					<p>
+					Manusia memiliki identitas formal yang bersifat individual dan wajib dimiliki, seperti akta kelahiran dan nomor induk kependudukan. Identitas ini dikelola oleh pemerintah secara sistematis dan berkelanjutan, sehingga perkiraan populasi manusia relatif akurat dan mudah diverifikasi. 
+					</p>
+					<p>
+					Pada hewan ternak, identifikasi dapat berupa ear tag atau sistem pencatatan pada unit peternakan. Pada hewan kesayangan, identifikasi dapat berupa microchip, buku vaksinasi, atau registrasi pada klinik atau organisasi tertentu. Namun, sistem identifikasi ini tidak bersifat universal, sering kali tidak terintegrasi, dan sangat bergantung pada inisiatif pemilik. Di sisi lain, satwa liar dan hewan jalanan biasanya tidak memiliki identitas formal sama sekali. Akibatnya, data populasi hewan tidak mencerminkan kondisi populasi yang sebenarnya secara menyeluruh.
+					</p>
+					
+					<h4>2.3.2. Metode deteksi</h4>
+					<p>
+					Metode deteksi dan pengumpulan data juga berbeda. Pengumpulan data populasi manusia dapat dilakukan melalui sensus rumah tangga, registrasi penduduk, atau survei yang relatif mudah dijalankan karena manusia dapat melaporkan dirinya sendiri atau memberikan informasi secara langsung.
+					</p>
+					<p>
+					Pada hewan, prosesnya jauh lebih sulit. Faktor manusia berperan penting dalam mengumpulkan data tentang hewan. Saat kita mendata hewan berpemilik, keberhasilannya sangat bergantung pada kesediaan si pemilik. Jika pemilik kooperatif, data bisa langsung kita peroleh. Namun, bisa saja pemilik enggan melaporkan jumlah hewan yang sebenarnya, misalnya karena alasan ekonomi, regulasi, pajak, atau kekhawatiran terhadap pembatasan dan tindakan pengendalian penyakit. Hal ini membuat data menjadi tidak akurat.
+					</p>
+					<p>
+					Di sisi lain, pendataan hewan tidak berpemilik—seperti hewan jalanan dan satwa liar—tidak secara langsung dipengaruhi oleh unsur manusia. Mereka dapat diamati langsung di lapangan. Namun, hewan-hewan ini sulit dideteksi karena mobilitasnya tinggi, hidup di habitat yang luas atau tersembunyi, dan sering menghindari manusia. Selain itu, bias muncul karena kita sulit membedakan individu yang sama dalam pengamatan berulang.
+					</p>
+					
+					<h4>2.3.3. Dinamika populasi</h4>
+					<p>
+					Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+					</p>
+				
+				<h3>2.4. Faktor yang perlu dipertimbangkan</h3>
+				<p>
+				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				</p>
+				
+				<h3>2.5. Jenis pendekatan dan metode</h3>
+				<p>
+				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				</p>
+				
+					<h4>2.5.1. Pendekatan estimasi populasi hewan</h4>
+					<p>
+					Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+					</p>
+					
+					<h4>2.5.2. Metode estimasi populasi hewan</h4>
+					<p>
+					Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+					</p>
+		</section>
+		
+		<section id="elements" class="mb-16">
+			<h2>3. Elemen</h2>			
+			
+			<p>
+            Pellentesque auctor metus at gravida vehicula. Phasellus dapibus justo eget turpis scelerisque, ac tincidunt neque fringilla.
+			</p>
+			
+				<ul>
+					<li>Suspendisse nec sapien non ligula molestie luctus.</li>
+					<li>Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh. Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh. Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh. Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh.</li>
+					<li>Donec eu mi nec quam euismod consequat.</li>
+				</ul>
+			
+			<div class="chart-wrapper">
+				<canvas class="js-chart" 
+					data-type="bar" 
+					data-label="Jumlah Kasus"
+					data-labels='["2020", "2021", "2022", "2023"]' 
+					data-values='[12, 19, 13, 15]'>
+				</canvas>
+				<p class="text-xs text-center text-slate-500 mt-2">Diagram 1. Tren kasus tahunan.</p>
+			</div>
+
+			<div class="chart-wrapper">
+				<canvas class="js-chart" 
+					data-type="line" 
+					data-label="Proyeksi"
+					data-labels='["Jan", "Feb", "Mar", "Apr"]' 
+					data-values='[5, 10, 8, 15]'>
+				</canvas>
+				<p class="text-xs text-center text-slate-500 mt-2">Diagram 2. Estimasi pertumbuhan bulanan.</p>
+			</div>
+			
+				<ol>
+					<li>Suspendisse nec sapien non ligula molestie luctus. Suspendisse nec sapien non ligula molestie luctus. Suspendisse nec sapien non ligula molestie luctus. Suspendisse nec sapien non ligula molestie luctus.</li>
+					<li>Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh.</li>
+					<li>Donec eu mi nec quam euismod consequat.</li>
+				</ol>
+		  
+				<div class="btn-container">
+					<a href="halaman-simulasi.html" target="_blank" rel="noopener noreferrer" class="btn-action shadow-md shadow-brand/20">
+						<span>Lakukan Simulasi</span>
+						<i data-lucide="chevron-right" class="w-4 h-4"></i>
+					</a>
+				</div>
+				
+					<p>
+					$$n = \frac{Z^2 \times p \times (1-p)}{d^2}$$
+					</p>
+
+			<p class="text-sm text-slate-500 text-center">Tabel 1.Mauris fringilla congue erat vel egestas. Curabitur at nunc non velit pulvinar viverra.</p>
+			<div class="table-wrapper">
+			<div class="table-container">
+				<table class="w-full min-w-[800px] text-left text-sm">
+					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+						<tr>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-1</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-2</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-3</th>
+							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-4</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+						<tr>
+							<td class="py-4 px-6 font-medium">Morbi mattis</td>
+							<td class="py-4 px-6">Sapien at pellentesque sagittis. Sapien at pellentesque sagittis.</td>
+							<td class="py-4 px-6">Sed a augue. Sed a augue.</td>
+							<td class="py-4 px-6">Aliquet ipsum. Aliquet ipsum.</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6 font-medium">Nulla venenatis</td>
+							<td class="py-4 px-6">Luctus quis sit amet ex. Luctus quis sit amet ex.</td>
+							<td class="py-4 px-6">Mauris sed velit ullamcorper. Mauris sed velit ullamcorper.</td>
+							<td class="py-4 px-6">Rhoncus lorem nec. Rhoncus lorem nec.</td>
+						</tr>
+						<tr>
+							<td class="py-4 px-6 font-medium">Maecenas sed diam</td>
+							<td class="py-4 px-6">Aenean aliquam. Aenean aliquam.</td>
+							<td class="py-4 px-6">Augue eget elit volutpat egestas. Augue eget elit volutpat egestas.</td>
+							<td class="py-4 px-6">Aenean sit amet tortor quis quam. Aenean sit amet tortor quis quam.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="scroll-hint">
+				<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+				<span>Geser tabel untuk melihat selengkapnya</span>
+			</div>
+			</div>
+			
+			<figure>
+				<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" style="width: 400px;" alt="Deskripsi gambar untuk aksesibilitas">
+				<figcaption>Gambar 1. Deskripsi atau sumber gambar yang mendukung materi di atas.</figcaption>
+			</figure>
+			
+			<div class="p-6 md:p-8 rounded-2xl bg-[#f2f2f2] dark:bg-[#0d0d0d] border border-slate-200 dark:border-white/5 shadow-sm" data-quiz>
+				<h4 class="text-lg font-semibold mb-2">Pertanyaan 1</h4>
+				<p class="text-slate-600 dark:text-slate-400">
+				Suspendisse in nunc sit amet ante porttitor tristique. Nam porta felis vel lacinia maximus.?
+				</p>
+			<div class="space-y-3">
+				<label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+					<input type="radio" name="q1" value="a" class="mt-1.5 accent-brand">
+					<span>Nullam ut turpis vel velit varius posuere eu a arcu.</span>
+				</label>
+				<label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+					<input type="radio" name="q1" value="b" data-correct class="mt-1.5 accent-brand">
+					<span>Proin eu diam vel magna elementum consequat posuere ac mauris.</span>
+				</label>
+				<label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+					<input type="radio" name="q1" value="c" class="mt-1.5 accent-brand">
+					<span>In tempus tellus vel ante consectetur, et efficitur turpis auctor. In tempus tellus vel ante consectetur, et efficitur turpis auctor.</span>
+				</label>
+			</div>
+			<div class="mt-8 flex items-center gap-4">
+				<button data-check class="bg-brand hover:bg-indigo-700 text-white transition font-medium">
+					Periksa Jawaban
+				</button>
+				<button data-reset class="text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 text-sm font-medium">
+					Reset
+				</button>
+            </div>			
+            <div data-feedback class="mt-4 font-medium hidden"></div>
+			</div>
+		  
+			<div class="callout">
+				<i data-lucide="info" class="w-5 h-5"></i>
+				<p>
+				Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. 
+				</p>
+			</div>
+			
+			
+		</section>
+
+        <footer class="mt-10 pt-4 border-t border-slate-200 dark:border-slate-800 text-slate-500 text-sm">
+          <div class="flex justify-between items-center mb-4">
+            <a href="#" class="flex items-center gap-2 hover:text-brand transition-colors group">
+              <i data-lucide="chevron-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+              <span>Modul Sebelumnya</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-2 hover:text-brand transition-colors group">
+              <span>Modul Berikutnya</span>
+              <i data-lucide="chevron-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+
+          <div class="text-center pt-4 border-t border-slate-100 dark:border-slate-900/50">
+            <p>Situs web ini dibuat dengan ♡ oleh RianHS.</p>
+          </div>
+        </footer>
+      </article>
+    </main>
+  </div>
+  
+  <!--
+  <button id="backToTop" class="fixed bottom-6 right-6 p-2 bg-brand text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-indigo-700 hover:-translate-y-1 z-50 focus:outline-none" title="Kembali ke Atas">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+	</button> -->
+
+  <script>
+    // 1. Inisialisasi State (Selalu Reset ke Default: Dark, Sans, 1.1rem)
+    const html = document.documentElement;
+    const body = document.body;
+
+    /// Paksa Dark Mode setiap refresh
+    html.classList.add('dark');
+    localStorage.theme = 'dark';
+
+    // Paksa Sans-serif setiap refresh
+    body.classList.remove('font-serif-mode');
+    localStorage.fontMode = 'sans';
+
+    // Paksa Font Size 1.1rem setiap refresh
+    let currentFontSize = 1.1;
+    const updateFontSize = (size) => {
+      html.style.setProperty('--base-font-size', `${size}rem`);
+      localStorage.setItem('fontSize', size);
+    };
+    updateFontSize(currentFontSize);
+
+    // 2. Fungsi Pembantu & Observer
+    const slugify = (text) => text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    lucide.createIcons();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const tocLink = document.querySelector(`#tocList a[data-target="${id}"]`);
+        if (entry.isIntersecting) {
+          document.querySelectorAll('#tocList a').forEach(el => el.classList.remove('toc-active'));
+          tocLink?.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+
+    // 3. Pembuatan TOC Otomatis & Event Listeners
+    const sections = document.querySelectorAll('article section');
+    const tocList = document.getElementById('tocList');
+
+    sections.forEach(section => {
+      const h2 = section.querySelector('h2');
+      const subHeadings = Array.from(section.querySelectorAll('h3, h4'))
+                               .filter(el => !el.closest('[data-quiz]'));
+      if (h2) {
+        if (!section.id) section.id = slugify(h2.textContent);
+        observer.observe(section);
+
+        const link = document.createElement('a');
+        link.href = `#${section.id}`;
+        link.textContent = h2.textContent;
+		link.className = 'block px-4 py-2 hover:text-brand transition-all duration-200 whitespace-normal leading-tight mb-1';
+        link.setAttribute('data-target', section.id);
+        tocList.appendChild(link);
+
+        subHeadings.forEach(sub => {
+          sub.id = slugify(sub.textContent);
+          observer.observe(sub);
+          const isH4 = sub.tagName === 'H4';
+          const subLink = document.createElement('a');
+          subLink.href = `#${sub.id}`;
+          subLink.textContent = sub.textContent;
+		  subLink.className = `block ${isH4 ? 'px-12 py-1 text-[0.7rem]' : 'px-8 py-1.5 text-xs'} text-slate-500 hover:text-brand transition-all whitespace-normal leading-tight mb-1`;
+          subLink.setAttribute('data-target', sub.id);
+          tocList.appendChild(subLink);
+        });
+      }
+    });
+
+    // 4. Toggle Handlers
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    document.getElementById('fontToggle').addEventListener('click', () => {
+      body.classList.toggle('font-serif-mode');
+      localStorage.fontMode = body.classList.contains('font-serif-mode') ? 'serif' : 'sans';
+    });
+
+    document.getElementById('increaseFont').addEventListener('click', () => {
+      if (currentFontSize < 1.4) { currentFontSize += 0.05; updateFontSize(currentFontSize); }
+    });
+
+    document.getElementById('decreaseFont').addEventListener('click', () => {
+      if (currentFontSize > 0.9) { currentFontSize -= 0.05; updateFontSize(currentFontSize); }
+    });
+
+    // Sidebar Toggle Logic (Mendukung Ponsel & PC Focus Mode)
+    const sidebar = document.getElementById('sidebar');
+    const toggleSidebar = document.getElementById('toggleSidebar');
+    
+    toggleSidebar.addEventListener('click', () => {
+      if (window.innerWidth >= 1024) {
+        // Logika untuk Tampilan PC (Desktop)
+        if (sidebar.style.display === 'none') {
+          sidebar.style.display = 'block';
+          // Beri sedikit jeda agar transisi muncul setelah display berubah
+          setTimeout(() => {
+            sidebar.classList.remove('lg:opacity-0', 'lg:-ml-72');
+          }, 10);
+        } else {
+          sidebar.classList.add('lg:opacity-0', 'lg:-ml-72');
+          // Sembunyikan sepenuhnya setelah transisi selesai (300ms)
+          setTimeout(() => {
+            sidebar.style.display = 'none';
+          }, 300);
+        }
+      } else {
+        // Logika untuk Tampilan Ponsel (Mobile) - Tetap seperti semula
+        sidebar.classList.toggle('-translate-x-full');
+      }
+    });
+
+    // 5. Quiz Logic
+    document.querySelectorAll('[data-quiz]').forEach(quiz => {
+      const checkBtn = quiz.querySelector('[data-check]');
+      const resetBtn = quiz.querySelector('[data-reset]');
+      const feedback = quiz.querySelector('[data-feedback]');
+
+      checkBtn.addEventListener('click', () => {
+        const selected = quiz.querySelector('input[type="radio"]:checked');
+        if (!selected) return alert('Pilih salah satu jawaban!');
+        feedback.classList.remove('hidden', 'text-emerald-500', 'text-rose-500');
+        if (selected.hasAttribute('data-correct')) {
+          feedback.textContent = '✓ Jawaban Anda benar!';
+          feedback.classList.add('text-emerald-500');
+        } else {
+          feedback.textContent = '✗ Belum tepat.';
+          feedback.classList.add('text-rose-500');
+        }
+      });
+
+      resetBtn.addEventListener('click', () => {
+        quiz.querySelectorAll('input').forEach(i => i.checked = false);
+        feedback.classList.add('hidden');
+      });
+    });
+	
+	// Inisialisasi Otomatis Semua Grafik
+    document.querySelectorAll('.js-chart').forEach(canvas => {
+      const type = canvas.dataset.type;
+      const label = canvas.dataset.label;
+      const labels = JSON.parse(canvas.dataset.labels);
+      const values = JSON.parse(canvas.dataset.values);
+
+      new Chart(canvas, {
+        type: type,
+        data: {
+          labels: labels,
+          datasets: [{
+            label: label,
+            data: values,
+            backgroundColor: '#4f46e5',
+            borderColor: '#4f46e5',
+            borderWidth: type === 'line' ? 2 : 0,
+            borderRadius: 6,
+            tension: 0.3 // Membuat garis sedikit melengkung (untuk tipe line)
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: html.classList.contains('dark') ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)'
+              }
+            },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    });
+	
+	// Back to Top Logic
+    const backToTopBtn = document.getElementById('backToTop');
+
+    // Tambahkan pengecekan ini
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove('opacity-0', 'invisible');
+          backToTopBtn.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopBtn.classList.add('opacity-0', 'invisible');
+          backToTopBtn.classList.remove('opacity-100', 'visible');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+	
+  </script>
+</body>
+</html>
