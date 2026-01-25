@@ -337,6 +337,26 @@
     article ol.compact li + li {
       margin-top: 0;
     }
+	
+	/* Mengatur tingkatan kedua pada Ordered List (1 -> a) */
+    article ol ol {
+      list-style-type: lower-alpha; /* Huruf kecil: a, b, c */
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mengatur tingkatan kedua pada Unordered List (* -> ○) */
+    article ul ul {
+      list-style-type: circle; /* Lingkaran kosong */
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Memastikan indentasi tambahan untuk sub-poin */
+    article li > ul, 
+    article li > ol {
+      margin-left: 1.5rem;
+    }
 
   </style>
 </head>
@@ -389,12 +409,11 @@
 
 		<section id="dasar-dasar-epidemiologi" class="mb-16">
 			<h2>1. Dasar-dasar epidemiologi</h2>
-			
 			<p>
-            Semua makhluk hidup bisa terganggu kesehatannya dan menjadi sakit. Pada umumnya, penyakit tidak muncul secara acak, tetapi mengikuti pola tertentu. Dengan mengamati dan menganalisis pola-pola ini, kita dapat mencegah dan/atau mengendalikan penyakit.
+			Secara sederhana, epidemiologi adalah ilmu yang mempelajari bagaimana penyakit-penyakit muncul dan menyebar di dalam populasi dan bagaimana cara mengendalikannya. Dengan mempelajari epidemiologi, kita menggunakan perspektif baru dalam melihat penyakit. Kita tidak lagi melihat penyakit pada satu per satu individu, tetapi pada keseluruhan populasi.
 			</p>
 			<p>
-			Secara sederhana, epidemiologi adalah yang ilmu mempelajari bagaimana penyakit-penyakit muncul dan menyebar di dalam populasi dan bagaimana cara mengendalikannya. Dalam epidemiologi veteriner, populasi yang dipelajari adalah sekelompok hewan, bukan hanya hewan secara individual.
+			Epidemiologi dipelajari dalam kedokteran hewan. Kita menyebutnya "epidemiologi veteriner". Namun, ada pula orang yang menyebut ilmu ini "epizootiologi", yang merupakan padanan epidemiologi untuk populasi hewan.
 			</p>
 			<p>
 			Bayangkan ada seorang dokter hewan yang bekerja di peternakan yang memiliki 100 ekor sapi perah. Dalam seminggu terakhir, 10 sapi mengalami diare dan penurunan produksi susu. Dokter hewan tersebut mungkin berpikir:
@@ -406,23 +425,23 @@
 					<li>Mengapa 10 ekor sapi ini yang terdampak dan bukan 90 ekor sapi lainnya?</li>
 				</ul>
 			<p>
-			Dengan pendekatan epidemiologis, kita tidak berfokus pada seekor hewan, tetapi menyelidiki suatu populasi.
+			Dengan pendekatan epidemiologis, kita tidak berfokus pada seekor hewan, tetapi menyelidiki keseluruhan populasi.
 			</p>
 			<p>
-			Sebelum melangkah lebih jauh, perlu dipahami bahwa kondisi kesehatan dan penyakit memiliki pola yang dapat dipelajari.
+            Epidemiologi berangkat dari konsep sederhana: Semua makhluk hidup bisa terganggu kesehatannya dan menjadi sakit. Pada umumnya, penyakit tidak muncul secara acak, tetapi mengikuti pola tertentu yang dapat dipelajari. Dengan mengamati dan menganalisis pola-pola ini, kita dapat mencegah dan mengendalikan penyakit, yang tidak hanya terjadi pada tingkat individu, tetapi juga pada tingkat populasi.
 			</p>
 
 
 				<h3>1.1. Asal kata</h3>
 				
 				<p>
-				Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: epi (di atas atau pada), demos (rakyat atau populasi), dan logos (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
+				Epidemiologi berasal dari bahasa Yunani, yang terdiri dari tiga akar kata utama: <em>epi</em> (di atas atau pada), <em>demos</em> (rakyat atau populasi), dan <em>logos</em> (ilmu atau studi). Secara harfiah, epidemiologi berarti "ilmu tentang sesuatu yang terjadi pada populasi." 
 				</p>
 				<p>
-				Epidemiologi juga dapat dimaknai sebagai ilmu yang mempelajari epidemi. Kata ini berasal dari bahasa Yunani epidemios, yang berarti 'tersebar dalam populasi.'
+				Epidemiologi juga dapat dimaknai sebagai "ilmu yang mempelajari epidemi". Kata ini berasal dari bahasa Yunani <em>epidemios</em>, yang berarti 'tersebar dalam populasi.'
 				</p>
 				<p>
-				Hippokrates, seorang tabib Yunani Kuno yang dikenal sebagai "Bapak Kedokteran," adalah orang pertama yang menggunakan kata epidemi dalam konteks kesehatan. Ia menggunakan istilah epidemios untuk merujuk pada sekumpulan sindrom fisik yang beredar dan menyebar dalam suatu populasi manusia pada waktu tertentu.
+				Hippokrates, seorang tabib Yunani Kuno yang dikenal sebagai "Bapak Kedokteran," adalah orang pertama yang menggunakan kata epidemi dalam konteks kesehatan. Ia menggunakan istilah <em>epidemios</em> untuk merujuk pada sekumpulan sindrom fisik yang beredar dan menyebar dalam suatu populasi manusia pada waktu tertentu.
 				</p>
 				<figure>
 					<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg" style="width: 175px;" alt="Deskripsi gambar untuk aksesibilitas">
@@ -432,8 +451,8 @@
 				Sejak zaman peradaban kuno, ada dua istilah yang menggambarkan situasi penyakit dalam suatu populasi: epidemi dan endemi.
 				</p>
 				<ul>
-					<li>Epidemi berasal dari epi- (di atas) dan demos (populasi). Artinya, kondisi saat suatu penyakit “mengunjungi” populasi. Istilah ini digunakan ketika suatu penyakit muncul dan menyebar dengan cepat dalam suatu populasi dan jumlahnya melampaui angka yang biasanya diprediksi dalam periode waktu tertentu.</li>
-					<li>Di sisi lain, endemi berasal dari en- (di dalam) dan demos (populasi). Artinya, kondisi saat suatu penyakit "mendiami" populasi. Istilah ini digunakan ketika suatu penyakit selalu ada dalam suatu populasi dengan tingkat kejadian yang relatif stabil dan dapat diprediksi. </li>
+					<li>Epidemi berasal dari <em>epi-</em> (di atas) dan <em>demos</em> (populasi). Artinya, kondisi saat suatu penyakit “mengunjungi” populasi. Istilah ini digunakan ketika suatu penyakit muncul dan menyebar dengan cepat dalam suatu populasi dan jumlahnya melampaui angka yang biasanya diprediksi dalam periode waktu tertentu.</li>
+					<li>Di sisi lain, endemi berasal dari <em>en-</em> (di dalam) dan <em>demos</em> (populasi). Artinya, kondisi saat suatu penyakit "mendiami" populasi. Istilah ini digunakan ketika suatu penyakit selalu ada dalam suatu populasi dengan tingkat kejadian yang relatif stabil dan dapat diprediksi.</li>
 				</ul>
 				<p>
 				Sebagai contoh, rabies bersifat endemik di beberapa wilayah tropis, sedangkan flu burung dapat menjadi epidemi ketika terjadi peningkatan kasus secara drastis di luar pola normalnya.
@@ -442,7 +461,7 @@
 				<h3>1.2. Berpikir epidemiologis</h3>
 				
 				<p>
-				Salah satu butir kompetensi dokter hewan Indonesia menurut Perhimpunan Dokter Hewan Indonesia (PDHI) adalah:
+				Salah satu butir kompetensi dokter hewan Indonesia menurut Perhimpunan Dokter Hewan Indonesia adalah:
 				</p>
 				<blockquote>
 				"... memiliki kemampuan dalam melakukan diagnosis klinis, laboratoris, patologis, dan epidemiologis penyakit hewan."
@@ -465,53 +484,148 @@
 				<p>
 				Berikut ini contoh perbandingan perspektif seorang klinisi dan epidemiolog.
 				</p>
-			<p class="text-sm text-slate-500 text-center">Tabel 1.Perbandingan perspektif seorang klinisi dan epidemiolog.</p>
-			<div class="table-wrapper">
-			<div class="table-container">
-				<table class="w-full min-w-[800px] text-left text-sm">
-					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
-						<tr>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Perbandingan</th>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Klinisi</th>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Epidemiolog</th>
-						</tr>
-					</thead>
-					<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-						<tr>
-							<td class="py-4 px-6 font-medium">Unit yang diperhatikan</td>
-							<td class="py-4 px-6">Individu</td>
-							<td class="py-4 px-6">Populasi</td>
-						</tr>
-						<tr>
-							<td class="py-4 px-6 font-medium">Tujuan</td>
-							<td class="py-4 px-6">Menjaga kesehatan individu dan menyembuhkan individu sakit</td>
-							<td class="py-4 px-6">Mencegah dan mengendalikan penyakit pada populasi</td>
-						</tr>
-						<tr>
-							<td class="py-4 px-6 font-medium">Diagnosis</td>
-							<td class="py-4 px-6">Berdasarkan anamnesis, pemeriksaan fisik, dan pencitraan diagnostik</td>
-							<td class="py-4 px-6">Berdasarkan analisis statistika dan kajian epidemiologis</td>
-						</tr>
-						<tr>
-							<td class="py-4 px-6 font-medium">Penanganan</td>
-							<td class="py-4 px-6">Melakukan perawatan medis, menghantarkan obat, atau melakukan pembedahan</td>
-							<td class="py-4 px-6">Membuat aturan yang memodifikasi perlakuan terhadap populasi</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="scroll-hint">
-				<i data-lucide="move-horizontal" class="w-3 h-3"></i>
-				<span>Geser tabel untuk melihat selengkapnya</span>
-			</div>
-			</div>
+				<p class="text-sm text-slate-500 text-center">Tabel 1.Perbandingan perspektif seorang klinisi dan epidemiolog.</p>
+				<div class="table-wrapper">
+				<div class="table-container">
+					<table class="w-full min-w-[800px] text-left text-sm">
+						<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+							<tr>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Perbandingan</th>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Klinisi</th>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Epidemiolog</th>
+							</tr>
+						</thead>
+						<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+							<tr>
+								<td class="py-4 px-6 font-medium">Unit yang diperhatikan</td>
+								<td class="py-4 px-6">Individu</td>
+								<td class="py-4 px-6">Populasi</td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Tujuan</td>
+								<td class="py-4 px-6">Menjaga kesehatan individu dan menyembuhkan individu sakit</td>
+								<td class="py-4 px-6">Mencegah dan mengendalikan penyakit pada populasi</td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Diagnosis</td>
+								<td class="py-4 px-6">Berdasarkan anamnesis, pemeriksaan fisik, dan pencitraan diagnostik</td>
+								<td class="py-4 px-6">Berdasarkan analisis statistika dan kajian epidemiologis</td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Penanganan</td>
+								<td class="py-4 px-6">Melakukan perawatan medis, menghantarkan obat, atau melakukan pembedahan</td>
+								<td class="py-4 px-6">Membuat aturan yang memodifikasi perlakuan terhadap populasi</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="scroll-hint">
+					<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+					<span>Geser tabel untuk melihat selengkapnya</span>
+				</div>
+				</div>
 				<p>
 				Dengan mengadopsi pendekatan epidemiologis, seorang dokter hewan dapat memperluas perannya dari sekadar menangani individu yang sakit menjadi menganalisis dan mencegah penyakit dalam skala yang lebih luas. Pendekatan ini sangat penting dalam menghadapi ancaman penyakit menular, zoonosis, dan tantangan kesehatan hewan yang semakin kompleks dalam skala global.
 				</p>
+
+				<h3>1.3. Pola kejadian penyakit</h3>
+				<p>
+				Ketika dihadapkan dengan seekor hewan, seorang klinisi akan mengamati tanda klinis yang ditunjukkan oleh hewan tersebut. Misalnya, ia menemukan bahwa hewan itu pincang, mengalami gangguan pada kulit dan rambut, dan terdapat leleran dari hidungnya.  
+				</p>
+				<p>
+				Seorang epidemiolog juga dapat mengamati "tanda klinis" dari suatu populasi. Ada pola-pola tertentu mengenai kejadian penyakit yang ditunjukkan oleh populasi. Secara garis besar, suatu populasi dapat dinyatakan berstatus "bebas dari penyakit" atau berstatus "tertular penyakit". Meskipun demikian, di Indonesia, pemerintah membuat status ketiga, yaitu "terduga". Maksudnya, di daerah tersebut belum terdapat laporan kasus penyakit, tetapi berbatasan langsung dengan daerah yang berstatus tertular penyakit.
+				</p>
+				<p>
+				Ketika ada dua populasi yang sama-sama berstatus "tertular", situasi penyakit di daerah tersebut bisa saja berbeda. Bisa saja pada populasi A situasi penyakitnya adalah "endemi", sedangkan pada populasi B, penyakitnya berada pada situasi "epidemi". Inilah yang dimaksud dengan perbedaan pola kejadian penyakit.
+				</p>
+				Selain epidemi dan endemi, ada beberapa istilah lain yang sering digunakan untuk menggambarkan situasi penyakit dalam populasi, seperti hiperendemi, wabah, pandemi, dan sporadis.
+				</p>
+				<ul>
+					<li>Hiperendemi adalah situasi ketika suatu penyakit terus-menerus ada dalam suatu populasi dengan tingkat kejadian yang tinggi dan stabil. Artinya, kasus penyakit muncul secara rutin seperti endemi, dengan jumlah yang tinggi. Contohnya adalah malaria yang secara konsisten terjadi dalam angka tinggi di beberapa daerah tropis sepanjang tahun.</li>
+					<li>Wabah mengacu pada peningkatan kasus suatu penyakit di suatu wilayah tertentu dalam waktu yang relatif singkat, dan sering kali dalam skala yang lebih kecil dibandingkan dengan epidemi. Contoh wabah adalah peningkatan mendadak kasus leptospirosis setelah banjir di suatu daerah. </li>
+					<li>Pandemi adalah epidemi yang terjadi dalam skala global atau lintas benua, seperti pandemi Covid-19 yang menyebar ke hampir seluruh negara di dunia.</li>
+					<li>Sporadis merujuk pada kasus penyakit yang muncul secara acak atau tidak teratur tanpa pola yang jelas, seperti kasus antraks pada hewan yang kadang-kadang muncul di daerah tertentu tanpa kejadian yang meluas.</li>
+				</ul>
+				<p>
+				Banyak orang menganggap bahwa wabah adalah sinonim epidemi. Namun, keduanya memiliki perbedaan dalam cakupan luasnya. Wabah biasanya mengacu pada kejadian yang lebih terbatas dalam skala wilayah tertentu, seperti di satu desa, kota, atau komunitas tertentu. Sementara itu, epidemi menggambarkan penyebaran penyakit dalam wilayah yang lebih luas dan sering kali berdampak pada sejumlah besar individu dalam suatu populasi. Contoh perbedaan ini dapat dilihat pada kasus flu babi yang dimulai sebagai wabah di daerah tertentu sebelum berkembang menjadi epidemi dan akhirnya menjadi pandemi. 
+				</p>
+				<p class="text-sm text-slate-500 text-center">Tabel x.Contoh endemi, wabah, epidemi, dan pandemi pada populasi manusia dan hewan.</p>
+				<div class="table-wrapper">
+				<div class="table-container">
+					<table class="w-full min-w-[800px] text-left text-sm">
+						<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+							<tr>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Situasi penyakit</th>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Contoh pada populasi manusia</th>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Contoh pada populasi hewan</th>
+							</tr>
+						</thead>
+						<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+							<tr>
+								<td class="py-4 px-6 font-medium">Endemi</td>
+								<td class="py-4 px-6">Malaria di beberapa bagian Afrika</td>
+								<td class="py-4 px-6">Penyakit mulut dan kuku di beberapa bagian Afrika</td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Wabah</td>
+								<td class="py-4 px-6">Wabah kolera di kamp pengungsian</td>
+								<td class="py-4 px-6">Wabah flu burung di peternakan ayam</td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Epidemi</td>
+								<td class="py-4 px-6">Virus ebola di Afrika Barat (2014–2016)</td>
+								<td class="py-4 px-6">Penyakit sapi gila di Inggris Raya (1990-an)</td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Pandemi</td>
+								<td class="py-4 px-6">COVID-19</td>
+								<td class="py-4 px-6">Rinderpest sebelum dieradikasi</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="scroll-hint">
+					<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+					<span>Geser tabel untuk melihat selengkapnya</span>
+				</div>
+				</div>
+				</p>
+				Terkadang, kita sering membaca atau mendengar istilah "kejadian luar biasa" (KLB). Ini adalah istilah yang hanya ada di Indonesia dan hanya digunakan untuk kejadian penyakit pada manusia, bukan pada hewan. Pada populasi manusia, predikat KLB diberikan terlebih dahulu sebelum wabah.
+				</p>
+				<p class="text-sm text-slate-500 text-center">Tabel x. Perbedaan istilah KLB dan wabah.</p>
+				<div class="table-wrapper">
+				<div class="table-container">
+					<table class="w-full min-w-[800px] text-left text-sm">
+						<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+							<tr>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Istilah</th>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Definisi dalam UU Kesehatan</th>
+								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Definisi dalam UU Peternakan dan Kesehatan Hewan</th>
+							</tr>
+						</thead>
+						<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+							<tr>
+								<td class="py-4 px-6 font-medium">Kejadian luar biasa</td>
+								<td class="py-4 px-6">meningkatnya kejadian, kesakitan, kematian, dan/atau kedisabilitasan akibat penyakit dan masalah kesehatan yang bermakna secara epidemiologis di suatu daerah pada kurun waktu tertentu</td>
+								<td class="py-4 px-6"><em>Tidak ada</em></td>
+							</tr>
+							<tr>
+								<td class="py-4 px-6 font-medium">Wabah</td>
+								<td class="py-4 px-6">meningkatnya kejadian luar biasa penyakit menular yang ditandai dengan jumlah kasus dan/atau kematian meningkat dan menyebar secara cepat dalam skala luas.</td>
+								<td class="py-4 px-6">kejadian penyakit luar biasa yang dapat berupa timbulnya suatu penyakit hewan menular baru di suatu wilayah atau kenaikan kasus penyakit hewan menular mendadak yang dikategorikan sebagai bencana nonalam.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="scroll-hint">
+					<i data-lucide="move-horizontal" class="w-3 h-3"></i>
+					<span>Geser tabel untuk melihat selengkapnya</span>
+				</div>
+				</div>
 				
-				<h3>1.3. Sejarah</h3>
+				<h3>1.4. Sejarah</h3>
 				
-					<h4>1.3.1. Sejarah epidemiologi</h4>
+					<h4>1.4.1. Sejarah epidemiologi</h4>
 					<p>
 					Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti konsep bahwa penyakit muncul akibat interaksi antara manusia dan lingkungan. Namun, julukan "Bapak epidemiologi modern" diberikan kepada John Snow, seorang dokter asal Inggris yang hidup pada abad ke-19.
 					</p>
@@ -540,7 +654,7 @@
 					Penemuan ini menjadi bukti awal bahwa penyakit dapat ditularkan melalui sumber air yang terkontaminasi. Wabah kolera dikendalikan bahkan sebelum bakteri penyebabnya, yaitu <i>Vibrio cholerae</i>, ditemukan oleh Robert Koch pada tahun 1884, sekitar 30 tahun setelah studi Snow. Melalui data epidemiologis, John Snow dapat memperkirakan sumber penyakit dan penyebarannya.
 					</p>
 					
-					<h4>1.3.2. Sejarah epidemiologi veteriner</h4>
+					<h4>1.4.2. Sejarah epidemiologi veteriner</h4>
 					<p>
 					Dalam bidang kedokteran hewan, epidemiologi mengalami kemajuan pesat pada akhir abad ke-19. Penelitian tentang demam sapi Texas menjadi salah satu pemicunya. Penyakit ini menjadi masalah serius di Amerika Serikat karena menyebabkan angka kematian yang cukup tinggi.
 					</p>
@@ -558,11 +672,6 @@
 					Sebelum penemuan ini, sebagian besar ilmuwan dan dokter belum mengetahui bahwa artropoda bisa menjadi penular penyakit. Oleh karena itu, studi tentang demam sapi Texas (saat ini dikenal sebagai babesiosis sapi) membuka pemahaman bahwa artropoda seperti nyamuk dan kutu dapat menularkan penyakit seperti malaria dan demam kuning. Selain itu, temuan ini juga menjadi dasar bagi penerapan program pengendalian penyakit berbasis vektor, seperti pemberantasan caplak untuk mengurangi penyebaran penyakit pada ternak.
 					</p>
 				
-				<h3>1.4. Pola kejadian penyakit</h3>
-				
-				<p>
-				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
-				</p>
 				
 				<h3>1.5. Definisi epidemiologi secara komprehensif</h3>
 				
@@ -635,15 +744,23 @@
 						</tr>
 						<tr>
 							<td class="py-4 px-6">When (kapan)</td>
-							<td class="py-4 px-6">Kapan saja kondisi atau peristiwa kesehatan tersebut terjadi (atau mulai terjadi)?<br>Kapan waktu ketika kondis atau peristiwa kesehatan tersebut paling sering terjadi pada populasi?</td>
+							<td class="py-4 px-6">
+								<div>Kapan saja kondisi atau peristiwa kesehatan tersebut terjadi (atau mulai terjadi)?</div>
+								<div class="mt-2">Kapan waktu ketika kondisi atau peristiwa kesehatan tersebut paling sering terjadi pada populasi?</div></td>
 						</tr>
 						<tr>
 							<td class="py-4 px-6">Why (mengapa)</td>
-							<td class="py-4 px-6">Mengapa populasi mengalami kondisi atau peristiwa kesehatan tersebut?<br>Mengapa kondisi atau peristiwa kesehatan tersebut lebih sering ditemukan pada kelompok tertentu dalam populasi?</td>
+							<td class="py-4 px-6">
+								<div>Mengapa populasi mengalami kondisi atau peristiwa kesehatan tersebut?</div>
+								<div class="mt-2">Mengapa kondisi atau peristiwa kesehatan tersebut lebih sering ditemukan pada kelompok tertentu dalam populasi?</div></td>
 						</tr>
 						<tr>
 							<td class="py-4 px-6">How (bagaimana)</td>
-							<td class="py-4 px-6">Bagaimana cara kondisi atau peristiwa kesehatan tersebut dapat menyebar di antara individu dalam populasi?<br>Bagaimana perkiraan kejadian kondisi atau peristiwa kesehatan tersebut pada masa depan?<br>Bagaimana cara mengendalikan penyebaran kondisi atau peristiwa kesehatan tersebut dalam populasi?<br>Bagaimana efektivitas suatu intervensi dalam menurunkan angka kejadian kondisi atau peristiwa kesehatan tersebut dalam populasi?</td>
+							<td class="py-4 px-6">
+								<div>Bagaimana cara kondisi atau peristiwa kesehatan tersebut dapat menyebar di antara individu dalam populasi?</div>
+								<div class="mt-2">Bagaimana perkiraan kejadian kondisi atau peristiwa kesehatan tersebut pada masa depan?</div>
+								<div class="mt-2">Bagaimana cara mengendalikan penyebaran kondisi atau peristiwa kesehatan tersebut dalam populasi?</div>
+								<div class="mt-2">Bagaimana efektivitas suatu intervensi dalam menurunkan angka kejadian kondisi atau peristiwa kesehatan tersebut dalam populasi?</div></td>
 						</tr>
 					</tbody>
 				</table>
@@ -660,13 +777,13 @@
 					<li>Deskripsi merupakan fungsi epidemiologi yang memerinci kejadian suatu kondisi atau peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata what, who, when, dan where.</li>
 					<li>Eksplanasi merupakan fungsi epidemiologi yang menggali penyebab atau faktor yang berperan dalam terjadinya kondisi atau peristiwa kesehatan dalam populasi. Hal-hal ini dijawab oleh pertanyaan yang menggunakan kata why.</li>
 					<li>Prediksi merupakan fungsi epidemiologi yang memperkirakan kemungkinan kejadian suatu kondisi atau peristiwa kesehatan pada masa depan berdasarkan data dan tren yang ada.</li>
-					<li>Intervensi merupakan fungsi epidemiologi yang merancang, menerapkan, dan mengevaluasi tindakan atau kebijakan untuk mencegah atau mengendalikan kondisi/peristiwa kesehatan dalam populasi.</li>
+					<li>Intervensi merupakan fungsi epidemiologi yang merancang, menerapkan, dan mengevaluasi tindakan atau kebijakan untuk mencegah atau mengendalikan kondisi atau peristiwa kesehatan dalam populasi.</li>
 				</ol>
 				<p>
 				Catatan: Jawaban atas pertanyaan yang menggunakan kata how dapat ditempatkan dalam fungsi eksplanasi, prediksi, atau intervensi, bergantung pada konteks dan kontennya.
 				</p>
 				<p>
-				Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel berikut ini merangkum topik pertanyaan utama, jenis informasi yang dihasilkan, serta cabang epidemiologi yang relevan dengan masing-masing fungsi.
+				Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel 3 merangkum topik pertanyaan utama, jenis informasi yang dihasilkan, serta cabang epidemiologi yang relevan dengan masing-masing fungsi.
 				</p>
 			<p class="text-sm text-slate-500 text-center">Tabel 3.xxx</p>
 			<div class="table-wrapper">
@@ -696,9 +813,9 @@
 							<td class="py-4 px-6">Prediktif</td>
 						</tr>
 						<tr>
-							<td class="py-4 px-6">Apa saja intervensi atau kebijakan untuk mencegah atau mengendalikan suatu kondisi/peristiwa kesehatan dalam populasi?</td>
+							<td class="py-4 px-6">Apa saja intervensi atau kebijakan untuk mencegah atau mengendalikan suatu kondisi atau peristiwa kesehatan dalam populasi?</td>
 							<td class="py-4 px-6">Intervensi atau kebijakan serta evaluasi efektivitas, efisiensi, dan kesetaraannya</td>
-							<td class="py-4 px-6">Intervensional</td>
+							<td class="py-4 px-6">Intervensional (atau eksperimental)</td>
 						</tr>
 					</tbody>
 				</table>
@@ -714,13 +831,40 @@
 				
 				
 				<h3>1.7. Jenis kajian epidemiologi</h3>
-				
 				<p>
-				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				Di bagian sebelumnya, kita telah membahas definisi epidemiologi yang komprehensif, yaitu "Studi ilmiah mengenai distribusi dan determinan dari kondisi atau peristiwa yang berhubungan dengan kesehatan pada populasi yang spesifik dan penerapan studi ini untuk mengendalikan masalah kesehatan."
 				</p>
+				<ol>
+					<li>Epidemiologi deskriptif adalah cabang epidemiologi yang memerinci kejadian suatu kondisi atau peristiwa kesehatan dalam populasi berdasarkan karakteristik individu, tempat, dan waktu. Dalam epidemiologi deskriptif, kita berfokus pada kasus positif. Ia menguraikan unsur "distribusi" dalam definisi epidemiologi di atas.</li>
+					<li>Epidemiologi analitis adalah cabang epidemiologi yang menggali penyebab dan/atau faktor yang berperan dalam terjadinya kondisi atau peristiwa kesehatan dalam populasi. Dalam epidemiologi analitis, kita menguji hipotesis dengan cara membandingkan kasus positif dan kasus negatif. Ia menguraikan unsur "determinan" dalam definisi epidemiologi di atas.</li>
+				</ol>
+				<p>
+				Untuk memperjelas perbedaan antara epidemiologi deskriptif dan analitis, berikut contoh narasi singkat pada beberapa topik penelitian.
+				</p>
+
+				<ol>
+					<li>Kecanduan merokok pada penduduk Indonesia
+						<ol>
+							<li>Epidemiologi deskriptif: Seorang peneliti akan menggambarkan seberapa banyak kasus kecanduan merokok, siapa yang paling banyak kecanduan (misalnya berdasarkan umur, jenis kelamin, pekerjaan), di wilayah mana kasus paling banyak terjadi, dan pada periode waktu apa kecenderungan kasus meningkat.</li>
+							<li>Epidemiologi analitis: Seorang peneliti akan menguji apakah faktor tertentu, seperti tingkat pendidikan, paparan iklan rokok, atau pengaruh teman sebaya, berkaitan secara signifikan dengan kecanduan merokok, dengan cara membandingkan kelompok yang kecanduan dan yang tidak kecanduan.</li>
+						</ol>
+					</li>
+					<li>Rabun jauh pada mahasiswa Universitas Hasanuddin
+						<ol>
+							<li>Epidemiologi deskriptif: Seorang peneliti akan menghitung proporsi mahasiswa yang mengalami rabun jauh, memerinci berdasarkan fakultas, usia, jenis kelamin, serta melihat apakah kasus lebih banyak terjadi pada mahasiswa tahun awal atau akhir.</li>
+							<li>Epidemiologi analitis: Seorang peneliti akan mengevaluasi apakah lama waktu penggunaan gawai atau kebiasaan membaca dalam pencahayaan buruk berkaitan dengan kejadian rabun jauh, dengan membandingkan mahasiswa yang rabun jauh dan yang tidak.</li>
+						</ol>
+					</li>
+					<li>Obesitas pada anjing di Kota Makassar
+						<ol>
+							<li>Epidemiologi deskriptif: Seorang peneliti akan melaporkan berapa banyak anjing yang mengalami obesitas, di kelurahan mana saja kasus paling banyak ditemukan, jenis ras anjing apa yang paling sering mengalami obesitas, dan tren kasus obesitas dalam beberapa tahun terakhir.</li>
+							<li>Epidemiologi analitis: Seorang peneliti akan mengkaji apakah pola makan, kurangnya aktivitas fisik, atau kebiasaan pemberian camilan oleh pemilik berhubungan dengan kejadian obesitas, dengan membandingkan anjing obesitas dan anjing yang tidak obesitas.</li>
+						</ol>
+					</li>
+				</ol>
+
 				
 				<h3>1.8. Peran epidemiologi bagi populasi hewan</h3>
-				
 				<p>
 				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
 				</p>
