@@ -37,15 +37,54 @@
       font-size: 1.1rem;
     }
 
-	/* Kustomisasi Scrollbar */
-	::-webkit-scrollbar { width: 6px; height: 6px; }
-	::-webkit-scrollbar-track { background: transparent; }
+	/* ===== Scrollbar halaman utama ===== */
+	body::-webkit-scrollbar {
+		width: 10px;
+	}
 
-	/* Default (mode terang) */
-	::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+	body::-webkit-scrollbar-track {
+		background: rgba(148, 163, 184, 0.12);
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: #94a3b8;
+		border-radius: 9999px;
+		border: 2px solid transparent;
+		background-clip: padding-box;
+	}
+
+	.dark body::-webkit-scrollbar-track {
+		background: rgba(100, 116, 139, 0.18);
+	}
+
+	.dark body::-webkit-scrollbar-thumb {
+		background: #64748b;
+	}
+
+	/* ===== Scrollbar sidebar ===== */
+	#sidebar::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	#sidebar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	#sidebar::-webkit-scrollbar-thumb {
+		background: #94a3b8;
+		border-radius: 9999px;
+	}
+
+	.dark #sidebar::-webkit-scrollbar-thumb {
+		background: #64748b;
+	}
 
 	/* Override untuk mode gelap */
 	.dark ::-webkit-scrollbar-thumb { background: #64748b; }
+	
+	body::-webkit-scrollbar-thumb:hover {
+		background: #64748b;
+	}
 
 
     /* Highlight Daftar Isi */
@@ -330,43 +369,63 @@
     }
 
     /* Pengaturan Otomatis Ordered List (Daftar Angka) */
-    article ol {
-      list-style-type: decimal; /* Setara list-decimal */
-      margin-left: 1.5rem;      /* Setara ml-6 */
-      margin-bottom: 1.5rem;    /* Setara mb-6 */
-    }
-	
-	/* Replikasi space-y-2 (jarak antar butir daftar) */
-    article ul li + li, 
-    article ol li + li {
-      margin-top: 0.5rem; /* Memberikan jeda 8px antar item */
-    }
-	
-	/* Kelas khusus untuk daftar tanpa spasi antar baris */
-    article ul.compact li + li, 
-    article ol.compact li + li {
-      margin-top: 0;
-    }
-	
-	/* Mengatur tingkatan kedua pada Ordered List (1 -> a) */
-    article ol ol {
-      list-style-type: lower-alpha; /* Huruf kecil: a, b, c */
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
+	/* Level 1 */
+	article ol {
+		list-style-type: decimal;
+		margin-left: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	/* Level 2 */
+	article ol ol {
+		list-style-type: lower-alpha;
+	}
+
+	/* Level 3 */
+	article ol ol ol {
+		list-style-type: decimal;
+	}
+
+	/* Level 4 */
+	article ol ol ol ol {
+		list-style-type: lower-alpha;
+	}
+
+	article ul > li + li,
+	article ol > li + li {
+		margin-top: 0.5rem;
+	}
+
+	article ul.compact > li + li, 
+	article ol.compact > li + li {
+		margin-top: 0;
+	}
 
     /* Mengatur tingkatan kedua pada Unordered List (* -> ○) */
     article ul ul {
       list-style-type: circle; /* Lingkaran kosong */
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
     }
 
-    /* Memastikan indentasi tambahan untuk sub-poin */
-    article li > ul, 
-    article li > ol {
-      margin-left: 1.5rem;
-    }
+	article li > ul,
+	article li > ol {
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		margin-left: 1.5rem;
+	}
+
+	article ul ul,
+	article ul ol,
+	article ol ul,
+	article ol ol {
+		margin-bottom: 0.5rem;
+	}
+	
+	/* Spacing teks dalam tabel agar setara dengan badan artikel */
+	.table-container table th,
+	.table-container table td {
+		line-height: 1.75;
+	}
+
 
   </style>
 </head>
@@ -498,7 +557,7 @@
 				<p class="text-sm text-slate-500 text-center">Tabel 1. Perbandingan perspektif seorang klinisi dan epidemiolog.</p>
 				<div class="table-wrapper">
 				<div class="table-container">
-					<table class="w-full min-w-[800px] text-left text-sm">
+					<table class="w-full min-w-[800px] text-left">
 						<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
 							<tr>
 								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Perbandingan</th>
@@ -569,7 +628,7 @@
 				<p class="text-sm text-slate-500 text-center">Tabel 2. Contoh endemi, wabah, epidemi, dan pandemi pada populasi manusia dan hewan.</p>
 				<div class="table-wrapper">
 				<div class="table-container">
-					<table class="w-full min-w-[800px] text-left text-sm">
+					<table class="w-full min-w-[800px] text-left">
 						<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
 							<tr>
 								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Situasi penyakit</th>
@@ -612,7 +671,7 @@
 				<p class="text-sm text-slate-500 text-center">Tabel 3. Perbedaan definisi KLB dan wabah menurut undang-undang.</p>
 				<div class="table-wrapper">
 				<div class="table-container">
-					<table class="w-full min-w-[800px] text-left text-sm">
+					<table class="w-full min-w-[800px] text-left">
 						<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
 							<tr>
 								<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Istilah</th>
@@ -744,7 +803,7 @@
 			<p class="text-sm text-slate-500 text-center">Tabel 4. Pertanyaan terkait kondisi atau peristiwa kesehatan dalam populasi spesifik.</p>
 			<div class="table-wrapper">
 			<div class="table-container">
-				<table class="w-full min-w-[800px] text-left text-sm">
+				<table class="w-full min-w-[800px] text-left">
 					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
 						<tr>
 							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Kata tanya</th>
@@ -810,7 +869,7 @@
 			<p class="text-sm text-slate-500 text-center">Tabel 5. Jenis-jenis kajian epidemiologi.</p>
 			<div class="table-wrapper">
 			<div class="table-container">
-				<table class="w-full min-w-[800px] text-left text-sm">
+				<table class="w-full min-w-[800px] text-left">
 					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
 						<tr>
 							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Topik pertanyaan</th>
@@ -892,11 +951,11 @@
 				</p>
 				<ul>
 					<li>Jika dalam populasi belum ada masalah kesehatan tertentu, epidemiologi dapat digunakan untuk mencegah masalah kesehatan tersebut masuk ke dalam populasi. Sebagai contoh, pes ruminansia kecil (<em>peste des petits ruminants</em>) merupakan penyakit yang belum ada di Indonesia. Prinsip-prinsip epidemiologi dapat digunakan untuk menjaga agar Indonesia tetap bebas dari penyakit ini.</li>
-					<li>Jika dalam populasi sudah ada masalah kesehatan tertentu, epidemiologi dapat digunakan untuk menurunkan kasus masalah kesehatan tersebut. Ada dua contoh skenario untuk hal ini.</li>
+					<li>Jika dalam populasi sudah ada masalah kesehatan tertentu, epidemiologi dapat digunakan untuk menurunkan kasus masalah kesehatan tersebut. Ada dua contoh skenario untuk hal ini.
 					<ul>
 						<li>Saat terjadi wabah penyakit mulut dan kuku (PMK) di suatu kabupaten, prinsip-prinsip epidemiologi dapat digunakan untuk mengendalikan wabah dan menurunkan kasus PMK.</li>
 						<li>Bruselosis sapi merupakan penyakit yang endemis di Provinsi Sulawesi Selatan. Prinsip-prinsip epidemiologi dapat digunakan untuk mengeliminasi penyakit ini sehingga Sulawesi Selatan menjadi provinsi yang bebas dari bruselosis sapi.</li>
-					</ul>
+					</ul></li>
 				</ul>
 				<p>
 				Meskipun epidemiologi dapat digunakan untuk berbagai hal dalam populasi, ada prasyarat yang harus dipenuhi agar ilmu ini dapat digunakan secara efektif, yaitu adanya data yang valid, reliabel, dan berkualitas. Kita tidak dapat mencegah, menurunkan, atau mengeliminasi suatu masalah kesehatan dari populasi jika kita tidak memiliki data tentang populasi tersebut. Oleh karena itu, tahap paling awal yang harus dilakukan adalah mengumpulkan data mengenai populasi.
@@ -1030,115 +1089,40 @@
 				
 				<h3>2.5. Jenis pendekatan dan metode</h3>
 				<p>
-				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				Ada berbagai metode untuk memperkirakan populasi hewan. Secara garis besar, kita dapat membaginya menjadi dua, yaitu estimasi berbasis data primer dan data sekunder.
 				</p>
-				
-					<h4>2.5.1. Pendekatan estimasi populasi hewan</h4>
-					<p>
-					Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
-					</p>
-					
-					<h4>2.5.2. Metode estimasi populasi hewan</h4>
-					<p>
-					Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
-					</p>
-		</section>
-		
-		<section id="elements" class="mb-16">
-			<h2>3. Elemen</h2>			
-			
-			<p>
-            Pellentesque auctor metus at gravida vehicula. Phasellus dapibus justo eget turpis scelerisque, ac tincidunt neque fringilla.
-			</p>
-			
-				<ul>
-					<li>Suspendisse nec sapien non ligula molestie luctus.</li>
-					<li>Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh. Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh. Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh. Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh.</li>
-					<li>Donec eu mi nec quam euismod consequat.</li>
-				</ul>
-			
-			<div class="chart-wrapper">
-				<canvas class="js-chart" 
-					data-type="bar" 
-					data-label="Jumlah Kasus"
-					data-labels='["2020", "2021", "2022", "2023"]' 
-					data-values='[12, 19, 13, 15]'>
-				</canvas>
-				<p class="text-xs text-center text-slate-500 mt-2">Diagram 1. Tren kasus tahunan.</p>
-			</div>
-
-			<div class="chart-wrapper">
-				<canvas class="js-chart" 
-					data-type="line" 
-					data-label="Proyeksi"
-					data-labels='["Jan", "Feb", "Mar", "Apr"]' 
-					data-values='[5, 10, 8, 15]'>
-				</canvas>
-				<p class="text-xs text-center text-slate-500 mt-2">Diagram 2. Estimasi pertumbuhan bulanan.</p>
-			</div>
-			
 				<ol>
-					<li>Suspendisse nec sapien non ligula molestie luctus. Suspendisse nec sapien non ligula molestie luctus. Suspendisse nec sapien non ligula molestie luctus. Suspendisse nec sapien non ligula molestie luctus.</li>
-					<li>Praesent dignissim ante maximus, pulvinar tortor sed, venenatis nibh.</li>
-					<li>Donec eu mi nec quam euismod consequat.</li>
+				  <li>
+				    Estimasi berbasis data primer<br>Data dikoleksi dari lapangan pada waktu dan lokasi tertentu. Peneliti terlibat langsung dalam proses pengamatan, pencatatan, atau pengukuran sehingga ia memiliki kendali penuh atas desain dan kualitas data. Meskipun demikian, pendekatan ini biasanya menyita banyak waktu dan biaya.
+				    <ol>
+				      <li>
+				        Observasi langsung terhadap individu hewan.<br>Metode ini berfokus untuk mendeteksi keberadaan individu hewan secara fisik di lapangan, baik dengan melihat langsung atau menggunakan alat bantu seperti drone atau kamera suhu. Akurasinya sangat bergantung pada kemampuan dalam mendeteksi hewan, kondisi lingkungan, serta desain pengamatan.					
+				        <ol>
+				          <li>Penghitungan menyeluruh (sensus)<br>Peneliti menghitung setiap individu dalam suatu populasi tanpa ada yang terlewat. Cara ini paling efektif diterapkan pada populasi tertutup dengan jumlah hewan yang relatif sedikit dan mendiami area yang batas-batasnya jelas.</li>
+				          <li>
+				            Penghitungan berbasis sampel area<br>Karena keterbatasan sumber daya untuk menyisir seluruh wilayah, peneliti hanya menghitung hewan pada beberapa titik contoh sebagai perwakilan. Hasil dari sampel tersebut kemudian diproyeksikan untuk menggambarkan populasi di seluruh area studi.<br>Penghitungan berbasis sampel area dilakukan dengan mengamati sebagian wilayah yang mewakili keseluruhan area studi, kemudian hasilnya diekstrapolasikan ke wilayah yang lebih luas. Pendekatan ini digunakan ketika sensus tidak memungkinkan karena luas wilayah atau ukuran populasi yang besar. Ketepatan estimasi bergantung pada desain sampling dan representativitas area yang dipilih.
+				            <ol>
+				              <li>Metode kuadrat/plot<br>Area studi dibagi menjadi petak-petak kecil (plot) dengan ukuran tetap, lalu seluruh hewan di dalam plot terpilih dihitung secara teliti. Metode ini sangat cocok untuk hewan yang pergerakannya lambat atau cenderung menetap di satu lokasi.<br>Metode kuadrat atau plot membagi area studi menjadi unit-unit berbentuk petak dengan ukuran tertentu. Individu hewan yang terdapat dalam petak tersebut dihitung, lalu kepadatan yang diperoleh digunakan untuk memperkirakan jumlah pada seluruh area. Metode ini sering digunakan pada populasi yang relatif menetap dan mudah diamati dalam batas ruang tertentu.</li>
+				              <li>Metode transek<br>Pengamat menyusuri jalur linear yang telah ditentukan dan mencatat setiap hewan yang dijumpai sepanjang perjalanan. Teknik ini sering digunakan untuk memantau satwa liar atau ternak yang dilepaskan di padang penggembalaan luas.<br>Metode transek dilakukan dengan mengamati hewan sepanjang garis atau jalur tertentu yang telah ditentukan. Pengamat mencatat individu yang terlihat di sepanjang transek tersebut, dan data yang diperoleh digunakan untuk memperkirakan kepadatan atau jumlah populasi. Variasi metode ini mencakup transek garis, transek jalur, serta pendekatan yang mempertimbangkan jarak deteksi.</li>
+				            </ol>
+				          </li>
+				          <li>Penghitungan berbasis probabilitas deteksi<br>Metode ini mempertimbangkan bahwa tidak semua individu dalam populasi dapat terdeteksi pada setiap pengamatan. Dengan teknik seperti <em>mark-recapture</em>, peneliti menggunakan pemodelan matematika untuk memperkirakan jumlah hewan yang tidak terlihat berdasarkan rasio hewan yang berhasil ditemukan kembali.</li>
+				        </ol>
+				      </li>
+				      <li>Observasi tidak langsung terhadap tanda keberadaan hewan<br>Jika hewannya sulit ditemukan, peneliti dapat beralih untuk menghitung bukti keberadaan mereka. Bukti ini bisa berupa feses, jejak kaki, sarang, suara, hingga materi genetik hewan yang tertinggal di lingkungan (disebut dengan environmental DNA).</li>					  
+				      <li>Estimasi berbasis pelaporan manusia<br>Data primer juga bisa diperoleh dengan mengumpulkan data dari orang-orang yang bersinggungan langsung dengan hewan. Peneliti menggali informasi dari masyarakat melalui kuesioner dan wawancara. Akurasi metode ini sangat bergantung pada kejujuran, ingatan, catatan, dan pemahaman responden.</li>
+				    </ol>
+				  </li>
+				  <li>
+				    Estimasi berbasis data sekunder<br>Pendekatan ini memanfaatkan informasi yang sudah dikumpulkan oleh pihak lain. Peneliti tidak perlu pergi ke lapangan. Ia hanya mengolah dan menganalisis data yang tersedia. Penggunaan data sekunder sangat efisien untuk mendapatkan gambaran populasi hewan. Namun, kualitas estimasi si peneliti sangat tergantung pada mutu dan relevansi data yang digunakan.
+				    <ol>
+				      <li>Data administratif<br>Sumber data berasal dari pencatatan resmi instansi pemerintah (misalnya angka populasi ternak dari Badan Pusat Statistik) atau catatan vaksinasi. Data ini biasanya menjadi landasan dalam penyusunan kebijakan, bukan untuk penelitian populasi.</li>
+				      <li>Data penelitian sebelumnya<br>Peneliti merujuk pada angka estimasi yang sudah dipublikasikan dalam jurnal ilmiah atau dokumen proyek lembaga konservasi. Data ini dapat digunakan sebagai referensi atau pembanding. Namun, perbedaan waktu, metode, dan cakupan wilayah harus diperhatikan agar interpretasi tidak keliru.</li>
+				      <li>Estimasi turunan dari data sekunder<br>Angka populasi hewan diperoleh melalui kalkulasi menggunakan data penunjang lain yang memiliki korelasi kuat. Contohnya adalah memperkirakan jumlah anjing melalui rasio populasi manusia di suatu kota atau menghitung populasi ayam pedaging berdasarkan volume pakan yang terdistribusi di daerah tersebut.</li>
+				    </ol>
+				  </li>
 				</ol>
-		  
-				<div class="btn-container">
-					<a href="halaman-simulasi.html" target="_blank" rel="noopener noreferrer" class="btn-action shadow-md shadow-brand/20">
-						<span>Lakukan Simulasi</span>
-						<i data-lucide="chevron-right" class="w-4 h-4"></i>
-					</a>
-				</div>
-				
-					<p>
-					$$n = \frac{Z^2 \times p \times (1-p)}{d^2}$$
-					</p>
 
-			<p class="text-sm text-slate-500 text-center">Tabel 1.Mauris fringilla congue erat vel egestas. Curabitur at nunc non velit pulvinar viverra.</p>
-			<div class="table-wrapper">
-			<div class="table-container">
-				<table class="w-full min-w-[800px] text-left text-sm">
-					<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
-						<tr>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-1</th>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-2</th>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-3</th>
-							<th class="py-4 px-6 font-semibold text-slate-900 dark:text-white">Header-4</th>
-						</tr>
-					</thead>
-					<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-						<tr>
-							<td class="py-4 px-6 font-medium">Morbi mattis</td>
-							<td class="py-4 px-6">Sapien at pellentesque sagittis. Sapien at pellentesque sagittis.</td>
-							<td class="py-4 px-6">Sed a augue. Sed a augue.</td>
-							<td class="py-4 px-6">Aliquet ipsum. Aliquet ipsum.</td>
-						</tr>
-						<tr>
-							<td class="py-4 px-6 font-medium">Nulla venenatis</td>
-							<td class="py-4 px-6">Luctus quis sit amet ex. Luctus quis sit amet ex.</td>
-							<td class="py-4 px-6">Mauris sed velit ullamcorper. Mauris sed velit ullamcorper.</td>
-							<td class="py-4 px-6">Rhoncus lorem nec. Rhoncus lorem nec.</td>
-						</tr>
-						<tr>
-							<td class="py-4 px-6 font-medium">Maecenas sed diam</td>
-							<td class="py-4 px-6">Aenean aliquam. Aenean aliquam.</td>
-							<td class="py-4 px-6">Augue eget elit volutpat egestas. Augue eget elit volutpat egestas.</td>
-							<td class="py-4 px-6">Aenean sit amet tortor quis quam. Aenean sit amet tortor quis quam.</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="scroll-hint">
-				<i data-lucide="move-horizontal" class="w-3 h-3"></i>
-				<span>Geser tabel untuk melihat selengkapnya</span>
-			</div>
-			</div>
-			
-			<figure>
-				<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" style="width: 400px;" alt="Deskripsi gambar untuk aksesibilitas">
-				<figcaption>Gambar 1. Deskripsi atau sumber gambar yang mendukung materi di atas.</figcaption>
-			</figure>
-			
 			<div class="p-6 md:p-8 rounded-2xl bg-[#f2f2f2] dark:bg-[#0d0d0d] border border-slate-200 dark:border-white/5 shadow-sm" data-quiz>
 				<h4 class="text-lg font-semibold mb-2">Pertanyaan 1</h4>
 				<p class="text-slate-600 dark:text-slate-400">
@@ -1168,16 +1152,10 @@
             </div>			
             <div data-feedback class="mt-4 font-medium hidden"></div>
 			</div>
-		  
-			<div class="callout">
-				<i data-lucide="info" class="w-5 h-5"></i>
-				<p>
-				Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. 
-				</p>
-			</div>
-			
 			
 		</section>
+		
+
 
         <footer class="mt-10 pt-4 border-t border-slate-200 dark:border-slate-800 text-slate-500 text-sm">
           <div class="flex justify-between items-center mb-4">
