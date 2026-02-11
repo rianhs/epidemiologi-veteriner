@@ -37,11 +37,16 @@
       font-size: 1.1rem;
     }
 
-    /* Kustomisasi Scrollbar */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    .light ::webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
-    .dark ::webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+	/* Kustomisasi Scrollbar */
+	::-webkit-scrollbar { width: 6px; height: 6px; }
+	::-webkit-scrollbar-track { background: transparent; }
+
+	/* Default (mode terang) */
+	::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+
+	/* Override untuk mode gelap */
+	.dark ::-webkit-scrollbar-thumb { background: #64748b; }
+
 
     /* Highlight Daftar Isi */
 	.toc-active {
@@ -209,7 +214,7 @@
     }
 
     figcaption {
-      font-size: 0.875rem;
+      font-size: var(--base-font-size);
       color: #64748b; /* Slate-500 */
       margin-top: 0.5rem;
 	  margin-bottom: 1rem;
@@ -290,6 +295,11 @@
     .prose-content {
       transition: font-family 0.2s ease, font-size 0.2s ease;
     }
+	
+	/* Membuat elemen yang pakai text-sm (caption tabel, teks tabel, dll) ikut skala font */
+	.prose-content .text-sm {
+	font-size: var(--base-font-size);
+	}
 	
 	/* Mengecilkan seluruh teks di dalam kartu kuis */
     [data-quiz] {
@@ -405,6 +415,7 @@
 			<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
 				Pengantar epidemiologi veteriner
 			</h1>
+			<p id="word-count-info" class="text-sm text-slate-500 mt-2"></p>
 		</header>
 
 		<section id="dasar-dasar-epidemiologi" class="mb-16">
@@ -987,7 +998,34 @@
 				
 				<h3>2.4. Faktor yang perlu dipertimbangkan</h3>
 				<p>
-				Nulla ex nunc, eleifend at erat et, consequat elementum justo. Sed et lectus quis ex tincidunt eleifend. Nullam consequat, ipsum in efficitur varius, risus dolor laoreet nisl, eleifend faucibus sem magna a lectus. Donec scelerisque ipsum nisi, quis lacinia augue viverra ac. Sed ante justo, congue vitae elementum quis, porttitor nec mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum magna sit amet magna cursus, vitae faucibus tellus dignissim.
+				Sebelum memilih pendekatan atau metode estimasi, kita perlu memahami konteks biologis, epidemiologis, dan operasional dari populasi yang akan dikaji. Kesalahan dalam mendefinisikan masalah atau mengabaikan faktor-faktor penting dapat menghasilkan estimasi yang tidak akurat dan menyesatkan, meskipun metode yang digunakan secara teknis sudah tepat.
+				</p>
+				<p>
+				Faktor pertama yang harus dipertimbangkan adalah tujuan estimasi populasi. Penghitungan populasi dapat dilakukan dalam rangka pengendalian penyakit, penelitian epidemiologis, perencanaan program, analisis ekonomi, atau penyusunan kebijakan. Tujuan ini akan menentukan tingkat ketelitian yang dibutuhkan, cakupan wilayah, serta frekuensi estimasi. Sebagai contoh, estimasi kasar mungkin sudah memadai untuk perencanaan awal program, tetapi estimasi yang lebih presisi diperlukan untuk evaluasi kebijakan atau penelitian ilmiah. Tanpa kejelasan tujuan, hasil estimasi populasi berisiko tidak relevan atau tidak dapat dimanfaatkan secara optimal.
+				</p>
+				<p>
+				Jenis dan status populasi hewan juga memengaruhi cara kita memilih pendekatan estimasi. Populasi hewan produksi, hewan kesayangan, dan satwa liar masing-masing memiliki karakteristik yang berbeda dalam hal pengelolaan, akses, dan ketersediaan data. Selain itu, status kepemilikan hewan (apakah berpemilik, semi-berpemilik, atau tidak berpemilik) menentukan sejauh mana data dapat diperoleh melalui manusia atau harus dikumpulkan melalui observasi langsung. Populasi hewan domestik yang dikelola secara intensif cenderung lebih mudah diestimasi dibandingkan populasi hewan feral atau satwa liar yang bergerak bebas dan sulit dijangkau.
+				</p>
+				<p>
+				Karakteristik biologis dan perilaku hewan merupakan faktor penting berikutnya. Ukuran tubuh, pola aktivitas harian, perilaku sosial, dan respons hewan terhadap kehadiran manusia akan memengaruhi peluang deteksi dan akurasi pengamatan. Hewan yang hidup berkelompok dan aktif pada siang hari relatif lebih mudah diamati dibandingkan hewan soliter atau nokturnal. Pola reproduksi dan siklus hidup juga perlu dipertimbangkan karena tingkat kelahiran dan kematian yang tinggi dapat menyebabkan perubahan populasi yang cepat. Dampaknya, estimasi pada satu titik waktu tertentu mungkin tidak lagi relevan dalam waktu singkat.
+				</p>
+				<p>
+				Skala ruang dan waktu estimasi merupakan faktor krusial dalam mendefinisikan populasi yang akan dihitung. Estimasi dapat dilakukan pada tingkat lokal, regional, atau nasional, dengan batas wilayah yang ditentukan secara administratif maupun ekologis. Batas administratif sering digunakan karena kemudahan dalam pelaporan dan pengelolaan hewan, tetapi tidak selalu mencerminkan batas biologis atau pergerakan alami hewan. Selain itu, dimensi waktu juga harus ditentukan secara jelas, apakah estimasi dilakukan untuk satu titik waktu tertentu atau untuk suatu periode waktu. Pada populasi yang dinamis, perbedaan waktu pengamatan dapat menghasilkan estimasi yang sangat berbeda.
+				</p>
+				<p>
+				Ketersediaan dan kualitas data menjadi pertimbangan lain yang sangat menentukan. Data populasi dapat bersumber dari data sekunder, seperti statistik resmi, laporan dinas, atau catatan peternak, maupun dari data primer yang dikumpulkan melalui survei lapangan. Setiap sumber data memiliki keterbatasan, baik dari segi kelengkapan, akurasi, maupun potensi bias. Data yang bergantung pada pelaporan manusia sering kali dipengaruhi oleh kepatuhan dan kepentingan pelapor, sedangkan data lapangan menghadapi tantangan keterbatasan akses dan deteksi yang tidak sempurna. Oleh karena itu, kualitas data perlu dinilai secara kritis sebelum digunakan dalam estimasi populasi.
+				</p>
+				<p>
+				Faktor lain yang tidak kalah penting adalah ketersediaan sumber daya dan keterbatasan operasional. Estimasi populasi membutuhkan waktu, biaya, tenaga, serta keahlian teknis yang memadai. Kondisi geografis, aksesibilitas lokasi, dan keamanan personel di lapangan dapat membatasi pilihan metode yang dapat diterapkan. Selain itu, penggunaan teknologi tertentu, seperti penandaan individu atau alat pengamatan khusus, memerlukan kapasitas teknis dan logistik yang tidak selalu tersedia. Pertimbangan realistis terhadap sumber daya yang ada sangat diperlukan agar estimasi populasi dapat dilaksanakan secara efektif dan berkelanjutan.
+				</p>
+				<p>
+				Aspek etika, kesejahteraan hewan, dan sosial juga harus menjadi bagian dari pertimbangan sebelum melakukan estimasi populasi. Metode yang melibatkan penangkapan, penandaan, atau manipulasi hewan harus memperhatikan prinsip kesejahteraan hewan dan meminimalkan stres atau cedera. Pada hewan berpemilik, penerimaan masyarakat dan kerja sama pemilik menjadi faktor penentu keberhasilan pengumpulan data. Selain itu, aspek hukum dan regulasi, termasuk perizinan dan kewenangan, perlu diperhatikan agar kegiatan estimasi populasi tidak menimbulkan konflik atau dampak negatif bagi masyarakat.
+				</p>
+				<p>
+				Terakhir, setiap estimasi populasi selalu didasarkan pada asumsi tertentu dan mengandung tingkat ketidakpastian. Asumsi mengenai deteksi, pergerakan hewan, atau stabilitas populasi harus dinyatakan secara jelas. Sumber ketidakpastian dan potensi kesalahan perlu diidentifikasi dan dipertimbangkan dalam interpretasi hasil. Pemahaman terhadap asumsi dan keterbatasan ini sangat penting agar angka populasi tidak diperlakukan sebagai nilai absolut, melainkan sebagai perkiraan yang memiliki rentang ketelitian tertentu.
+				</p>
+				<p>
+				Dengan mempertimbangkan berbagai faktor tersebut, estimasi populasi hewan dapat dilakukan secara lebih tepat. Faktor-faktor ini sekaligus menjadi dasar dalam memilih pendekatan dan metode estimasi yang sesuai, yang akan dibahas pada bagian selanjutnya mengenai klasifikasi cara dan metode estimasi populasi hewan.
 				</p>
 				
 				<h3>2.5. Jenis pendekatan dan metode</h3>
@@ -1362,6 +1400,27 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+	
+	// ===== Word Count Logic =====
+	function updateWordCount() {
+		const content = document.querySelector('.prose-content');
+		const output = document.getElementById('word-count-info');
+		if (!content || !output) return;
+
+	const text = content.innerText.trim();
+	const words = text.split(/\s+/).filter(word => word.length > 0);
+	const wordCount = words.length;
+
+	const minTime = Math.ceil(wordCount / 200);
+	const maxTime = Math.ceil(wordCount / 150);
+
+	output.textContent =
+		`Jumlah kata: ${wordCount.toLocaleString('id-ID')}; ` +
+		`estimasi waktu baca: ${minTime}–${maxTime} menit ` +
+		`(asumsi 150–200 kata per menit)`;
+	}
+
+	document.addEventListener('DOMContentLoaded', updateWordCount);
 	
   </script>
 </body>
