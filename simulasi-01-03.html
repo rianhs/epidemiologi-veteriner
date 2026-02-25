@@ -340,7 +340,7 @@
   </div>
 
   <script>
-    const MODE = { DESC: "deskriptif", ANAL: "analitis" };
+  const MODE = { DESC: "deskriptif", ANAL: "analitis" };
     let currentMode = MODE.DESC;
 
     const grid = document.getElementById("grid");
@@ -457,104 +457,175 @@
       ].join("\n");
     }
 
-    function showTooltipFor(el, animal){
-      const rectField = field.getBoundingClientRect();
-      const rectEl = el.getBoundingClientRect();
-      const margin = 12;
+    let openAnimalId = null;
+let openEl = null;
 
-      let left = (rectEl.left - rectField.left) + 30;
-      let top  = (rectEl.top - rectField.top) + 30;
+const canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
 
-      tooltip.style.left = left + "px";
-      tooltip.style.top  = top + "px";
+function positionTooltipNear(el){
+  const rectField = field.getBoundingClientRect();
+  const rectEl = el.getBoundingClientRect();
+  const margin = 12;
 
-      const modeName = (currentMode === MODE.DESC) ? "Deskriptif" : "Analitis";
-      ttModeBadge.textContent = modeName;
+  let left = (rectEl.left - rectField.left) + 30;
+  let top  = (rectEl.top  - rectField.top)  + 30;
 
-      ttDot.className = "dot " + (animal.sick ? "red" : "green");
-      ttName.textContent = `Hewan #${pad2(animal.id)}`;
-      ttBody.textContent = labelText(animal);
+  tooltip.style.left = left + "px";
+  tooltip.style.top  = top  + "px";
 
-      tooltip.classList.add("show");
+  const rectTT = tooltip.getBoundingClientRect();
 
-      const rectTT = tooltip.getBoundingClientRect();
+  const overflowRight = rectTT.right - rectField.right;
+  if(overflowRight > 0){
+    left = Math.max(margin, left - overflowRight - 10);
+    tooltip.style.left = left + "px";
+  }
 
-      const overflowRight = rectTT.right - rectField.right;
-      if(overflowRight > 0){
-        left = Math.max(margin, left - overflowRight - 10);
-        tooltip.style.left = left + "px";
-      }
+  const overflowLeft = rectTT.left - rectField.left;
+  if(overflowLeft < 0){
+    left = Math.max(margin, left - overflowLeft + 10);
+    tooltip.style.left = left + "px";
+  }
 
-      const overflowBottom = rectTT.bottom - rectField.bottom;
-      if(overflowBottom > 0){
-        top = Math.max(margin, top - overflowBottom - 10);
-        tooltip.style.top = top + "px";
-      }
+  const overflowBottom = rectTT.bottom - rectField.bottom;
+  if(overflowBottom > 0){
+    top = Math.max(margin, top - overflowBottom - 10);
+    tooltip.style.top = top + "px";
+  }
 
-      srAnnounce.textContent = `Menampilkan data hewan ${animal.id}.`;
-    }
+  const overflowTop = rectTT.top - rectField.top;
+  if(overflowTop < 0){
+    top = Math.max(margin, top - overflowTop + 10);
+    tooltip.style.top = top + "px";
+  }
+}
 
-    function hideTooltip(){ tooltip.classList.remove("show"); }
+function showTooltipFor(el, animal){
+  openAnimalId = animal.id;
+  openEl = el;
+
+  if(openEl){
+    openEl.setAttribute("aria-expanded", "true");
+  }
+
+  const modeName = (currentMode === MODE.DESC) ? "Deskriptif" : "Analitis";
+  ttModeBadge.textContent = modeName;
+
+  ttDot.className = "dot " + (animal.sick ? "red" : "green");
+  ttName.textContent = `Hewan #${pad2(animal.id)}`;
+  ttBody.textContent = labelText(animal);
+
+  tooltip.classList.add("show");
+  positionTooltipNear(el);
+
+  srAnnounce.textContent = `Menampilkan data hewan ${animal.id}.`;
+}
+
+function hideTooltip(){
+  tooltip.classList.remove("show");
+  openAnimalId = null;
+
+  if(openEl){
+    openEl.setAttribute("aria-expanded", "false");
+    openEl = null;
+  }
+}
+
 
     function renderGrid(){
-      grid.innerHTML = "";
-      const fragment = document.createDocumentFragment();
+  grid.innerHTML = "";
+  const fragment = document.createDocumentFragment();
 
-      for(const a of DATA){
-        const el = document.createElement("div");
-        el.className = "animal " + (a.sick ? "red" : "green");
-        el._data = a;
+  for(const a of DATA){
+    const el = document.createElement("div");
+    el.className = "animal " + (a.sick ? "red" : "green");
+    el._data = a;
 
-        el.addEventListener("mouseenter", () => {
-          if(shouldShowTooltip(a)) showTooltipFor(el, a);
-        });
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-expanded", "false");
+    el.setAttribute("aria-label", `Hewan #${pad2(a.id)}, ${a.sick ? "sakit" : "tidak sakit"}`);
 
-        el.addEventListener("click", (e) => {
-          e.stopPropagation();
-          if(shouldShowTooltip(a)) showTooltipFor(el, a);
-        });
+    el.addEventListener("pointerenter", () => {
+      if(canHover && shouldShowTooltip(a)) showTooltipFor(el, a);
+    });
 
-        fragment.appendChild(el);
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if(shouldShowTooltip(a)) showTooltipFor(el, a);
+    });
+
+    el.addEventListener("keydown", (e) => {
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        e.stopPropagation();
+        if(shouldShowTooltip(a)) showTooltipFor(el, a);
       }
+    });
 
-      grid.appendChild(fragment);
-    }
+    fragment.appendChild(el);
+  }
+
+  grid.appendChild(fragment);
+}
+
+    function setStageTitle(lines){
+  stageTitle.replaceChildren();
+  lines.forEach((line, i) => {
+    if(i > 0) stageTitle.appendChild(document.createElement("br"));
+    stageTitle.appendChild(document.createTextNode(line));
+  });
+}
 
     function setMode(mode){
-      currentMode = mode;
+  currentMode = mode;
 
-      const isDesc = (mode === MODE.DESC);
-      btnDesc.classList.toggle("active", isDesc);
-      btnAnal.classList.toggle("active", !isDesc);
+  const isDesc = (mode === MODE.DESC);
+  btnDesc.classList.toggle("active", isDesc);
+  btnAnal.classList.toggle("active", !isDesc);
 
-      btnDesc.setAttribute("aria-selected", isDesc ? "true" : "false");
-      btnAnal.setAttribute("aria-selected", !isDesc ? "true" : "false");
+  btnDesc.setAttribute("aria-selected", isDesc ? "true" : "false");
+  btnAnal.setAttribute("aria-selected", !isDesc ? "true" : "false");
 
-      if(isDesc){
-        stageTitle.innerHTML = "Mode deskriptif hanya menampilkan informasi pada hewan berpenyakit (merah).<br>Tujuan: menggambarkan distribusi kasus berdasarkan siapa, di mana, kapan.<br>Instruksi: Rekapitulasi informasi yang diperoleh dari hewan sakit. Apakah penyakit lebih banyak ditemukan pada spesies, jenis kelamin, desa, atau bulan tertentu?";
-        modeText.textContent = "Kita hanya berfokus pada kasus positif.	";
-      } else {
-        stageTitle.innerHTML = "Mode analitis menampilkan informasi pada semua hewan, baik hewan berpenyakit (merah) maupun tidak (hijau).<br>Tujuan: mengeksplorasi faktor yang diduga memengaruhi kejadian penyakit.<br>Instruksi: Rekapitulasi semua informasi. Apakah variabel tertentu lebih sering ditemukan pada hewan sakit dibandingkan hewan tidak sakit?";
-        modeText.textContent = "Kita membandingkan kasus positif dan negatif.";
-      }
+  if(isDesc){
+    setStageTitle([
+      "Mode deskriptif hanya menampilkan informasi pada hewan berpenyakit (merah).",
+      "Tujuan: menggambarkan distribusi kasus berdasarkan siapa, di mana, kapan.",
+      "Instruksi: Rekapitulasi informasi yang diperoleh dari hewan sakit. Apakah penyakit lebih banyak ditemukan pada spesies, jenis kelamin, desa, atau bulan tertentu?"
+    ]);
+    modeText.textContent = "Kita hanya berfokus pada kasus positif.";
+  } else {
+    setStageTitle([
+      "Mode analitis menampilkan informasi pada semua hewan, baik hewan berpenyakit (merah) maupun tidak (hijau).",
+      "Tujuan: mengeksplorasi faktor yang diduga memengaruhi kejadian penyakit.",
+      "Instruksi: Rekapitulasi semua informasi. Apakah variabel tertentu lebih sering ditemukan pada hewan sakit dibandingkan hewan tidak sakit?"
+    ]);
+    modeText.textContent = "Kita membandingkan kasus positif dan negatif.";
+  }
 
-      if(tooltip.classList.contains("show")){
-        const m = ttName.textContent.match(/#(\d+)/);
-        if(m){
-          const id = parseInt(m[1], 10);
-          const animal = DATA.find(a => a.id === id);
-          if(animal){
-            ttBody.textContent = labelText(animal);
-            ttModeBadge.textContent = isDesc ? "Deskriptif" : "Analitis";
-          } else {
-            hideTooltip();
-          }
-        }
-      }
+  if(tooltip.classList.contains("show") && openAnimalId !== null){
+    const animal = DATA.find(a => a.id === openAnimalId);
+    if(animal && shouldShowTooltip(animal)){
+      ttBody.textContent = labelText(animal);
+      ttModeBadge.textContent = isDesc ? "Deskriptif" : "Analitis";
+      if(openEl) positionTooltipNear(openEl);
+    } else {
+      hideTooltip();
     }
+  } else {
+    hideTooltip();
+  }
+}
 
     field.addEventListener("click", () => hideTooltip());
     btnCloseTT.addEventListener("click", (e) => { e.stopPropagation(); hideTooltip(); });
+
+    document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape" && tooltip.classList.contains("show")){
+    e.stopPropagation();
+    hideTooltip();
+  }
+});
 
     btnDesc.addEventListener("click", () => setMode(MODE.DESC));
     btnAnal.addEventListener("click", () => setMode(MODE.ANAL));
@@ -568,6 +639,6 @@
     document.getElementById("countTotal").textContent = String(DATA.length);
 
     setMode(MODE.DESC);
-  </script>
+</script>
 </body>
 </html>
