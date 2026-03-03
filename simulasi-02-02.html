@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Dinamika Penularan Penyakit</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Gaya Dasar bergaya Apple (Minimalis) */
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --accent-blue: #0066cc;
+            --danger-red: #ff3b30;
+            --safe-green: #34c759;
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 0;
+            border-bottom: 1px solid #e5e5ea;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* Kontrol Slider */
+        .control-group {
+            margin-bottom: 24px;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .control-header label {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .value-display {
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+            color: var(--accent-blue);
+            background: rgba(0, 102, 204, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid var(--accent-blue);
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #d1d1d6;
+            border-radius: 2px;
+        }
+
+        /* Seksi Visualisasi */
+        .metric-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric {
+            background-color: #f2f2f7;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .metric h3 {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .metric .number {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 8px 0 4px 0;
+        }
+
+        .metric.danger {
+            background-color: rgba(255, 59, 48, 0.1);
+        }
+        .metric.danger .number { color: var(--danger-red); }
+
+        .metric.safe {
+            background-color: rgba(52, 199, 89, 0.1);
+        }
+        .metric.safe .number { color: var(--safe-green); }
+
+        .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        /* Progress Bar Kekebalan Kelompok */
+        .hit-container {
+            background: #f2f2f7;
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .hit-bar-bg {
+            background: #e5e5ea;
+            height: 12px;
+            border-radius: 6px;
+            position: relative;
+            margin: 12px 0;
+            overflow: hidden;
+        }
+
+        .hit-bar-fill {
+            height: 100%;
+            background: var(--safe-green);
+            border-radius: 6px;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .hit-marker {
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            width: 2px;
+            background: var(--danger-red);
+            transition: left 0.4s ease;
+            z-index: 10;
+        }
+
+        .hit-marker::after {
+            content: 'Ambang (HIT)';
+            position: absolute;
+            top: -20px;
+            left: -40px;
+            font-size: 10px;
+            color: var(--danger-red);
+            font-weight: bold;
+            width: 80px;
+            text-align: center;
+        }
+
+        .status-text {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Dashboard Epidemiologi Veteriner</h1>
+    <p class="subtitle">Simulasi Interaktif Angka Reproduksi (R₀ & Rₑ) dan Kekebalan Kelompok (Herd Immunity)</p>
+
+    <div class="card controls">
+        <h2>1. Pembentuk Angka Reproduksi Dasar (R₀)</h2>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: -10px; margin-bottom: 20px;">
+            R₀ terbentuk dari interaksi Inang, Agen, dan Lingkungan pada populasi yang rentan.
+        </p>
+        
+        <div class="control-group">
+            <div class="control-header">
+                <label>Jumlah kontak harian per individu</label>
+                <span class="value-display" id="val-kontak">10 ekor</span>
+            </div>
+            <input type="range" id="input-kontak" min="1" max="100" value="10" step="1" oninput="updateSim()">
+        </div>
+
+        <div class="control-group">
+            <div class="control-header">
+                <label>Peluang penularan per kontak</label>
+                <span class="value-display" id="val-peluang">15%</span>
+            </div>
+            <input type="range" id="input-peluang" min="1" max="100" value="15" step="1" oninput="updateSim()">
+        </div>
+
+        <div class="control-group">
+            <div class="control-header">
+                <label>Durasi masa infeksius</label>
+                <span class="value-display" id="val-durasi">3 hari</span>
+            </div>
+            <input type="range" id="input-durasi" min="1" max="30" value="3" step="1" oninput="updateSim()">
+        </div>
+
+        <h2 style="margin-top: 40px;">2. Intervensi Populasi (Kekebalan)</h2>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: -10px; margin-bottom: 20px;">
+            Mengurangi proporsi individu rentan (S) untuk menurunkan Rₑ.
+        </p>
+
+        <div class="control-group">
+            <div class="control-header">
+                <label>Proporsi populasi kebal (Vaksinasi/Alami)</label>
+                <span class="value-display" id="val-kebal">20%</span>
+            </div>
+            <input type="range" id="input-kebal" min="0" max="100" value="20" step="1" oninput="updateSim()">
+        </div>
+    </div>
+
+    <div class="card visuals">
+        <h2>Hasil Analisis Dinamika Penyakit</h2>
+        
+        <div class="metric-cards">
+            <div class="metric" id="metric-r0">
+                <h3>Potensi Penularan (R₀)</h3>
+                <div class="number" id="display-r0">0.0</div>
+                <div style="font-size: 12px; color: var(--text-muted);">Tanpa intervensi</div>
+            </div>
+            <div class="metric" id="metric-re">
+                <h3>Penularan Aktual (Rₑ)</h3>
+                <div class="number" id="display-re">0.0</div>
+                <div style="font-size: 12px; color: var(--text-muted);" id="status-re">Evaluasi...</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="reproductionChart"></canvas>
+        </div>
+
+        <div class="hit-container">
+            <h3 style="margin-top:0; font-size:14px;">Status Kekebalan Kelompok (Herd Immunity)</h3>
+            <div style="display:flex; justify-content: space-between; font-size: 12px; color: var(--text-muted);">
+                <span>0%</span>
+                <span id="hit-target-text">Ambang: 0%</span>
+                <span>100%</span>
+            </div>
+            <div class="hit-bar-bg">
+                <div class="hit-bar-fill" id="hit-fill"></div>
+                <div class="hit-marker" id="hit-marker"></div>
+            </div>
+            <div class="status-text" id="hit-status">Aman</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let myChart;
+
+    function initChart() {
+        const ctx = document.getElementById('reproductionChart').getContext('2d');
+        myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Angka Reproduksi Dasar (R₀)', 'Angka Reproduksi Efektif (Rₑ)'],
+                datasets: [{
+                    label: 'Nilai Reproduksi',
+                    data: [0, 0],
+                    backgroundColor: ['#0066cc', '#ff3b30'],
+                    borderRadius: 8,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    annotation: { // Kita simulasikan garis batas tanpa plugin eksternal ekstra dengan grid
+                        annotations: {}
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: (context) => {
+                                if (context.tick.value === 1) {
+                                    return 'rgba(255, 59, 48, 0.8)'; // Garis merah tegas di nilai 1
+                                }
+                                return 'rgba(0, 0, 0, 0.1)';
+                            },
+                            lineWidth: (context) => {
+                                return context.tick.value === 1 ? 2 : 1;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function updateSim() {
+        // 1. Ambil nilai dari slider
+        const kontak = parseFloat(document.getElementById('input-kontak').value);
+        const peluang = parseFloat(document.getElementById('input-peluang').value);
+        const durasi = parseFloat(document.getElementById('input-durasi').value);
+        const kebal = parseFloat(document.getElementById('input-kebal').value);
+
+        // 2. Perbarui label teks slider
+        document.getElementById('val-kontak').innerText = kontak + " ekor";
+        document.getElementById('val-peluang').innerText = peluang + "%";
+        document.getElementById('val-durasi').innerText = durasi + " hari";
+        document.getElementById('val-kebal').innerText = kebal + "%";
+
+        // 3. Kalkulasi Matematis
+        // R0 = kontak * peluang * durasi
+        const r0 = kontak * (peluang / 100) * durasi;
+        
+        // S (Proporsi Rentan) = 1 - Kebal
+        const proporsiRentan = 1 - (kebal / 100);
+        
+        // Re = R0 * S
+        const re = r0 * proporsiRentan;
+
+        // Herd Immunity Threshold (HIT) = 1 - 1/R0
+        let hit = 0;
+        if (r0 > 1) {
+            hit = (1 - (1 / r0)) * 100;
+        }
+
+        // 4. Perbarui Tampilan Angka
+        document.getElementById('display-r0').innerText = r0.toFixed(2);
+        document.getElementById('display-re').innerText = re.toFixed(2);
+
+        // Styling kotak metrik Re
+        const metricRe = document.getElementById('metric-re');
+        const statusRe = document.getElementById('status-re');
+        if (re >= 1) {
+            metricRe.className = 'metric danger';
+            statusRe.innerText = 'Wabah akan terus menyebar';
+            myChart.data.datasets[0].backgroundColor[1] = '#ff3b30'; // Merah
+        } else {
+            metricRe.className = 'metric safe';
+            statusRe.innerText = 'Penularan mereda (terkendali)';
+            myChart.data.datasets[0].backgroundColor[1] = '#34c759'; // Hijau
+        }
+
+        // 5. Perbarui Grafik Bar Chart
+        myChart.data.datasets[0].data = [r0.toFixed(2), re.toFixed(2)];
+        myChart.update();
+
+        // 6. Perbarui Visualisasi Herd Immunity
+        document.getElementById('hit-target-text').innerText = 'Ambang (HIT): ' + hit.toFixed(1) + '%';
+        
+        const hitMarker = document.getElementById('hit-marker');
+        const hitFill = document.getElementById('hit-fill');
+        const hitStatus = document.getElementById('hit-status');
+
+        hitMarker.style.left = hit + '%';
+        hitFill.style.width = kebal + '%';
+
+        if (r0 <= 1) {
+            hitStatus.innerText = "R₀ ≤ 1. Penyakit tidak memicu wabah secara mandiri.";
+            hitStatus.style.color = "var(--safe-green)";
+            hitMarker.style.display = 'none';
+        } else {
+            hitMarker.style.display = 'block';
+            if (kebal >= hit) {
+                hitStatus.innerText = "Aman: Kekebalan populasi telah melampaui ambang batas.";
+                hitStatus.style.color = "var(--safe-green)";
+            } else {
+                hitStatus.innerText = "Bahaya: Diperlukan " + (hit - kebal).toFixed(1) + "% populasi kebal lagi untuk menghentikan penularan.";
+                hitStatus.style.color = "var(--danger-red)";
+            }
+        }
+    }
+
+    // Inisialisasi grafik dan nilai awal saat halaman dimuat
+    window.onload = function() {
+        initChart();
+        updateSim();
+    };
+</script>
+
+</body>
+</html>
