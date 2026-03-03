@@ -78,23 +78,6 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
-        .ai-gradient-text {
-            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .ai-gradient-bg {
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-        }
-
-        /* Spinner animation */
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .spinner {
-            animation: spin 1s linear infinite;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
@@ -107,10 +90,6 @@
                 <p class="text-sm text-gray-500 mt-1">Simulasi Interaksi Inang, Agen, dan Lingkungan</p>
             </div>
             <div class="flex items-center gap-3">
-                <button onclick="generateCaseStudy()" id="btn-case-study" class="text-sm font-medium text-white transition-all flex items-center gap-2 ai-gradient-bg hover:opacity-90 px-4 py-2 rounded-full shadow-sm">
-                    <span id="case-study-icon">✨</span>
-                    <span id="case-study-text">Buat Studi Kasus AI</span>
-                </button>
                 <button onclick="resetSimulasi()" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full">
                     <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Reset
                 </button>
@@ -249,11 +228,6 @@
             <!-- Area SVG Segitiga -->
             <div class="glass-panel rounded-3xl p-8 flex flex-col items-center justify-center relative overflow-hidden flex-1">
                 
-                <!-- Notifikasi Skenario Kasus (Tersembunyi by default) -->
-                <div id="case-study-banner" class="hidden w-full bg-purple-50 border border-purple-100 rounded-xl p-4 mb-4 text-left">
-                    <h4 id="case-title" class="text-purple-800 font-bold text-sm">Judul Skenario</h4>
-                    <p id="case-desc" class="text-purple-700 text-sm mt-1 leading-relaxed">Deskripsi skenario...</p>
-                </div>
 
                 <div class="text-center w-full z-10">
                     <h3 class="text-2xl font-semibold tracking-tight" id="status-title">Kondisi Endemis</h3>
@@ -309,30 +283,6 @@
                     <circle cx="500" cy="400" r="35" fill="rgba(255,255,255,0.2)" class="pointer-events-none"/>
                     <text x="500" y="405" text-anchor="middle" dominant-baseline="middle" fill="white" font-weight="600" font-size="14" class="pointer-events-none">LINGKUNGAN</text>
                 </svg>
-
-                <!-- Skor & AI Button Bottom Section -->
-                <div class="w-full mt-4 flex flex-col sm:flex-row items-center justify-between gap-6 px-4">
-                    <div class="flex flex-col items-center sm:items-start">
-                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">Skor Risiko Penularan</span>
-                        <div id="score-display" class="text-4xl font-bold tracking-tighter text-gray-700">50</div>
-                    </div>
-                    
-                    <button onclick="analyzeSituation()" id="btn-analyze" class="w-full sm:w-auto text-sm font-medium text-purple-700 transition-all flex items-center justify-center gap-2 bg-purple-50 border border-purple-200 hover:bg-purple-100 px-5 py-3 rounded-xl shadow-sm">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-500" id="analyze-icon"></i> 
-                        <span id="analyze-text">Analisis Situasi Saat Ini</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Panel Hasil Analisis AI -->
-            <div id="ai-analysis-panel" class="hidden glass-panel rounded-2xl p-6 border-l-4 border-purple-500 bg-white shadow-sm">
-                <div class="flex items-center gap-2 mb-2">
-                    <i data-lucide="bot" class="w-5 h-5 text-purple-600"></i>
-                    <h3 class="font-semibold text-gray-800">Analisis Epidemiolog (AI)</h3>
-                </div>
-                <div id="ai-analysis-content" class="text-sm text-gray-600 leading-relaxed italic">
-                    <!-- Konten AI akan muncul di sini -->
-                </div>
             </div>
 
         </div>
@@ -342,10 +292,6 @@
     <script>
         // Inisialisasi ikon Lucide
         lucide.createIcons();
-
-        // Gemini API Configuration
-        const apiKey = ""; // API key diinject oleh sistem runtime
-        const MODEL_NAME = "gemini-2.5-flash-preview-09-2025";
         
         // Konstanta Warna
         const COLOR_GREEN = { r: 16, g: 185, b: 129 }; // Emerald 500 (Aman)
@@ -410,10 +356,6 @@
             let radius = 20 + (totalScore / 100) * 40; 
             centerNode.setAttribute('r', radius);
 
-            const scoreDisplay = document.getElementById('score-display');
-            scoreDisplay.innerText = totalScore;
-            scoreDisplay.style.color = totalColor;
-
             const statusTitle = document.getElementById('status-title');
             const statusDesc = document.getElementById('status-desc');
             
@@ -431,8 +373,6 @@
                 statusDesc.innerText = "Kejadian penyakit relatif stabil dan diprediksi tetap ada dalam populasi.";
             }
             
-            // Sembunyikan panel analisis jika parameter diubah, agar user menekan tombol analisis lagi
-            document.getElementById('ai-analysis-panel').classList.add('hidden');
         }
 
         // Reset
@@ -441,183 +381,7 @@
             document.getElementById('inang-slider').value = 50;
             document.getElementById('lingkungan-slider').value = 50;
             document.querySelectorAll('.toggle-checkbox').forEach(cb => cb.checked = false);
-            document.getElementById('case-study-banner').classList.add('hidden');
-            document.getElementById('ai-analysis-panel').classList.add('hidden');
             updateSimulasi();
-        }
-
-        // Fungsi fetch API Gemini dengan retry
-        async function fetchWithRetry(url, options, maxRetries = 5) {
-            let retries = 0;
-            const baseDelay = 1000;
-            while (retries < maxRetries) {
-                try {
-                    const response = await fetch(url, options);
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.error?.message || 'Unknown error'}`);
-                    }
-                    return await response.json();
-                } catch (error) {
-                    retries++;
-                    if (retries >= maxRetries) throw error;
-                    await new Promise(resolve => setTimeout(resolve, baseDelay * Math.pow(2, retries - 1)));
-                }
-            }
-        }
-
-        // Fitur 1: Buat Skenario Wabah (JSON Response)
-        async function generateCaseStudy() {
-            const btnText = document.getElementById('case-study-text');
-            const btnIcon = document.getElementById('case-study-icon');
-            
-            // UI Loading state
-            btnText.innerText = "Menyusun Kasus...";
-            btnIcon.classList.add('spinner');
-            btnIcon.innerText = "⏳";
-            
-            const prompt = `Buat satu skenario singkat kasus wabah penyakit hewan nyata yang relevan di Indonesia (misalnya PMK, Rabies, Anthrax, ASF, atau Avian Influenza). 
-            Berikan: 
-            1. 'judul' kasus.
-            2. 'deskripsi' singkat situasi wabah di lapangan.
-            3. 'agen': Angka (0-100) merepresentasikan tingkat virulensi/dosis agen di alam tanpa intervensi.
-            4. 'inang': Angka (0-100) merepresentasikan kerentanan awal inang di wilayah tersebut.
-            5. 'lingkungan': Angka (0-100) merepresentasikan kondisi lingkungan (kepadatan, cuaca) yang memperburuk wabah.
-            Angka-angka ini akan digunakan untuk mengatur setelan slider simulasi. Jika wabahnya parah, angka-angka harus tinggi (>60).`;
-
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: {
-                    responseMimeType: "application/json",
-                    responseSchema: {
-                        type: "OBJECT",
-                        properties: {
-                            judul: { type: "STRING" },
-                            deskripsi: { type: "STRING" },
-                            agen: { type: "INTEGER" },
-                            inang: { type: "INTEGER" },
-                            lingkungan: { type: "INTEGER" }
-                        },
-                        required: ["judul", "deskripsi", "agen", "inang", "lingkungan"]
-                    }
-                }
-            };
-
-            try {
-                const response = await fetchWithRetry(
-                    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`,
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    }
-                );
-
-                const dataText = response.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (!dataText) throw new Error("Format respons tidak valid.");
-                
-                const caseData = JSON.parse(dataText);
-
-                // Update UI based on AI result
-                document.getElementById('case-title').innerText = caseData.judul;
-                document.getElementById('case-desc').innerText = caseData.deskripsi;
-                document.getElementById('case-study-banner').classList.remove('hidden');
-
-                // Update Sliders
-                document.getElementById('agen-slider').value = caseData.agen;
-                document.getElementById('inang-slider').value = caseData.inang;
-                document.getElementById('lingkungan-slider').value = caseData.lingkungan;
-
-                // Matikan semua intervensi sebagai skenario dasar
-                document.querySelectorAll('.toggle-checkbox').forEach(cb => cb.checked = false);
-                
-                updateSimulasi();
-
-            } catch (error) {
-                alert("Maaf, gagal menghubungi AI untuk membuat studi kasus. Pastikan koneksi internet Anda stabil.");
-            } finally {
-                // Restore UI
-                btnText.innerText = "Buat Studi Kasus AI";
-                btnIcon.classList.remove('spinner');
-                btnIcon.innerText = "✨";
-            }
-        }
-
-        // Fitur 2: Analisis Situasi Saat Ini (Text Response)
-        async function analyzeSituation() {
-            const btn = document.getElementById('btn-analyze');
-            const btnText = document.getElementById('analyze-text');
-            const icon = document.getElementById('analyze-icon');
-            const panel = document.getElementById('ai-analysis-panel');
-            const content = document.getElementById('ai-analysis-content');
-
-            btn.disabled = true;
-            btnText.innerText = "Menganalisis...";
-            icon.setAttribute('data-lucide', 'loader-2');
-            icon.classList.add('spinner');
-            lucide.createIcons();
-
-            // Kumpulkan data state saat ini
-            let agenBase = document.getElementById('agen-slider').value;
-            let inangBase = document.getElementById('inang-slider').value;
-            let lingBase = document.getElementById('lingkungan-slider').value;
-            
-            let interventions = [];
-            if(document.getElementById('agen-intervensi1').checked) interventions.push("Disinfeksi Lingkungan diterapkan");
-            if(document.getElementById('agen-intervensi2').checked) interventions.push("Terapi/Depopulasi diterapkan");
-            if(document.getElementById('inang-intervensi1').checked) interventions.push("Vaksinasi Masal diterapkan");
-            if(document.getElementById('inang-intervensi2').checked) interventions.push("Nutrisi Inang diperbaiki");
-            if(document.getElementById('lingkungan-intervensi1').checked) interventions.push("Sanitasi Kandang dikelola");
-            if(document.getElementById('lingkungan-intervensi2').checked) interventions.push("Hewan diisolasi dan Vektor dikontrol");
-
-            const interventionText = interventions.length > 0 ? interventions.join(", ") : "Tidak ada intervensi yang dilakukan";
-
-            const prompt = `Anda adalah Dosen/Ahli Epidemiologi Veteriner. Analisis situasi wabah hewan berikut berdasarkan konsep segitiga epidemiologi:
-            - Skor dasar Agen (Virulensi): ${agenBase}/100
-            - Skor dasar Inang (Kerentanan): ${inangBase}/100
-            - Skor dasar Lingkungan (Stresor): ${lingBase}/100
-            - Intervensi aktif: ${interventionText}.
-            - Skor Risiko Akhir Kombinasi: ${currentTotalScore}/100.
-            
-            Tugas Anda: Berikan analisis singkat, padat, dan profesional (maksimal 3 paragraf pendek) mengenai mengapa skor akhir tersebut terjadi, bagaimana efektivitas intervensi saat ini, dan apa saran prioritas dokter hewan selanjutnya. Gunakan bahasa Indonesia baku dan ilmiah (hindari sapaan/pembuka surat, langsung ke inti analisis).`;
-
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: "Anda adalah asisten ahli epidemiologi veteriner yang memberikan analisis praktis dan ilmiah langsung sasaran." }] }
-            };
-
-            try {
-                const response = await fetchWithRetry(
-                    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`,
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    }
-                );
-
-                const textResult = response.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (!textResult) throw new Error("Respons kosong.");
-
-                // Formatting simple markdown (newlines to <br>, **bold** to <b>)
-                let formattedText = textResult
-                    .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
-                    .replace(/\n\n/g, '<br><br>')
-                    .replace(/\n/g, '<br>');
-
-                content.innerHTML = formattedText;
-                panel.classList.remove('hidden');
-
-            } catch (error) {
-                content.innerHTML = `<span class="text-red-500">Gagal mengambil analisis AI. Silakan coba lagi.</span>`;
-                panel.classList.remove('hidden');
-            } finally {
-                btn.disabled = false;
-                btnText.innerText = "Analisis Situasi Saat Ini";
-                icon.setAttribute('data-lucide', 'sparkles');
-                icon.classList.remove('spinner');
-                lucide.createIcons();
-            }
         }
 
         // Inisialisasi
