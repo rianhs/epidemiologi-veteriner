@@ -30,7 +30,7 @@
 
         .header { text-align: center; margin-bottom: 2rem; }
         .header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-        .header p { color: var(--text-secondary); max-width: 700px; margin: 0 auto; font-size: 1rem; }
+        .header p { color: var(--text-secondary); max-width: 800px; margin: 0 auto; font-size: 1rem; }
 
         .container { display: flex; gap: 2rem; max-width: 1400px; margin: 0 auto; height: 80vh; min-height: 700px; }
 
@@ -65,7 +65,7 @@
         .valve-container { display: flex; flex-direction: column; align-items: center; }
         .valve-icon { font-size: 1.2rem; margin: -5px 0; z-index: 3; filter: grayscale(100%); }
 
-        /* --- KONTROL SLIDER --- */
+        /* --- KONTROL SLIDER BARU --- */
         .controls-area { background: var(--bg-widget); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border-light); margin-top: 1rem; }
         .slider-group { margin-bottom: 1rem; }
         .slider-group:last-child { margin-bottom: 0; }
@@ -102,7 +102,7 @@
 
     <div class="header">
         <h1>Model Bak Mandi Epidemiologi</h1>
-        <p>Prevalensi dipengaruhi oleh penambahan air dari keran atas (Insidensi) dan kebocoran di bawah (Eliminasi). Perhatikan perbedaan <strong>angka penyebut</strong> pada rumus di sisi kanan.</p>
+        <p>Prevalensi dipengaruhi oleh penambahan kasus baru (Insidensi) dan lamanya individu menderita sakit (Durasi). Konsep dasar: <strong>Prevalensi ≈ Insidensi × Durasi</strong>.</p>
     </div>
 
     <div class="container">
@@ -133,11 +133,9 @@
                 <div style="display: flex; gap: 80px; justify-content: center; width: 100%;">
                     <div class="valve-container">
                         <div class="pipe-vertical"><div class="pipe-flow" id="flow-R" style="background: repeating-linear-gradient(180deg, transparent, transparent 4px, var(--c-recovered) 4px, var(--c-recovered) 8px);"></div></div>
-                        <div class="valve-icon">🚰</div>
                     </div>
                     <div class="valve-container">
                         <div class="pipe-vertical"><div class="pipe-flow" id="flow-D" style="background: repeating-linear-gradient(180deg, transparent, transparent 4px, var(--c-dead) 4px, var(--c-dead) 8px);"></div></div>
-                        <div class="valve-icon">🚰</div>
                     </div>
                 </div>
 
@@ -169,17 +167,17 @@
                 </div>
                 <div class="slider-group">
                     <div class="slider-header">
-                        <span>Laju Kesembuhan (Lubang Pembuangan R)</span>
-                        <span class="slider-val" id="val-slider-rec">20%</span>
+                        <span>Durasi Penyakit (Waktu Tertahan di Bak)</span>
+                        <span class="slider-val" id="val-slider-dur">10 Hari</span>
                     </div>
-                    <input type="range" id="slider-rec" min="0" max="100" value="20">
+                    <input type="range" id="slider-dur" min="1" max="30" value="10">
                 </div>
                 <div class="slider-group">
                     <div class="slider-header">
-                        <span>Laju Kematian (Lubang Pembuangan D)</span>
-                        <span class="slider-val" id="val-slider-death">5%</span>
+                        <span>Nasib Kasus: CFR (Mati) vs Kesembuhan</span>
+                        <span class="slider-val" id="val-slider-cfr">CFR: 5% | Sembuh: 95%</span>
                     </div>
-                    <input type="range" id="slider-death" min="0" max="100" value="5">
+                    <input type="range" id="slider-cfr" min="0" max="100" value="5">
                 </div>
                 
                 <div class="btn-group">
@@ -204,7 +202,7 @@
                             </div>
                         </span>
                     </div>
-                    <div class="desc-text">Perhatikan penyebutnya! Individu mati (D) tidak lagi dihitung dalam populasi pembagi prevalensi berjalan.</div>
+                    <div class="desc-text">Prevalensi akan memuncak jika <strong>Durasi Penyakit</strong> panjang, karena penderita lama menetap di dalam bak sebelum sembuh/mati.</div>
                 </div>
 
                 <div class="metric-card" style="border-left: 5px solid var(--c-susceptible);">
@@ -220,7 +218,7 @@
                             × 100
                         </span>
                     </div>
-                    <div class="desc-text">Kasus baru per 100 populasi rentan. Aliran akan terhenti otomatis jika Tandon Atas (S) sudah habis.</div>
+                    <div class="desc-text">Kasus baru per 100 populasi rentan. Aliran akan terhenti otomatis jika Tandon Rentan (S) sudah kosong.</div>
                 </div>
             </div>
 
@@ -288,44 +286,40 @@
             document.getElementById('disp-inc').innerText = incRate.toFixed(1);
         }
 
-        // PERBAIKAN: Menggunakan Model Aliran Air Murni
+        // PERBAIKAN: Logika Matematika sesuai P = I x D
         function simulateStep() {
-            // 1. Keran Insidensi (Berapa debit air yang tumpah per sekon)
+            // 1. Hitung Insidensi (Kasus Baru)
             let sliderInc = parseInt(document.getElementById('slider-inc').value);
-            let maxFlow = 15; // Maksimal 15 orang jatuh sakit per hari (tick)
+            let maxFlow = 15; 
             let newCases = (sliderInc / 100) * maxFlow; 
             
-            // Hentikan air jika tandon atas habis
             if (newCases > pop.S) newCases = pop.S; 
             
-            // 2. Lubang Pembuangan
-            let sliderRec = parseInt(document.getElementById('slider-rec').value);
-            let rateRecovery = (sliderRec / 100) * 0.05; // Maksimal 5% dari bak sembuh/tick
-            let recoveries = rateRecovery * pop.I;
+            // 2. Hitung Pengeluaran dari Bak (Berdasarkan Durasi)
+            let duration = parseInt(document.getElementById('slider-dur').value);
+            // Semakin lama durasi, semakin lambat air menguras dari bak I
+            let drainRate = 1 / duration; 
+            let totalLeaving = pop.I * drainRate;
 
-            let sliderDeath = parseInt(document.getElementById('slider-death').value);
-            let rateDeath = (sliderDeath / 100) * 0.05; // Maksimal 5% dari bak mati/tick
-            let deaths = rateDeath * pop.I;
-
-            if (recoveries + deaths > pop.I) {
-                let ratio = pop.I / (recoveries + deaths);
-                recoveries *= ratio;
-                deaths *= ratio;
-            }
+            // 3. Distribusi Nasib (Kesembuhan vs Kematian harus berjumlah 100% dari totalLeaving)
+            let cfr = parseInt(document.getElementById('slider-cfr').value) / 100;
+            let deaths = totalLeaving * cfr;
+            let recoveries = totalLeaving * (1 - cfr);
 
             recentNewCases = newCases;
 
-            // 3. Terapkan perpindahan volume
+            // 4. Terapkan perpindahan volume
             pop.S -= newCases;
             pop.I += newCases;
-            pop.I -= (recoveries + deaths);
+            pop.I -= totalLeaving; // Dikurangi total orang yang sembuh & mati
             pop.R += recoveries;
             pop.D += deaths;
 
             timeTick++;
 
-            // 4. Update UI & Animasi
+            // 5. Update UI & Animasi Visual Aliran Air
             document.getElementById('flow-I').style.display = newCases > 0.1 ? 'block' : 'none';
+            // Proporsi aliran pipa bergantung pada porsi kesembuhan dan kematian
             document.getElementById('flow-R').style.display = recoveries > 0.1 ? 'block' : 'none';
             document.getElementById('flow-D').style.display = deaths > 0.1 ? 'block' : 'none';
 
@@ -340,7 +334,7 @@
 
             updateUI();
 
-            // 5. Auto-Stop jika Tandon Habis & Bak Kosong
+            // Auto-Stop jika Tandon Habis & Bak Kosong
             if (pop.S < 0.1 && pop.I < 0.1) {
                 toggleSim(); 
                 document.getElementById('btn-play').innerText = "Simulasi Selesai";
@@ -389,8 +383,15 @@
             updateUI();
         }
 
-        document.getElementById('slider-rec').addEventListener('input', function(e) { document.getElementById('val-slider-rec').innerText = e.target.value + '%'; });
-        document.getElementById('slider-death').addEventListener('input', function(e) { document.getElementById('val-slider-death').innerText = e.target.value + '%'; });
+        // Teks interaktif untuk Slider
+        document.getElementById('slider-dur').addEventListener('input', function(e) { 
+            document.getElementById('val-slider-dur').innerText = e.target.value + ' Hari'; 
+        });
+        document.getElementById('slider-cfr').addEventListener('input', function(e) { 
+            let cfrVal = e.target.value;
+            let recVal = 100 - cfrVal;
+            document.getElementById('val-slider-cfr').innerText = `CFR: ${cfrVal}% | Sembuh: ${recVal}%`; 
+        });
         document.getElementById('slider-inc').addEventListener('input', function(e) {
             let val = e.target.value;
             let text = "Sedang";
