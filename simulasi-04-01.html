@@ -239,6 +239,7 @@
             cursor: pointer;
             margin-left: 6px;
             transition: background-color 0.2s;
+			text-transform: none;
         }
 
         .info-icon:hover {
@@ -560,13 +561,13 @@
         resNPN.textContent = T_minus > 0 ? npn.toFixed(1) + '%' : '--%';
 
         // Suntikkan Teks Interpretasi Dinamis
-        infoSe.innerHTML = `Artinya, dari seluruh kelompok hewan yang <strong>benar-benar sakit</strong>, alat uji ini berhasil mendeteksi sebanyak <strong>${actSe.toFixed(1)}%</strong> di antaranya. Sisanya terlewat dari deteksi (sebagai negatif palsu).`;
+        infoSe.innerHTML = `Artinya, dari seluruh kelompok hewan yang <strong>benar-benar sakit</strong>, uji ini berhasil mendeteksi sebanyak <strong>${actSe.toFixed(1)}%</strong> di antaranya. Sisanya terlewat dari deteksi (sebagai negatif palsu).`;
         
-        infoSp.innerHTML = `Artinya, dari seluruh kelompok hewan yang <strong>benar-benar tidak sakit</strong>, alat uji ini berhasil mengenalinya sebanyak <strong>${actSp.toFixed(1)}%</strong> dengan tepat. Sisanya keliru dituduh sakit (sebagai positif palsu).`;
+        infoSp.innerHTML = `Artinya, dari seluruh kelompok hewan yang <strong>benar-benar tidak sakit</strong>, uji ini berhasil mengenali sebanyak <strong>${actSp.toFixed(1)}%</strong> di antaranya. Sisanya keliru dituduh sakit (sebagai positif palsu).`;
         
-        infoNPP.innerHTML = `Artinya, jika hasil uji diagnostik seekor hewan keluar sebagai <strong>positif</strong>, tingkat keyakinan bahwa hewan tersebut <strong>benar-benar sakit</strong> adalah <strong>${npp.toFixed(1)}%</strong>. (Masih ada peluang sebesar <strong>${(100 - npp).toFixed(1)}%</strong> bahwa hewan tersebut sebenarnya tidak sakit).`;
+        infoNPP.innerHTML = `Artinya, jika hasil ujinya <strong>positif</strong>, tingkat keyakinan bahwa hewan tersebut <strong>benar-benar sakit</strong> adalah <strong>${npp.toFixed(1)}%</strong>. (Masih ada peluang sebesar <strong>${(100 - npp).toFixed(1)}%</strong> bahwa hewan tersebut sebenarnya tidak sakit).`;
         
-        infoNPN.innerHTML = `Artinya, jika hasil uji diagnostik seekor hewan keluar sebagai <strong>negatif</strong>, tingkat keyakinan bahwa hewan tersebut <strong>benar-benar tidak sakit</strong> adalah <strong>${npn.toFixed(1)}%</strong>. (Masih ada peluang sebesar <strong>${(100 - npn).toFixed(1)}%</strong> bahwa hewan tersebut sebenarnya sakit).`;
+        infoNPN.innerHTML = `Artinya, jika hasil ujinya <strong>negatif</strong>, tingkat keyakinan bahwa hewan tersebut <strong>benar-benar tidak sakit</strong> adalah <strong>${npn.toFixed(1)}%</strong>. (Masih ada peluang sebesar <strong>${(100 - npn).toFixed(1)}%</strong> bahwa hewan tersebut sebenarnya sakit).`;
     }
 
     // Listeners
