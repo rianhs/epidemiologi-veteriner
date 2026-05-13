@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analisis Risiko Impor — Epidemiologi & Ekonomi Veteriner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf8f3;
+    --warm-white: #f5f2eb;
+    --ink: #1a1814;
+    --ink-light: #3d3a34;
+    --ink-muted: #7a756c;
+    --accent: #b85c2a;
+    --accent-light: #e8916a;
+    --accent-pale: #f5e8df;
+    --teal: #2a7a6e;
+    --teal-light: #e0f0ed;
+    --gold: #c9962a;
+    --gold-pale: #faf0d7;
+    --border: #e2ddd4;
+    --shadow: 0 2px 16px rgba(26,24,20,0.08);
+    --shadow-lg: 0 8px 40px rgba(26,24,20,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3 { font-family: 'Lora', serif; line-height: 1.25; }
+  h2 { font-size: 1.75rem; color: var(--ink); margin-bottom: 0.5rem; }
+  h3 { font-size: 1.2rem; color: var(--ink-light); margin-bottom: 0.5rem; }
+  p { color: var(--ink-light); margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-family: 'Lora', serif; font-style: italic; }
+
+  /* ── LAYOUT ── */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .divider {
+    width: 40px; height: 3px;
+    background: var(--accent);
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+
+  /* ── COVER ── */
+  #cover {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex; align-items: center;
+    padding: 4rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 30%, rgba(184,92,42,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(42,122,110,0.12) 0%, transparent 50%);
+  }
+  #cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,150,42,0.6), transparent);
+  }
+  .cover-inner {
+    position: relative; z-index: 1;
+    max-width: 820px; margin: 0 auto;
+  }
+  .cover-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(184,92,42,0.15);
+    border: 1px solid rgba(184,92,42,0.3);
+    border-radius: 2rem;
+    padding: 0.3rem 0.9rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 2rem;
+  }
+  .cover-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  #cover h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    color: #faf8f3;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  #cover h1 em {
+    color: var(--accent-light);
+  }
+  .cover-meta {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .cover-meta-item {
+    display: flex; flex-direction: column; gap: 0.15rem;
+  }
+  .cover-meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250,248,243,0.4);
+  }
+  .cover-meta-value {
+    font-size: 0.85rem;
+    color: rgba(250,248,243,0.75);
+    font-weight: 500;
+  }
+  .cover-nav {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-top: 3rem;
+  }
+  .cover-nav a {
+    padding: 0.45rem 1rem;
+    background: rgba(250,248,243,0.06);
+    border: 1px solid rgba(250,248,243,0.12);
+    border-radius: 0.3rem;
+    font-size: 0.78rem;
+    color: rgba(250,248,243,0.6);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .cover-nav a:hover {
+    background: rgba(184,92,42,0.2);
+    border-color: rgba(184,92,42,0.4);
+    color: var(--accent-light);
+  }
+
+  /* ── CAPAIAN ── */
+  #capaian { background: var(--warm-white); border-bottom: 1px solid var(--border); }
+  .cpl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  .cpl-item {
+    background: var(--cream);
+    padding: 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .cpl-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-pale);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .cpl-text { font-size: 0.9rem; color: var(--ink-light); line-height: 1.6; }
+
+  /* ── SKENARIO ── */
+  #skenario { background: var(--cream); }
+  .scenario-card {
+    background: var(--ink);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .scenario-card::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 10rem;
+    color: rgba(255,255,255,0.04);
+    position: absolute;
+    top: -2rem; left: 1.5rem;
+    line-height: 1;
+  }
+  .scenario-card p {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    color: rgba(250,248,243,0.9);
+    line-height: 1.8;
+    font-style: italic;
+    position: relative; z-index: 1;
+    margin: 0;
+  }
+  .scenario-card p strong {
+    color: var(--accent-light);
+    font-style: normal;
+  }
+  .scenario-prompt {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--accent-pale);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .scenario-prompt p {
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .scenario-prompt strong { color: var(--accent); }
+
+  /* ── BAHAYA VS RISIKO ── */
+  #bahaya-risiko { background: var(--warm-white); border-top: 1px solid var(--border); }
+  .concept-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  .concept-box {
+    background: var(--cream);
+    padding: 1.75rem;
+  }
+  .concept-box.highlighted { background: var(--ink); }
+  .concept-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .tag-bahaya { background: var(--accent-pale); color: var(--accent); }
+  .tag-risiko { background: rgba(42,122,110,0.15); color: #2a7a6e; }
+  .concept-box.highlighted .tag-risiko { background: rgba(42,122,110,0.2); color: #6ecfc3; }
+  .concept-box h3 { margin-bottom: 0.5rem; }
+  .concept-box.highlighted h3 { color: var(--cream); }
+  .concept-box.highlighted p { color: rgba(250,248,243,0.7); }
+  .concept-formula {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(42,122,110,0.15);
+    border-radius: 0.4rem;
+    color: #6ecfc3;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  /* ── MATRIKS RISIKO ── */
+  .matrix-wrap {
+    margin-top: 2.5rem;
+  }
+  .matrix-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  .matrix-outer {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+  .matrix-y-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .matrix-grid-wrap { flex: 1; }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .matrix-cell {
+    aspect-ratio: 1;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    text-align: center;
+    transition: all 0.2s;
+    position: relative;
+    border: 2px solid transparent;
+  }
+  .matrix-cell:hover { transform: scale(1.03); border-color: var(--ink); }
+  .matrix-cell.active { border-color: var(--ink) !important; transform: scale(1.03); }
+  .cell-high-high { background: #fce8e8; }
+  .cell-high-low { background: #fef3e2; }
+  .cell-low-high { background: #fef3e2; }
+  .cell-low-low { background: #e8f5e9; }
+  .cell-icon { font-size: 1.4rem; margin-bottom: 0.3rem; }
+  .cell-label { font-size: 0.68rem; color: var(--ink-light); line-height: 1.3; font-weight: 500; }
+  .cell-risk {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    margin-top: 0.2rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 1rem;
+  }
+  .risk-tinggi { background: #fca5a5; color: #7f1d1d; }
+  .risk-sedang { background: #fcd34d; color: #78350f; }
+  .risk-rendah { background: #86efac; color: #14532d; }
+  .matrix-x-labels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 0.5rem;
+  }
+  .matrix-x-label {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .matrix-x-axis {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .matrix-info {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    min-height: 80px;
+    transition: all 0.3s;
+  }
+  .matrix-info .info-title {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* ── KERANGKA ── */
+  #kerangka { background: var(--cream); }
+  .framework-diagram {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+  .fw-main-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .fw-box {
+    flex: 1;
+    max-width: 200px;
+    padding: 1.25rem 1rem;
+    border-radius: 0.6rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .fw-box:hover, .fw-box.active {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .fw-box-1 { background: var(--accent-pale); border-color: rgba(184,92,42,0.2); }
+  .fw-box-1:hover, .fw-box-1.active { border-color: var(--accent); }
+  .fw-box-2 { background: var(--teal-light); border-color: rgba(42,122,110,0.2); }
+  .fw-box-2:hover, .fw-box-2.active { border-color: var(--teal); }
+  .fw-box-3 { background: var(--gold-pale); border-color: rgba(201,150,42,0.2); }
+  .fw-box-3:hover, .fw-box-3.active { border-color: var(--gold); }
+  .fw-box-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .fw-box-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .fw-box-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.3rem;
+  }
+  .fw-arrow {
+    font-size: 1.2rem;
+    color: var(--ink-muted);
+    padding: 0 0.25rem;
+    flex-shrink: 0;
+  }
+  .fw-down-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 2rem;
+    margin-top: 0.25rem;
+  }
+  .fw-down-arrow {
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+  }
+  .fw-bottom {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    background: var(--ink);
+    border-radius: 0.6rem;
+    text-align: center;
+    margin-top: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+  }
+  .fw-bottom:hover, .fw-bottom.active {
+    border-color: rgba(250,248,243,0.3);
+    box-shadow: var(--shadow-lg);
+  }
+  .fw-bottom-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--cream);
+  }
+  .fw-bottom-icon { font-size: 1.3rem; margin-bottom: 0.2rem; }
+  .fw-detail {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .fw-detail.visible { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .fw-detail h3 { margin-bottom: 0.75rem; }
+  .fw-detail-skenario {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--cream);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: var(--ink-light);
+  }
+  .fw-detail-skenario strong { color: var(--accent); }
+
+  /* ── IDENTIFIKASI BAHAYA ── */
+  #identifikasi { background: var(--warm-white); border-top: 1px solid var(--border); }
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .criteria-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    padding: 1.25rem;
+    transition: all 0.2s;
+  }
+  .criteria-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+  .criteria-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .criteria-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .criteria-card p { font-size: 0.83rem; margin: 0; }
+
+  .hazard-table-wrap { margin-top: 2rem; overflow-x: auto; }
+  .hazard-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .hazard-table th {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+  }
+  .hazard-table th:first-child { border-radius: 0.4rem 0 0 0; }
+  .hazard-table th:last-child { border-radius: 0 0.4rem 0 0; }
+  .hazard-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-light);
+    vertical-align: top;
+  }
+  .hazard-table tr:last-child td { border-bottom: none; }
+  .hazard-table tr:hover td { background: var(--cream); }
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+  .badge-ya { background: #fce8e8; color: #c0392b; }
+  .badge-tidak { background: #e8f5e9; color: #27ae60; }
+  .badge-mungkin { background: #fef3e2; color: #e67e22; }
+
+  /* ── PENILAIAN RISIKO ── */
+  #penilaian { background: var(--cream); }
+  .risk-flow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  .risk-flow-box {
+    flex: 1;
+    min-width: 140px;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    background: var(--warm-white);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .risk-flow-box:hover, .risk-flow-box.active-tab {
+    border-color: var(--teal);
+    background: var(--teal-light);
+    box-shadow: var(--shadow);
+  }
+  .risk-flow-box .rf-icon { font-size: 1.3rem; margin-bottom: 0.35rem; }
+  .risk-flow-box .rf-title { font-weight: 600; font-size: 1rem; color: var(--ink); }
+  .risk-flow-box .rf-sub { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.15rem; }
+  .risk-flow-eq {
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+  .risk-tab-content {
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .risk-tab-content.active { display: block; }
+
+  /* ── KOMBINASI KUALITATIF ── */
+  .combo-section { margin-top: 2rem; }
+  .combo-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1.25rem;
+  }
+  .combo-selectors {
+    display: flex; gap: 1rem; align-items: center;
+    flex-wrap: wrap; margin-bottom: 1.5rem;
+  }
+  .combo-select-wrap {
+    flex: 1; min-width: 140px;
+  }
+  .combo-label {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .combo-select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a756c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.25rem;
+  }
+  .combo-select:focus { outline: none; border-color: var(--teal); }
+  .combo-operator {
+    font-size: 1.5rem;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+    margin-top: 1.25rem;
+  }
+  .combo-result {
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.6rem;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+  }
+  .combo-result-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.4rem;
+  }
+  .combo-result-value {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .combo-result-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin-top: 0.25rem;
+  }
+  .result-T { background: #fce8e8; border-color: #f87171; }
+  .result-T .combo-result-value { color: #c0392b; }
+  .result-S { background: #fef9e7; border-color: #fcd34d; }
+  .result-S .combo-result-value { color: #b7791f; }
+  .result-R { background: #e8f5e9; border-color: #86efac; }
+  .result-R .combo-result-value { color: #27ae60; }
+  .result-AR { background: #e0f0ed; border-color: #6ecfc3; }
+  .result-AR .combo-result-value { color: #2a7a6e; }
+  .result-ASR { background: #ede9fe; border-color: #c4b5fd; }
+  .result-ASR .combo-result-value { color: #6d28d9; }
+  .result-DA { background: var(--warm-white); border-color: var(--border); }
+  .result-DA .combo-result-value { color: var(--ink-muted); }
+
+  .uncertainty-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--gold-pale);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.85rem;
+    color: var(--ink-light);
+  }
+  .uncertainty-note strong { color: var(--gold); }
+
+  /* ── MANAJEMEN RISIKO ── */
+  #manajemen { background: var(--warm-white); border-top: 1px solid var(--border); }
+  .alor-explainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin: 1.5rem 0;
+  }
+  .alor-box {
+    background: var(--cream);
+    padding: 1.5rem;
+  }
+  .alor-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .tag-alop { background: var(--accent-pale); color: var(--accent); }
+  .tag-alor { background: var(--teal-light); color: var(--teal); }
+  .alor-box h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+
+  /* ── CHART INTERAKTIF ── */
+  .chart-section { margin-top: 2rem; }
+  .chart-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .chart-control-group label {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .chart-control-group select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a756c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.25rem;
+  }
+  .chart-control-group select:focus { outline: none; border-color: var(--teal); }
+
+  .bar-chart-wrap {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    min-height: 280px;
+    position: relative;
+  }
+  .bar-group { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; max-width: 160px; }
+  .bar-track {
+    width: 100%;
+    height: 180px;
+    background: var(--border);
+    border-radius: 0.4rem 0.4rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    width: 100%;
+    border-radius: 0.4rem 0.4rem 0 0;
+    transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  .bar-val-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+  }
+  .bar-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: center;
+  }
+  .bar-sublabel {
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+  }
+  .bar-fill-hasil { background: linear-gradient(180deg, #f87171, #ef4444); }
+  .bar-fill-alor { background: linear-gradient(180deg, #6ecfc3, #2a7a6e); }
+  .chart-verdict {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .verdict-aman { background: #e8f5e9; color: #27ae60; border: 1px solid #86efac; }
+  .verdict-perlu { background: #fce8e8; color: #c0392b; border: 1px solid #f87171; }
+
+  .mitigation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .mitigation-card {
+    padding: 1.1rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    font-size: 0.85rem;
+  }
+  .mitigation-card .m-icon { font-size: 1.3rem; margin-bottom: 0.4rem; }
+  .mitigation-card h3 { font-size: 0.88rem; margin-bottom: 0.3rem; }
+  .mitigation-card p { font-size: 0.8rem; color: var(--ink-muted); margin: 0; }
+
+  /* ── KOMUNIKASI RISIKO ── */
+  #komunikasi { background: var(--cream); }
+  .audience-tabs {
+    display: flex; gap: 0.5rem; margin: 1.5rem 0 1rem;
+    flex-wrap: wrap;
+  }
+  .aud-tab {
+    padding: 0.45rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 2rem;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--warm-white);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink-light);
+  }
+  .aud-tab:hover, .aud-tab.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--cream);
+  }
+  .aud-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .aud-content.active { display: block; }
+  .comm-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  .comm-card h3 { margin-bottom: 1rem; }
+  .comm-items { display: flex; flex-direction: column; gap: 0.75rem; }
+  .comm-item {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    font-size: 0.88rem; color: var(--ink-light);
+  }
+  .comm-item-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .comm-example {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--cream);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--ink-light);
+  }
+  .comm-example strong { color: var(--teal); font-style: normal; }
+
+  /* ── BENCANA ── */
+  #bencana { background: var(--warm-white); border-top: 1px solid var(--border); }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .compare-col { }
+  .compare-head {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .compare-head-1 { background: var(--ink); color: var(--cream); }
+  .compare-head-2 { background: var(--accent-pale); color: var(--accent); }
+  .compare-body {
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 1.25rem;
+    background: var(--cream);
+  }
+  .compare-body p { font-size: 0.85rem; margin-bottom: 0.75rem; }
+  .compare-formula-wrap {
+    text-align: center;
+    padding: 0.75rem;
+    background: var(--warm-white);
+    border-radius: 0.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-top: 0.75rem;
+  }
+  .compare-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .compare-list li {
+    font-size: 0.83rem;
+    color: var(--ink-light);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0.5rem;
+  }
+  .compare-list li:last-child { border-bottom: none; }
+  .compare-list li::before { content: '–'; color: var(--ink-muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+  footer p {
+    color: rgba(250,248,243,0.4);
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  footer strong { color: rgba(250,248,243,0.7); }
+
+  /* ── SCROLL PROGRESS ── */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: var(--accent);
+    z-index: 999;
+    transition: width 0.1s;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    h2 { font-size: 1.4rem; }
+    .concept-split, .alor-explainer, .compare-grid { grid-template-columns: 1fr; }
+    .fw-main-row { flex-direction: column; align-items: stretch; }
+    .fw-arrow { transform: rotate(90deg); text-align: center; }
+    .chart-controls { grid-template-columns: 1fr; }
+    .bar-chart-wrap { gap: 1.5rem; }
+    .matrix-outer { flex-direction: column; align-items: stretch; }
+    .matrix-y-label { writing-mode: horizontal-tb; transform: none; padding-bottom: 0; margin-bottom: 0.5rem; }
+    #pengantar > .container > div { grid-template-columns: 1fr; }
+  }
+
+  /* ── MATRIKS 5x5 ── */
+  .cell5 {
+    aspect-ratio: 1;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    transition: all 0.15s;
+    position: relative;
+    border: 2px solid transparent;
+  }
+  .cell5:hover { transform: scale(1.06); z-index: 2; }
+  .cell5.active5 { border-color: var(--ink) !important; transform: scale(1.08); z-index: 3; }
+  .cell5-label {
+    font-size: 0.6rem;
+    writing-mode: horizontal-tb;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 0.4rem; color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .dot-marker {
+    position: absolute;
+    width: 10px; height: 10px;
+    background: white;
+    border: 2px solid rgba(0,0,0,0.4);
+    border-radius: 50%;
+    font-size: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ══════════════════════════════════════════ COVER -->
+<section id="cover">
+  <div class="cover-inner">
+    <div class="cover-tag">MK Epidemiologi &amp; Ekonomi Veteriner</div>
+    <h1>Analisis Risiko <br><em>Impor Hewan &amp; Produknya</em></h1>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Program Studi</span>
+        <span class="cover-meta-value">S1 Kedokteran Hewan</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Kerangka</span>
+        <span class="cover-meta-value">WOAH Import Risk Analysis</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Durasi</span>
+        <span class="cover-meta-value">100 menit</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CAPAIAN -->
+<section id="capaian" style="padding: 8rem 1.5rem;">
+  <div class="container">
+    <span class="section-label">Capaian Pembelajaran</span>
+    <h2>Setelah perkuliahan ini, mahasiswa mampu menelaah dokumen analisis risiko impor hewan atau produk hewan yang dipublikasikan oleh peneliti, akademisi, atau pemerintah berdasarkan kerangka WOAH.</h2>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ PENGANTAR -->
+<section id="pengantar" style="padding: 8rem 1.5rem;">
+  <div class="container">
+    <span class="section-label">Apa itu Analisis Risiko?</span>
+    <p style="font-size:1.05rem; color:var(--ink-light); line-height:1.8; margin-bottom:1rem;">Analisis risiko merupakan suatu <strong>teknik untuk menilai dan menangani</strong> potensi munculnya peristiwa yang tidak diinginkan.</p>
+    <p style="font-size:1.05rem; color:var(--ink-light); line-height:1.8; margin:0;">Metode ini digunakan dalam berbagai bidang, misalnya bisnis, manajemen proyek, kesehatan masyarakat, dan dalam <strong>epidemiologi veteriner</strong>, khususnya untuk menganalisis risiko masuk dan tersebarnya penyakit hewan lintas batas (<em>transboundary animal diseases</em>).</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ BAHAYA vs RISIKO -->
+<section id="bahaya-risiko">
+  <div class="container">
+    <span class="section-label">Konsep Dasar</span>
+    <h2>Bahaya vs Risiko</h2>
+    <div class="divider"></div>
+    <div class="concept-split">
+      <div class="concept-box">
+        <h3>Bahaya (<em>hazard</em>)</h3>
+        <p>Bahaya adalah sesuatu yang punya potensi buruk, merugikan, dan/atau tidak diinginkan, tetapi belum tentu terwujud.</p>
+      </div>
+      <div class="concept-box highlighted">
+        <h3 style="color:var(--cream)">Risiko (<em>risk</em>)</h3>
+        <p>Risiko adalah <em>peluang kemunculan dan dampak yang ditimbulkan</em> oleh suatu bahaya — dua dimensi yang harus dipertimbangkan sekaligus.</p>
+        <div class="concept-formula">Risiko = Kemungkinan × Dampak</div>
+      </div>
+    </div>
+
+    <!-- Matriks 2x2 menyeberang jalan -->
+    <div class="matrix-wrap">
+      <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.25rem; align-items:stretch;">
+        <div style="display:flex; align-items:center; gap:0.6rem; background:var(--accent-pale); border:1px solid rgba(184,92,42,0.2); border-radius:0.5rem; padding:0.5rem 0.9rem;">
+          <span style="font-size:0.65rem; font-family:'DM Mono',monospace; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; white-space:nowrap;">Aktivitas</span>
+          <span style="font-size:0.85rem; color:var(--ink-light);">Menyeberang jalan</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.6rem; background:#fdecea; border:1px solid rgba(192,57,43,0.2); border-radius:0.5rem; padding:0.5rem 0.9rem;">
+          <span style="font-size:0.65rem; font-family:'DM Mono',monospace; letter-spacing:0.1em; text-transform:uppercase; color:#c0392b; font-weight:600; white-space:nowrap;">Bahaya</span>
+          <span style="font-size:0.85rem; color:var(--ink-light);">Tertabrak kendaraan</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.6rem; background:var(--teal-light); border:1px solid rgba(42,122,110,0.2); border-radius:0.5rem; padding:0.5rem 0.9rem;">
+          <span style="font-size:0.65rem; font-family:'DM Mono',monospace; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); font-weight:600; white-space:nowrap;">Risiko</span>
+          <span style="font-size:0.85rem; color:var(--ink-light);">Tergantung situasi — klik sel untuk lihat</span>
+        </div>
+      </div>
+      <div class="matrix-outer">
+        <div class="matrix-y-label">↑ Peluang</div>
+        <div class="matrix-grid-wrap">
+          <div style="display:grid; grid-template-columns: 80px 1fr 1fr; gap:4px;">
+            <div></div>
+            <div style="text-align:center; font-size:0.75rem; font-weight:600; color:var(--ink-muted); padding:0.4rem 0;">Dampak Ringan</div>
+            <div style="text-align:center; font-size:0.75rem; font-weight:600; color:var(--ink-muted); padding:0.4rem 0;">Dampak Berat</div>
+            <div style="display:flex; align-items:center; justify-content:flex-end; padding-right:0.75rem; font-size:0.75rem; font-weight:600; color:var(--ink-muted);">Peluang Besar</div>
+            <div class="matrix-cell cell-high-low" onclick="showCellInfo('besar-ringan', this)" style="aspect-ratio:unset; min-height:130px;">
+              <div class="cell-icon">🚲🚲🚲</div>
+              <div class="cell-label">Jalan ramai<br>kendaraan: sepeda</div>
+              <div class="cell-risk risk-sedang">RISIKO SEDANG</div>
+            </div>
+            <div class="matrix-cell cell-high-high" onclick="showCellInfo('besar-berat', this)" style="aspect-ratio:unset; min-height:130px;">
+              <div class="cell-icon">🚗🚌🚐</div>
+              <div class="cell-label">Jalan ramai<br>kendaraan: mobil</div>
+              <div class="cell-risk risk-tinggi">RISIKO TINGGI</div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:flex-end; padding-right:0.75rem; font-size:0.75rem; font-weight:600; color:var(--ink-muted);">Peluang Kecil</div>
+            <div class="matrix-cell cell-low-low" onclick="showCellInfo('kecil-ringan', this)" style="aspect-ratio:unset; min-height:130px;">
+              <div class="cell-icon">🚲</div>
+              <div class="cell-label">Jalan sepi<br>kendaraan: sepeda</div>
+              <div class="cell-risk risk-rendah">RISIKO RENDAH</div>
+            </div>
+            <div class="matrix-cell cell-low-high" onclick="showCellInfo('kecil-berat', this)" style="aspect-ratio:unset; min-height:130px;">
+              <div class="cell-icon">🚗</div>
+              <div class="cell-label">Jalan sepi<br>kendaraan: mobil</div>
+              <div class="cell-risk risk-sedang">RISIKO SEDANG</div>
+            </div>
+          </div>
+          <div class="matrix-x-axis" style="margin-top:0.5rem;">→ Dampak (keparahan jika tertabrak)</div>
+        </div>
+      </div>
+      <div class="matrix-info" id="matrixInfo">
+        <div class="info-title">💡 Klik salah satu sel di atas</div>
+        Matriks ini menggambarkan bahwa <em>bahayanya</em> sama, yaitu tertabrak kendaraan, tapi <em>risikonya</em> berbeda tergantung situasi. Itulah mengapa bahaya dan risiko harus dibedakan.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CONTOH KLINIK -->
+<section id="contoh-klinik" style="background:var(--warm-white); border-top:1px solid var(--border);">
+  <div class="container">
+    <span class="section-label">Contoh — Matriks 5×5</span>
+    <h2>Membuka Praktik Dokter Hewan &amp; Pet Shop</h2>
+    <div class="divider"></div>
+    <p>Langkah pertama: identifikasi bahaya. Langkah kedua: nilai risikonya menggunakan matriks (contoh: 5x5).</p>
+
+    <!-- Tabel identifikasi bahaya klinik -->
+    <div style="overflow-x:auto; margin-bottom:2rem;">
+      <table class="hazard-table">
+        <thead>
+          <tr>
+            <th>Bahaya</th>
+            <th>Contoh</th>
+            <th>Peluang</th>
+            <th>Dampak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Masalah legal</strong></td>
+            <td>Melanggar aturan usaha, tuntutan hukum dari klien</td>
+            <td><span class="badge" style="background:#e8f5e9;color:#27ae60;">2 — Kecil</span></td>
+            <td><span class="badge" style="background:#fce8e8;color:#c0392b;">5 — Sangat berat</span></td>
+          </tr>
+          <tr>
+            <td><strong>Masalah finansial</strong></td>
+            <td>Habis modal, tidak profit, pencurian, penipuan</td>
+            <td><span class="badge" style="background:#fef3e2;color:#e67e22;">4 — Besar</span></td>
+            <td><span class="badge" style="background:#fef3e2;color:#e67e22;">4 — Berat</span></td>
+          </tr>
+          <tr>
+            <td><strong>Masalah operasional</strong></td>
+            <td>Kualitas layanan buruk, kecelakaan kerja</td>
+            <td><span class="badge" style="background:#fce8e8;color:#c0392b;">5 — Sangat besar</span></td>
+            <td><span class="badge" style="background:#fef3e2;color:#e67e22;">4 — Berat</span></td>
+          </tr>
+          <tr>
+            <td><strong>Masalah kompetitif</strong></td>
+            <td>Persepsi &amp; pemasaran buruk, tak ada pelanggan</td>
+            <td><span class="badge" style="background:#fef9e7;color:#b7791f;">3 — Sedang</span></td>
+            <td><span class="badge" style="background:#fef9e7;color:#b7791f;">3 — Sedang</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Matriks 5x5 interaktif -->
+    <p class="matrix-title" style="margin-bottom:1rem;">Klik sel untuk melihat kategori risiko</p>
+    <div>
+      <div>
+        <div id="matrix5x5" style="display:grid; grid-template-columns: 100px repeat(5,1fr); gap:3px;"></div>
+        <div style="display:grid; grid-template-columns: 100px repeat(5,1fr); gap:3px; margin-top:3px;">
+          <div></div>
+          <div style="text-align:center;font-size:0.65rem;color:var(--ink-muted);font-weight:500; line-height:1.4;">1<br><span style="font-weight:400;">Sangat ringan</span></div>
+          <div style="text-align:center;font-size:0.65rem;color:var(--ink-muted);font-weight:500; line-height:1.4;">2<br><span style="font-weight:400;">Ringan</span></div>
+          <div style="text-align:center;font-size:0.65rem;color:var(--ink-muted);font-weight:500; line-height:1.4;">3<br><span style="font-weight:400;">Sedang</span></div>
+          <div style="text-align:center;font-size:0.65rem;color:var(--ink-muted);font-weight:500; line-height:1.4;">4<br><span style="font-weight:400;">Berat</span></div>
+          <div style="text-align:center;font-size:0.65rem;color:var(--ink-muted);font-weight:500; line-height:1.4;">5<br><span style="font-weight:400;">Sangat berat</span></div>
+        </div>
+        <div class="matrix-x-axis" style="margin-top:0.5rem;">→ Dampak / konsekuensi</div>
+      </div>
+    </div>
+    <div class="matrix-info" id="matrixInfo5" style="margin-top:1rem;">
+      <div class="info-title">💡 Klik salah satu sel di atas</div>
+      Setiap sel menunjukkan kategori risiko berdasarkan kombinasi peluang kejadian dan dampaknya. Warna abu-abu = sangat rendah, hijau = rendah, kuning = sedang, oranye = tinggi, merah = sangat tinggi.
+    </div>
+
+    <!-- Manajemen risiko klinik -->
+    <div style="margin-top:2rem;">
+      <p style="font-weight:600; margin-bottom:0.75rem;">Langkah ketiga: mitigasi untuk setiap bahaya</p>
+      <table class="hazard-table">
+        <thead>
+          <tr>
+            <th>Bahaya</th>
+            <th>Menurunkan peluang</th>
+            <th>Menurunkan dampak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Masalah legal</strong></td>
+            <td>Taat aturan, konsultasi ahli hukum</td>
+            <td>Buat kontrak tertulis dengan klien</td>
+          </tr>
+          <tr>
+            <td><strong>Masalah finansial</strong></td>
+            <td>Akuntansi dan keamanan yang baik</td>
+            <td>Asuransi usaha</td>
+          </tr>
+          <tr>
+            <td><strong>Masalah operasional</strong></td>
+            <td>Buat SOP, kontrol kualitas rutin</td>
+            <td>Buat rencana cadangan</td>
+          </tr>
+          <tr>
+            <td><strong>Masalah kompetitif</strong></td>
+            <td>Riset pasar, branding yang kuat</td>
+            <td>Bangun kerja sama dan loyalitas klien</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ SKENARIO -->
+<section id="skenario">
+  <div class="container">
+    <span class="section-label">Skenario Pemicu</span>
+    <h2>Bagaimana dengan lalu lintas hewan &amp; produk hewan?</h2>
+    <div class="divider"></div>
+    <p>Prinsipnya sama — identifikasi bahaya, nilai risiko, kelola. Namun, dalam konteks kesehatan hewan, kerangkanya lebih terstruktur dan terstandar secara internasional.</p>
+
+    <div class="scenario-card">
+      <p>Untuk mendukung <strong>program makan bergizi gratis</strong>, pemerintah berencana mendatangkan <strong>1.000 ekor sapi perah</strong> dari Jawa Timur ke Sulawesi Selatan. Sebagai pejabat otoritas veteriner, Anda diminta menyusun rekomendasi apakah pemasukan sapi ini layak dilanjutkan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ KERANGKA -->
+<section id="kerangka">
+  <div class="container">
+    <span class="section-label">Kerangka WOAH</span>
+    <h2>Empat Komponen Analisis Risiko Impor</h2>
+    <div class="divider"></div>
+    <p>Klik setiap komponen untuk melihat penjelasan dan kaitannya dengan skenario sapi perah dari Jawa Timur.</p>
+
+    <div class="framework-diagram">
+      <div class="fw-main-row">
+        <div class="fw-box fw-box-1" id="fw1" onclick="toggleFW(1)">
+          <div class="fw-box-num">01</div>
+          <div class="fw-box-icon">🔍</div>
+          <div class="fw-box-title">Identifikasi Bahaya</div>
+        </div>
+        <div class="fw-arrow">→</div>
+        <div class="fw-box fw-box-2" id="fw2" onclick="toggleFW(2)">
+          <div class="fw-box-num">02</div>
+          <div class="fw-box-icon">📊</div>
+          <div class="fw-box-title">Penilaian Risiko</div>
+        </div>
+        <div class="fw-arrow">→</div>
+        <div class="fw-box fw-box-3" id="fw3" onclick="toggleFW(3)">
+          <div class="fw-box-num">03</div>
+          <div class="fw-box-icon">🛡️</div>
+          <div class="fw-box-title">Manajemen Risiko</div>
+        </div>
+      </div>
+      <div class="fw-down-row">
+        <div class="fw-down-arrow">↓</div>
+        <div class="fw-down-arrow">↓</div>
+        <div class="fw-down-arrow">↓</div>
+      </div>
+      <div class="fw-bottom" id="fw4" onclick="toggleFW(4)">
+        <div class="fw-bottom-icon">📢</div>
+        <div class="fw-bottom-title">Komunikasi Risiko</div>
+      </div>
+    </div>
+
+    <div class="fw-detail" id="fw-detail-1">
+      <h3>🔍 Identifikasi Bahaya</h3>
+      <p>Langkah pertama: inventarisasi semua agen penyakit yang <em>secara biologis mungkin</em> terbawa bersama komoditas yang akan diimpor. Belum menilai probabilitas — hanya mengidentifikasi kandidat bahaya.</p>
+      <div class="fw-detail-skenario">
+        <strong>Kasus sapi perah Jatim → Sulsel:</strong> Agen apa saja yang bisa terbawa bersama 1.000 ekor sapi? LSD? Brucellosis? PMK? Semua diinventarisasi dulu, baru disaring mana yang memenuhi kriteria bahaya.
+      </div>
+    </div>
+    <div class="fw-detail" id="fw-detail-2">
+      <h3>📊 Penilaian Risiko</h3>
+      <p>Untuk setiap bahaya yang teridentifikasi, dilakukan tiga sub-penilaian: <strong>penilaian pemasukan</strong> (seberapa mungkin masuk?), <strong>penilaian paparan</strong> (seberapa mungkin menyebar?), dan <strong>penilaian dampak</strong> (seberapa besar kerugiannya?). Kemungkinan = pemasukan × paparan, lalu dikombinasikan dengan dampak.</p>
+      <div class="fw-detail-skenario">
+        <strong>Kasus sapi perah Jatim → Sulsel:</strong> Apakah LSD bisa lolos pemeriksaan? Jika lolos, apakah ada vektor di Sulsel? Jika menyebar, berapa kerugian peternak sapi perah di Sulsel?
+      </div>
+    </div>
+    <div class="fw-detail" id="fw-detail-3">
+      <h3>🛡️ Manajemen Risiko</h3>
+      <p>Jika risiko akhir melebihi ALOR (tingkat risiko yang dapat diterima), perlu tindakan mitigasi: persyaratan kesehatan, karantina, pengujian, larangan parsial, atau pembatalan impor. Jika risiko sudah di bawah ALOR, impor dapat dilanjutkan.</p>
+      <div class="fw-detail-skenario">
+        <strong>Kasus sapi perah Jatim → Sulsel:</strong> Apakah cukup dengan sertifikat kesehatan dari dinas asal? Atau perlu karantina 14 hari di daerah tujuan? Atau perlu uji serologis negatif terlebih dahulu?
+      </div>
+    </div>
+    <div class="fw-detail" id="fw-detail-4">
+      <h3>📢 Komunikasi Risiko</h3>
+      <p>Seluruh proses analisis — metode, data yang digunakan, asumsi, ketidakpastian, dan rekomendasi — harus dikomunikasikan secara transparan kepada semua pihak terkait. Komunikasi risiko bukan hanya laporan akhir, melainkan berlangsung sepanjang proses analisis.</p>
+      <div class="fw-detail-skenario">
+        <strong>Kasus sapi perah Jatim → Sulsel:</strong> Dinas kesehatan hewan perlu laporan teknis lengkap. Kepala dinas perlu ringkasan eksekutif. Peternak perlu penjelasan dalam bahasa yang mudah dipahami.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ IDENTIFIKASI BAHAYA -->
+<section id="identifikasi">
+  <div class="container">
+    <span class="section-label">Komponen 1</span>
+    <h2>Identifikasi Bahaya</h2>
+    <div class="divider"></div>
+    <p>Suatu agen penyakit, patogen, atau parasit dianggap sebagai <strong>bahaya</strong> jika memenuhi setidaknya satu dari empat kriteria berikut:</p>
+
+    <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+      <div class="criteria-card" style="display:flex; gap:1.25rem; align-items:flex-start;">
+        <div class="criteria-icon" style="margin:0; flex-shrink:0;">🚚</div>
+        <div>
+          <h3 style="margin-bottom:0.3rem;">Dapat Terbawa</h3>
+          <p style="margin:0;">Agen tersebut secara biologis memungkinkan untuk terbawa bersama komoditas yang dipindahkan — melalui darah, jaringan, sekresi, atau kontak langsung.</p>
+        </div>
+      </div>
+      <div class="criteria-card" style="display:flex; gap:1.25rem; align-items:flex-start;">
+        <div class="criteria-icon" style="margin:0; flex-shrink:0;">🏝️</div>
+        <div>
+          <h3 style="margin-bottom:0.3rem;">Daerah Tujuan Bebas atau Terkendali</h3>
+          <p style="margin:0;">Penyakit tersebut belum pernah ada, sudah diberantas, atau sedang dalam program pengendalian aktif di daerah tujuan — sehingga pemasukannya akan mengubah status kesehatan hewan.</p>
+        </div>
+      </div>
+      <div class="criteria-card" style="display:flex; gap:1.25rem; align-items:flex-start;">
+        <div class="criteria-icon" style="margin:0; flex-shrink:0;">🧬</div>
+        <div>
+          <h3 style="margin-bottom:0.3rem;">Perbedaan Genetik atau Virulensi</h3>
+          <p style="margin:0;">Meskipun penyakit ada di kedua daerah, strain di daerah asal memiliki karakteristik genetik atau tingkat virulensi yang berbeda — misalnya lebih ganas atau resisten terhadap vaksin yang digunakan.</p>
+        </div>
+      </div>
+      <div class="criteria-card" style="display:flex; gap:1.25rem; align-items:flex-start;">
+        <div class="criteria-icon" style="margin:0; flex-shrink:0;">🔥</div>
+        <div>
+          <h3 style="margin-bottom:0.3rem;">Sulit Diinaktivasi</h3>
+          <p style="margin:0;">Untuk produk hewan olahan: agen tersebut tidak dapat dimatikan dengan proses pengolahan standar (pemanasan, penggaraman, pengasaman) sehingga tetap infektif dalam produk akhir.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hazard-table-wrap">
+      <p style="margin: 1.5rem 0 0.75rem; font-size:0.9rem;"><strong>Contoh aplikasi</strong> — Sapi perah dari Jawa Timur ke Sulawesi Selatan:</p>
+      <table class="hazard-table">
+	  <colgroup>
+	    <col style="width: 22%">
+	    <col style="width: 14%">
+	    <col style="width: 14%">
+	    <col style="width: 38%">
+	    <col style="width: 12%">
+	  </colgroup>
+        <thead>
+          <tr>
+            <th>Agen Penyakit</th>
+            <th>Status Jatim</th>
+            <th>Status Sulsel</th>
+            <th>Kriteria Terpenuhi</th>
+            <th>Bahaya?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Virus LSD</strong><br>(Lumpy skin disease)</td>
+            <td>Endemis</td>
+            <td>Bebas</td>
+            <td>Dapat terbawa; daerah tujuan bebas</td>
+            <td><span class="badge badge-ya">YA</span></td>
+          </tr>
+          <tr>
+            <td><strong>Brucella sp.</strong><br>(Brucellosis)</td>
+            <td>Endemis</td>
+            <td>Dikendalikan</td>
+            <td>Dapat terbawa; daerah tujuan dalam program pengendalian</td>
+            <td><span class="badge badge-ya">YA</span></td>
+          </tr>
+          <tr>
+            <td><strong>Virus PMK</strong><br>(Penyakit mulut &amp; kuku)</td>
+            <td>Endemis</td>
+            <td>Dikendalikan</td>
+            <td>Dapat terbawa; daerah tujuan dalam program pengendalian</td>
+            <td><span class="badge badge-ya">YA</span></td>
+          </tr>
+          <tr>
+            <td><strong>Fasciola sp.</strong><br>(Fasciolosis)</td>
+            <td>Ada</td>
+            <td>Ada, tidak dikendalikan</td>
+            <td>Ada di kedua daerah; tidak ada program pengendalian; tidak ada perbedaan strain signifikan</td>
+            <td><span class="badge badge-tidak">TIDAK</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ PENILAIAN RISIKO -->
+<section id="penilaian">
+  <div class="container">
+    <span class="section-label">Komponen 2</span>
+    <h2>Penilaian Risiko</h2>
+    <div class="divider"></div>
+    <p>Penilaian risiko dilakukan untuk setiap bahaya yang teridentifikasi. Prosesnya berlangsung dalam tiga tahap yang dikombinasikan secara berurutan:</p>
+
+    <div class="risk-flow">
+      <div class="risk-flow-box" id="tab-masuk" onclick="showRiskTab('masuk')" style="background:#e8f4f0; border-color:#a8d5c8;">
+        <div class="rf-icon">🚪</div>
+        <div class="rf-title">Penilaian Pemasukan</div>
+        <div class="rf-sub">Entry assessment</div>
+      </div>
+      <div class="risk-flow-eq">×</div>
+      <div class="risk-flow-box" id="tab-paparan" onclick="showRiskTab('paparan')" style="background:#e8f4f0; border-color:#a8d5c8;">
+        <div class="rf-icon">🔗</div>
+        <div class="rf-title">Penilaian Paparan</div>
+        <div class="rf-sub">Exposure assessment</div>
+      </div>
+      <div class="risk-flow-eq">×</div>
+      <div class="risk-flow-box" id="tab-dampak" onclick="showRiskTab('dampak')" style="background:#fdecea; border-color:#f4a8a0;">
+        <div class="rf-icon">💥</div>
+        <div class="rf-title">Penilaian Dampak</div>
+        <div class="rf-sub">Consequence assessment</div>
+      </div>
+    </div>
+
+    <div class="risk-tab-content active" id="rtc-masuk">
+      <h3>🚪 Penilaian Pemasukan</h3>
+      <p>Menilai kemungkinan agen penyakit <em>masuk ke daerah tujuan</em> bersama komoditas yang dipindahkan. Pertanyaan kuncinya: apakah hewan atau produk yang dikirim dapat membawa agen ini dalam kondisi infektif?</p>
+      <p>Faktor yang dipertimbangkan: prevalensi penyakit di daerah asal, efektivitas pengujian dan sertifikasi, prosedur karantina, jenis komoditas (hidup vs produk olahan), dan kemungkinan kontaminasi selama transportasi.</p>
+      <div class="fw-detail-skenario" style="margin-top:1rem;">
+        <strong>Contoh (LSD, sapi perah Jatim→Sulsel):</strong> Prevalensi LSD di Jatim dilaporkan masih ada. Pemeriksaan klinis sebelum pengiriman bisa melewatkan kasus subklinis. Penilaian pemasukan: <em>Rendah hingga Sedang</em>.
+      </div>
+    </div>
+    <div class="risk-tab-content" id="rtc-paparan">
+      <h3>🔗 Penilaian Paparan</h3>
+      <p>Menilai kemungkinan hewan atau manusia yang rentan di daerah tujuan <em>terpapar</em> agen yang berhasil masuk. Bahaya yang sudah masuk belum tentu menyebabkan wabah jika tidak ada paparan yang cukup.</p>
+      <p>Faktor yang dipertimbangkan: keberadaan vektor, kepadatan populasi hewan rentan, praktik manajemen ternak, dan pola perdagangan lokal di daerah tujuan.</p>
+      <div class="fw-detail-skenario" style="margin-top:1rem;">
+        <strong>Contoh (LSD, sapi perah Jatim→Sulsel):</strong> LSD ditularkan oleh vektor (lalat, nyamuk). Sulsel memiliki populasi vektor yang cukup aktif. Hewan sapi perah baru akan dikandangkan bersama sapi lokal. Penilaian paparan: <em>Sedang</em>.
+      </div>
+    </div>
+    <div class="risk-tab-content" id="rtc-dampak">
+      <h3>💥 Penilaian Dampak</h3>
+      <p>Menilai <em>besaran kerugian</em> yang akan terjadi jika agen penyakit berhasil masuk dan menyebabkan infeksi. Dampak dinilai dari berbagai dimensi secara kualitatif.</p>
+      <p>Dimensi dampak: kesehatan hewan (morbiditas, mortalitas), kerugian ekonomi langsung (produksi, kematian ternak), dampak perdagangan (restriksi ekspor), dampak kesehatan masyarakat (zoonosis), dan dampak lingkungan.</p>
+      <div class="fw-detail-skenario" style="margin-top:1rem;">
+        <strong>Contoh (LSD, sapi perah Jatim→Sulsel):</strong> LSD menyebabkan penurunan produksi susu drastis, kematian hewan, dan pelarangan perdagangan ternak antar daerah. Tidak ada komponen zoonosis. Penilaian dampak: <em>Sedang hingga Tinggi</em>.
+      </div>
+    </div>
+
+    <!-- ── ILUSTRASI TIGA PENILAIAN ── -->
+    <div style="margin: 2rem 0 1.5rem;">
+      <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; border-radius:0.75rem; display:block;">
+        <defs>
+          <marker id="arr" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 9 3.5, 0 7" fill="#b85c2a"/>
+          </marker>
+          <marker id="arr-orange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#e67e22"/>
+          </marker>
+          <clipPath id="seaClip">
+            <rect x="240" y="0" width="120" height="280"/>
+          </clipPath>
+        </defs>
+
+        <!-- ── LANGIT ── -->
+        <rect width="900" height="280" fill="#eef6ff"/>
+
+        <!-- Awan kiri -->
+        <ellipse cx="70" cy="36" rx="34" ry="14" fill="white" opacity="0.85"/>
+        <ellipse cx="96" cy="27" rx="26" ry="17" fill="white" opacity="0.85"/>
+        <ellipse cx="46" cy="30" rx="20" ry="12" fill="white" opacity="0.85"/>
+
+        <!-- Awan kanan -->
+        <ellipse cx="760" cy="34" rx="36" ry="14" fill="white" opacity="0.85"/>
+        <ellipse cx="786" cy="25" rx="26" ry="17" fill="white" opacity="0.85"/>
+        <ellipse cx="736" cy="28" rx="22" ry="13" fill="white" opacity="0.85"/>
+        <ellipse cx="860" cy="42" rx="28" ry="12" fill="white" opacity="0.75"/>
+
+        <!-- ── LAUT (sempit, 120px) ── -->
+        <rect x="240" y="132" width="120" height="148" fill="#8ec8f0"/>
+        <path d="M240 150 Q265 142 290 150 Q315 158 340 150 Q360 142 360 150" fill="none" stroke="white" stroke-width="1.8" opacity="0.55" clip-path="url(#seaClip)"/>
+        <path d="M240 166 Q265 158 290 166 Q315 174 340 166 Q360 158 360 166" fill="none" stroke="white" stroke-width="1.6" opacity="0.45" clip-path="url(#seaClip)"/>
+        <path d="M240 182 Q265 174 290 182 Q315 190 340 182 Q360 174 360 182" fill="none" stroke="white" stroke-width="1.4" opacity="0.35" clip-path="url(#seaClip)"/>
+        <text x="300" y="268" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2a6a9a" font-weight="600">Selat Makassar</text>
+
+        <!-- ── DARATAN JAWA TIMUR (sempit, 0–240) ── -->
+        <path d="M0 280 L0 140 Q30 130 70 132 Q130 136 190 128 Q220 124 240 132 L240 280 Z" fill="#a8d878"/>
+        <!-- Label Jawa Timur -->
+        <rect x="8" y="62" width="160" height="50" rx="7" fill="white" opacity="0.95"/>
+        <text x="88" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#1a1814">Jawa Timur</text>
+        <text x="88" y="102" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">Daerah Asal — Endemis LSD</text>
+
+        <!-- ── DARATAN SULAWESI SELATAN (lebar, 360–900) ── -->
+        <path d="M360 132 Q390 122 450 124 Q530 118 620 122 Q700 126 780 120 Q840 116 900 126 L900 280 L360 280 Z" fill="#a8d878"/>
+        <!-- Label Sulawesi Selatan -->
+        <rect x="570" y="62" width="210" height="50" rx="7" fill="white" opacity="0.95"/>
+        <text x="675" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#1a1814">Sulawesi Selatan</text>
+        <text x="675" y="102" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">Daerah Tujuan — Bebas LSD</text>
+
+        <!-- ── PANAH TUNGGAL JATIM → SULSEL ── -->
+        <line x1="238" y1="156" x2="360" y2="156" stroke="#b85c2a" stroke-width="3" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+
+        <!-- ══ ZONA 1: PENILAIAN PEMASUKAN (Jatim) ══ -->
+        <!-- Sapi kiri (jauh dari panah) -->
+        <text x="62" y="183" text-anchor="middle" font-size="34">🐄</text>
+        <circle cx="80" cy="150" r="12" fill="#fdecea" stroke="#f87171" stroke-width="2"/>
+        <text x="80" y="156" text-anchor="middle" font-size="12">🦠</text>
+
+        <!-- Sapi kanan (dekat panah) -->
+        <text x="188" y="183" text-anchor="middle" font-size="34">🐄</text>
+        <circle cx="206" cy="150" r="12" fill="#fdecea" stroke="#f87171" stroke-width="2"/>
+        <text x="206" y="156" text-anchor="middle" font-size="12">🦠</text>
+
+        <!-- Label zona 1 -->
+        <rect x="8" y="196" width="224" height="46" rx="6" fill="white" stroke="#2a7a6e" stroke-width="1.5"/>
+        <text x="120" y="214" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#2a7a6e">① PENILAIAN PEMASUKAN</text>
+        <text x="120" y="230" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Apakah virus lolos bersama sapi?</text>
+
+        <!-- ══ ZONA 2: PENILAIAN PAPARAN (kiri Sulsel) ══ -->
+        <!-- Sapi positif baru tiba (dekat panah) -->
+        <text x="404" y="183" text-anchor="middle" font-size="34">🐄</text>
+        <circle cx="422" cy="150" r="12" fill="#fdecea" stroke="#f87171" stroke-width="2"/>
+        <text x="422" y="156" text-anchor="middle" font-size="12">🦠</text>
+
+        <!-- Lalat vektor -->
+        <text x="465" y="162" text-anchor="middle" font-size="18">🪰</text>
+
+        <!-- Panah penularan -->
+        <path d="M432 158 Q455 164 482 162" fill="none" stroke="#e67e22" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+
+        <!-- Sapi lokal rentan -->
+        <text x="506" y="185" text-anchor="middle" font-size="32">🐄</text>
+
+        <!-- Label zona 2 -->
+        <rect x="368" y="196" width="218" height="46" rx="6" fill="white" stroke="#b85c2a" stroke-width="1.5"/>
+        <text x="477" y="214" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#b85c2a">② PENILAIAN PAPARAN</text>
+        <text x="477" y="230" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Apakah virus menular ke sapi lokal?</text>
+
+        <!-- Garis pemisah zona 2 / zona 3 -->
+        <line x1="600" y1="127" x2="600" y2="278" stroke="#aaa" stroke-width="1" stroke-dasharray="5,4"/>
+
+        <!-- ══ ZONA 3: PENILAIAN DAMPAK (kanan Sulsel) ══ -->
+        <!-- Dua sapi wabah -->
+        <text x="672" y="183" text-anchor="middle" font-size="34">🐄</text>
+        <circle cx="690" cy="150" r="12" fill="#fdecea" stroke="#f87171" stroke-width="2"/>
+        <text x="690" y="156" text-anchor="middle" font-size="12">🦠</text>
+
+        <text x="782" y="183" text-anchor="middle" font-size="34">🐄</text>
+        <circle cx="800" cy="150" r="12" fill="#fdecea" stroke="#f87171" stroke-width="2"/>
+        <text x="800" y="156" text-anchor="middle" font-size="12">🦠</text>
+
+        <!-- Label zona 3 -->
+        <rect x="608" y="196" width="284" height="46" rx="6" fill="white" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="750" y="214" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#c0392b">③ PENILAIAN DAMPAK</text>
+        <text x="750" y="230" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Seberapa besar kerugian jika wabah terjadi?</text>
+      </svg>
+    </div>
+
+    <!-- Simulasi kombinasi -->
+    <div class="combo-section">
+      <p class="combo-title">⚙️ Simulasi — Kalkulator Kombinasi Kualitatif</p>
+      <p style="font-size:0.88rem; margin-bottom:1.25rem;">Gunakan tabel aturan kombinasi (lima level) untuk menghitung kemungkinan dan risiko akhir. Pilih nilai untuk setiap komponen:</p>
+
+      <div style="margin-bottom:1.5rem;">
+        <p style="font-size:0.82rem; color:var(--ink-muted); font-weight:600; margin-bottom:0.75rem;">LANGKAH 1 — Kemungkinan = Pemasukan × Paparan</p>
+        <div class="combo-selectors">
+          <div class="combo-select-wrap">
+            <label class="combo-label">Pemasukan (K1)</label>
+            <select class="combo-select" id="sel-masuk" onchange="updateCombo()">
+              <option value="">— pilih —</option>
+              <option value="T">Tinggi (0,7–1,0)</option>
+              <option value="S">Sedang (0,3–0,7)</option>
+              <option value="R">Rendah (0,05–0,3)</option>
+              <option value="AR">Amat Rendah (0,001–0,05)</option>
+              <option value="ASR">Amat Sangat Rendah (0,000001–0,001)</option>
+              <option value="DA">Dapat Diabaikan (0–0,000001)</option>
+            </select>
+          </div>
+          <div class="combo-operator">×</div>
+          <div class="combo-select-wrap">
+            <label class="combo-label">Paparan (K2)</label>
+            <select class="combo-select" id="sel-dedah" onchange="updateCombo()">
+              <option value="">— pilih —</option>
+              <option value="T">Tinggi (0,7–1,0)</option>
+              <option value="S">Sedang (0,3–0,7)</option>
+              <option value="R">Rendah (0,05–0,3)</option>
+              <option value="AR">Amat Rendah (0,001–0,05)</option>
+              <option value="ASR">Amat Sangat Rendah (0,000001–0,001)</option>
+              <option value="DA">Dapat Diabaikan (0–0,000001)</option>
+            </select>
+          </div>
+          <div class="combo-operator">=</div>
+          <div class="combo-select-wrap">
+            <label class="combo-label">Kemungkinan</label>
+            <div class="combo-result result-DA" id="result-kemung" style="padding:0.6rem 0.75rem; min-height:42px;">
+              <div class="combo-result-value" style="font-size:1rem;">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p style="font-size:0.82rem; color:var(--ink-muted); font-weight:600; margin-bottom:0.75rem;">LANGKAH 2 — Risiko Akhir = Kemungkinan × Dampak</p>
+        <div class="combo-selectors">
+          <div class="combo-select-wrap">
+            <label class="combo-label">Kemungkinan</label>
+            <div class="combo-result result-DA" id="result-kemung2" style="padding:0.6rem 0.75rem; min-height:42px;">
+              <div class="combo-result-value" style="font-size:1rem;">—</div>
+            </div>
+          </div>
+          <div class="combo-operator">×</div>
+          <div class="combo-select-wrap">
+            <label class="combo-label">Dampak</label>
+            <select class="combo-select" id="sel-dampak" onchange="updateCombo()">
+              <option value="">— pilih —</option>
+              <option value="T">Tinggi</option>
+              <option value="S">Sedang</option>
+              <option value="R">Rendah</option>
+              <option value="AR">Amat Rendah</option>
+              <option value="ASR">Amat Sangat Rendah</option>
+              <option value="DA">Dapat Diabaikan</option>
+            </select>
+          </div>
+          <div class="combo-operator">=</div>
+          <div class="combo-select-wrap">
+            <label class="combo-label">Risiko Akhir</label>
+            <div class="combo-result result-DA" id="result-risiko" style="padding:0.6rem 0.75rem; min-height:42px;">
+              <div class="combo-result-value" style="font-size:1rem;">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uncertainty-note">
+        <strong>⚠️ Ketidakpastian informasi:</strong> Setiap penilaian harus disertai pernyataan tingkat kepercayaan. Jika data surveilans terbatas, ketidakpastian tinggi — dan ini harus dilaporkan secara eksplisit. Ketidakpastian bukan kelemahan analisis, melainkan bagian integral dari transparansi ilmiah.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ MANAJEMEN RISIKO -->
+<section id="manajemen">
+  <div class="container">
+    <span class="section-label">Komponen 3</span>
+    <h2>Manajemen Risiko</h2>
+    <div class="divider"></div>
+    <p>Setelah risiko akhir diperoleh, bandingkan dengan <strong>ALOP</strong> (tingkat perlindungan yang sesuai) atau <strong>ALOR</strong> (tingkat risiko yang masih dapat diterima oleh negara atau daerah tujuan).</p>
+
+    <div class="alor-explainer">
+      <div class="alor-box">
+        <span class="alor-tag tag-alop">ALOP</span>
+        <h3>Appropriate Level of Protection</h3>
+        <p style="font-size:0.85rem;">Pernyataan kebijakan: <em>seberapa aman</em> yang ingin dicapai. Ditetapkan oleh pemerintah berdasarkan nilai sosial, ekonomi, dan politik — bukan angka.</p>
+        <p style="font-size:0.85rem; margin:0;"><em>Contoh: "Indonesia tidak menoleransi masuknya penyakit eksotik baru yang dapat mengancam industri peternakan nasional."</em></p>
+      </div>
+      <div class="alor-box">
+        <span class="alor-tag tag-alor">ALOR</span>
+        <h3>Acceptable Level of Risk</h3>
+        <p style="font-size:0.85rem;">Translasi teknis dari ALOP ke dalam kategori risiko yang terukur. Digunakan langsung dalam analisis untuk menentukan apakah tindakan mitigasi diperlukan.</p>
+        <p style="font-size:0.85rem; margin:0;"><em>Contoh: "Risiko akhir tidak boleh melebihi kategori Amat Rendah (AR)."</em></p>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <p style="font-size:0.88rem; margin-bottom:1.25rem;">Simulasikan skenario berbeda — bandingkan risiko akhir dengan ALOP/ALOR yang ditetapkan:</p>
+      <div class="chart-controls">
+        <div class="chart-control-group">
+          <label>Hasil Risiko Akhir</label>
+          <select id="chart-hasil" onchange="updateChart()">
+            <option value="5">Tinggi</option>
+            <option value="4">Sedang</option>
+            <option value="3" selected>Rendah</option>
+            <option value="2">Amat Rendah</option>
+            <option value="1">Amat Sangat Rendah</option>
+            <option value="0">Dapat Diabaikan</option>
+          </select>
+        </div>
+        <div class="chart-control-group">
+          <label>ALOP/ALOR yang Ditetapkan</label>
+          <select id="chart-alor" onchange="updateChart()">
+            <option value="5">Tinggi</option>
+            <option value="4">Sedang</option>
+            <option value="3">Rendah</option>
+            <option value="2">Amat Rendah</option>
+            <option value="1" selected>Amat Sangat Rendah</option>
+            <option value="0">Dapat Diabaikan</option>
+          </select>
+        </div>
+      </div>
+      <div class="bar-chart-wrap">
+        <div class="bar-group">
+          <div class="bar-track">
+            <div class="bar-fill bar-fill-hasil" id="bar-hasil" style="height:50%">
+              <span class="bar-val-label" id="bar-hasil-label">Rendah</span>
+            </div>
+          </div>
+          <div class="bar-label">Risiko Akhir</div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-track">
+            <div class="bar-fill bar-fill-alor" id="bar-alor" style="height:33.3%">
+              <span class="bar-val-label" id="bar-alor-label">Amat Sangat Rendah</span>
+            </div>
+          </div>
+          <div class="bar-label">ALOP/ALOR</div>
+        </div>
+      </div>
+      <div class="chart-verdict" id="chart-verdict">
+        ⚠️ Risiko akhir <strong>melebihi</strong> ALOP/ALOR — diperlukan tindakan manajemen risiko sebelum impor dapat dilanjutkan.
+      </div>
+    </div>
+
+    <p style="margin-top:2rem; margin-bottom:1rem; font-weight:600;">Pilihan tindakan manajemen risiko — berdasarkan komponen yang perlu diturunkan:</p>
+
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+      <!-- Kelompok 1: Menurunkan pemasukan -->
+      <div style="border:1px solid #a8d5c8; border-radius:0.6rem; overflow:hidden;">
+        <div style="background:#e8f4f0; padding:0.75rem 1.25rem; display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1rem;">🚪</span>
+          <span style="font-weight:600; font-size:0.88rem; color:var(--teal);">Menurunkan risiko pemasukan LSD dari Jawa Timur</span>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:0; background:var(--border);">
+          <div style="background:var(--cream); padding:1rem 1.25rem;">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">💉</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Vaksinasi dengan Titer Protektif</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Hewan telah divaksinasi LSD dan memiliki titer antibodi yang telah terbukti memberikan perlindungan, dibuktikan dengan uji serologis</div>
+          </div>
+          <div style="background:var(--cream); padding:1rem 1.25rem; border-left:1px solid var(--border);">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">🏥</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Isolasi 28 Hari Tanpa Gejala</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Hewan diisolasi selama 28 hari di fasilitas karantina daerah asal dan tidak menunjukkan tanda klinis LSD selama periode tersebut</div>
+          </div>
+          <div style="background:var(--cream); padding:1rem 1.25rem; border-left:1px solid var(--border);">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">🧪</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Hasil PCR Negatif</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Setiap hewan menunjukkan hasil uji PCR negatif terhadap virus LSD yang dilakukan oleh laboratorium yang terakreditasi, sesaat sebelum pengiriman</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kelompok 2: Menurunkan paparan -->
+      <div style="border:1px solid #a8d5c8; border-radius:0.6rem; overflow:hidden;">
+        <div style="background:#e8f4f0; padding:0.75rem 1.25rem; display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1rem;">🔗</span>
+          <span style="font-weight:600; font-size:0.88rem; color:var(--teal);">Menurunkan paparan dari sapi positif ke hewan rentan di Sulsel</span>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:0; background:var(--border);">
+          <div style="background:var(--cream); padding:1rem 1.25rem;">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">🏥</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Karantina Pasca-tiba</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Isolasi hewan impor selama 14–21 hari di daerah tujuan, terpisah dari hewan lokal</div>
+          </div>
+          <div style="background:var(--cream); padding:1rem 1.25rem; border-left:1px solid var(--border);">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">🦟</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Pengendalian Vektor</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Pengendalian lalat dan nyamuk di kandang karantina untuk memutus rantai penularan</div>
+          </div>
+          <div style="background:var(--cream); padding:1rem 1.25rem; border-left:1px solid var(--border);">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">📍</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Pembatasan Pergerakan</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Larangan memindahkan hewan dari lokasi karantina hingga dinyatakan bebas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kelompok 3: Menurunkan dampak -->
+      <div style="border:1px solid #f4a8a0; border-radius:0.6rem; overflow:hidden;">
+        <div style="background:#fdecea; padding:0.75rem 1.25rem; display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1rem;">💥</span>
+          <span style="font-weight:600; font-size:0.88rem; color:#c0392b;">Menurunkan dampak jika LSD berhasil masuk dan menyebar</span>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:0; background:var(--border);">
+          <div style="background:var(--cream); padding:1rem 1.25rem;">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">💉</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Vaksinasi Hewan Lokal</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Vaksinasi populasi sapi lokal di Sulsel sebelum kedatangan hewan impor</div>
+          </div>
+          <div style="background:var(--cream); padding:1rem 1.25rem; border-left:1px solid var(--border);">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">🚨</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Rencana Respons Wabah</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">SOP penanggulangan wabah LSD yang siap diaktifkan: stamping out, zona, kompensasi</div>
+          </div>
+          <div style="background:var(--cream); padding:1rem 1.25rem; border-left:1px solid var(--border);">
+            <div style="font-size:1.1rem; margin-bottom:0.3rem;">📡</div>
+            <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Surveilans Aktif</div>
+            <div style="font-size:0.8rem; color:var(--ink-muted);">Pemantauan klinis rutin pada hewan impor dan hewan lokal di sekitarnya selama 60 hari</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kelompok 4: Penolakan -->
+      <div style="border:1px solid #9b9b9b; border-radius:0.6rem; overflow:hidden;">
+        <div style="background:#f5f5f5; padding:0.75rem 1.25rem; display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1rem;">🚫</span>
+          <span style="font-weight:600; font-size:0.88rem; color:#444;">Penolakan — risiko tidak dapat diturunkan hingga memenuhi ALOR</span>
+        </div>
+        <div style="background:var(--cream); padding:1.25rem 1.5rem;">
+          <p style="font-size:0.85rem; color:var(--ink-light); margin-bottom:0.75rem;">Jika setelah mempertimbangkan seluruh opsi mitigasi yang tersedia, risiko akhir masih melebihi ALOR yang ditetapkan, pemasukan <strong>harus ditolak</strong>. Penolakan bukan kegagalan analisis — melainkan keputusan berbasis bukti yang sah dan merupakan hak prerogatif negara/daerah tujuan berdasarkan prinsip SPS Agreement WTO.</p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:0.75rem;">
+            <div style="padding:0.9rem 1rem; background:#f9f9f9; border:1px solid #e0e0e0; border-radius:0.5rem;">
+              <div style="font-size:1rem; margin-bottom:0.3rem;">📋</div>
+              <div style="font-weight:600; font-size:0.82rem; margin-bottom:0.2rem; color:var(--ink);">Kondisi yang Memicu Penolakan</div>
+              <div style="font-size:0.78rem; color:var(--ink-muted);">Tidak ada tindakan mitigasi yang secara teknis dapat menurunkan risiko ke bawah ALOR; atau biaya mitigasi tidak sebanding dengan manfaat pemasukan</div>
+            </div>
+            <div style="padding:0.9rem 1rem; background:#f9f9f9; border:1px solid #e0e0e0; border-radius:0.5rem;">
+              <div style="font-size:1rem; margin-bottom:0.3rem;">📝</div>
+              <div style="font-weight:600; font-size:0.82rem; margin-bottom:0.2rem; color:var(--ink);">Kewajiban Dokumentasi</div>
+              <div style="font-size:0.78rem; color:var(--ink-muted);">Keputusan penolakan harus didokumentasikan secara ilmiah, transparan, dan dapat dipertahankan — untuk mencegah klaim hambatan perdagangan yang tidak berdasar</div>
+            </div>
+            <div style="padding:0.9rem 1rem; background:#f9f9f9; border:1px solid #e0e0e0; border-radius:0.5rem;">
+              <div style="font-size:1rem; margin-bottom:0.3rem;">🔁</div>
+              <div style="font-weight:600; font-size:0.82rem; margin-bottom:0.2rem; color:var(--ink);">Peluang Revisi</div>
+              <div style="font-size:0.78rem; color:var(--ink-muted);">Negara/daerah asal dapat mengajukan data baru atau perubahan kondisi; jika kondisi berubah secara signifikan, analisis risiko dapat diulang</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="komunikasi">
+  <div class="container">
+    <span class="section-label">Komponen 4</span>
+    <h2>Komunikasi Risiko</h2>
+    <div class="divider"></div>
+    <p>Komunikasi risiko bukan sekadar laporan akhir — ia berlangsung <em>sepanjang</em> proses analisis. Tiga hal yang selalu harus dikomunikasikan: <strong>hasil analisis</strong>, <strong>ketidakpastian</strong>, dan <strong>dasar pengambilan keputusan</strong>.</p>
+
+    <div class="audience-tabs">
+      <button class="aud-tab active" onclick="showAudience('teknis', this)">👨‍🔬 Pejabat Teknis</button>
+      <button class="aud-tab" onclick="showAudience('kepala', this)">👔 Kepala Dinas</button>
+      <button class="aud-tab" onclick="showAudience('peternak', this)">🐄 Peternak</button>
+    </div>
+
+    <div class="aud-content active" id="aud-teknis">
+      <div class="comm-card">
+        <h3>Komunikasi kepada Pejabat Teknis Veteriner</h3>
+        <div class="comm-items">
+          <div class="comm-item">
+            <div class="comm-item-icon">📄</div>
+            <div>Laporan lengkap dengan metodologi, sumber data, tabel penilaian, dan justifikasi setiap nilai kualitatif yang dipilih</div>
+          </div>
+          <div class="comm-item">
+            <div class="comm-item-icon">⚠️</div>
+            <div>Pernyataan eksplisit tentang ketidakpastian — data mana yang tidak tersedia, asumsi apa yang dibuat, dan bagaimana ketidakpastian ini mempengaruhi hasil</div>
+          </div>
+          <div class="comm-item">
+            <div class="comm-item-icon">🔄</div>
+            <div>Referensi silang ke laporan surveilans resmi (WOAH, PDSR, laporan dinas provinsi) yang menjadi basis penilaian</div>
+          </div>
+        </div>
+        <div class="comm-example">
+          <strong>Contoh frasa:</strong> "Penilaian pemasukan LSD ditetapkan pada kategori Rendah berdasarkan prevalensi yang dilaporkan Dinas Peternakan Jawa Timur tahun 2023 (n=47 kasus dari populasi 1,2 juta ekor). Ketidakpastian: data surveilans aktif terbatas pada 8 dari 38 kabupaten, sehingga prevalensi sebenarnya mungkin lebih tinggi."
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-content" id="aud-kepala">
+      <div class="comm-card">
+        <h3>Komunikasi kepada Kepala Dinas / Pengambil Kebijakan</h3>
+        <div class="comm-items">
+          <div class="comm-item">
+            <div class="comm-item-icon">📊</div>
+            <div>Ringkasan eksekutif satu halaman: hasil akhir, rekomendasi, dan dua atau tiga alasan utama — tanpa detail teknis metodologi</div>
+          </div>
+          <div class="comm-item">
+            <div class="comm-item-icon">⚖️</div>
+            <div>Tampilkan opsi kebijakan beserta konsekuensinya, bukan hanya satu rekomendasi — biarkan pengambil keputusan memilih berdasarkan prioritas yang mereka miliki</div>
+          </div>
+          <div class="comm-item">
+            <div class="comm-item-icon">💰</div>
+            <div>Sertakan estimasi dampak ekonomi dari setiap opsi: biaya tindakan mitigasi vs potensi kerugian jika wabah terjadi</div>
+          </div>
+        </div>
+        <div class="comm-example">
+          <strong>Contoh frasa:</strong> "Pemasukan 1.000 ekor sapi perah membawa risiko Rendah terhadap LSD. Dengan menambahkan syarat uji serologis negatif sebelum pengiriman, risiko dapat diturunkan ke level yang dapat diterima. Biaya pengujian diperkirakan Rp 150.000/ekor, atau total Rp 150 juta — jauh lebih kecil dari potensi kerugian wabah LSD yang diestimasi mencapai Rp 2–5 miliar."
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-content" id="aud-peternak">
+      <div class="comm-card">
+        <h3>Komunikasi kepada Peternak dan Masyarakat</h3>
+        <div class="comm-items">
+          <div class="comm-item">
+            <div class="comm-item-icon">🗣️</div>
+            <div>Gunakan bahasa sehari-hari tanpa istilah teknis — jelaskan <em>apa yang akan terjadi</em> dan <em>apa yang perlu dilakukan</em>, bukan bagaimana analisisnya dilakukan</div>
+          </div>
+          <div class="comm-item">
+            <div class="comm-item-icon">✅</div>
+            <div>Fokus pada tindakan konkret yang diharapkan dari peternak: apa yang perlu disiapkan, siapa yang harus dihubungi, dan apa tanda-tanda yang harus diwaspadai</div>
+          </div>
+          <div class="comm-item">
+            <div class="comm-item-icon">🤝</div>
+            <div>Bangun kepercayaan dengan transparansi — jelaskan bahwa syarat tertentu diberlakukan bukan untuk mempersulit, melainkan untuk melindungi ternak mereka sendiri</div>
+          </div>
+        </div>
+        <div class="comm-example">
+          <strong>Contoh frasa:</strong> "Sapi yang akan masuk dari Jawa sudah diperiksa kesehatannya dan dinyatakan bebas dari penyakit kulit berbenjol (LSD). Selama 14 hari pertama setelah tiba, mohon pisahkan dari sapi yang sudah ada di kandang Bapak/Ibu dan laporkan jika ada sapi yang demam atau muncul benjolan di kulitnya."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ BENCANA -->
+<section id="bencana">
+  <div class="container">
+    <span class="section-label">Perspektif Tambahan</span>
+    <h2>Analisis Risiko: WOAH vs Manajemen Bencana</h2>
+    <div class="divider"></div>
+    <p>Ada dua pendekatan berbeda dalam memaknai "analisis risiko" — keduanya valid, tetapi untuk tujuan yang berbeda. Penting bagi dokter hewan untuk mengetahui di mana masing-masing tepat digunakan.</p>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-head compare-head-1">Kerangka WOAH (Impor)</div>
+        <div class="compare-body">
+          <p>Dirancang untuk keputusan teknis berbasis bukti: apakah suatu komoditas boleh masuk, dengan syarat apa, dan seberapa besar risikonya.</p>
+          <div class="compare-formula-wrap">Risiko = Kemungkinan × Dampak</div>
+          <ul class="compare-list">
+            <li>Terstandar secara internasional (WOAH/OIE)</li>
+            <li>Operasional: menghasilkan keputusan konkret</li>
+            <li>Digunakan oleh otoritas veteriner &amp; karantina</li>
+            <li>Output: rekomendasi impor &amp; persyaratan SPS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-head compare-head-2">Kerangka Manajemen Bencana (DRR)</div>
+        <div class="compare-body">
+          <p>Dirancang untuk perencanaan kapasitas respons dan advokasi kebijakan: mengapa dampak bencana berbeda antar wilayah meski ancamannya sama.</p>
+          <div class="compare-formula-wrap">Risiko = Bahaya × Kerentanan / Kapasitas</div>
+          <ul class="compare-list">
+            <li>Dikembangkan UNDRR, bukan WOAH</li>
+            <li>Konseptual: berguna untuk berpikir sistemis</li>
+            <li>Digunakan dalam perencanaan darurat &amp; advokasi</li>
+            <li>Output: prioritas penguatan kapasitas wilayah</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem; padding:1.25rem 1.5rem; background:var(--gold-pale); border-left:3px solid var(--gold); border-radius: 0 0.5rem 0.5rem 0; font-size:0.88rem; color:var(--ink-light);">
+      <strong style="color:var(--gold);">Catatan untuk dokter hewan:</strong> Dalam praktik karantina dan perdagangan hewan, kerangka WOAH adalah standar yang diakui dan dapat dipertahankan secara ilmiah. Kerangka manajemen bencana berguna saat Anda perlu meyakinkan pemangku kebijakan tentang <em>mengapa</em> dua daerah dengan wabah yang sama bisa memiliki dampak yang sangat berbeda — dan mengapa investasi dalam kapasitas veteriner itu penting.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ FOOTER -->
+<footer>
+  <p>Materi kuliah — <strong>Epidemiologi &amp; Ekonomi Veteriner</strong> · Program Studi Kedokteran Hewan, Fakultas Kedokteran, Universitas Hasanuddin · Kerangka analisis risiko mengacu pada <strong>WOAH Terrestrial Animal Health Code</strong></p>
+</footer>
+
+<script>
+// ── PROGRESS BAR ──
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('progressBar');
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  el.style.width = pct + '%';
+});
+
+// ── MATRIX ──
+const cellInfo = {
+  'besar-ringan': { title: '🚲🚲🚲 Jalan ramai, sepeda', text: 'Peluang tertabrak BESAR (jalan ramai), dampak RINGAN (sepeda tidak mematikan). Risiko: SEDANG. Aktivitasnya berisiko karena frekuensi paparan tinggi, meski akibat satu kejadian tidak terlalu parah.' },
+  'besar-berat': { title: '🚗🚌 Jalan ramai, kendaraan berat', text: 'Peluang tertabrak BESAR (jalan ramai), dampak BERAT (kendaraan berat, bisa fatal). Risiko: TINGGI. Inilah kombinasi paling berbahaya — sering terpapar dan akibatnya serius. Harus dihindari atau dimitigasi (gunakan jembatan penyeberangan, lampu lalu lintas, dll.).' },
+  'kecil-ringan': { title: '🚲 Jalan sepi, sepeda', text: 'Peluang tertabrak KECIL (jalan sepi), dampak RINGAN (sepeda). Risiko: RENDAH. Ini menunjukkan perbedaan antara bahaya (ada kendaraan) dan risiko (kecil karena jarang dan tidak berbahaya). Bahaya tetap ada, tapi risikonya dapat diabaikan.' },
+  'kecil-berat': { title: '🚗 Jalan sepi, mobil', text: 'Peluang tertabrak KECIL (jalan sepi), dampak BERAT (mobil bisa fatal). Risiko: SEDANG. Jarang terjadi, tapi kalau terjadi akibatnya serius. Inilah mengapa jalan sepi pun tetap perlu kewaspadaan jika ada kendaraan bermotor.' },
+};
+let activeCell = null;
+function showCellInfo(key, el) {
+  if (activeCell) activeCell.classList.remove('active');
+  el.classList.add('active');
+  activeCell = el;
+  const info = cellInfo[key];
+  document.getElementById('matrixInfo').innerHTML = `<div class="info-title">${info.title}</div>${info.text}`;
+}
+
+// ── FRAMEWORK ──
+let activeFW = null;
+function toggleFW(n) {
+  const detail = document.getElementById('fw-detail-' + n);
+  const box = document.getElementById('fw' + n) || document.getElementById('fw' + n);
+  if (activeFW === n) {
+    detail.classList.remove('visible');
+    activeFW = null;
+    document.querySelectorAll('.fw-box, .fw-bottom').forEach(b => b.classList.remove('active'));
+  } else {
+    document.querySelectorAll('.fw-detail').forEach(d => d.classList.remove('visible'));
+    document.querySelectorAll('.fw-box, .fw-bottom').forEach(b => b.classList.remove('active'));
+    detail.classList.add('visible');
+    const target = n <= 3 ? document.getElementById('fw'+n) : document.getElementById('fw4');
+    if (target) target.classList.add('active');
+    activeFW = n;
+  }
+}
+
+// ── RISK TABS ──
+function showRiskTab(key) {
+  document.querySelectorAll('.risk-tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.risk-flow-box').forEach(b => b.classList.remove('active-tab'));
+  const content = document.getElementById('rtc-' + key);
+  if (content) content.classList.add('active');
+  const tab = document.getElementById('tab-' + key);
+  if (tab) tab.classList.add('active-tab');
+}
+
+// ── COMBO CALCULATOR ──
+const comboTable = {
+  T: { T:'T', S:'S', R:'R', AR:'AR', ASR:'ASR', DA:'DA' },
+  S: { T:'S', S:'R', R:'R', AR:'AR', ASR:'ASR', DA:'DA' },
+  R: { T:'R', S:'R', R:'AR', AR:'AR', ASR:'ASR', DA:'DA' },
+  AR: { T:'AR', S:'AR', R:'AR', AR:'ASR', ASR:'ASR', DA:'DA' },
+  ASR: { T:'ASR', S:'ASR', R:'ASR', AR:'ASR', ASR:'DA', DA:'DA' },
+  DA: { T:'DA', S:'DA', R:'DA', AR:'DA', ASR:'DA', DA:'DA' },
+};
+const levelNames = { T:'Tinggi', S:'Sedang', R:'Rendah', AR:'Amat Rendah', ASR:'Amat Sangat Rendah', DA:'Dapat Diabaikan' };
+const levelRanges = { T:'0,7–1,0', S:'0,3–0,7', R:'0,05–0,3', AR:'0,001–0,05', ASR:'0,000001–0,001', DA:'≈ 0' };
+
+function setResult(elId, val) {
+  const el = document.getElementById(elId);
+  el.className = 'combo-result result-' + (val || 'DA');
+  el.style.padding = '0.6rem 0.75rem';
+  el.style.minHeight = '42px';
+  if (val) {
+    el.innerHTML = `<div class="combo-result-value" style="font-size:1rem;">${levelNames[val]}</div>`;
+  } else {
+    el.innerHTML = `<div class="combo-result-value" style="font-size:1rem;">—</div>`;
+  }
+}
+
+function updateCombo() {
+  const masuk = document.getElementById('sel-masuk').value;
+  const dedah = document.getElementById('sel-dedah').value;
+  const dampak = document.getElementById('sel-dampak').value;
+
+  let kemung = null;
+  if (masuk && dedah) kemung = comboTable[masuk][dedah];
+  setResult('result-kemung', kemung);
+  setResult('result-kemung2', kemung);
+
+  let risiko = null;
+  if (kemung && dampak) risiko = comboTable[kemung][dampak];
+  setResult('result-risiko', risiko);
+}
+
+// ── BAR CHART ──
+const levelLabels = ['Dapat Diabaikan','Amat Sangat Rendah','Amat Rendah','Rendah','Sedang','Tinggi'];
+function updateChart() {
+  const hasil = parseInt(document.getElementById('chart-hasil').value);
+  const alor = parseInt(document.getElementById('chart-alor').value);
+  const pctHasil = ((hasil + 1) / 6) * 100;
+  const pctAlor = ((alor + 1) / 6) * 100;
+
+  document.getElementById('bar-hasil').style.height = pctHasil + '%';
+  document.getElementById('bar-alor').style.height = pctAlor + '%';
+  document.getElementById('bar-hasil-label').textContent = levelLabels[hasil];
+  document.getElementById('bar-alor-label').textContent = levelLabels[alor];
+
+  const verdict = document.getElementById('chart-verdict');
+  if (hasil > alor) {
+    verdict.className = 'chart-verdict verdict-perlu';
+    verdict.innerHTML = `⚠️ Risiko akhir (<strong>${levelLabels[hasil]}</strong>) <strong>melebihi</strong> ALOR (<strong>${levelLabels[alor]}</strong>) — diperlukan tindakan manajemen risiko sebelum impor dapat dilanjutkan.`;
+  } else {
+    verdict.className = 'chart-verdict verdict-aman';
+    verdict.innerHTML = `✅ Risiko akhir (<strong>${levelLabels[hasil]}</strong>) <strong>berada di bawah atau sama dengan</strong> ALOR (<strong>${levelLabels[alor]}</strong>) — impor dapat dilanjutkan tanpa tindakan mitigasi tambahan.`;
+  }
+}
+updateChart();
+
+// ── MATRIX 5x5 ──
+const cellColors = {
+  "1,1":"#9e9e9e","1,2":"#9e9e9e","1,3":"#7cb342","1,4":"#fbc02d","1,5":"#fbc02d",
+  "2,1":"#9e9e9e","2,2":"#7cb342","2,3":"#7cb342","2,4":"#fbc02d","2,5":"#f57c00",
+  "3,1":"#7cb342","3,2":"#7cb342","3,3":"#fbc02d","3,4":"#fbc02d","3,5":"#f57c00",
+  "4,1":"#fbc02d","4,2":"#fbc02d","4,3":"#fbc02d","4,4":"#f57c00","4,5":"#d32f2f",
+  "5,1":"#fbc02d","5,2":"#f57c00","5,3":"#f57c00","5,4":"#d32f2f","5,5":"#d32f2f"
+};
+const cellLabels = {
+  "1,1":"Sangat rendah","1,2":"Sangat rendah","1,3":"Rendah","1,4":"Sedang","1,5":"Sedang",
+  "2,1":"Sangat rendah","2,2":"Rendah","2,3":"Rendah","2,4":"Sedang","2,5":"Tinggi",
+  "3,1":"Rendah","3,2":"Rendah","3,3":"Sedang","3,4":"Sedang","3,5":"Tinggi",
+  "4,1":"Sedang","4,2":"Sedang","4,3":"Sedang","4,4":"Tinggi","4,5":"Sangat tinggi",
+  "5,1":"Sedang","5,2":"Tinggi","5,3":"Tinggi","5,4":"Sangat tinggi","5,5":"Sangat tinggi"
+};
+
+function buildMatrix5x5() {
+  const grid = document.getElementById('matrix5x5');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const rowLabels5 = ['5 — Sangat besar','4 — Besar','3 — Sedang','2 — Kecil','1 — Sangat kecil'];
+  for (let row = 0; row < 5; row++) {
+    const p = 5 - row;
+    const lbl = document.createElement('div');
+    lbl.style.cssText = 'display:flex; align-items:center; justify-content:flex-end; padding-right:0.5rem; font-size:0.63rem; color:var(--ink-muted); font-weight:500; white-space:nowrap;';
+    lbl.textContent = rowLabels5[row];
+    grid.appendChild(lbl);
+    for (let d = 1; d <= 5; d++) {
+      const key = `${p},${d}`;
+      const cell = document.createElement('div');
+      cell.style.cssText = `background:${cellColors[key]}; height:32px; border-radius:3px; cursor:pointer; display:flex; align-items:center; justify-content:center; position:relative; border:2px solid transparent; transition:all 0.15s;`;
+      cell.title = `Peluang ${p}, Dampak ${d} → Risiko ${cellLabels[key]}`;
+      cell.onclick = () => showCell5(p, d, cell);
+      grid.appendChild(cell);
+    }
+  }
+}
+let activeCell5 = null;
+function showCell5(p, d, el) {
+  if (activeCell5) { activeCell5.style.border = '2px solid transparent'; activeCell5.style.transform = 'scale(1)'; }
+  el.style.border = '2px solid var(--ink)';
+  el.style.transform = 'scale(1.06)';
+  activeCell5 = el;
+  const key = `${p},${d}`;
+  const info = document.getElementById('matrixInfo5');
+  info.innerHTML = `<div class="info-title">Peluang ${p} × Dampak ${d} → <strong>Risiko ${cellLabels[key]}</strong></div>`;
+}
+buildMatrix5x5();
+function showAudience(key, btn) {
+  document.querySelectorAll('.aud-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.aud-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('aud-' + key).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
